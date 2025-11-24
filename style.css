@@ -1,12 +1,180 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Onest:wght@100..900&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap');
-body
-{
-  font-family: 'Nunito Sans', sans-serif;
+
+/* --- Сброс стилей --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* --- Общие стили для body --- */
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
 }
 
+/* --- Стилизация Header (Общий контейнер) --- */
+.header {
+    /* Мы разделим header на темную полосу сверху и контейнер для изображения */
+    background-color: #f7f7f7; /* Темный фон для верхней полосы */
+    padding-bottom: 20px; /* Отступ между темной полосой и началом изображения */
+    position: relative;
+}
+
+/* --- Верхняя панель (Header Top Bar) --- */
+.header-top-bar { /* Используем этот класс вместо .header-top для большей ясности */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px; /* Отступы по краям и сверху/снизу */
+    color: white;
+    /* Обратите внимание, логотип должен быть черным на белом фоне (как в вашем примере) 
+       или белым на черном фоне (как в моем коде).
+       Я временно сделаю его белым, чтобы он был виден на фоне #333. */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #222222; /* Изменено на белый для контраста с фоном #333 */
+}
+
+/* --- Секция авторизации (Flag/Register/Sign in) --- */
+.auth-section {
+    display: flex;
+    align-items: center;
+}
+
+.language-flag {
+    width: 30px;
+    height: 20px;
+    margin-right: 15px;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.flag-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Стили для кнопок (Register/Sign in) --- */
+.button {
+    background: none;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.button-bordered {
+    border: 1px solid #222222; /* Светлая обводка */
+    color: #222222; /* Светлый текст */
+    margin-left: 10px;
+}
+
+    .button-bordered:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+.signin-btn i {
+    margin-left: 5px;
+}
+
+/* --- Секция фонового изображения (Баннер) --- */
+.header-image-container {
+    /* Высота и другие настройки для фона, чтобы он занимал верхнюю часть */
+
+    height: 200px; /* Примерная высота */
+
+    background-image: url("img/head.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white; /* Цвет текста на баннере */
+
+    padding: 20px;
+    position: relative; /* Чтобы позиционировать элементы внутри */
+}
+
+/* --- Секция поиска (Search Section) --- */
+.search-section {
+    position: absolute;
+    width: 100%;
+    /* Позиционируем форму поиска поверх баннера */
+    top: 200px;
+    left: 0;
+    z-index: 10;
+}
+
+.search-form-container {
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 50px;
+}
+
+.search-field {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    flex-grow: 1;
+    border-right: 1px solid #eee;
+    color: #666;
+    font-size: 15px;
+    cursor: pointer;
+    white-space: nowrap; /* Предотвращаем перенос текста */
+}
+
+    .search-field i {
+        color: #888;
+        margin-right: 10px;
+    }
+
+.search-toggle {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    color: #666;
+    border-right: 1px solid #eee;
+}
+
+.search-button {
+    background-color: #6a1b9a; /* Фиолетовый цвет */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 0 15px;
+    font-size: 20px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* --- Дополнительные вкладки под формой поиска (Easy booking и т.д.) --- */
+.search-tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 25px;
+    font-size: 12px;
+    color: #666;
+}
+
+    .tab-item i {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
