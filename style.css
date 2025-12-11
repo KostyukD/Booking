@@ -40,6 +40,10 @@ body {
     color: #222222; /* Изменено на белый для контраста с фоном #333 */
 }
 
+.logo span{
+    color: #6a1b9a;
+}
+
 /* --- Секция авторизации (Flag/Register/Sign in) --- */
 .auth-section {
     display: flex;
@@ -93,7 +97,7 @@ body {
 
     height: 200px; /* Примерная высота */
 
-    background-image: url("img/head.jpg");
+    background-image: url("img_main/header.jpg");
     background-size: cover;
     background-position: center;
     color: white; /* Цвет текста на баннере */
