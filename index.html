@@ -17,8 +17,7 @@
                 
 
                 <button class="button button-bordered register-btn">Register</button>
-                
-                <button class="button button-bordered signin-btn" id="openSignInModalButton">
+                <button class="button button-bordered signin-btn">
                     Sign in
                     <i class="fas fa-user-circle"></i>
                 </button>
@@ -295,50 +294,6 @@
     <footer>
         <img src="img_main/Spooky.jpg" alt="1">
     </footer>
-
-
-    <div id="signInModal" class="modal">
-        <div class="modal-content">
-            <h2>Sign In</h2>
-            
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            
-            <button class="continue-button">Continue</button>
-            
-            <p class="register-link-text">Do not have an account? <a href="#">**Register**</a></p>
-            
-            <hr class="modal-divider">
-
-            <button class="social-button google-btn">
-                <i class="fab fa-google"></i> Sign in with Google
-            </button>
-            <button class="social-button facebook-btn">
-                <i class="fab fa-facebook-f"></i> Sign in with Facebook
-            </button>
-            <button class="social-button apple-btn">
-                <i class="fab fa-apple"></i> Sign in with Apple
-            </button>
-
-        </div>
-    </div>
-    
-    <script>
-        const modal = document.getElementById('signInModal');
-        const btn = document.getElementById('openSignInModalButton'); 
-        
-        // Открытие модального окна по клику на кнопку "Sign In"
-        btn.onclick = function() {
-          modal.style.display = 'flex'; // Используем flex для центрирования
-        }
-        
-        // Закрытие модального окна по клику вне его (на оверлей)
-        window.onclick = function(event) {
-          if (event.target == modal) {
-            modal.style.display = 'none';
-          }
-        }
-    </script>
 
 
 </body>
