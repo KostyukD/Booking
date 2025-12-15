@@ -294,7 +294,54 @@
     <footer>
         <img src="img_main/Spooky.jpg" alt="1">
     </footer>
+
+
+
+/*КАКИШБЛЯ*/
+<div id="signInModal" class="modal">
+    <div class="modal-content">
+        <h2>Sign In</h2>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button class="continue-button">Continue</button>
+        
+        <p>Do not have an account? <a href="#">**Register**</a></p>
+        
+        <button class="social-button google">Sign in with Google</button>
+        <button class="social-button facebook">Sign in with Facebook</button>
+        <button class="social-button apple">Sign in with Apple</button>
+
+    </div>
+</div>
+
+<script>
+    // 1. Получаем ссылки на элементы
+const modal = document.getElementById('signInModal');
+const btn = document.getElementById('openSignInModalButton'); // Предположим, у вашей кнопки "Sign In" такой id
+// const span = document.getElementsByClassName('close-button')[0]; // Если вы добавили кнопку закрытия
+
+// 2. Когда пользователь нажимает на кнопку, открываем модальное окно
+btn.onclick = function() {
+  modal.style.display = 'flex'; // Меняем 'none' на 'flex' (или 'block')
+}
+
+// 3. Когда пользователь кликает в любое место вне модального содержимого, закрываем его
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+}
+
+// 4. (Опционально) Когда пользователь нажимает на кнопку закрытия
+/*
+span.onclick = function() {
+  modal.style.display = 'none';
+}
+*/
+</script>
+
     
+    /*КАКИШБЛЯКОНЕЦ*/
 
 </body>
 </html>
