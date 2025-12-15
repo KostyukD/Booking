@@ -1,299 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel For you.</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel For you.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
-    <header class="header">
-        <div class="header-top-bar">
-            <div class="logo">Hotel for <span class="highlight">you.</span></div>
+    <header class="header">
+        <div class="header-top-bar">
+            <div class="logo">Hotel for <span class="highlight">you.</span></div>
 
-            <div class="auth-section">
-                
+            <div class="auth-section">
+                
 
-                <button class="button button-bordered register-btn">Register</button>
-                <button class="button button-bordered signin-btn">
-                    Sign in
-                    <i class="fas fa-user-circle"></i>
-                </button>
-                <div class="language-flag">
-                    <img src="img_main/logo_lang.png" alt="Язык" class="flag-icon">
-                </div>
-            </div>
-        </div>
+                <button class="button button-bordered register-btn">Register</button>
+                
+                <button class="button button-bordered signin-btn" id="openSignInModalButton">
+                    Sign in
+                    <i class="fas fa-user-circle"></i>
+                </button>
+                <div class="language-flag">
+                    <img src="img_main/logo_lang.png" alt="Язык" class="flag-icon">
+                </div>
+            </div>
+        </div>
 
-        <div class="header-image-container">
-        </div>
+        <div class="header-image-container">
+        </div>
 
-        <section class="search-section">
-            <div class="search-form-container">
-                <div class="search-field where">
-                    <i class="fas fa-map-marker-alt"></i>
-                    Where are you going?
-                </div>
-                <div class="search-field check-dates">
-                    <i class="far fa-calendar-alt"></i>
-                    Check in - Check out
-                </div>
-                <div class="search-field guests-rooms">
-                    <i class="fas fa-user-friends"></i>
-                    2 adults • 0 children • 1 room
-                </div>
-                <div class="search-toggle">
-                    <i class="fas fa-exchange-alt"></i>
-                </div>
-                <button class="search-button">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
+        <section class="search-section">
+            <div class="search-form-container">
+                <div class="search-field where">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Where are you going?
+                </div>
+                <div class="search-field check-dates">
+                    <i class="far fa-calendar-alt"></i>
+                    Check in - Check out
+                </div>
+                <div class="search-field guests-rooms">
+                    <i class="fas fa-user-friends"></i>
+                    2 adults • 0 children • 1 room
+                </div>
+                <div class="search-toggle">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
 
-            <div class="search-tabs">
-                <div class="tab-item">
-                    <i class="fas fa-book-open"></i> Easy booking
-                </div>
-                <div class="tab-item">
-                    <i class="fas fa-lock"></i> Secure payment
-                </div>
-                <div class="tab-item">
-                    <i class="fas fa-info-circle"></i> Relevant information
-                </div>
-            </div>
-        </section>
-    </header>
+            <div class="search-tabs">
+                <div class="tab-item">
+                    <i class="fas fa-book-open"></i> Easy booking
+                </div>
+                <div class="tab-item">
+                    <i class="fas fa-lock"></i> Secure payment
+                </div>
+                <div class="tab-item">
+                    <i class="fas fa-info-circle"></i> Relevant information
+                </div>
+            </div>
+        </section>
+    </header>
 
-    <main class="main-content">
-  <div class="gallery">
+    <main class="main-content">
+  <div class="gallery">
 
-    <div class="card">
-      <div class="card-img">
-        <img src="img_main/hotel1.jpg" alt="hotel">
-      </div>
+    <div class="card">
+      <div class="card-img">
+        <img src="img_main/hotel1.jpg" alt="hotel">
+      </div>
 
-      <div class="card-body">
-        <h3>Hotel name | City | Country</h3>
+      <div class="card-body">
+        <h3>Hotel name | City | Country</h3>
 
-        <div class="rating">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-        </div>
+        <div class="rating">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+        </div>
 
-        <p class="distance">the city center : 116 m</p>
-        <p class="price">$130 <span>night</span></p>
-      </div>
-    </div>
+        <p class="distance">the city center : 116 m</p>
+        <p class="price">$130 <span>night</span></p>
+      </div>
+    </div>
 
-     <div class="card">
-      <div class="card-img">
-        <img src="img_main/hotel2.jpg" alt="hotel2">
-      </div>
+     <div class="card">
+      <div class="card-img">
+        <img src="img_main/hotel2.jpg" alt="hotel2">
+      </div>
 
-      <div class="card-body">
-        <h3>Hotel name | City | Country</h3>
+      <div class="card-body">
+        <h3>Hotel name | City | Country</h3>
 
-        <div class="rating">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-        </div>
+        <div class="rating">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+        </div>
 
-        <p class="distance">the city center : 116 m</p>
-        <p class="price">$130 <span>night</span></p>
-      </div>
-    </div>
-     <div class="card">
-      <div class="card-img">
-        <img src="img_main/hotel3.jpg" alt="hote3">
-      </div>
+        <p class="distance">the city center : 116 m</p>
+        <p class="price">$130 <span>night</span></p>
+      </div>
+    </div>
+     <div class="card">
+      <div class="card-img">
+        <img src="img_main/hotel3.jpg" alt="hote3">
+      </div>
 
-      <div class="card-body">
-        <h3>Hotel name | City | Country</h3>
+      <div class="card-body">
+        <h3>Hotel name | City | Country</h3>
 
-        <div class="rating">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-        </div>
+        <div class="rating">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+        </div>
 
-        <p class="distance">the city center : 116 m</p>
-        <p class="price">$130 <span>night</span></p>
-      </div>
-    </div>
+        <p class="distance">the city center : 116 m</p>
+        <p class="price">$130 <span>night</span></p>
+      </div>
+    </div>
 
-     <div class="card">
-      <div class="card-img">
-        <img src="img_main/hotel4.jpg" alt="hotel4">
-      </div>
+     <div class="card">
+      <div class="card-img">
+        <img src="img_main/hotel4.jpg" alt="hotel4">
+      </div>
 
-      <div class="card-body">
-        <h3>Hotel name | City | Country</h3>
+      <div class="card-body">
+        <h3>Hotel name | City | Country</h3>
 
-        <div class="rating">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-        </div>
+        <div class="rating">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+        </div>
 
-        <p class="distance">the city center : 116 m</p>
-        <p class="price">$130 <span>night</span></p>
-      </div>
-    </div>
+        <p class="distance">the city center : 116 m</p>
+        <p class="price">$130 <span>night</span></p>
+      </div>
+    </div>
 
-     <div class="card">
-      <div class="card-img">
-        <img src="img_main/hotel5.jpg" alt="hotel5">
-      </div>
+     <div class="card">
+      <div class="card-img">
+        <img src="img_main/hotel5.jpg" alt="hotel5">
+      </div>
 
-      <div class="card-body">
-        <h3>Hotel name | City | Country</h3>
+      <div class="card-body">
+        <h3>Hotel name | City | Country</h3>
 
-        <div class="rating">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-        </div>
+        <div class="rating">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+        </div>
 
-        <p class="distance">the city center : 116 m</p>
-        <p class="price">$130 <span>night</span></p>
-      </div>
-    </div>
+        <p class="distance">the city center : 116 m</p>
+        <p class="price">$130 <span>night</span></p>
+      </div>
+    </div>
 
-     <div class="card">
-      <div class="card-img">
-        <img src="img_main/hotel6.jpg" alt="hotel6">
-      </div>
+     <div class="card">
+      <div class="card-img">
+        <img src="img_main/hotel6.jpg" alt="hotel6">
+      </div>
 
-      <div class="card-body">
-        <h3>Hotel name | City | Country</h3>
+      <div class="card-body">
+        <h3>Hotel name | City | Country</h3>
 
-        <div class="rating">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-        </div>
+        <div class="rating">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+        </div>
 
-        <p class="distance">the city center : 116 m</p>
-        <p class="price">$130 <span>night</span></p>
-      </div>
-    </div>
+        <p class="distance">the city center : 116 m</p>
+        <p class="price">$130 <span>night</span></p>
+      </div>
+    </div>
 
-     <div class="card">
-      <div class="card-img">
-        <img src="img_main/hotel7.jpg" alt="hotel7">
-      </div>
+     <div class="card">
+      <div class="card-img">
+        <img src="img_main/hotel7.jpg" alt="hotel7">
+      </div>
 
-      <div class="card-body">
-        <h3>Hotel name | City | Country</h3>
+      <div class="card-body">
+        <h3>Hotel name | City | Country</h3>
 
-        <div class="rating">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-        </div>
+        <div class="rating">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+        </div>
 
-        <p class="distance">the city center : 116 m</p>
-        <p class="price">$130 <span>night</span></p>
-      </div>
-    </div>
+        <p class="distance">the city center : 116 m</p>
+        <p class="price">$130 <span>night</span></p>
+      </div>
+    </div>
 
-     <div class="card">
-      <div class="card-img">
-        <img src="img_main/hotel8.jpg" alt="hotel8">
-      </div>
+     <div class="card">
+      <div class="card-img">
+        <img src="img_main/hotel8.jpg" alt="hotel8">
+      </div>
 
-      <div class="card-body">
-        <h3>Hotel name | City | Country</h3>
+      <div class="card-body">
+        <h3>Hotel name | City | Country</h3>
 
-        <div class="rating">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-          <img src="img_main/purple_star.png" alt="">
-        </div>
+        <div class="rating">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+          <img src="img_main/purple_star.png" alt="">
+        </div>
 
-        <p class="distance">the city center : 116 m</p>
-        <p class="price">$130 <span>night</span></p>
-      </div>
-    </div>
+        <p class="distance">the city center : 116 m</p>
+        <p class="price">$130 <span>night</span></p>
+      </div>
+    </div>
 
-  </div>
+  </div>
 
-  <div class="reviews">
-      <div class="card-review">
-        <div class="card-review-header">
-        <div class="review-user">
-            <img src="img_main/review_icon2.png" alt="user avatar" class="review-avatar">
-            <div class="review-user-info">
-                <h4 class="review-name">Name</h4>
-                <p class="review-hotel">Hotel Name</p>
-            </div>
-        </div>  
-        <p class="review-date">12 days ago</p> 
-        </div>
+  <div class="reviews">
+      <div class="card-review">
+        <div class="card-review-header">
+        <div class="review-user">
+            <img src="img_main/review_icon2.png" alt="user avatar" class="review-avatar">
+            <div class="review-user-info">
+                <h4 class="review-name">Name</h4>
+                <p class="review-hotel">Hotel Name</p>
+            </div>
+        </div>  
+        <p class="review-date">12 days ago</p> 
+        </div>
 
-        <p class="review-text">
-    Lorem ipsum dolor sit amet consectetur.
-    Viverra ultricies enim interdum fermentum tortor.
-    Facilisis nulla eun. Ac netus tincidunt arcu er sed.
-        </p>
-      </div>
+        <p class="review-text">
+    Lorem ipsum dolor sit amet consectetur.
+    Viverra ultricies enim interdum fermentum tortor.
+    Facilisis nulla eun. Ac netus tincidunt arcu er sed.
+        </p>
+      </div>
 
-      <div class="card-review">
-        <div class="card-review-header">
-        <div class="review-user">
-            <img src="img_main/review_icon3.png" alt="user avatar" class="review-avatar">
-            <div class="review-user-info">
-                <h4 class="review-name">Name</h4>
-                <p class="review-hotel">Hotel Name</p>
-            </div>
-        </div>  
-        <p class="review-date">12 days ago</p> 
-        </div>
+      <div class="card-review">
+        <div class="card-review-header">
+        <div class="review-user">
+            <img src="img_main/review_icon3.png" alt="user avatar" class="review-avatar">
+            <div class="review-user-info">
+                <h4 class="review-name">Name</h4>
+                <p class="review-hotel">Hotel Name</p>
+            </div>
+        </div>  
+        <p class="review-date">12 days ago</p> 
+        </div>
 
-        <p class="review-text">
-    Lorem ipsum dolor sit amet consectetur.
-    Viverra ultricies enim interdum fermentum tortor.
-    Facilisis nulla eun. Ac netus tincidunt arcu er sed.
-        </p>
-      </div>
+        <p class="review-text">
+    Lorem ipsum dolor sit amet consectetur.
+    Viverra ultricies enim interdum fermentum tortor.
+    Facilisis nulla eun. Ac netus tincidunt arcu er sed.
+        </p>
+      </div>
 
-      <div class="card-review">
-        <div class="card-review-header">
-        <div class="review-user">
-            <img src="img_main/review_icon1.png" alt="user avatar" class="review-avatar">
-            <div class="review-user-info">
-                <h4 class="review-name">Name</h4>
-                <p class="review-hotel">Hotel Name</p>
-            </div>
-        </div>  
-        <p class="review-date">12 days ago</p> 
-        </div>
+      <div class="card-review">
+        <div class="card-review-header">
+        <div class="review-user">
+            <img src="img_main/review_icon1.png" alt="user avatar" class="review-avatar">
+            <div class="review-user-info">
+                <h4 class="review-name">Name</h4>
+                <p class="review-hotel">Hotel Name</p>
+            </div>
+        </div>  
+        <p class="review-date">12 days ago</p> 
+        </div>
 
-        <p class="review-text">
-    Lorem ipsum dolor sit amet consectetur.
-    Viverra ultricies enim interdum fermentum tortor.
-    Facilisis nulla eun. Ac netus tincidunt arcu er sed.
-        </p>
-      </div>
-  </div>
+        <p class="review-text">
+    Lorem ipsum dolor sit amet consectetur.
+    Viverra ultricies enim interdum fermentum tortor.
+    Facilisis nulla eun. Ac netus tincidunt arcu er sed.
+        </p>
+      </div>
+  </div>
 </main>
 
 
-    <footer>
-        <img src="img_main/Spooky.jpg" alt="1">
-    </footer>
+    <footer>
+        <img src="img_main/Spooky.jpg" alt="1">
+    </footer>
+
+
+    <div id="signInModal" class="modal">
+        <div class="modal-content">
+            <h2>Sign In</h2>
+            
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            
+            <button class="continue-button">Continue</button>
+            
+            <p class="register-link-text">Do not have an account? <a href="#">**Register**</a></p>
+            
+            <hr class="modal-divider">
+
+            <button class="social-button google-btn">
+                <i class="fab fa-google"></i> Sign in with Google
+            </button>
+            <button class="social-button facebook-btn">
+                <i class="fab fa-facebook-f"></i> Sign in with Facebook
+            </button>
+            <button class="social-button apple-btn">
+                <i class="fab fa-apple"></i> Sign in with Apple
+            </button>
+
+        </div>
+    </div>
+    
+    <script>
+        const modal = document.getElementById('signInModal');
+        const btn = document.getElementById('openSignInModalButton'); 
+        
+        // Открытие модального окна по клику на кнопку "Sign In"
+        btn.onclick = function() {
+          modal.style.display = 'flex'; // Используем flex для центрирования
+        }
+        
+        // Закрытие модального окна по клику вне его (на оверлей)
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = 'none';
+          }
+        }
+    </script>
 
 
 </body>
