@@ -245,30 +245,76 @@ body {
   font-size: 14px;
 }
 
-.reviews{
+.reviews-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 70px;
+}
+
+.reviews-title {
+    text-align: center;
+    margin-bottom: 32px;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+
+.reviews {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
 
-.review-card{
+.card-review {
+    background: #fff;
+    border: 1px solid #94D0B4;
+    border-radius: 16px;
+    padding: 20px;
     display: flex;
-    gap: 12px;
-    border: #94D0B4 1px solid;
+    flex-direction: column;
+    gap: 16px;
 }
 
-/*.review-avatar{
-    border-radius: 400px;
-    width: 48px;
-}*/
-/* Изменил имя с .review-card на .card-review, чтобы совпадало с твоим HTML */
-.card-review { 
+.card-review-header {
     display: flex;
-    flex-direction: column; /* Добавил, чтобы текст был под аватаром, как на макете */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-user {
+    display: flex;
+    align-items: center;
     gap: 12px;
-    border: #94D0B4 1px solid;
-    padding: 20px; /* Добавил внутренний отступ, чтобы текст не прилипал к рамке */
-    border-radius: 14px;
+}
+
+.review-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review-user-info h4 {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.review-user-info p {
+    font-size: 12px;
+    color: #777;
+}
+
+.review-date {
+    font-size: 12px;
+    color: #999;
+    white-space: nowrap;
+}
+
+.review-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
 }
 
 /* =========================================
