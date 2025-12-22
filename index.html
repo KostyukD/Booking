@@ -73,10 +73,11 @@
         <h2 class="modal-title">Sign In</h2>
 
         <form class="modal-form">
-            <input type="email" placeholder="Email" class="modal-input">
-            <input type="password" placeholder="Password" class="modal-input">
-            <button type="button" class="continue-btn">Continue</button>
-        </form>
+    <input type="email" placeholder="Email" class="modal-input login-input">
+    <input type="password" placeholder="Password" class="modal-input login-input">
+    
+    <button type="button" class="continue-btn" id="loginContinueBtn">Continue</button>
+</form>
 
         <p class="register-link">Do not have an account? <a href="#" id="linkToRegister">Register</a></p>
 
@@ -122,78 +123,7 @@
         </div>
     </div>
 </div>
-<div id="authOverlay" class="overlay">
-    <div class="modal-content">
-        <button class="close-btn" id="closeAuth">&times;</button>
-        <h2 class="modal-title">Authentication</h2>
 
-        <form class="modal-form">
-    <input type="text" id="authCodeInput" placeholder="Code" class="modal-input auth-input">
-    <p class="auth-info">
-        We have sent you an email with the code.
-        Check your mail and enter the code for the authentication.
-    </p>
-    <button type="button" class="continue-btn" id="authContinueBtn">Continue</button>
-</form>
-    </div>
-</div>
-
-<div id="infoOverlay" class="overlay">
-    <div class="modal-content">
-        <button class="close-btn" id="closeInfo">&times;</button>
-        <h2 class="modal-title">Information</h2>
-
-        <p class="info-description">
-            Tell us about yourself so we can better choose options for you :)
-        </p>
-
-        <form class="modal-form">
-            <select class="modal-input info-input">
-                <option value="" disabled selected>Country</option>
-                <option value="usa">USA</option>
-                <option value="uk">UK</option>
-                <option value="ua">Ukraine</option>
-            </select>
-
-            <select class="modal-input info-input">
-                <option value="" disabled selected>City</option>
-                <option value="ny">New York</option>
-                <option value="london">London</option>
-                <option value="kyiv">Kyiv</option>
-            </select>
-
-            <select class="modal-input info-input">
-                <option value="" disabled selected>Why do you travel?</option>
-                <option value="business">Business</option>
-                <option value="leisure">Leisure</option>
-                <option value="family">Family</option>
-            </select>
-
-            <div class="pet-selection">
-                <p>Travelling with a pet?</p>
-                <label><input type="radio" name="pet" value="yes"> Yes</label>
-                <label><input type="radio" name="pet" value="no"> No</label>
-            </div>
-
-            <button type="button" class="continue-btn" id="infoContinueBtn">Continue</button>
-            <button type="button" class="button-bordered later-btn" id="infoLaterBtn">Later</button>
-        </form>
-    </div>
-</div>
-<div id="doneOverlay" class="overlay">
-    <div class="modal-content">
-        <button class="close-btn" id="closeDone">&times;</button>
-        <h2 class="modal-title">All done!</h2>
-
-        <div class="success-icon-container">
-            <div class="success-circle">
-                <i class="fas fa-check"></i>
-            </div>
-        </div>
-        <button type="button" class="btn-gray-rect" id="checkProfileBtn">Check your profile!</button>
-        <button type="button" class="btn-purple-rounded" id="continueBookingBtn">Continue booking</button>
-    </div>
-</div>
     <main class="main-content">
   <div class="gallery">
 
@@ -457,8 +387,8 @@
         </div>
     </div>
     <div class="register-action">
-    <button class="register-purple-btn" id="openRegisterFooter">Register an account</button>
-</div>
+        <button class="register-purple-btn">Register an account</button>
+    </div>
 </section>
 
       <script src="script.js"></script>
