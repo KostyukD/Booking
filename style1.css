@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 
-.highlight{
+.highlight {
     color: #6a1b9a;
 }
 
@@ -44,9 +44,9 @@ body {
     color: #222222; /* Изменено на белый для контраста с фоном #333 */
 }
 
-.logo span{
-    color: #6a1b9a;
-}
+    .logo span {
+        color: #6a1b9a;
+    }
 
 /* --- Секция авторизации (Flag/Register/Sign in) --- */
 .auth-section {
@@ -101,7 +101,7 @@ body {
 
     height: 200px; /* Примерная высота */
 
-    background-image: url("img_main/header.jpg");
+    background-image: url("img/header2.jpg");
     background-size: cover;
     background-position: center;
     color: white; /* Цвет текста на баннере */
@@ -173,7 +173,14 @@ body {
     justify-content: center;
     margin-top: 20px;
 }
-
+.tab-icon {
+    width: 25px; /* Установите нужную ширину */
+    height: 25px; /* Установите нужную высоту */
+    object-fit: cover; /* Чтобы фото не сплющивалось */
+    margin-right: 8px; /* Отступ от картинки до текста */
+    vertical-align: middle; /* Выравнивание по центру строки */
+    border-radius: 4px; /* Опционально: скругление углов */
+}
 .tab-item {
     display: flex;
     flex-direction: column;
@@ -187,3 +194,4 @@ body {
         font-size: 24px;
         margin-bottom: 5px;
     }
+
