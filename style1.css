@@ -101,7 +101,7 @@ body {
 
     height: 200px; /* Примерная высота */
 
-    background-image: url("img/header2.jpg");
+    background-image: url("img_main/header2.jpg");
     background-size: cover;
     background-position: center;
     color: white; /* Цвет текста на баннере */
