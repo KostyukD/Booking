@@ -65,18 +65,34 @@ window.onload = function () {
     function handleInputs(inputClass, btnId) {
         const inputs = document.querySelectorAll(inputClass);
         const btn = document.getElementById(btnId);
-        if (!btn) return;
+        
+        // Проверка: находит ли JS кнопку и инпуты?
+        if (!btn || inputs.length === 0) {
+            console.warn("Предупреждение: Не найдены элементы для", inputClass, btnId);
+            return;
+        }
 
         inputs.forEach(input => {
-            input.oninput = () => {
-                let filled = true;
-                inputs.forEach(i => { if (i.value.trim() === "") filled = false; });
-                if (filled) btn.classList.add('active');
-                else btn.classList.remove('active');
-            };
+            // Используем 'input' вместо 'oninput' для надежности
+            input.addEventListener('input', () => {
+                let allFilled = true;
+                
+                inputs.forEach(i => {
+                    if (i.value.trim() === "") {
+                        allFilled = false;
+                    }
+                });
+
+                if (allFilled) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
         });
     }
 
+    // Вызываем строго после объявления функции
     handleInputs('.login-input', 'loginContinueBtn');
     handleInputs('.reg-input', 'regContinueBtn');
 };
