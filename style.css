@@ -233,7 +233,6 @@ body {
 .distance {
   font-size: 13px;
   color: #717171;
-;
 }
 
 .price {
@@ -258,9 +257,18 @@ body {
     border: #94D0B4 1px solid;
 }
 
-.review-avatar{
+/*.review-avatar{
     border-radius: 400px;
     width: 48px;
+}*/
+/* Изменил имя с .review-card на .card-review, чтобы совпадало с твоим HTML */
+.card-review { 
+    display: flex;
+    flex-direction: column; /* Добавил, чтобы текст был под аватаром, как на макете */
+    gap: 12px;
+    border: #94D0B4 1px solid;
+    padding: 20px; /* Добавил внутренний отступ, чтобы текст не прилипал к рамке */
+    border-radius: 14px;
 }
 
 /* =========================================
