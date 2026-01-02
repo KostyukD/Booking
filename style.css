@@ -157,15 +157,28 @@ body {
 
 
 .search-button {
-    background-color: #6a1b9a; /* Фиолетовый цвет */
+    background-color: #6a1b9a;
     color: white;
-    border: none;
     border-radius: 30px;
-    padding: 0 15px;
-    font-size: 20px;
+
+    width: 44px;
+    height: 44px;
+
+    display: inline-flex;     
+    align-items: center;      
+    justify-content: center;   
+
+    text-decoration: none;     
     cursor: pointer;
     flex-shrink: 0;
 }
+
+.search-button i {
+    display: block;     
+    font-size: 20px;
+    line-height: 1;    
+}
+
 
 /* --- Дополнительные вкладки под формой поиска (Easy booking и т.д.) --- */
 .search-tabs {
