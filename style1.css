@@ -8,20 +8,20 @@
 }
 
 .highlight {
-    color: #6a1b9a;
+    color: #581ADB;
 }
 
 /* --- Общие стили для body --- */
 body {
     font-family: 'Nunito Sans', sans-serif;
-    background-color: #f7f7f7;
+    background-color: #ffffff;
     color: #333;
 }
 
 /* --- Стилизация Header (Общий контейнер) --- */
 .header {
     /* Мы разделим header на темную полосу сверху и контейнер для изображения */
-    background-color: #f7f7f7; /* Темный фон для верхней полосы */
+    background-color: #ffffff; /* Темный фон для верхней полосы */
     padding-bottom: 20px; /* Отступ между темной полосой и началом изображения */
     position: relative;
 }
@@ -45,7 +45,7 @@ body {
 }
 
     .logo span {
-        color: #6a1b9a;
+        color: #581ADB;
     }
 
 /* --- Секция авторизации (Flag/Register/Sign in) --- */
@@ -157,7 +157,7 @@ body {
 
 
 .search-button {
-    background-color: #6a1b9a; /* Фиолетовый цвет */
+    background-color: #581ADB; /* Фиолетовый цвет */
     color: white;
     border: none;
     border-radius: 30px;
@@ -195,3 +195,265 @@ body {
         margin-bottom: 5px;
     }
 
+    .filters {
+  margin-top: 40px;
+  width: 260px;
+  background: #ffffff;
+  border: 1px solid #DDDDDD;
+  border-radius: 13px;
+  padding: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.see-the-map{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 ;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    color: #EE0039;
+    border: 1px solid #DDDDDD;
+    border-radius: 30px;
+    padding: 10px 24px 10px 24px;
+}
+
+.filters-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #717171;
+}
+
+/* PRICE */
+.price-values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #777;
+}
+
+.price-range {
+  width: 100%;
+}
+
+/* SEARCH */
+.search-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  font-size: 13px;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+/* CHECKBOXES */
+.checkbox {
+  display: grid;
+  grid-template-columns: 16px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #444;
+  cursor: pointer;
+}
+
+.checkbox input {
+  appearance: none; /* Hides default browser checkbox */
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #777; /* Custom border color */
+  border-radius: 50%; /* Makes it fully circular; adjust to 8px for softer rounding */
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease; /* Smooth hover/focus effects */
+}
+
+.checkbox input:checked {
+  background-color: #6c5ce7; /* Fill when checked */
+  border-color: #6c5ce7;
+}
+
+.checkbox input:focus {
+  outline: 2px solid #6c5ce7; /* Accessibility focus ring */
+  outline-offset: 2px;
+}
+
+.count {
+  color: #999;
+  font-size: 12px;
+}
+
+.hotel-card {
+  display: flex;
+  max-width: 700px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin-top:50px;
+}
+
+/* Контейнер для изображения */
+.hotel-card__image-container {
+  flex: 1;
+  min-width: 300px;
+  max-height: 250px;
+  overflow: hidden;
+}
+
+/* Изображение */
+.hotel-card__image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Основной контент карточки */
+.hotel-card__content {
+  flex: 2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Заголовок и рейтинг */
+.hotel-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 10px;
+}
+
+.hotel-card__title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.hotel-card__rating {
+  font-size: 1em;
+  color: #6f42c1;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/* Иконки */
+.hotel-card__icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Теги */
+.hotel-card__tags {
+  margin-top: 8px;
+  font-size: 1em;
+  color: #555;
+}
+
+/* Информация о расположении и ссылка на карту */
+.hotel-card__info {
+  margin-top: 10px;
+  font-size: 0.95em;
+  color: #555;
+}
+
+.hotel-card__map-link {
+  display: inline-block;
+  margin-top: 4px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.hotel-card__map-link:hover {
+  text-decoration: underline;
+}
+
+/* Описание */
+.hotel-card__description {
+  margin-top: 10px;
+  font-size: 0.95em;
+  color: #333;
+  flex-grow: 1;
+}
+
+/* Расстояние и цена */
+.hotel-card__distance {
+  margin-top: 10px;
+}
+
+.hotel-card__distance p {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Нижний блок с ценой и кнопкой */
+.hotel-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+/* Цена */
+.hotel-card__price {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Кнопки */
+.hotel-card__buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.hotel-card__btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  font-size: 0.95em;
+}
+
+.hotel-card__btn--choose {
+  background-color: #581ADB;
+  color: #fff;
+}
+
+.hotel-card__btn--choose:hover {
+  background-color: #581ADB;
+}
+
+.content 
+{
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+}
+
+a:any-link
+{
+    color: #581ADB;
+}
