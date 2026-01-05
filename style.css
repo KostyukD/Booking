@@ -8,7 +8,7 @@
 }
 
 .highlight{
-    color: #6a1b9a;
+    color: #581ADB;
 }
 
 /* --- Общие стили для body --- */
@@ -45,7 +45,7 @@ body {
 }
 
 .logo span{
-    color: #6a1b9a;
+    color: #581ADB;
 }
 
 /* --- Секция авторизации (Flag/Register/Sign in) --- */
@@ -157,7 +157,7 @@ body {
 
 
 .search-button {
-    background-color: #6a1b9a;
+    background-color: #581ADB;
     color: white;
     border-radius: 30px;
 
@@ -366,7 +366,7 @@ body {
 }
 
 .modal-title {
-    color: #6a1b9a;
+    color: #581ADB;
     margin-bottom: 25px;
     font-size: 24px;
     font-weight: 700;
@@ -386,7 +386,7 @@ body {
 }
 
     .modal-input:focus {
-        border-color: #7B61FF;
+        border-color: #581ADB;
     }
 
 /* Кнопка Continue */
@@ -408,7 +408,7 @@ body {
     }
     /* Состояние кнопки Continue, когда поля заполнены */
     .continue-btn.active {
-        background-color: #6a1b9a !important; /* Твой фиолетовый */
+        background-color: #581ADB !important; /* Твой фиолетовый */
         color: white !important;
         cursor: pointer;
     }
@@ -421,7 +421,7 @@ body {
 }
 
     .register-link a {
-        color: #6a1b9a;
+        color: #581ADB;
         text-decoration: none;
         font-weight: bold;
     }
@@ -558,7 +558,7 @@ body {
 }
 
 .register-purple-btn {
-    background: #6200EA;
+    background: #581ADB;
     color: white;
     border: none;
     padding: 15px 50px;
