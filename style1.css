@@ -171,7 +171,7 @@ body {
 .search-tabs {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 .tab-icon {
     width: 25px; /* Установите нужную ширину */
@@ -196,8 +196,9 @@ body {
     }
 
     .filters {
-  margin-top: 40px;
+  margin-top: 100px;
   width: 260px;
+  height: fit-content;
   background: #ffffff;
   border: 1px solid #DDDDDD;
   border-radius: 13px;
@@ -285,12 +286,12 @@ body {
 }
 
 .checkbox input:checked {
-  background-color: #6c5ce7; /* Fill when checked */
-  border-color: #6c5ce7;
+  background-color: #581ADB; /* Fill when checked */
+  border-color: #581ADB;
 }
 
 .checkbox input:focus {
-  outline: 2px solid #6c5ce7; /* Accessibility focus ring */
+  outline: 2px solid #581ADB; /* Accessibility focus ring */
   outline-offset: 2px;
 }
 
@@ -301,156 +302,160 @@ body {
 
 .hotel-card {
   display: flex;
-  max-width: 700px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 880px;
+  background: #fff;
+  margin-bottom: 50px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.1);
   overflow: hidden;
-  margin-bottom: 20px;
-  margin-top:50px;
+  font-family: Arial, sans-serif;
+  position: relative;
 }
 
-/* Контейнер для изображения */
-.hotel-card__image-container {
-  flex: 1;
-  min-width: 300px;
-  max-height: 250px;
-  overflow: hidden;
+.hotel-card__image {
+  width: 310px;
+  height: 310px;
+  flex-shrink: 0;
 }
 
-/* Изображение */
-.hotel-card__image-container img {
+.hotel-card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-/* Основной контент карточки */
-.hotel-card__content {
-  flex: 2;
-  padding: 20px;
+.hotel-card__body {
+  padding: 20px 24px;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
-/* Заголовок и рейтинг */
-.hotel-card__header {
+.hotel-card__top {
   display: flex;
   justify-content: space-between;
-  align-items: start;
-  margin-bottom: 10px;
+  align-items: flex-start;
+  gap: 70px;
 }
 
 .hotel-card__title {
-  font-size: 1.2em;
-  font-weight: bold;
   margin: 0;
+  font-size: 20px;
 }
 
-.hotel-card__rating {
-  font-size: 1em;
-  color: #6f42c1;
-  font-weight: bold;
-  margin-left: 10px;
+.hotel-card__stars {
+  color: #581ADB;
+  margin: 4px 0;
 }
 
-/* Иконки */
-.hotel-card__icon {
-  width: 24px;
-  height: 24px;
+.hotel-card__badges {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 13px;
+  color: #666;
 }
 
-/* Теги */
-.hotel-card__tags {
-  margin-top: 8px;
-  font-size: 1em;
-  color: #555;
+.hotel-card__score {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: right;
+  font-size: 16px;
+  font-weight: 400;
+  color: #666;
 }
 
-/* Информация о расположении и ссылка на карту */
+.hotel-card__score-circle {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #581ADB;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 20px;
+  color: #581ADB;
+}
+
 .hotel-card__info {
   margin-top: 10px;
-  font-size: 0.95em;
-  color: #555;
+  font-size: 16px;
+  font-weight: 400;
+  color: #222222;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
 }
 
-.hotel-card__map-link {
-  display: inline-block;
+.hotel-card__info a {
+  display: block;
   margin-top: 4px;
-  color: #007bff;
+  color: #581ADB;
   text-decoration: none;
 }
 
-.hotel-card__map-link:hover {
-  text-decoration: underline;
-}
-
-/* Описание */
-.hotel-card__description {
-  margin-top: 10px;
-  font-size: 0.95em;
-  color: #333;
+.hotel-card__desc {
+  margin-top: 15px;
+  width: 100%;
+  max-width: 300px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #717171;
+  line-height: 1.4;
   flex-grow: 1;
 }
 
-/* Расстояние и цена */
-.hotel-card__distance {
-  margin-top: 10px;
-}
-
-.hotel-card__distance p {
-  margin: 0;
-  font-size: 1em;
-  font-weight: 600;
-  color: #000;
-}
-
-/* Нижний блок с ценой и кнопкой */
-.hotel-card__footer {
+.hotel-card__bottom {
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 15px;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 14px;
 }
 
-/* Цена */
 .hotel-card__price {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #000;
+  font-size: 14px;
+  color: #666;
 }
 
-/* Кнопки */
-.hotel-card__buttons {
-  display: flex;
-  gap: 10px;
+.hotel-card__price strong {
+  font-size: 20px;
+  color: #000;
 }
 
 .hotel-card__btn {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s;
-  font-size: 0.95em;
-}
-
-.hotel-card__btn--choose {
-  background-color: #581ADB;
+  background: #581ADB;
   color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background .3s;
 }
 
-.hotel-card__btn--choose:hover {
-  background-color: #581ADB;
+.hotel-card__btn:hover {
+  background: #581ADB;
 }
+
 
 .content 
 {
   display: grid;
   grid-template-columns: 280px 1fr;
-  gap: 24px;
+  gap: 50px;
+  place-items: center-start;
+  padding: 0 50px 50px 50px;
+}
+
+.results
+{
+  margin-top: 100px;
 }
 
 a:any-link
