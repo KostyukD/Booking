@@ -1,1 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel For you.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
 
+    <header class="header">
+        <div class="header-top-bar">
+            <div class="logo">Hotel for <span class="highlight">you.</span></div>
+
+            <div class="auth-section">
+                <button id="openRegisterHeader" class="button button-bordered register-btn">Register</button>
+                <button id="openSignIn" class="button button-bordered signin-btn">
+                    Sign in
+                    <i class="fas fa-user-circle"></i>
+                </button>
+                <div class="language-flag">
+                    <img src="img/lang.png" alt="Язык" class="flag-icon">
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="hotel-top-info">
+        <div class="top-line-divider"></div> <div class="container-inner">
+            <div class="info-left-group">
+                <button class="back-circle-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="mini-search-row">
+                    <div class="mini-card">
+                        <i class="fas fa-plane-departure"></i>
+                        <span>Kyiv</span>
+                        <div class="info-dots">...</div>
+                    </div>
+                    <div class="mini-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Apr 9-11</span>
+                        <div class="info-dots">...</div>
+                    </div>
+                    <div class="mini-card">
+                        <i class="fas fa-user-friends"></i>
+                        <span>2 ad. 1 ch.</span>
+                        <div class="info-dots">...</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hotel-title-center">
+                <div class="stars-row">★★★★</div>
+                <h1 class="hotel-name-main">Tourist Hotel</h1>
+                <p class="hotel-phone-sub">(380) 555-0103</p>
+            </div>
+
+            <div class="rating-right-side">
+                <div class="score-circle">7.9</div>
+
+                <div class="reviews-info">
+                    <span class="reviews-label">reviews</span>
+                    <span class="reviews-count">345</span>
+                </div>
+
+                <div class="check-dropdown">
+                    <span>check</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalOverlay" class="overlay">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal">&times;</button>
+
+            <h2 class="modal-title">Sign In</h2>
+
+            <form class="modal-form">
+                <input type="email" placeholder="Email" class="modal-input">
+                <input type="password" placeholder="Password" class="modal-input">
+                <button type="button" class="continue-btn">Continue</button>
+            </form>
+
+            <p class="register-link">Do not have an account? <a href="#" id="linkToRegister">Register</a></p>
+
+            <div class="social-login">
+                <button class="social-button">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G">
+                    Sign In with Google
+                </button>
+                <button class="social-button">
+                    <i class="fab fa-facebook" style="color: #1877F2;"></i>
+                    Sign In with Facebook
+                </button>
+                <button class="social-button">
+                    <i class="fab fa-apple"></i>
+                    Sign In with Apple
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="registerOverlay" class="overlay">
+        <div class="modal-content">
+            <button class="close-btn" id="closeRegister">&times;</button>
+            <h2 class="modal-title">Register</h2>
+            <form class="modal-form">
+                <input type="text" placeholder="Full Name" class="modal-input reg-input">
+                <input type="email" placeholder="Email" class="modal-input reg-input">
+                <input type="password" placeholder="Password" class="modal-input reg-input">
+                <input type="password" placeholder="Confirm Password" class="modal-input reg-input">
+                <button type="button" class="continue-btn" id="regContinueBtn">Continue</button>
+            </form>
+            <p class="register-link">Already have an account? <a href="#" id="linkToSignIn">Sign In</a></p>
+            <div class="social-login">
+                <button class="social-button">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G"> Sign Up with Google
+                </button>
+                <button class="social-button">
+                    <i class="fab fa-facebook" style="color: #1877F2;"></i> Sign Up with Facebook
+                </button>
+                <button class="social-button">
+                    <i class="fab fa-apple"></i> Sign Up with Apple
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="authOverlay" class="overlay">
+        <div class="modal-content">
+            <button class="close-btn" id="closeAuth">&times;</button>
+            <h2 class="modal-title">Authentication</h2>
+
+            <form class="modal-form">
+                <input type="text" id="authCodeInput" placeholder="Code" class="modal-input auth-input">
+                <p class="auth-info">
+                    "We have sent you an email with the code.
+                    Check your mail and enter the code for the authentication."
+                </p>
+                <button type="button" class="continue-btn" id="authContinueBtn">Continue</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="infoOverlay" class="overlay">
+        <div class="modal-content">
+            <button class="close-btn" id="closeInfo">&times;</button>
+            <h2 class="modal-title">Information</h2>
+
+            <p class="info-description">
+                Tell us about yourself so we can better choose options for you :)
+            </p>
+
+            <form class="modal-form">
+                <select class="modal-input info-input">
+                    <option value="" disabled selected>Country</option>
+                    <option value="usa">USA</option>
+                    <option value="uk">UK</option>
+                    <option value="ua">Ukraine</option>
+                </select>
+
+                <select class="modal-input info-input">
+                    <option value="" disabled selected>City</option>
+                    <option value="ny">New York</option>
+                    <option value="london">London</option>
+                    <option value="kyiv">Kyiv</option>
+                </select>
+
+                <select class="modal-input info-input">
+                    <option value="" disabled selected>Why do you travel?</option>
+                    <option value="business">Business</option>
+                    <option value="leisure">Leisure</option>
+                    <option value="family">Family</option>
+                </select>
+
+                <div class="pet-selection">
+                    <p>Travelling with a pet?</p>
+                    <label><input type="radio" name="pet" value="yes"> Yes</label>
+                    <label><input type="radio" name="pet" value="no"> No</label>
+                </div>
+
+                <button type="button" class="continue-btn" id="infoContinueBtn">Continue</button>
+                <button type="button" class="button-bordered later-btn" id="infoLaterBtn">Later</button>
+            </form>
+        </div>
+    </div>
+    <div id="doneOverlay" class="overlay">
+        <div class="modal-content">
+            <button class="close-btn" id="closeDone">&times;</button>
+            <h2 class="modal-title">All done!</h2>
+
+            <div class="success-icon-container">
+                <div class="success-circle">
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+            <button type="button" class="btn-gray-rect" id="checkProfileBtn">Check your profile!</button>
+            <button type="button" class="btn-purple-rounded" id="continueBookingBtn">Continue booking</button>
+        </div>
+    </div>
+
+    <main>
+        <div class="main-content">
+            <section class="gallery-section">
+                <div class="main-image-container">
+                    <img src="img/room1.png" alt="Hotel Main Room" class="main-img">
+                    <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <div class="thumbnails-grid">
+                    <img src="img/room2.png" alt="Room 1" class="thumb">
+                    <img src="img/room3.png" alt="Room 2" class="thumb">
+                    <img src="img/room4.png" alt="Room 3" class="thumb">
+                </div>
+            </section>
+
+            <aside class="booking-sidebar">
+                <div class="price-header">
+                    <div class="price-val">
+                        <span class="price-num">85$</span>
+                        <span class="price-text">per night</span>
+                    </div>
+                    <button class="book-main-btn">BOOK</button>
+                </div>
+
+                <div class="location-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    LVIV STREET 8 | KYIV
+                </div>
+
+                <p class="hotel-description">
+                    Located in the heart of Kiev, our hotel offers a prime location for exploring the city's rich history and culture. With luxurious accommodations and top-notch amenities, we provide a comfortable and relaxing stay for all our guests. Whether you're traveling for business or leisure, our attentive staff is always on hand to assist with any needs you may have.
+                </p>
+
+                <div class="amenities-row">
+                    <span><i class="fas fa-crown"></i> popular</span>
+                    <span><i class="fas fa-city"></i> city centre</span>
+                    <span><i class="fas fa-mug-hot"></i> comfortable</span>
+                </div>
+
+                <div class="mini-review-card">
+                    <div class="review-user">
+                        <img src="img/review_icon3.png" alt="User" class="avatar">
+                        <div class="user-meta">
+                            <strong>Name</strong>
+                            <span>Hotel Name</span>
+                        </div>
+                        <span class="review-date">19 days ago</span>
+                    </div>
+                    <p class="review-text">Lorem ipsum dolor sit amet consectetur. Facilisis nulla eun. Ac netus tincidunt sed.</p>
+                    <i class="fas fa-chevron-right arrow-more"></i>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
