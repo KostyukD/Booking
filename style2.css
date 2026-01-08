@@ -556,3 +556,130 @@ body {
     flex-direction: column;
     height: 100%; /* Растягиваем на высоту левой части */
 }
+
+.guest-reviews-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.section-subtitle {
+    font-size: 14px;
+    color: #999;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.ratings-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.rating-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    min-width: 120px;
+}
+
+/* Стиль кругового индикатора */
+.circle-progress {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Создаем эффект прогресса через переменную --percent */
+    background: radial-gradient(closest-side, white 85%, transparent 0%), conic-gradient(#581ADB calc(var(--percent) * 1%), #E0E0E0 0);
+    position: relative;
+}
+
+.rating-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #581ADB;
+}
+
+.rating-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #7B42F6; /* Светло-фиолетовый как на макете */
+    text-transform: uppercase;
+}
+
+.facilities-detailed {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* Сетка FACILITIES */
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px; /* Расстояние между колонками */
+    align-items: start; /* Важно: колонки не растягиваются на всю высоту */
+}
+/* Стек элементов внутри колонки */
+.facilities-col {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Расстояние МЕЖДУ категориями в одной колонке (например, между Parking и Reception) */
+}
+
+/* Настройки иконок и текста (согласно макету) */
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+    .category-header i {
+        font-size: 18px;
+        color: #555;
+        width: 20px;
+        text-align: center;
+    }
+
+    .category-header span {
+        font-size: 15px;
+        font-weight: 600;
+        color: #333;
+    }
+
+.facility-list {
+    list-style: none;
+}
+
+    .facility-list li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        color: #757575;
+        margin-bottom: 8px;
+    }
+        .facility-list li i {
+            font-size: 10px;
+            color: #333;
+        }
+/* Центрируем заголовок */
+.section-subtitle-center {
+    font-size: 14px;
+    color: #999;
+    letter-spacing: 2px;
+    text-align: center; /* Текст по центру */
+    margin-bottom: 50px;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+}
