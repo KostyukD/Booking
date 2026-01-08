@@ -683,3 +683,370 @@ body {
     display: block;
     width: 100%;
 }
+/* --- Important Information --- */
+.important-info-section {
+    padding: 40px 10%;
+}
+.info-cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.info-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+    color: #666;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.info-card i {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #666;
+}
+.info-card p {
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* --- Book (Rooms) --- */
+.book-rooms-section {
+    padding: 20px 10%;
+    background-color: #fafafa;
+}
+.room-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    align-items: center;
+    flex-wrap: wrap;
+}
+.room-img-wrapper {
+    flex: 0 0 25%;
+    margin-right: 20px;
+}
+.room-img-wrapper img {
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+    object-fit: cover;
+}
+.room-details {
+    flex: 1;
+    padding-right: 20px;
+}
+.room-details h4 {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    color: #333;
+}
+.room-specs, .room-features {
+    display: flex;
+    gap: 20px;
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+.room-specs i, .room-features i {
+    margin-right: 5px;
+}
+.cancellation-policy {
+    color: #6200EA;
+    font-size: 13px;
+    font-weight: 500;
+}
+.room-price-action {
+    flex: 0 0 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+.price-tag {
+    font-size: 24px;
+    color: #6200EA;
+    font-weight: bold;
+}
+.btn-choose {
+    background-color: #6200EA;
+    color: white;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+.btn-info {
+    background-color: white;
+    color: #6200EA;
+    border: 1px solid #6200EA;
+    padding: 8px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+/* --- What's Nearby --- */
+.nearby-section {
+    padding: 40px 10%;
+}
+.nearby-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.nearby-col {
+    flex: 1;
+    min-width: 250px;
+}
+.nearby-header {
+    font-weight: bold;
+    color: #777;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nearby-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.nearby-list li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+/* --- Map --- */
+.map-container-section {
+    padding: 20px 10%;
+}
+.map-image-full {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+/* --- Comments --- */
+.comments-section {
+    padding: 40px 10%;
+}
+.comments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.comment-card {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 20px;
+    background: #fff;
+}
+.selected-comment {
+    border-color: pink; /* Як на макеті */
+}
+.comment-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+.comment-meta {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.comment-meta strong {
+    font-size: 14px;
+    color: #333;
+}
+.comment-meta span {
+    font-size: 12px;
+    color: #888;
+}
+.comment-date {
+    font-size: 12px;
+    color: #999;
+}
+.comment-text {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+}
+.comments-more {
+    text-align: center;
+    color: #6200EA;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+}
+
+/* --- FAQs --- */
+.faq-section {
+    padding: 40px 10%;
+    display: flex;
+    gap: 50px;
+}
+.faq-left {
+    flex: 0 0 20%;
+}
+.faq-title {
+    font-size: 48px;
+    color: #e0e0e0;
+    font-weight: bold;
+    margin: 0;
+}
+.faq-right {
+    flex: 1;
+}
+.faq-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    color: #666;
+    cursor: pointer;
+}
+.faq-item i {
+    color: #999;
+    font-size: 12px;
+}
+
+/* --- Hotels Nearby --- */
+.hotels-nearby-section {
+    padding: 40px 10%;
+}
+.hotels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+.hotel-card-small {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.hotel-img-box {
+    position: relative;
+    height: 150px;
+}
+.hotel-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.favorite-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    background: rgba(0,0,0,0.3);
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 12px;
+}
+.hotel-info {
+    padding: 10px 0;
+}
+.hotel-info h5 {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+.stars-purple {
+    color: #6200EA;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.distance {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 5px;
+}
+.price strong {
+    color: #333;
+    font-size: 14px;
+}
+
+/* --- Footer --- */
+.main-footer {
+    padding: 40px 10%;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    gap: 20px;
+}
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.footer-col a {
+    text-decoration: none;
+    color: #0071c2; /* Booking.com style blue */
+    font-size: 12px;
+}
+.footer-col a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .room-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .room-img-wrapper {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .room-price-action {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+    }
+    .btn-choose, .btn-info {
+        width: auto;
+    }
+    .faq-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .info-cards-container, .nearby-grid, .comments-grid {
+        flex-direction: column;
+    }
+}
