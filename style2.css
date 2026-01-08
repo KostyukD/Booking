@@ -108,16 +108,16 @@ body {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    padding: 0 20px;
-    min-height: 100px; /* Добавили фиксированную высоту для стабильности выравнивания */
+    padding: 0 20px 0 0; /* Убираем левый паддинг (последний 0) */
+    min-height: 100px;
 }
 
-/* Контейнер для кнопки и карточек */
 .info-left-group {
     display: flex;
     align-items: center;
-    gap: 10px; /* Уменьшаем расстояние между стрелкой и карточками */
-    justify-self: start; /* Прижимаем всю группу к началу сетки */
+    gap: 10px;
+    justify-content: flex-start; /* Принудительно прижимаем к левому краю */
+    width: 100%; /* Растягиваем на всю ширину левой колонки */
 }
 
 /* Кнопка "Назад" */
@@ -130,8 +130,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #333;
     flex-shrink: 0;
+    margin-left: 0; /* Убедись, что тут нет положительного отступа */
+    position: relative;
+    left: -230px; /* Этот параметр сдвинет кнопку максимально влево физически */
 }
 
 /* Ряд карточек */
