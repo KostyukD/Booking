@@ -815,19 +815,16 @@ body {
     border-radius: 20px;
 }
 
-/* --- ВИПРАВЛЕНІ СТИЛІ ДЛЯ КОМЕНТАРІВ --- */
+/* --- Comments --- */
 .comments-section {
     padding: 40px 10%;
 }
-
 .comments-grid {
     display: grid;
-    /* Рівно 3 колонки */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 30px; /* Відстань між картками */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     margin-bottom: 30px;
 }
-
 .comment-card {
     border-radius: 12px;
     padding: 24px;
@@ -836,27 +833,21 @@ body {
     flex-direction: column;
     justify-content: flex-start;
 }
-
-/* Стилі для рамок, як на дизайні */
 .card-green {
-    border: 1px solid #C8E6C9; /* Світло-зелена рамка */
+    border: 1px solid #C8E6C9;
 }
-
 .card-pink-border {
-    border: 1px solid #FFCDD2; /* Світло-рожева рамка */
+    border: 1px solid #FFCDD2;
 }
-
 .card-pink-fill {
     border: 1px solid #FFCDD2;
-    background-color: #FFF5F6; /* Світло-рожевий фон */
+    background-color: #FFF5F6;
 }
-
 .comment-header {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
 }
-
 .comment-avatar {
     width: 48px;
     height: 48px;
@@ -864,35 +855,29 @@ body {
     margin-right: 15px;
     object-fit: cover;
 }
-
 .comment-meta {
     display: flex;
     flex-direction: column;
 }
-
 .comment-meta strong {
     font-size: 16px;
     color: #222;
     font-weight: 700;
 }
-
 .comment-meta span {
     font-size: 13px;
     color: #888;
 }
-
 .comment-date {
-    margin-left: auto; /* Притискає дату вправо */
+    margin-left: auto;
     font-size: 12px;
     color: #999;
 }
-
 .comment-text {
     font-size: 14px;
     color: #444;
     line-height: 1.6;
 }
-
 .comments-more {
     text-align: center;
     color: #6200EA;
@@ -935,59 +920,47 @@ body {
     font-size: 12px;
 }
 
-/* --- ВИПРАВЛЕНІ СТИЛІ ДЛЯ ГОТЕЛІВ --- */
+/* --- Hotels Nearby --- */
 .hotels-nearby-section {
     padding: 40px 10%;
 }
-
 .hotels-grid {
     display: grid;
-    /* Рівно 4 колонки */
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
-
 .hotel-card-small {
     background: #fff;
-    border-radius: 16px; /* Заокруглені кути */
+    border-radius: 16px;
     overflow: hidden;
-    /* Прибираємо тінь або робимо дуже легку */
-    box-shadow: none; 
+    box-shadow: none;
 }
-
 .hotel-img-box {
     position: relative;
-    height: 180px; /* Трохи вище фото */
+    height: 180px;
     width: 100%;
 }
-
 .hotel-img-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 16px; /* Заокруглення самого фото */
+    border-radius: 16px;
 }
-
-/* Значок зірки на фото */
-.favorite-badge {
+.favorite-icon, .favorite-badge {
     position: absolute;
     top: 10px;
     left: 10px;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 10px;
     width: 24px;
     height: 24px;
-    background-color: rgba(100, 100, 100, 0.6);
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-.favorite-badge i {
-    color: white;
-    font-size: 10px;
-}
-
-/* Крапочки (пагінація) на фото */
 .img-pagination {
     position: absolute;
     bottom: 10px;
@@ -996,44 +969,36 @@ body {
     display: flex;
     gap: 5px;
 }
-
 .dot {
     width: 6px;
     height: 6px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
 }
-
 .dot.active {
     background-color: #fff;
 }
-
 .hotel-info {
     padding: 12px 0;
 }
-
 .hotel-info h5 {
-    margin: 0 0 5px 0;
+    margin: 5px 0;
     font-size: 14px;
-    font-weight: 600;
     color: #333;
+    font-weight: 600;
 }
-
 .stars-purple {
     color: #6200EA;
-    font-size: 10px;
-    letter-spacing: 2px;
+    font-size: 12px;
     margin-bottom: 5px;
 }
-
 .distance {
     font-size: 11px;
     color: #888;
     margin-bottom: 5px;
 }
-
 .price strong {
-    color: #222;
+    color: #333;
     font-size: 14px;
     font-weight: 800;
 }
@@ -1071,7 +1036,6 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
 @media (max-width: 768px) {
     .room-card {
         flex-direction: column;
@@ -1096,11 +1060,10 @@ body {
         flex-direction: column;
         gap: 20px;
     }
-    .info-cards-container, .nearby-grid {
+    .info-cards-container, .nearby-grid, .comments-grid {
         flex-direction: column;
     }
 }
-
 @media (max-width: 600px) {
     .comments-grid {
         grid-template-columns: 1fr;
