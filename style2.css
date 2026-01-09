@@ -108,7 +108,7 @@ body {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    padding: 0 20px 0 0; /* Убираем левый паддинг (последний 0) */
+    padding: 0 20px 0 0;
     min-height: 100px;
 }
 
@@ -116,11 +116,10 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    justify-content: flex-start; /* Принудительно прижимаем к левому краю */
-    width: 100%; /* Растягиваем на всю ширину левой колонки */
+    justify-content: flex-start;
+    width: 100%;
 }
 
-/* Кнопка "Назад" */
 .back-circle-btn {
     width: 40px;
     height: 40px;
@@ -131,23 +130,21 @@ body {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    margin-left: 0; /* Убедись, что тут нет положительного отступа */
+    margin-left: 0;
     position: relative;
-    left: -230px; /* Этот параметр сдвинет кнопку максимально влево физически */
+    left: -230px;
 }
 
-/* Ряд карточек */
 .mini-search-row {
     display: flex;
-    flex-direction: row; /* Выстраиваем карточки в линию */
-    gap: 8px; /* Зазор между карточками */
+    flex-direction: row;
+    gap: 8px;
 }
 
-/* Стили карточек */
 .mini-card {
     border: 1px solid #E0E0E0;
     border-radius: 16px;
-    padding:    15px 8px;
+    padding: 15px 8px;
     text-align: center;
     min-width: 95px;
     display: flex;
@@ -156,7 +153,6 @@ body {
     justify-content: center;
 }
 
-    /* Иконки, текст и точки фиолетового цвета */
     .mini-card span,
     .info-dots,
     .hotel-name-main,
@@ -183,7 +179,6 @@ body {
     margin-top: -2px;
 }
 
-/* Название отеля (ЦЕНТР) */
 .hotel-title-center {
     text-align: center;
     white-space: nowrap;
@@ -200,19 +195,17 @@ body {
     letter-spacing: 3px;
 }
 
-/* --- Рейтинг и отзывы справа --- */
 .rating-right-side {
-    justify-self: end; /* Прижимаем к правому краю колонки */
+    justify-self: end;
     display: flex;
     align-items: center;
-    gap: 15px; /* Расстояние между кругом, текстом и стрелкой */
+    gap: 15px;
 }
 
-/* Фиолетовый круг с оценкой */
 .score-circle {
     width: 48px;
     height: 48px;
-    border: 1.5px solid #581ADB; /* Тонкая фиолетовая линия */
+    border: 1.5px solid #581ADB;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -221,7 +214,7 @@ body {
     font-weight: 700;
     color: #581ADB;
 }
-/* Блок с текстом "reviews 345" */
+
 .reviews-info {
     display: flex;
     flex-direction: column;
@@ -231,7 +224,7 @@ body {
 
     .reviews-info .reviews-label {
         font-size: 12px;
-        color: #333; /* Серый цвет для подписи */
+        color: #333;
         font-weight: 400;
     }
 
@@ -241,7 +234,6 @@ body {
         font-weight: 600;
     }
 
-/* Выпадающий список "check" */
 .check-dropdown {
     display: flex;
     flex-direction: column;
@@ -331,7 +323,6 @@ body {
         color: white !important;
     }
 
-/* 1. Главный контейнер — фиксируем начало */
 .main-content {
     max-width: 1200px;
     margin: 30px auto;
@@ -339,13 +330,12 @@ body {
     grid-template-columns: 1.6fr 1fr;
     gap: 40px;
     padding: 0 20px;
-    align-items: start; /* Цена 85$ встанет ровно по верху большого фото */
+    align-items: start;
 }
 
-/* Главный контейнер фото */
 .main-image-container {
     position: relative;
-    margin-bottom: 1px; /* Было 20px или 15px, уменьшили до 10px */
+    margin-bottom: 1px;
     width: 100%;
 }
 
@@ -356,12 +346,12 @@ body {
     border-radius: 20px;
     display: block;
 }
-/* Общие стили для стрелок навигации */
+
 .nav-btn {
     position: absolute;
-    top: 50%; /* Центрируем по вертикали */
-    transform: translateY(-50%); /* Точная центровка */
-    background: rgba(255, 255, 255, 0.7); /* Полупрозрачный белый фон */
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
     border: none;
     width: 40px;
     height: 40px;
@@ -378,7 +368,7 @@ body {
         background: rgba(255, 255, 255, 0.9);
         transform: translateY(-50%) scale(1.1);
     }
-/* Расставляем стрелки по бокам внутри фото */
+
 .prev {
     left: 20px;
 }
@@ -387,18 +377,16 @@ body {
     right: 20px;
 }
 
-/* Сетка миниатюр */
 .thumbnails-grid {
     display: flex;
     justify-content: space-between;
-    gap: 15px; /* Уменьшили зазор, чтобы высвободить место под размер фото */
-    margin-top: 0; /* Убираем лишний отступ сверху, если он был */
+    gap: 15px;
+    margin-top: 0;
 }
 
-/* Сами маленькие фото */
 .thumb {
-    flex: 1; /* Растягиваются равномерно */
-    height: 150px; /* Увеличили высоту (было 120px) */
+    flex: 1;
+    height: 150px;
     object-fit: cover;
     border-radius: 15px;
     cursor: pointer;
@@ -407,10 +395,9 @@ body {
 
     .thumb:hover {
         opacity: 0.9;
-        transform: scale(1.02); /* Легкий эффект увеличения при наведении */
+        transform: scale(1.02);
     }
 
-/* 3. Убираем лишний отступ у заголовка цены */
 .price-header {
     display: flex;
     justify-content: space-between;
@@ -423,7 +410,7 @@ body {
     font-size: 38px;
     font-weight: 800;
     color: #581ADB;
-    line-height: 1; /* Чтобы не было невидимых отступов сверху */
+    line-height: 1;
 }
 
 .price-text {
@@ -433,25 +420,21 @@ body {
 }
 
 .book-main-btn {
-    /* Градиент вместо однотонного цвета для объема */
     background: #581ADB;
     color: white;
     border: none;
     padding: 14px 45px;
-    /* Увеличиваем скругление, чтобы кнопка была более овальной, как на макете */
     border-radius: 40px;
     font-weight: 700;
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
-    /* Мягкая фиолетовая тень (свечение) */
     box-shadow: 0 8px 20px rgba(88, 26, 219, 0.35);
-    text-transform: uppercase; /* Делаем текст капсом */
+    text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
     .book-main-btn:hover {
-        /* Немного усиливаем тень и меняем яркость при наведении */
         transform: translateY(-2px);
         box-shadow: 0 12px 25px rgba(88, 26, 219, 0.5);
         filter: brightness(1.1);
@@ -462,7 +445,6 @@ body {
         box-shadow: 0 5px 10px rgba(88, 26, 219, 0.3);
     }
 
-/* 4. Бейдж локации и описание */
 .location-badge {
     color: #E91E63;
     font-size: 12px;
@@ -487,24 +469,23 @@ body {
     .amenities-row span {
         display: flex;
         align-items: center;
-        gap: 8px; /* Расстояние между иконкой и текстом */
-        color: #999; /* Светло-серый цвет текста */
+        gap: 8px;
+        color: #999;
         font-size: 13px;
         font-weight: 400;
     }
     .amenities-row i {
         font-size: 14px;
-        color: #717171; /* Чуть более темный серый для самих иконок */
+        color: #717171;
     }
 
-/* 5. КАРТОЧКА ОТЗЫВА — ГЛАВНЫЙ СЕКРЕТ ВЫРАВНИВАНИЯ */
 .mini-review-card {
-    margin-top: auto; /* ЭТО вытолкнет отзыв в самый низ, к линии маленьких фото */
+    margin-top: auto;
     border: 1px solid #EEE;
     border-radius: 18px;
     padding: 20px;
     background: white;
-    min-height: 150px; /* Совпадает с высотой .thumb */
+    min-height: 150px;
 }
 
 .review-user {
@@ -542,19 +523,10 @@ body {
     line-height: 1.5;
 }
 
-.arrow-more {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #CCC;
-}
-/* 2. Правая колонка — превращаем в гибкий контейнер на всю высоту */
-/* В HTML оберни правую часть в <div class="booking-sidebar"> */
 .booking-sidebar {
     display: flex;
     flex-direction: column;
-    height: 100%; /* Растягиваем на высоту левой части */
+    height: 100%;
 }
 
 .guest-reviews-section {
@@ -588,7 +560,6 @@ body {
     min-width: 120px;
 }
 
-/* Стиль кругового индикатора */
 .circle-progress {
     width: 80px;
     height: 80px;
@@ -596,7 +567,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Создаем эффект прогресса через переменную --percent */
     background: radial-gradient(closest-side, white 85%, transparent 0%), conic-gradient(#581ADB calc(var(--percent) * 1%), #E0E0E0 0);
     position: relative;
 }
@@ -610,7 +580,7 @@ body {
 .rating-label {
     font-size: 11px;
     font-weight: 700;
-    color: #7B42F6; /* Светло-фиолетовый как на макете */
+    color: #7B42F6;
     text-transform: uppercase;
 }
 
@@ -620,21 +590,19 @@ body {
     padding: 0 20px;
 }
 
-/* Сетка FACILITIES */
 .facilities-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 60px; /* Расстояние между колонками */
-    align-items: start; /* Важно: колонки не растягиваются на всю высоту */
+    gap: 60px;
+    align-items: start;
 }
-/* Стек элементов внутри колонки */
+
 .facilities-col {
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Расстояние МЕЖДУ категориями в одной колонке (например, между Parking и Reception) */
+    gap: 40px;
 }
 
-/* Настройки иконок и текста (согласно макету) */
 .category-header {
     display: flex;
     align-items: center;
@@ -671,18 +639,19 @@ body {
             font-size: 10px;
             color: #333;
         }
-/* Центрируем заголовок */
+
 .section-subtitle-center {
     font-size: 14px;
     color: #999;
     letter-spacing: 2px;
-    text-align: center; /* Текст по центру */
+    text-align: center;
     margin-bottom: 50px;
     font-weight: 500;
     text-transform: uppercase;
     display: block;
     width: 100%;
 }
+
 /* --- Important Information --- */
 .important-info-section {
     padding: 40px 10%;
@@ -845,59 +814,84 @@ body {
     border-radius: 20px;
 }
 
-/* --- Comments --- */
+/* --- ВИПРАВЛЕНІ СТИЛІ ДЛЯ КОМЕНТАРІВ --- */
 .comments-section {
     padding: 40px 10%;
 }
+
 .comments-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    /* Рівно 3 колонки */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; /* Відстань між картками */
     margin-bottom: 30px;
 }
+
 .comment-card {
-    border: 1px solid #eee;
     border-radius: 12px;
-    padding: 20px;
+    padding: 24px;
     background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
-.selected-comment {
-    border-color: pink; /* Як на макеті */
+
+/* Стилі для рамок, як на дизайні */
+.card-green {
+    border: 1px solid #C8E6C9; /* Світло-зелена рамка */
 }
+
+.card-pink {
+    border: 1px solid #FFCDD2; /* Світло-рожева рамка */
+}
+
+.card-selected-pink {
+    border: 1px solid #FFCDD2;
+    background-color: #FFF5F6; /* Світло-рожевий фон */
+}
+
 .comment-header {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
 }
+
 .comment-avatar {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     margin-right: 15px;
     object-fit: cover;
 }
+
 .comment-meta {
     display: flex;
     flex-direction: column;
-    flex: 1;
 }
+
 .comment-meta strong {
-    font-size: 14px;
-    color: #333;
+    font-size: 16px;
+    color: #222;
+    font-weight: 700;
 }
+
 .comment-meta span {
-    font-size: 12px;
+    font-size: 13px;
     color: #888;
 }
+
 .comment-date {
+    margin-left: auto; /* Притискає дату вправо */
     font-size: 12px;
     color: #999;
 }
+
 .comment-text {
-    font-size: 13px;
-    color: #555;
-    line-height: 1.5;
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
 }
+
 .comments-more {
     text-align: center;
     color: #6200EA;
@@ -940,61 +934,107 @@ body {
     font-size: 12px;
 }
 
-/* --- Hotels Nearby --- */
+/* --- ВИПРАВЛЕНІ СТИЛІ ДЛЯ ГОТЕЛІВ --- */
 .hotels-nearby-section {
     padding: 40px 10%;
 }
+
 .hotels-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /* Рівно 4 колонки */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
+
 .hotel-card-small {
     background: #fff;
-    border-radius: 12px;
+    border-radius: 16px; /* Заокруглені кути */
     overflow: hidden;
+    /* Прибираємо тінь або робимо дуже легку */
+    box-shadow: none; 
 }
+
 .hotel-img-box {
     position: relative;
-    height: 150px;
+    height: 180px; /* Трохи вище фото */
+    width: 100%;
 }
+
 .hotel-img-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 16px; /* Заокруглення самого фото */
 }
-.favorite-icon {
+
+/* Значок зірки на фото */
+.favorite-badge {
     position: absolute;
     top: 10px;
     left: 10px;
-    color: white;
-    background: rgba(0,0,0,0.3);
-    padding: 5px;
+    width: 24px;
+    height: 24px;
+    background-color: rgba(100, 100, 100, 0.6);
     border-radius: 50%;
-    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.favorite-badge i {
+    color: white;
+    font-size: 10px;
+}
+
+/* Крапочки (пагінація) на фото */
+.img-pagination {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+
+.dot.active {
+    background-color: #fff;
+}
+
 .hotel-info {
-    padding: 10px 0;
+    padding: 12px 0;
 }
+
 .hotel-info h5 {
-    margin: 5px 0;
+    margin: 0 0 5px 0;
     font-size: 14px;
+    font-weight: 600;
     color: #333;
 }
+
 .stars-purple {
     color: #6200EA;
-    font-size: 12px;
+    font-size: 10px;
+    letter-spacing: 2px;
     margin-bottom: 5px;
 }
+
 .distance {
     font-size: 11px;
     color: #888;
     margin-bottom: 5px;
 }
+
 .price strong {
-    color: #333;
+    color: #222;
     font-size: 14px;
+    font-weight: 800;
 }
 
 /* --- Footer --- */
@@ -1022,6 +1062,15 @@ body {
 }
 
 /* Mobile adjustments */
+@media (max-width: 1024px) {
+    .comments-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hotels-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .room-card {
         flex-direction: column;
@@ -1046,7 +1095,16 @@ body {
         flex-direction: column;
         gap: 20px;
     }
-    .info-cards-container, .nearby-grid, .comments-grid {
+    .info-cards-container, .nearby-grid {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .comments-grid {
+        grid-template-columns: 1fr;
+    }
+    .hotels-grid {
+        grid-template-columns: 1fr;
     }
 }
