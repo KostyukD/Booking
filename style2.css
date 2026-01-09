@@ -1,1110 +1,937 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Onest:wght@100..900&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap');
-
-/* --- Сброс стилей --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.highlight {
-    color: #6a1b9a;
-}
-
-/* --- Общие стили для body --- */
-body {
-    font-family: 'Nunito Sans', sans-serif;
-    color: #333;
-}
-
-/* --- Стилизация Header --- */
-.header {
-    padding-bottom: 20px;
-    position: relative;
-}
-
-.header-top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #222222;
-}
-
-    .logo span {
-        color: #6a1b9a;
-    }
-
-.auth-section {
-    display: flex;
-    align-items: center;
-}
-
-.language-flag {
-    width: 30px;
-    height: 20px;
-    margin-right: 20px;
-    overflow: hidden;
-    border-radius: 3px;
-}
-
-.flag-icon {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.button {
-    background: none;
-    cursor: pointer;
-    padding: 8px 15px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-}
-
-.button-bordered {
-    border: 1px solid #222222;
-    color: #222222;
-    margin-left: 10px;
-}
-
-    .button-bordered:hover {
-        background-color: rgba(0, 0, 0, 0.05);
-    }
-
-.signin-btn i {
-    margin-left: 5px;
-}
-
-/* =========================================
-   ИНФО-ПАНЕЛЬ
-   ========================================= */
-
-.hotel-top-info {
-    position: relative;
-    padding-top: 0;
-    background: transparent;
-}
-
-.top-line-divider {
-    width: 100%;
-    height: 1px;
-    background-color: #E0E0E0;
-    margin-bottom: 20px;
-}
-
-.container-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    padding: 0 20px 0 0;
-    min-height: 100px;
-}
-
-.info-left-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: flex-start;
-    width: 100%;
-}
-
-.back-circle-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid #E0E0E0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-left: 0;
-    position: relative;
-    left: -230px;
-}
-
-.mini-search-row {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-}
-
-.mini-card {
-    border: 1px solid #E0E0E0;
-    border-radius: 16px;
-    padding: 15px 8px;
-    text-align: center;
-    min-width: 95px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-    .mini-card span,
-    .info-dots,
-    .hotel-name-main,
-    .stars-row,
-    .score-circle,
-    .check-dropdown {
-        color: #581ADB !important;
-    }
-
-    .mini-card i {
-        color: #717171;
-        font-size: 16px;
-        margin-bottom: 2px;
-    }
-
-    .mini-card span {
-        font-size: 11px;
-        font-weight: 700;
-    }
-
-.info-dots {
-    font-size: 10px;
-    line-height: 0.4;
-    margin-top: -2px;
-}
-
-.hotel-title-center {
-    text-align: center;
-    white-space: nowrap;
-}
-
-.hotel-name-main {
-    font-size: 28px;
-    font-weight: 800;
-    margin: 2px 0;
-}
-
-.stars-row {
-    font-size: 10px;
-    letter-spacing: 3px;
-}
-
-.rating-right-side {
-    justify-self: end;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.score-circle {
-    width: 48px;
-    height: 48px;
-    border: 1.5px solid #581ADB;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    font-weight: 700;
-    color: #581ADB;
-}
-
-.reviews-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    line-height: 1.1;
-}
-
-    .reviews-info .reviews-label {
-        font-size: 12px;
-        color: #333;
-        font-weight: 400;
-    }
-
-    .reviews-info .reviews-count {
-        font-size: 14px;
-        color: #333;
-        font-weight: 600;
-    }
-
-.check-dropdown {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    transition: opacity 0.2s;
-    margin-left: 5px;
-}
-
-    .check-dropdown:hover {
-        opacity: 0.7;
-    }
-
-    .check-dropdown span {
-        font-size: 12px;
-        color: #581ADB;
-        font-weight: 600;
-        margin-bottom: -2px;
-    }
-
-    .check-dropdown i {
-        font-size: 14px;
-        color: #581ADB;
-    }
-
-/* ОСТАЛЬНЫЕ СТИЛИ (МОДАЛКИ) */
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
-}
-
-    .overlay.active {
-        display: flex;
-    }
-
-.modal-content {
-    background: white;
-    width: 100%;
-    max-width: 420px;
-    padding: 40px;
-    border-radius: 24px;
-    position: relative;
-    text-align: center;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-}
-
-.modal-title {
-    color: #6a1b9a;
-    margin-bottom: 25px;
-    font-size: 24px;
-    font-weight: 700;
-}
-
-.modal-input {
-    width: 100%;
-    height: 50px;
-    padding: 0 20px;
-    margin-bottom: 15px;
-    border: 1px solid #E0E0E0;
-    border-radius: 25px;
-    outline: none;
-    font-size: 14px;
-}
-
-.continue-btn {
-    width: 100%;
-    height: 50px;
-    background: #E0E0E0;
-    border: none;
-    border-radius: 25px;
-    color: #8E8E8E;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-    .continue-btn.active {
-        background-color: #6a1b9a !important;
-        color: white !important;
-    }
-
-.main-content {
-    max-width: 1200px;
-    margin: 30px auto;
-    display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    gap: 40px;
-    padding: 0 20px;
-    align-items: start;
-}
-
-.main-image-container {
-    position: relative;
-    margin-bottom: 1px;
-    width: 100%;
-}
-
-.main-img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 20px;
-    display: block;
-}
-
-.nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.7);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #333;
-    transition: all 0.3s ease;
-    z-index: 5;
-}
-    .nav-btn:hover {
-        background: rgba(255, 255, 255, 0.9);
-        transform: translateY(-50%) scale(1.1);
-    }
-
-.prev {
-    left: 20px;
-}
-
-.next {
-    right: 20px;
-}
-
-.thumbnails-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    margin-top: 0;
-}
-
-.thumb {
-    flex: 1;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: transform 0.3s ease, opacity 0.3s;
-}
-
-    .thumb:hover {
-        opacity: 0.9;
-        transform: scale(1.02);
-    }
-
-.price-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
-    padding-top: 0;
-}
-
-.price-num {
-    font-size: 38px;
-    font-weight: 800;
-    color: #581ADB;
-    line-height: 1;
-}
-
-.price-text {
-    font-size: 18px;
-    color: #666;
-    margin-left: 5px;
-}
-
-.book-main-btn {
-    background: #581ADB;
-    color: white;
-    border: none;
-    padding: 14px 45px;
-    border-radius: 40px;
-    font-weight: 700;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(88, 26, 219, 0.35);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-    .book-main-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 25px rgba(88, 26, 219, 0.5);
-        filter: brightness(1.1);
-    }
-
-    .book-main-btn:active {
-        transform: translateY(0);
-        box-shadow: 0 5px 10px rgba(88, 26, 219, 0.3);
-    }
-
-.location-badge {
-    color: #E91E63;
-    font-size: 12px;
-    font-weight: bold;
-    margin: 10px 0 15px 0;
-}
-
-.hotel-description {
-    font-size: 14px;
-    line-height: 1.5;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.amenities-row {
-    display: flex;
-    gap: 20px;
-    border-bottom: 1px solid #EEE;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-}
-    .amenities-row span {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: #999;
-        font-size: 13px;
-        font-weight: 400;
-    }
-    .amenities-row i {
-        font-size: 14px;
-        color: #717171;
-    }
-
-.mini-review-card {
-    margin-top: auto;
-    border: 1px solid #EEE;
-    border-radius: 18px;
-    padding: 20px;
-    background: white;
-    min-height: 150px;
-}
-
-.review-user {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    margin-right: 12px;
-}
-
-.user-meta strong {
-    display: block;
-    font-size: 14px;
-}
-
-.user-meta span {
-    font-size: 12px;
-    color: #999;
-}
-
-.review-date {
-    margin-left: auto;
-    font-size: 12px;
-    color: #CCC;
-}
-
-.review-text {
-    font-size: 13px;
-    color: #555;
-    line-height: 1.5;
-}
-
-.booking-sidebar {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.guest-reviews-section {
-    max-width: 1200px;
-    margin: 50px auto;
-    text-align: center;
-    padding: 0 20px;
-}
-
-.section-subtitle {
-    font-size: 14px;
-    color: #999;
-    letter-spacing: 2px;
-    margin-bottom: 40px;
-    font-weight: 500;
-}
-
-.ratings-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.rating-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    flex: 1;
-    min-width: 120px;
-}
-
-.circle-progress {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: radial-gradient(closest-side, white 85%, transparent 0%), conic-gradient(#581ADB calc(var(--percent) * 1%), #E0E0E0 0);
-    position: relative;
-}
-
-.rating-value {
-    font-size: 20px;
-    font-weight: 700;
-    color: #581ADB;
-}
-
-.rating-label {
-    font-size: 11px;
-    font-weight: 700;
-    color: #7B42F6;
-    text-transform: uppercase;
-}
-
-.facilities-detailed {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 20px;
-}
-
-.facilities-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
-    align-items: start;
-}
-
-.facilities-col {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.category-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 15px;
-}
-
-    .category-header i {
-        font-size: 18px;
-        color: #555;
-        width: 20px;
-        text-align: center;
-    }
-
-    .category-header span {
-        font-size: 15px;
-        font-weight: 600;
-        color: #333;
-    }
-
-.facility-list {
-    list-style: none;
-}
-
-    .facility-list li {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 13px;
-        color: #757575;
-        margin-bottom: 8px;
-    }
-        .facility-list li i {
-            font-size: 10px;
-            color: #333;
-        }
-
-.section-subtitle-center {
-    font-size: 14px;
-    color: #999;
-    letter-spacing: 2px;
-    text-align: center;
-    margin-bottom: 50px;
-    font-weight: 500;
-    text-transform: uppercase;
-    display: block;
-    width: 100%;
-}
-
-/* --- Important Information --- */
-.important-info-section {
-    padding: 40px 10%;
-}
-.info-cards-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-.info-card {
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    flex: 1;
-    min-width: 150px;
-    color: #666;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.info-card i {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #666;
-}
-.info-card p {
-    font-size: 13px;
-    line-height: 1.4;
-    margin: 0;
-}
-
-/* --- Book (Rooms) --- */
-.book-rooms-section {
-    padding: 20px 10%;
-    background-color: #fafafa;
-}
-.room-card {
-    background: #fff;
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 20px;
-    display: flex;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    align-items: center;
-    flex-wrap: wrap;
-}
-.room-img-wrapper {
-    flex: 0 0 25%;
-    margin-right: 20px;
-}
-.room-img-wrapper img {
-    width: 100%;
-    border-radius: 10px;
-    height: auto;
-    object-fit: cover;
-}
-.room-details {
-    flex: 1;
-    padding-right: 20px;
-}
-.room-details h4 {
-    margin: 0 0 15px 0;
-    font-size: 18px;
-    color: #333;
-}
-.room-specs, .room-features {
-    display: flex;
-    gap: 20px;
-    color: #777;
-    font-size: 13px;
-    margin-bottom: 10px;
-    flex-wrap: wrap;
-}
-.room-specs i, .room-features i {
-    margin-right: 5px;
-}
-.cancellation-policy {
-    color: #6200EA;
-    font-size: 13px;
-    font-weight: 500;
-}
-.room-price-action {
-    flex: 0 0 15%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
-}
-.price-tag {
-    font-size: 24px;
-    color: #6200EA;
-    font-weight: bold;
-}
-.btn-choose {
-    background-color: #6200EA;
-    color: white;
-    border: none;
-    padding: 8px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    width: 100%;
-}
-.btn-info {
-    background-color: white;
-    color: #6200EA;
-    border: 1px solid #6200EA;
-    padding: 8px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    width: 100%;
-}
-
-/* --- What's Nearby --- */
-.nearby-section {
-    padding: 40px 10%;
-}
-.nearby-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-.nearby-col {
-    flex: 1;
-    min-width: 250px;
-}
-.nearby-header {
-    font-weight: bold;
-    color: #777;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.nearby-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.nearby-list li {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 8px;
-}
-
-/* --- Map --- */
-.map-container-section {
-    padding: 20px 10%;
-}
-.map-image-full {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-}
-
-/* --- ВИПРАВЛЕНІ СТИЛІ ДЛЯ КОМЕНТАРІВ --- */
-.comments-section {
-    padding: 40px 10%;
-}
-
-.comments-grid {
-    display: grid;
-    /* Рівно 3 колонки (сітка 3x3) */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 30px; /* Відстань між картками */
-    margin-bottom: 30px;
-}
-
-.comment-card {
-    border-radius: 12px;
-    padding: 24px;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-/* Стилі для рамок (як на фото 3) */
-.card-green {
-    border: 1px solid #C8E6C9; /* Світло-зелена рамка */
-}
-
-.card-pink {
-    border: 1px solid #FFCDD2; /* Світло-рожева рамка */
-}
-
-.card-selected-pink {
-    border: 1px solid #FFCDD2;
-    background-color: #FFF5F6; /* Світло-рожевий фон */
-}
-
-.comment-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.comment-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    margin-right: 15px;
-    object-fit: cover;
-}
-
-.comment-meta {
-    display: flex;
-    flex-direction: column;
-}
-
-.comment-meta strong {
-    font-size: 16px;
-    color: #222;
-    font-weight: 700;
-}
-
-.comment-meta span {
-    font-size: 13px;
-    color: #888;
-}
-
-.comment-date {
-    margin-left: auto; /* Притискає дату вправо */
-    font-size: 12px;
-    color: #999;
-}
-
-.comment-text {
-    font-size: 14px;
-    color: #444;
-    line-height: 1.6;
-}
-
-.comments-more {
-    text-align: center;
-    color: #6200EA;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 14px;
-}
-
-/* --- FAQs --- */
-.faq-section {
-    padding: 40px 10%;
-    display: flex;
-    gap: 50px;
-}
-.faq-left {
-    flex: 0 0 20%;
-}
-.faq-title {
-    font-size: 48px;
-    color: #e0e0e0;
-    font-weight: bold;
-    margin: 0;
-}
-.faq-right {
-    flex: 1;
-}
-.faq-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
-    color: #666;
-    cursor: pointer;
-}
-.faq-item i {
-    color: #999;
-    font-size: 12px;
-}
-
-/* --- ВИПРАВЛЕНІ СТИЛІ ДЛЯ ГОТЕЛІВ --- */
-.hotels-nearby-section {
-    padding: 40px 10%;
-}
-
-.hotels-grid {
-    display: grid;
-    /* Рівно 4 колонки */
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.hotel-card-small {
-    background: #fff;
-    border-radius: 16px; /* Заокруглені кути */
-    overflow: hidden;
-    /* Прибираємо тінь або робимо дуже легку */
-    box-shadow: none; 
-}
-
-.hotel-img-box {
-    position: relative;
-    height: 180px; /* Трохи вище фото */
-    width: 100%;
-}
-
-.hotel-img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 16px; /* Заокруглення самого фото */
-}
-
-/* Значок зірки на фото */
-.favorite-badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 24px;
-    height: 24px;
-    background-color: rgba(100, 100, 100, 0.6);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.favorite-badge i {
-    color: white;
-    font-size: 10px;
-}
-
-/* Крапочки (пагінація) на фото */
-.img-pagination {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 5px;
-}
-
-.dot {
-    width: 6px;
-    height: 6px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-}
-
-.dot.active {
-    background-color: #fff;
-}
-
-.hotel-info {
-    padding: 12px 0;
-}
-
-.hotel-info h5 {
-    margin: 0 0 5px 0;
-    font-size: 14px;
-    font-weight: 600;
-    color: #333;
-}
-
-.stars-purple {
-    color: #6200EA;
-    font-size: 10px;
-    letter-spacing: 2px;
-    margin-bottom: 5px;
-}
-
-.distance {
-    font-size: 11px;
-    color: #888;
-    margin-bottom: 5px;
-}
-
-.price strong {
-    color: #222;
-    font-size: 14px;
-    font-weight: 800;
-}
-
-/* --- Footer --- */
-.main-footer {
-    padding: 40px 10%;
-    background-color: #fff;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border-top: 1px solid #eee;
-    gap: 20px;
-}
-.footer-col {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-.footer-col a {
-    text-decoration: none;
-    color: #0071c2; /* Booking.com style blue */
-    font-size: 12px;
-}
-.footer-col a:hover {
-    text-decoration: underline;
-}
-
-/* Mobile adjustments */
-@media (max-width: 1024px) {
-    .comments-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .hotels-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .room-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .room-img-wrapper {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 15px;
-    }
-    .room-price-action {
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 15px;
-    }
-    .btn-choose, .btn-info {
-        width: auto;
-    }
-    .faq-section {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .info-cards-container, .nearby-grid {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 600px) {
-    .comments-grid {
-        grid-template-columns: 1fr;
-    }
-    .hotels-grid {
-        grid-template-columns: 1fr;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel For you.</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-top-bar">
+            <div class="logo">Hotel for <span class="highlight">you.</span></div>
+
+            <div class="auth-section">
+                <button id="openRegisterHeader" class="button button-bordered register-btn">Register</button>
+                <button id="openSignIn" class="button button-bordered signin-btn">
+                    Sign in
+                    <i class="fas fa-user-circle"></i>
+                </button>
+                <div class="language-flag">
+                    <img src="img_main/logo_lang.png" alt="Lang" class="flag-icon">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="hotel-top-info">
+        <div class="top-line-divider"></div> 
+        <div class="container-inner">
+            <div class="info-left-group">
+                <button class="back-circle-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="mini-search-row">
+                    <div class="mini-card">
+                        <i class="fas fa-plane-departure"></i>
+                        <span>Kyiv</span>
+                        <div class="info-dots">...</div>
+                    </div>
+                    <div class="mini-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Apr 9-11</span>
+                        <div class="info-dots">...</div>
+                    </div>
+                    <div class="mini-card">
+                        <i class="fas fa-user-friends"></i>
+                        <span>2 ad. 1 ch.</span>
+                        <div class="info-dots">...</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hotel-title-center">
+                <div class="stars-row">★★★★</div>
+                <h1 class="hotel-name-main">Tourist Hotel</h1>
+                <p class="hotel-phone-sub">(380) 555-0103</p>
+            </div>
+
+            <div class="rating-right-side">
+                <div class="score-circle">7.9</div>
+
+                <div class="reviews-info">
+                    <span class="reviews-label">reviews</span>
+                    <span class="reviews-count">345</span>
+                </div>
+
+                <div class="check-dropdown">
+                    <span>check</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalOverlay" class="overlay">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal">&times;</button>
+            <h2 class="modal-title">Sign In</h2>
+            <form class="modal-form">
+                <input type="email" placeholder="Email" class="modal-input">
+                <input type="password" placeholder="Password" class="modal-input">
+                <button type="button" class="continue-btn">Continue</button>
+            </form>
+            <p class="register-link">Do not have an account? <a href="#" id="linkToRegister">Register</a></p>
+            <div class="social-login">
+                <button class="social-button">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G">
+                    Sign In with Google
+                </button>
+                <button class="social-button">
+                    <i class="fab fa-facebook" style="color: #1877F2;"></i>
+                    Sign In with Facebook
+                </button>
+                <button class="social-button">
+                    <i class="fab fa-apple"></i>
+                    Sign In with Apple
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="registerOverlay" class="overlay">
+        <div class="modal-content">
+            <button class="close-btn" id="closeRegister">&times;</button>
+            <h2 class="modal-title">Register</h2>
+            <form class="modal-form">
+                <input type="text" placeholder="Full Name" class="modal-input reg-input">
+                <input type="email" placeholder="Email" class="modal-input reg-input">
+                <input type="password" placeholder="Password" class="modal-input reg-input">
+                <input type="password" placeholder="Confirm Password" class="modal-input reg-input">
+                <button type="button" class="continue-btn" id="regContinueBtn">Continue</button>
+            </form>
+            <p class="register-link">Already have an account? <a href="#" id="linkToSignIn">Sign In</a></p>
+            <div class="social-login">
+                <button class="social-button">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G"> Sign Up with Google
+                </button>
+                <button class="social-button">
+                    <i class="fab fa-facebook" style="color: #1877F2;"></i> Sign Up with Facebook
+                </button>
+                <button class="social-button">
+                    <i class="fab fa-apple"></i> Sign Up with Apple
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="authOverlay" class="overlay">
+        <div class="modal-content">
+            <button class="close-btn" id="closeAuth">&times;</button>
+            <h2 class="modal-title">Authentication</h2>
+            <form class="modal-form">
+                <input type="text" id="authCodeInput" placeholder="Code" class="modal-input auth-input">
+                <p class="auth-info">
+                    "We have sent you an email with the code.
+                    Check your mail and enter the code for the authentication."
+                </p>
+                <button type="button" class="continue-btn" id="authContinueBtn">Continue</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="infoOverlay" class="overlay">
+        <div class="modal-content">
+            <button class="close-btn" id="closeInfo">&times;</button>
+            <h2 class="modal-title">Information</h2>
+            <p class="info-description">
+                Tell us about yourself so we can better choose options for you :)
+            </p>
+            <form class="modal-form">
+                <select class="modal-input info-input">
+                    <option value="" disabled selected>Country</option>
+                    <option value="usa">USA</option>
+                    <option value="uk">UK</option>
+                    <option value="ua">Ukraine</option>
+                </select>
+                <select class="modal-input info-input">
+                    <option value="" disabled selected>City</option>
+                    <option value="ny">New York</option>
+                    <option value="london">London</option>
+                    <option value="kyiv">Kyiv</option>
+                </select>
+                <select class="modal-input info-input">
+                    <option value="" disabled selected>Why do you travel?</option>
+                    <option value="business">Business</option>
+                    <option value="leisure">Leisure</option>
+                    <option value="family">Family</option>
+                </select>
+                <div class="pet-selection">
+                    <p>Travelling with a pet?</p>
+                    <label><input type="radio" name="pet" value="yes"> Yes</label>
+                    <label><input type="radio" name="pet" value="no"> No</label>
+                </div>
+                <button type="button" class="continue-btn" id="infoContinueBtn">Continue</button>
+                <button type="button" class="button-bordered later-btn" id="infoLaterBtn">Later</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="doneOverlay" class="overlay">
+        <div class="modal-content">
+            <button class="close-btn" id="closeDone">&times;</button>
+            <h2 class="modal-title">All done!</h2>
+            <div class="success-icon-container">
+                <div class="success-circle">
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+            <button type="button" class="btn-gray-rect" id="checkProfileBtn">Check your profile!</button>
+            <button type="button" class="btn-purple-rounded" id="continueBookingBtn">Continue booking</button>
+        </div>
+    </div>
+
+    <main>
+        <div class="main-content">
+            <section class="gallery-section">
+                <div class="main-image-container">
+                    <img src="img_2/room1.png" alt="Hotel Main Room" class="main-img">
+                    <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <div class="thumbnails-grid">
+                    <img src="img_2/room2.png" alt="Room 1" class="thumb">
+                    <img src="img_2/room3.png" alt="Room 2" class="thumb">
+                    <img src="img_2/room4.png" alt="Room 3" class="thumb">
+                </div>
+            </section>
+
+            <aside class="booking-sidebar">
+                <div class="price-header">
+                    <div class="price-val">
+                        <span class="price-num">85$</span>
+                        <span class="price-text">per night</span>
+                    </div>
+                    <button class="book-main-btn">BOOK</button>
+                </div>
+
+                <div class="location-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    LVIV STREET 8 | KYIV
+                </div>
+
+                <p class="hotel-description">
+                    Located in the heart of Kiev, our hotel offers a prime location for exploring the city's rich history and culture. With luxurious accommodations and top-notch amenities, we provide a comfortable and relaxing stay for all our guests. Whether you're traveling for business or leisure, our attentive staff is always on hand to assist with any needs you may have.
+                </p>
+
+                <div class="amenities-row">
+                    <span><i class="fas fa-crown"></i> popular</span>
+                    <span><i class="fas fa-city"></i> city centre</span>
+                    <span><i class="fas fa-mug-hot"></i> comfortable</span>
+                </div>
+
+                <div class="mini-review-card">
+                    <div class="review-user">
+                        <img src="img_2/review_icon3.png" alt="User" class="avatar">
+                        <div class="user-meta">
+                            <strong>Name</strong>
+                            <span>Hotel Name</span>
+                        </div>
+                        <span class="review-date">19 days ago</span>
+                    </div>
+                    <p class="review-text">Lorem ipsum dolor sit amet consectetur. Facilisis nulla eun. Ac netus tincidunt sed.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <section class="guest-reviews-section">
+        <h3 class="section-subtitle">GUEST REVIEWS</h3>
+        <div class="ratings-container">
+            <div class="rating-item">
+                <div class="circle-progress" style="--percent: 98;">
+                    <span class="rating-value">9.8</span>
+                </div>
+                <span class="rating-label">FACILITIES</span>
+            </div>
+            <div class="rating-item">
+                <div class="circle-progress" style="--percent: 79;">
+                    <span class="rating-value">7.9</span>
+                </div>
+                <span class="rating-label">STAFF</span>
+            </div>
+            <div class="rating-item">
+                <div class="circle-progress" style="--percent: 92;">
+                    <span class="rating-value">9.2</span>
+                </div>
+                <span class="rating-label">CLEANLINESS</span>
+            </div>
+            <div class="rating-item">
+                <div class="circle-progress" style="--percent: 95;">
+                    <span class="rating-value">9.5</span>
+                </div>
+                <span class="rating-label">COMFORT</span>
+            </div>
+            <div class="rating-item">
+                <div class="circle-progress" style="--percent: 92;">
+                    <span class="rating-value">9.2</span>
+                </div>
+                <span class="rating-label">LOCATION</span>
+            </div>
+            <div class="rating-item">
+                <div class="circle-progress" style="--percent: 98;">
+                    <span class="rating-value">9.8</span>
+                </div>
+                <span class="rating-label">VALUE FOR MONEY</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="facilities-detailed">
+        <h3 class="section-subtitle-center">FACILITIES</h3>
+        <div class="facilities-grid">
+            <div class="facilities-col">
+                <div class="facility-category">
+                    <div class="category-header">
+                        <i class="fas fa-concierge-bell"></i>
+                        <span>General</span>
+                    </div>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-check"></i> Shuttle service</li>
+                        <li><i class="fas fa-check"></i> Additional charge</li>
+                        <li><i class="fas fa-check"></i> Grocery deliveries</li>
+                        <li><i class="fas fa-check"></i> Minimarket on site</li>
+                        <li><i class="fas fa-check"></i> Designated smoking area</li>
+                        <li><i class="fas fa-check"></i> Air conditioning</li>
+                        <li><i class="fas fa-check"></i> Mosquito net</li>
+                        <li><i class="fas fa-check"></i> Wake-up service</li>
+                        <li><i class="fas fa-check"></i> Heating</li>
+                        <li><i class="fas fa-check"></i> Interconnected room(s) available</li>
+                        <li><i class="fas fa-check"></i> Lift</li>
+                        <li><i class="fas fa-check"></i> Family rooms</li>
+                        <li><i class="fas fa-check"></i> Barber/beauty shop</li>
+                        <li><i class="fas fa-check"></i> Airport shuttle</li>
+                        <li><i class="fas fa-check"></i> Additional charge</li>
+                        <li><i class="fas fa-check"></i> Non-smoking rooms</li>
+                        <li><i class="fas fa-check"></i> Wake up service/Alarm clock</li>
+                        <li><i class="fas fa-check"></i> Room service</li>
+                    </ul>
+                </div>
+                <div class="facility-category">
+                    <div class="category-header">
+                        <i class="fas fa-concierge-bell"></i>
+                        <span>Accessibility</span>
+                    </div>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-check"></i> Upper floors accessible by stairs only</li>
+                        <li><i class="fas fa-check"></i> Upper floors accessible by elevator</li>
+                    </ul>
+                </div>
+                <div class="facility-category">
+                    <div class="category-header">
+                        <i class="fa-solid fa-language"></i>
+                        <span>Languages spoken</span>
+                    </div>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-check"></i> English</li>
+                        <li><i class="fas fa-check"></i> Ukrainian</li>
+                        <li><i class="fas fa-check"></i> German</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="facilities-col">
+                <div class="facility-category">
+                    <div class="category-header">
+                        <i class="fas fa-car"></i>
+                        <span>Parking</span>
+                    </div>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-check"></i> Parking garage</li>
+                    </ul>
+                </div>
+                <div class="facility-category">
+                    <div class="category-header">
+                        <i class="fa-brands fa-servicestack"></i>
+                        <span>Reception services</span>
+                    </div>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-check"></i> Fire extinguishers</li>
+                        <li><i class="fas fa-check"></i> CCTV outside property</li>
+                        <li><i class="fas fa-check"></i> CCTV in common areas</li>
+                        <li><i class="fas fa-check"></i> Smoke alarms</li>
+                        <li><i class="fas fa-check"></i> Security alarm</li>
+                        <li><i class="fas fa-check"></i> Key card access</li>
+                        <li><i class="fas fa-check"></i> 24-hour security</li>
+                        <li><i class="fas fa-check"></i> Safety deposit box</li>
+                    </ul>
+                </div>
+                <div class="facility-category">
+                    <div class="category-header">
+                        <i class="fas fa-broom"></i>
+                        <span>Cleaning services</span>
+                    </div>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-check"></i> Daily housekeeping</li>
+                        <li><i class="fas fa-check"></i> Laundry</li>
+                        <li><i class="fas fa-check"></i> Additional charge</li>
+                    </ul>
+                </div>
+                <div class="facility-category">
+                    <div class="category-header">
+                        <i class="fa-solid fa-people-group"></i>
+                        <span>Entertainment and family services</span>
+                    </div>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-check"></i> Kids' outdoor play equipment</li>
+                    </ul>
+                </div>
+                <div class="facility-category">
+                    <div class="category-header">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Safety & security</span>
+                    </div>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-check"></i> Invoice provided</li>
+                        <li><i class="fas fa-check"></i> Private check-in/check-out</li>
+                        <li><i class="fas fa-check"></i> Concierge service</li>
+                        <li><i class="fas fa-check"></i> Luggage storage</li>
+                        <li><i class="fas fa-check"></i> Express check-in/check-out</li>
+                        <li><i class="fas fa-check"></i> 24-hour front desk</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="facilities-col">
+                <div class="facility-category">
+                    <div class="category-header">
+                        <i class="fas fa-bath"></i>
+                        <span>Bathroom</span>
+                    </div>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-check"></i> Toilet paper</li>
+                        <li><i class="fas fa-check"></i> Towels</li>
+                        <li><i class="fas fa-check"></i> Slippers</li>
+                        <li><i class="fas fa-check"></i> Private bathroom</li>
+                        <li><i class="fas fa-check"></i> Toilet</li>
+                        <li><i class="fas fa-check"></i> Free toiletries</li>
+                        <li><i class="fas fa-check"></i> Hairdryer</li>
+                        <li><i class="fas fa-check"></i> Shower</li>
+                    </ul>
+                </div>
+                <div class="facility-category">
+                    <div class="category-header">
+                        <i class="fa-solid fa-bed"></i>
+                        <span>Bedroom</span>
+                    </div>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-check"></i> Linen</li>
+                    </ul>
+                </div>
+                <div class="facility-category">
+                    <div class="category-header">
+                        <i class="fa-solid fa-kitchen-set"></i>
+                        <span>Kitchen</span>
+                    </div>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-check"></i> Electric kettle</li>
+                    </ul>
+                </div>
+                <div class="facility-category">
+                    <div class="category-header">
+                        <i class="fa-brands fa-chromecast"></i>
+                        <span>Room Amenities</span>
+                    </div>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-check"></i> Clothes rack</li>
+                    </ul>
+                </div>
+                <div class="facility-category">
+                    <div class="category-header">
+                        <i class="fa-solid fa-paw"></i>
+                        <span>Pets</span>
+                    </div>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-check"></i> Pets are allowed. No extra charges</li>
+                    </ul>
+                </div>
+                <div class="facility-category">
+                    <div class="category-header">
+                        <i class="fa-solid fa-tv"></i>
+                        <span>Media & Technology</span>
+                    </div>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-check"></i> Flat-screen TV</li>
+                        <li><i class="fas fa-check"></i> Cable channels</li>
+                    </ul>
+                </div>
+                <div class="facility-category">
+                    <div class="category-header">
+                        <i class="fa-solid fa-utensils"></i>
+                        <span>Food & Drinks</span>
+                    </div>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-check"></i> Coffee house on site</li>
+                    </ul>
+                </div>
+                <div class="facility-category">
+                    <div class="category-header">
+                        <i class="fa-solid fa-wifi"></i>
+                        <span>Internet</span>
+                    </div>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-check"></i> Internet access available</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+    <section class="important-info-section">
+        <h3 class="section-subtitle-center">IMPORTANT INFORMATION</h3>
+        <div class="info-cards-container">
+            <div class="info-card">
+                <i class="far fa-clock"></i>
+                <p>Check-in time from<br>15:00 to 23:00</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-bed"></i>
+                <p>Maximum number of<br>extra beds 1</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-landmark"></i>
+                <p>City center 45 m</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-train"></i>
+                <p>Train station 356 m<br>Airport 543 m</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-paw"></i>
+                <p>Pets are allowed<br>No extra charge</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="book-rooms-section">
+        <h3 class="section-subtitle-center">BOOK</h3>
+        <div class="room-card">
+            <div class="room-img-wrapper">
+                <img src="img_2/room2.png" alt="Suite"> 
+            </div>
+            <div class="room-details">
+                <h4>Suite with a queen-size bed</h4>
+                <div class="room-specs">
+                    <span><i class="fas fa-bed"></i> Bed: queen-sized bed 1 | double bed 1</span>
+                    <span><i class="fas fa-user-friends"></i> Guests: maximum 3</span>
+                </div>
+                <div class="room-features">
+                    <span><i class="fas fa-wifi"></i> free wi-fi</span>
+                    <span><i class="fas fa-bath"></i> bath</span>
+                    <span><i class="fas fa-swimming-pool"></i> private pool</span>
+                </div>
+                <div class="cancellation-policy">
+                    <i class="fas fa-check"></i> FREE cancellation
+                </div>
+            </div>
+            <div class="room-price-action">
+                <span class="price-tag">85$</span>
+                <button class="btn-choose">CHOOSE</button>
+                <button class="btn-info">+INFO</button>
+            </div>
+        </div>
+
+        <div class="room-card">
+            <div class="room-img-wrapper">
+                <img src="img_2/room3.png" alt="Suite">
+            </div>
+            <div class="room-details">
+                <h4>Suite with a queen-size bed</h4>
+                <div class="room-specs">
+                    <span><i class="fas fa-bed"></i> Bed: queen-sized bed 1 | double bed 1</span>
+                    <span><i class="fas fa-user-friends"></i> Guests: maximum 3</span>
+                </div>
+                <div class="room-features">
+                    <span><i class="fas fa-wifi"></i> free wi-fi</span>
+                    <span><i class="fas fa-bath"></i> bath</span>
+                    <span><i class="fas fa-swimming-pool"></i> private pool</span>
+                </div>
+                <div class="cancellation-policy">
+                    <i class="fas fa-check"></i> FREE cancellation
+                </div>
+            </div>
+            <div class="room-price-action">
+                <span class="price-tag">75$</span>
+                <button class="btn-choose">CHOOSE</button>
+                <button class="btn-info">+INFO</button>
+            </div>
+        </div>
+
+        <div class="room-card">
+            <div class="room-img-wrapper">
+                <img src="img_2/room4.png" alt="Standard">
+            </div>
+            <div class="room-details">
+                <h4>Standard room</h4>
+                <div class="room-specs">
+                    <span><i class="fas fa-bed"></i> Bed: queen-sized bed 1 | double bed 1</span>
+                    <span><i class="fas fa-user-friends"></i> Guests: maximum 3</span>
+                </div>
+                <div class="room-features">
+                    <span><i class="fas fa-wifi"></i> free wi-fi</span>
+                    <span><i class="fas fa-bath"></i> bath</span>
+                </div>
+                <div class="cancellation-policy">
+                    <i class="fas fa-check"></i> FREE cancellation
+                </div>
+            </div>
+            <div class="room-price-action">
+                <span class="price-tag">62$</span>
+                <button class="btn-choose">CHOOSE</button>
+                <button class="btn-info">+INFO</button>
+            </div>
+        </div>
+        
+        <div class="room-card">
+            <div class="room-img-wrapper">
+                <img src="img_2/room1.png" alt="Standard">
+            </div>
+            <div class="room-details">
+                <h4>Standard room</h4>
+                <div class="room-specs">
+                    <span><i class="fas fa-bed"></i> Bed: queen-sized bed 1 | double bed 1</span>
+                    <span><i class="fas fa-user-friends"></i> Guests: maximum 3</span>
+                </div>
+                <div class="room-features">
+                    <span><i class="fas fa-wifi"></i> free wi-fi</span>
+                    <span><i class="fas fa-bath"></i> bath</span>
+                </div>
+                <div class="cancellation-policy">
+                    <i class="fas fa-check"></i> FREE cancellation
+                </div>
+            </div>
+            <div class="room-price-action">
+                <span class="price-tag">65$</span>
+                <button class="btn-choose">CHOOSE</button>
+                <button class="btn-info">+INFO</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="nearby-section">
+        <h3 class="section-subtitle-center">WHAT'S NEARBY</h3>
+        <div class="nearby-grid">
+            <div class="nearby-col">
+                <div class="nearby-header"><i class="fas fa-map-signs"></i> Attractions</div>
+                <ul class="nearby-list">
+                    <li><span>Park Yunist</span> <span>2 km</span></li>
+                    <li><span>Сквер Павла Шклярука</span> <span>1 km</span></li>
+                    <li><span>Сквер героїчної оборони Одеси</span> <span>2 km</span></li>
+                    <li><span>Міжрейсова база моряків</span> <span>5 km</span></li>
+                    <li><span>School-internat № 91</span> <span>5 km</span></li>
+                    <li><span>Український науковий центр</span> <span>11 km</span></li>
+                    <li><span>Botanical Garden</span> <span>2 km</span></li>
+                </ul>
+            </div>
+            <div class="nearby-col">
+                <div class="nearby-header"><i class="fas fa-utensils"></i> Attractions</div>
+                <ul class="nearby-list">
+                    <li><span>Cafe/bar Pekaraya SDOBA</span> <span>2 km</span></li>
+                    <li><span>Restaurant Shpinat</span> <span>1 km</span></li>
+                    <li><span>Restaurant Strong House</span> <span>2 km</span></li>
+                </ul>
+                <br>
+                <div class="nearby-header"><i class="fas fa-bus"></i> Public transport</div>
+                <ul class="nearby-list">
+                    <li><span>Train Odessa-Mala</span> <span>16 km</span></li>
+                    <li><span>Train Odessa Train Station</span> <span>11 km</span></li>
+                </ul>
+                <br>
+                <div class="nearby-header"><i class="fas fa-plane"></i> Public transport</div>
+                <ul class="nearby-list">
+                    <li><span>Kyiv International Airport</span> <span>16 km</span></li>
+                </ul>
+            </div>
+            <div class="nearby-col">
+                <div class="nearby-header"><i class="fas fa-umbrella-beach"></i> Beaches in the neighbourhood</div>
+                <ul class="nearby-list">
+                    <li><span>Arkadia Beach</span> <span>9 km</span></li>
+                    <li><span>Station Velykoho Fontanu Beach</span> <span>8 km</span></li>
+                    <li><span>Chayka</span> <span>12 km</span></li>
+                    <li><span>SBU beach</span> <span>18 km</span></li>
+                    <li><span>Malomu Fontani Beach</span> <span>19 km</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-container-section">
+        <img src="Group 252.png" alt="Map Location" class="map-image-full" style="width: 100%; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+    </section>
+
+    <section class="comments-section">
+        <h3 class="section-subtitle-center">COMMENTS</h3>
+        <div class="comments-grid">
+            <div class="comment-card card-green">
+                <div class="comment-header">
+                    <img src="Ellipse 8.png" alt="User" class="comment-avatar">
+                    <div class="comment-meta">
+                        <strong>Name</strong>
+                        <span>Hotel Name</span>
+                    </div>
+                    <span class="comment-date">12 days ago</span>
+                </div>
+                <p class="comment-text">Lorem ipsum dolor sit amet consectetur. Viverra ultricies enim interdum fermentum.</p>
+            </div>
+    
+            <div class="comment-card card-green">
+                <div class="comment-header">
+                    <img src="Ellipse 9.png" alt="User" class="comment-avatar">
+                    <div class="comment-meta">
+                        <strong>Name</strong>
+                        <span>Hotel Name</span>
+                    </div>
+                    <span class="comment-date">19 days ago</span>
+                </div>
+                <p class="comment-text">Lorem ipsum dolor sit amet consectetur. Facilisis nulla eun. Ac netus tincidunt sed.</p>
+            </div>
+    
+            <div class="comment-card card-pink-border">
+                <div class="comment-header">
+                    <img src="Ellipse 10.png" alt="User" class="comment-avatar">
+                    <div class="comment-meta">
+                        <strong>Name</strong>
+                        <span>Hotel Name</span>
+                    </div>
+                    <span class="comment-date">12 days ago</span>
+                </div>
+                <p class="comment-text">Viverra ultricies enim interdum fermentum tor. Facilisis nulla eun. Ac netus tincidunt.</p>
+            </div>
+    
+            <div class="comment-card card-green">
+                <div class="comment-header">
+                    <img src="Ellipse 6.png" alt="User" class="comment-avatar">
+                    <div class="comment-meta">
+                        <strong>Name</strong>
+                        <span>Hotel Name</span>
+                    </div>
+                    <span class="comment-date">12 days ago</span>
+                </div>
+                <p class="comment-text">Lorem ipsum dolor sit amet consectetur. Viverra ultricies enim interdum fermentum.</p>
+            </div>
+    
+            <div class="comment-card card-pink-fill">
+                <div class="comment-header">
+                    <img src="Ellipse 7.png" alt="User" class="comment-avatar">
+                    <div class="comment-meta">
+                        <strong>Name</strong>
+                        <span>Hotel Name</span>
+                    </div>
+                    <span class="comment-date">19 days ago</span>
+                </div>
+                <p class="comment-text">Lorem ipsum dolor sit amet consectetur. Facilisis nulla eun. Ac netus tincidunt sed.</p>
+            </div>
+    
+            <div class="comment-card card-green">
+                <div class="comment-header">
+                    <img src="Ellipse 11.png" alt="User" class="comment-avatar">
+                    <div class="comment-meta">
+                        <strong>Name</strong>
+                        <span>Hotel Name</span>
+                    </div>
+                    <span class="comment-date">12 days ago</span>
+                </div>
+                <p class="comment-text">Viverra ultricies enim interdum fermentum tor. Facilisis nulla eun. Ac netus tincidunt.</p>
+            </div>
+
+             <div class="comment-card card-green">
+                <div class="comment-header">
+                    <img src="Ellipse 12.png" alt="User" class="comment-avatar">
+                    <div class="comment-meta">
+                        <strong>Name</strong>
+                        <span>Hotel Name</span>
+                    </div>
+                    <span class="comment-date">12 days ago</span>
+                </div>
+                <p class="comment-text">Lorem ipsum dolor sit amet consectetur. Viverra ultricies enim interdum fermentum.</p>
+            </div>
+
+             <div class="comment-card card-green">
+                <div class="comment-header">
+                    <img src="Ellipse 14.png" alt="User" class="comment-avatar">
+                    <div class="comment-meta">
+                        <strong>Name</strong>
+                        <span>Hotel Name</span>
+                    </div>
+                    <span class="comment-date">19 days ago</span>
+                </div>
+                <p class="comment-text">Lorem ipsum dolor sit amet consectetur. Facilisis nulla eun. Ac netus tincidunt sed.</p>
+            </div>
+
+             <div class="comment-card card-green">
+                <div class="comment-header">
+                    <img src="Ellipse 16.png" alt="User" class="comment-avatar">
+                    <div class="comment-meta">
+                        <strong>Name</strong>
+                        <span>Hotel Name</span>
+                    </div>
+                    <span class="comment-date">12 days ago</span>
+                </div>
+                <p class="comment-text">Viverra ultricies enim interdum fermentum tor. Facilisis nulla eun. Ac netus tincidunt.</p>
+            </div>
+        </div>
+        <div class="comments-more">
+            <span>more</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="faq-left">
+            <h2 class="faq-title">FAQs</h2>
+        </div>
+        <div class="faq-right">
+            <div class="faq-item">
+                <span>Common question</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-item">
+                <span>Common question</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-item">
+                <span>Common question</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-item">
+                <span>Common question</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-item">
+                <span>Common question</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <section class="hotels-nearby-section">
+        <h3 class="section-subtitle-center">HOTELS NEARBY</h3>
+        <div class="hotels-grid">
+            <div class="hotel-card-small">
+                <div class="hotel-img-box">
+                    <img src="Rectangle 6.png" alt="Hotel">
+                    <div class="favorite-badge"><i class="fas fa-star"></i></div>
+                    <div class="img-pagination">
+                        <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                </div>
+                <div class="hotel-info">
+                    <h5>Hotel name | City | Country</h5>
+                    <div class="stars-purple">★★★★</div>
+                    <p class="distance">the city center : 116 m</p>
+                    <p class="price"><strong>$ 130 night</strong></p>
+                </div>
+            </div>
+    
+            <div class="hotel-card-small">
+                <div class="hotel-img-box">
+                    <img src="Rectangle 7.png" alt="Hotel">
+                    <div class="favorite-badge"><i class="fas fa-star"></i></div>
+                    <div class="img-pagination">
+                        <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                </div>
+                <div class="hotel-info">
+                    <h5>Hotel name | City | Country</h5>
+                    <div class="stars-purple">★★★★</div>
+                    <p class="distance">the city center : 1168 m</p>
+                    <p class="price"><strong>$ 142 night</strong></p>
+                </div>
+            </div>
+    
+            <div class="hotel-card-small">
+                <div class="hotel-img-box">
+                    <img src="Rectangle 8.png" alt="Hotel">
+                    <div class="favorite-badge"><i class="fas fa-star"></i></div>
+                    <div class="img-pagination">
+                        <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                </div>
+                <div class="hotel-info">
+                    <h5>Hotel name | City | Country</h5>
+                    <div class="stars-purple">★★★★</div>
+                    <p class="distance">the city center : 96 m</p>
+                    <p class="price"><strong>$ 98 night</strong></p>
+                </div>
+            </div>
+    
+            <div class="hotel-card-small">
+                <div class="hotel-img-box">
+                    <img src="Rectangle 9.png" alt="Hotel">
+                    <div class="favorite-badge"><i class="fas fa-star"></i></div>
+                    <div class="img-pagination">
+                        <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                </div>
+                <div class="hotel-info">
+                    <h5>Hotel name | City | Country</h5>
+                    <div class="stars-purple">★★★★</div>
+                    <p class="distance">the city center : 106 m</p>
+                    <p class="price"><strong>$ 167 night</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-col">
+            <a href="#">Countries</a>
+            <a href="#">Regions</a>
+            <a href="#">Cities</a>
+            <a href="#">Districts</a>
+            <a href="#">Airports</a>
+            <a href="#">Hotels</a>
+            <a href="#">Places of interest</a>
+        </div>
+        <div class="footer-col">
+            <a href="#">Homes</a>
+            <a href="#">Apartments</a>
+            <a href="#">Resorts</a>
+            <a href="#">Villas</a>
+            <a href="#">Hostels</a>
+            <a href="#">B&Bs</a>
+            <a href="#">Guest houses</a>
+        </div>
+        <div class="footer-col">
+            <a href="#">Unique places to stay</a>
+            <a href="#">All destinations</a>
+            <a href="#">All flight destinations</a>
+            <a href="#">All car hire locations</a>
+            <a href="#">Discover</a>
+            <a href="#">Reviews</a>
+            <a href="#">Awards</a>
+        </div>
+        <div class="footer-col">
+            <a href="#">Car hire</a>
+            <a href="#">Flight finder</a>
+            <a href="#">Restaurant reservations</a>
+            <a href="#">For Travel Agents</a>
+        </div>
+        <div class="footer-col">
+            <a href="#">Coronavirus (COVID-19)</a>
+            <a href="#">FAQs About Booking.com</a>
+            <a href="#">Customer Service help</a>
+            <a href="#">Partner help</a>
+            <a href="#">Careers</a>
+            <a href="#">Sustainability</a>
+            <a href="#">Press centre</a>
+            <a href="#">Safety resource centre</a>
+            <a href="#">Investor relations</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+    </footer>
+</body>
+</html>
