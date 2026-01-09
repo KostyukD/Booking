@@ -15,6 +15,7 @@
 body {
     font-family: 'Nunito Sans', sans-serif;
     color: #333;
+    background-color: #fff;
 }
 
 /* --- Стилизация Header --- */
@@ -821,17 +822,17 @@ body {
 }
 .comments-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     margin-bottom: 30px;
 }
 .comment-card {
-    border: 1px solid #eee;
     border-radius: 12px;
     padding: 24px;
     background: #fff;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
 }
 .card-green {
     border: 1px solid #C8E6C9;
@@ -863,6 +864,7 @@ body {
 .comment-meta strong {
     font-size: 16px;
     color: #222;
+    font-weight: 700;
 }
 .comment-meta span {
     font-size: 13px;
@@ -871,6 +873,7 @@ body {
 .comment-date {
     font-size: 12px;
     color: #999;
+    margin-left: auto; /* Притискає дату вправо */
 }
 .comment-text {
     font-size: 14px;
@@ -925,33 +928,35 @@ body {
 }
 .hotels-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 .hotel-card-small {
     background: #fff;
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
+    box-shadow: none;
 }
 .hotel-img-box {
     position: relative;
-    height: 150px;
+    height: 180px;
+    width: 100%;
 }
 .hotel-img-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 16px;
 }
 .favorite-icon, .favorite-badge {
     position: absolute;
     top: 10px;
     left: 10px;
     color: white;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.5);
     padding: 5px;
     border-radius: 50%;
-    font-size: 12px;
+    font-size: 10px;
     width: 24px;
     height: 24px;
     display: flex;
@@ -976,12 +981,13 @@ body {
     background-color: #fff;
 }
 .hotel-info {
-    padding: 10px 0;
+    padding: 12px 0;
 }
 .hotel-info h5 {
     margin: 5px 0;
     font-size: 14px;
     color: #333;
+    font-weight: 600;
 }
 .stars-purple {
     color: #6200EA;
@@ -996,6 +1002,7 @@ body {
 .price strong {
     color: #333;
     font-size: 14px;
+    font-weight: 800;
 }
 
 /* --- Footer --- */
@@ -1023,6 +1030,14 @@ body {
 }
 
 /* Mobile adjustments */
+@media (max-width: 1024px) {
+    .comments-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hotels-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 @media (max-width: 768px) {
     .room-card {
         flex-direction: column;
@@ -1049,5 +1064,13 @@ body {
     }
     .info-cards-container, .nearby-grid, .comments-grid {
         flex-direction: column;
+    }
+}
+@media (max-width: 600px) {
+    .comments-grid {
+        grid-template-columns: 1fr;
+    }
+    .hotels-grid {
+        grid-template-columns: 1fr;
     }
 }
