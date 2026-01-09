@@ -20,7 +20,7 @@
                     <i class="fas fa-user-circle"></i>
                 </button>
                 <div class="language-flag">
-                    <img src="img_main/logo_lang.png" alt="Lang" class="flag-icon">
+                    <img src="logo_lang.png" alt="Lang" class="flag-icon" onerror="this.style.display='none'">
                 </div>
             </div>
         </div>
@@ -84,16 +84,13 @@
             <p class="register-link">Do not have an account? <a href="#" id="linkToRegister">Register</a></p>
             <div class="social-login">
                 <button class="social-button">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G">
-                    Sign In with Google
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G"> Sign In with Google
                 </button>
                 <button class="social-button">
-                    <i class="fab fa-facebook" style="color: #1877F2;"></i>
-                    Sign In with Facebook
+                    <i class="fab fa-facebook" style="color: #1877F2;"></i> Sign In with Facebook
                 </button>
                 <button class="social-button">
-                    <i class="fab fa-apple"></i>
-                    Sign In with Apple
+                    <i class="fab fa-apple"></i> Sign In with Apple
                 </button>
             </div>
         </div>
@@ -195,15 +192,15 @@
         <div class="main-content">
             <section class="gallery-section">
                 <div class="main-image-container">
-                    <img src="img_2/room1.png" alt="Hotel Main Room" class="main-img">
+                    <img src="room1.png" alt="Hotel Main Room" class="main-img" onerror="this.src='https://placehold.co/800x400?text=Room+Photo'">
                     <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
                     <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
                 </div>
 
                 <div class="thumbnails-grid">
-                    <img src="img_2/room2.png" alt="Room 1" class="thumb">
-                    <img src="img_2/room3.png" alt="Room 2" class="thumb">
-                    <img src="img_2/room4.png" alt="Room 3" class="thumb">
+                    <img src="room2.png" alt="Room 1" class="thumb" onerror="this.src='https://placehold.co/200x150?text=Room+1'">
+                    <img src="room3.png" alt="Room 2" class="thumb" onerror="this.src='https://placehold.co/200x150?text=Room+2'">
+                    <img src="room4.png" alt="Room 3" class="thumb" onerror="this.src='https://placehold.co/200x150?text=Room+3'">
                 </div>
             </section>
 
@@ -233,7 +230,7 @@
 
                 <div class="mini-review-card">
                     <div class="review-user">
-                        <img src="img_2/review_icon3.png" alt="User" class="avatar">
+                        <img src="review_icon3.png" alt="User" class="avatar">
                         <div class="user-meta">
                             <strong>Name</strong>
                             <span>Hotel Name</span>
@@ -488,8 +485,6 @@
         </div>
     </section>
 
-    <script src="script.js"></script>
-
     <section class="important-info-section">
         <h3 class="section-subtitle-center">IMPORTANT INFORMATION</h3>
         <div class="info-cards-container">
@@ -520,7 +515,7 @@
         <h3 class="section-subtitle-center">BOOK</h3>
         <div class="room-card">
             <div class="room-img-wrapper">
-                <img src="img_2/room2.png" alt="Suite"> 
+                <img src="room2.png" alt="Suite" onerror="this.src='https://placehold.co/300x200?text=Room'">
             </div>
             <div class="room-details">
                 <h4>Suite with a queen-size bed</h4>
@@ -546,7 +541,7 @@
 
         <div class="room-card">
             <div class="room-img-wrapper">
-                <img src="img_2/room3.png" alt="Suite">
+                <img src="room3.png" alt="Suite" onerror="this.src='https://placehold.co/300x200?text=Room'">
             </div>
             <div class="room-details">
                 <h4>Suite with a queen-size bed</h4>
@@ -572,7 +567,7 @@
 
         <div class="room-card">
             <div class="room-img-wrapper">
-                <img src="img_2/room4.png" alt="Standard">
+                <img src="room4.png" alt="Standard" onerror="this.src='https://placehold.co/300x200?text=Room'">
             </div>
             <div class="room-details">
                 <h4>Standard room</h4>
@@ -597,7 +592,7 @@
         
         <div class="room-card">
             <div class="room-img-wrapper">
-                <img src="img_2/room1.png" alt="Standard">
+                <img src="room1.png" alt="Standard" onerror="this.src='https://placehold.co/300x200?text=Room'">
             </div>
             <div class="room-details">
                 <h4>Standard room</h4>
@@ -669,7 +664,7 @@
     </section>
 
     <section class="map-container-section">
-        <img src="Group 252.png" alt="Map Location" class="map-image-full" style="width: 100%; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        <img src="location.jpg" alt="Map Location" class="map-image-full" style="width: 100%; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
     </section>
 
     <section class="comments-section">
@@ -933,5 +928,7 @@
             <a href="#">Terms & Conditions</a>
         </div>
     </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
