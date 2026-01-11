@@ -9,7 +9,11 @@ window.onload = function () {
 
     const openSignInBtn = document.getElementById('openSignIn');
     const openRegisterBtn = document.getElementById('openRegisterHeader');
-    const openRegisterFooterBtn = document.getElementById('openRegisterFooter'); 
+    
+    // --- ВИПРАВЛЕННЯ ТУТ ---
+    // Ми шукаємо кнопку за класом, тому що в HTML у неї немає ID 'openRegisterFooter'
+    const openRegisterFooterBtn = document.querySelector('.register-purple-btn'); 
+    // -----------------------
 
     const closeSignInBtn = document.getElementById('closeModal');
     const closeRegisterBtn = document.getElementById('closeRegister');
@@ -45,6 +49,8 @@ window.onload = function () {
     // 3. Открытие окон
     if (openSignInBtn) openSignInBtn.onclick = () => show(signInOverlay);
     if (openRegisterBtn) openRegisterBtn.onclick = () => show(registerOverlay);
+    
+    // Тепер це буде працювати, бо ми правильно знайшли кнопку
     if (openRegisterFooterBtn) openRegisterFooterBtn.onclick = () => show(registerOverlay);
 
     // 4. Закрытие (крестики)
