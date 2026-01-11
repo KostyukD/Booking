@@ -3,27 +3,27 @@ window.onload = function () {
     // 1. Находим все элементы
     const signInOverlay = document.getElementById('modalOverlay');
     const registerOverlay = document.getElementById('registerOverlay');
-    const authOverlay = document.getElementById('authOverlay');
+    const authOverlay = document.getElementById('authOverlay'); // Тепер цей елемент існує в HTML
     const infoOverlay = document.getElementById('infoOverlay');
     const doneOverlay = document.getElementById('doneOverlay');
 
+    // Кнопки відкриття
     const openSignInBtn = document.getElementById('openSignIn');
     const openRegisterBtn = document.getElementById('openRegisterHeader');
-    
-    // --- ВИПРАВЛЕННЯ ТУТ ---
-    // Ми шукаємо кнопку за класом, тому що в HTML у неї немає ID 'openRegisterFooter'
-    const openRegisterFooterBtn = document.querySelector('.register-purple-btn'); 
-    // -----------------------
+    const openRegisterFooterBtn = document.querySelector('.register-purple-btn'); // Кнопка внизу сторінки
 
+    // Кнопки закриття
     const closeSignInBtn = document.getElementById('closeModal');
     const closeRegisterBtn = document.getElementById('closeRegister');
     const closeAuthBtn = document.getElementById('closeAuth');
     const closeInfoBtn = document.getElementById('closeInfo');
     const closeDoneBtn = document.getElementById('closeDone');
 
+    // Посилання
     const linkToRegister = document.getElementById('linkToRegister');
     const linkToSignIn = document.getElementById('linkToSignIn');
 
+    // Кнопки "Continue" та інпути
     const authCodeInput = document.getElementById('authCodeInput');
     const authContinueBtn = document.getElementById('authContinueBtn');
     const regContinueBtn = document.getElementById('regContinueBtn');
@@ -49,8 +49,6 @@ window.onload = function () {
     // 3. Открытие окон
     if (openSignInBtn) openSignInBtn.onclick = () => show(signInOverlay);
     if (openRegisterBtn) openRegisterBtn.onclick = () => show(registerOverlay);
-    
-    // Тепер це буде працювати, бо ми правильно знайшли кнопку
     if (openRegisterFooterBtn) openRegisterFooterBtn.onclick = () => show(registerOverlay);
 
     // 4. Закрытие (крестики)
@@ -86,6 +84,7 @@ window.onload = function () {
         inputs.forEach(input => {
             input.addEventListener('input', () => {
                 let allFilled = true;
+                // Перевіряємо, чи всі поля заповнені
                 inputs.forEach(i => { if (i.value.trim() === "") allFilled = false; });
                 
                 if (allFilled) btn.classList.add('active');
@@ -100,15 +99,33 @@ window.onload = function () {
     handleInputs('.info-input', 'infoContinueBtn');
 
     // 8. Цепочка шагов
+    // Головний перехід: Реєстрація -> Authentication
     if (regContinueBtn) {
-        regContinueBtn.onclick = () => { if (regContinueBtn.classList.contains('active')) { hide(registerOverlay); show(authOverlay); } };
-    }
-    if (authContinueBtn) {
-        authContinueBtn.onclick = () => {
-            if (authCodeInput.value === "1234") { hide(authOverlay); show(infoOverlay); }
-            else { alert("Try 1234"); authCodeInput.style.borderColor = "red"; }
+        regContinueBtn.onclick = () => { 
+            // Якщо кнопка активна (всі поля заповнені), переходимо далі
+            if (regContinueBtn.classList.contains('active')) { 
+                hide(registerOverlay); 
+                show(authOverlay); 
+            } 
         };
     }
+
+    if (authContinueBtn) {
+        authContinueBtn.onclick = () => {
+            if (authCodeInput.value === "1234") { 
+                hide(authOverlay); 
+                // Тут можна додати наступне вікно, якщо воно є, наприклад infoOverlay
+                // show(infoOverlay); 
+                alert("Authentication successful!");
+            }
+            else { 
+                alert("Try 1234"); 
+                authCodeInput.style.borderColor = "red"; 
+            }
+        };
+    }
+    
+    // Логіка для інших кнопок (якщо потрібна)
     if (infoContinueBtn) {
         infoContinueBtn.onclick = () => { if (infoContinueBtn.classList.contains('active')) { hide(infoOverlay); show(doneOverlay); } };
     }
