@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Onest:wght@100..900&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-top-bar">
+            <a class="h1-header" href="index.html"><div class="logo">Hotel for <span class="highlight">you.</span></div></a>
+        </div>
+        <div class="top-line-divider"></div>
+    </header>
+
+    <main class="main-container">
+        <aside class="search-summary">
+            <div class="summary-card">
+                <i class="fa-solid fa-plane-up"></i>
+                <span class="location">Kyiv</span>
+                <div class="dots">...</div>
+            </div>
+            <div class="summary-card">
+                <i class="fa-regular fa-calendar-days"></i>
+                <span class="dates">Apr 9-11</span>
+                <div class="dots">...</div>
+            </div>
+            <div class="summary-card">
+                <i class="fa-solid fa-user-group"></i>
+                <span class="guests">2 ad. 1 ch.</span>
+                <div class="dots">...</div>
+            </div>
+        </aside>
+        <button class="back-btn"><i class="fa-solid fa-angle-left"></i></button>
+        <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+
+        <div class="content-column">
+
+            <section class="room-card">
+                <div class="room-image">
+                    <img src="img_3/room1.png" alt="Suite">
+                </div>
+                <div class="room-info">
+                    <h3>Suite with a queen-size bed</h3>
+                    <div class="room-details">
+                        <div class="detail-item">
+                            <i class="fa-solid fa-bed"></i>
+                            <span>Bed: queen-sized bed 1 | double bed 1</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fa-solid fa-users"></i>
+                            <span>Guests: maximum 3</span>
+                        </div>
+                    </div>
+                    <div class="amenities">
+                        <span><i class="fa-solid fa-wifi"></i> free wi-fi</span>
+                        <span><i class="fa-solid fa-bath"></i> bath</span>
+                        <span><i class="fa-solid fa-person-swimming"></i> private pool</span>
+                    </div>
+                    <div class="cancellation">
+                        <i class="fa-solid fa-check"></i> FREE cancellation
+                    </div>
+                </div>
+            </section>
+
+            <section class="booking-container">
+                <div class="booking-header">
+                    <span class="step-indicator">2/3</span>
+                    <h2 class="booking-title">Booking</h2>
+                </div>
+
+                <form class="booking-form">
+                    <div class="form-row">
+                        <div class="select-wrapper">
+                            <select class="form-input select-input">
+                                <option value="" disabled selected>Country</option>
+                                <option value="ua">Ukraine</option>
+                                <option value="us">USA</option>
+                                <option value="uk">United Kingdom</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row align-center">
+                        <input type="tel" placeholder="Phone number" class="form-input">
+                        <p class="helper-text">In order for the administration to be able to contact you</p>
+                    </div>
+                </form>
+            </section>
+
+
+
+            <div class="additional-options">
+                <div class="form-row options-row">
+                    <label class="option-item">
+                        <input type="checkbox" name="call-confirm" checked>
+                        <span class="custom-checkbox"></span>
+                        <span class="option-text">Call me to confirm booking!</span>
+                    </label>
+
+                    <label class="option-item">
+                        <input type="checkbox" name="email-confirm">
+                        <span class="custom-checkbox"></span>
+                        <span class="option-text">Send me an email to confirm booking!</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="continue-btn">Continue</button>
+            </div>
+
+        </div>
+    </main>
+
+
+
+</body>
+</html>
