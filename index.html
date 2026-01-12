@@ -6,6 +6,21 @@
     <title>Hotel For you.</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Стиль для фото профілю в хедері */
+        .header-profile-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #6200EA;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .header-profile-img:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
 
@@ -14,11 +29,19 @@
             <div class="logo">Hotel for <span class="highlight">you.</span></div>
 
             <div class="auth-section">
-                <button id="openRegisterHeader" class="button button-bordered register-btn">Register</button>
-                <button id="openSignIn" class="button button-bordered signin-btn">
-                    Sign in
-                    <i class="fas fa-user-circle"></i>
-                </button>
+                
+                <div id="authButtonsContainer" style="display: flex; gap: 10px; align-items: center;">
+                    <button id="openRegisterHeader" class="button button-bordered register-btn">Register</button>
+                    <button id="openSignIn" class="button button-bordered signin-btn">
+                        Sign in
+                        <i class="fas fa-user-circle"></i>
+                    </button>
+                </div>
+
+                <a href="account.html" id="userProfileHeader" style="display: none; margin-right: 15px;">
+                    <img src="img_acc/a349e35e5470441fe4efb8aeb7ee9917ab64e660.png" alt="Profile" class="header-profile-img" onerror="this.src='img_main/review_icon2.png'">
+                </a>
+
                 <div class="language-flag">
                     <img src="img_main/logo_lang.png" alt="Язык" class="flag-icon">
                 </div>
@@ -185,10 +208,11 @@
             </div>
 
             <button type="button" class="continue-btn active" id="checkProfileBtn">Check your profile!</button>
-            
             <button type="button" class="continue-btn" id="continueBookingBtn" style="background: white; color: #6200EA; border: 1px solid #6200EA; margin-top: 10px;">Continue booking</button>
         </div>
     </div>
+
+
     <main class="main-content">
         <div class="gallery">
             <div class="card">
@@ -235,7 +259,6 @@
                     <p class="price">$130 <span>night</span></p>
                 </div>
             </div>
-            
             <div class="card">
                 <div class="card-img"><img src="img_main/hotel5.jpg" alt="hotel5"></div>
                 <div class="card-body">
