@@ -1,6 +1,8 @@
 window.onload = function () {
 
-    // 1. Находим все элементы
+    // --- 1. ЗНАХОДИМО ВСІ ЕЛЕМЕНТИ ---
+    
+    // Модальні вікна
     const signInOverlay = document.getElementById('modalOverlay');
     const registerOverlay = document.getElementById('registerOverlay');
     const authOverlay = document.getElementById('authOverlay');
@@ -11,36 +13,33 @@ window.onload = function () {
     const authButtonsContainer = document.getElementById('authButtonsContainer');
     const userProfileHeader = document.getElementById('userProfileHeader');
 
-    // Кнопки відкриття
+    // Кнопки відкриття вікон
     const openSignInBtn = document.getElementById('openSignIn');
     const openRegisterBtn = document.getElementById('openRegisterHeader');
     const openRegisterFooterBtn = document.querySelector('.register-purple-btn'); 
 
-    // Кнопки закриття
+    // Кнопки закриття (хрестики)
     const closeSignInBtn = document.getElementById('closeModal');
     const closeRegisterBtn = document.getElementById('closeRegister');
     const closeAuthBtn = document.getElementById('closeAuth');
     const closeInfoBtn = document.getElementById('closeInfo');
     const closeDoneBtn = document.getElementById('closeDone');
 
-    // Посилання
+    // Посилання всередині модалок
     const linkToRegister = document.getElementById('linkToRegister');
     const linkToSignIn = document.getElementById('linkToSignIn');
 
-    // Кнопки "Continue" та інпути
-    const authCodeInput = document.getElementById('authCodeInput');
+    // Кнопки "Continue"
+    const loginContinueBtn = document.getElementById('loginContinueBtn'); // Кнопка у вікні Sign In
     const authContinueBtn = document.getElementById('authContinueBtn');
     const regContinueBtn = document.getElementById('regContinueBtn');
-    
-    // Кнопки у вікні Information
     const infoContinueBtn = document.getElementById('infoContinueBtn');
     const infoLaterBtn = document.getElementById('infoLaterBtn');
-    
-    // Кнопки у вікні All Done
     const checkProfileBtn = document.getElementById('checkProfileBtn'); 
     const continueBookingBtn = document.getElementById('continueBookingBtn');
 
-    // 2. Универсальные функции
+    // --- 2. ФУНКЦІЇ ВІДКРИТТЯ/ЗАКРИТТЯ ---
+
     function show(modal) {
         if (modal) {
             modal.classList.add('active');
@@ -55,27 +54,19 @@ window.onload = function () {
         }
     }
 
-    // 3. Открытие окон
+    // --- 3. ЛОГІКА ВІДКРИТТЯ ---
     if (openSignInBtn) openSignInBtn.onclick = () => show(signInOverlay);
     if (openRegisterBtn) openRegisterBtn.onclick = () => show(registerOverlay);
     if (openRegisterFooterBtn) openRegisterFooterBtn.onclick = () => show(registerOverlay);
 
-    // 4. Закрытие (крестики)
+    // --- 4. ЛОГІКА ЗАКРИТТЯ ---
     if (closeSignInBtn) closeSignInBtn.onclick = () => hide(signInOverlay);
     if (closeRegisterBtn) closeRegisterBtn.onclick = () => hide(registerOverlay);
     if (closeAuthBtn) closeAuthBtn.onclick = () => hide(authOverlay);
     if (closeInfoBtn) closeInfoBtn.onclick = () => hide(infoOverlay);
     if (closeDoneBtn) closeDoneBtn.onclick = () => hide(doneOverlay);
 
-    // 5. Переходы между окнами
-    if (linkToRegister) {
-        linkToRegister.onclick = (e) => { e.preventDefault(); hide(signInOverlay); show(registerOverlay); };
-    }
-    if (linkToSignIn) {
-        linkToSignIn.onclick = (e) => { e.preventDefault(); hide(registerOverlay); show(signInOverlay); };
-    }
-
-    // 6. Закрытие по фону
+    // Закриття по кліку на фон
     window.onclick = function (event) {
         if (event.target === signInOverlay) hide(signInOverlay);
         if (event.target === registerOverlay) hide(registerOverlay);
@@ -84,7 +75,15 @@ window.onload = function () {
         if (event.target === doneOverlay) hide(doneOverlay);
     };
 
-    // 7. Функция активации кнопок (фиолетовый цвет)
+    // Переходи між Sign In та Register
+    if (linkToRegister) {
+        linkToRegister.onclick = (e) => { e.preventDefault(); hide(signInOverlay); show(registerOverlay); };
+    }
+    if (linkToSignIn) {
+        linkToSignIn.onclick = (e) => { e.preventDefault(); hide(registerOverlay); show(signInOverlay); };
+    }
+
+    // --- 5. АКТИВАЦІЯ КНОПОК (ФІОЛЕТОВИЙ КОЛІР) ---
     function handleInputs(inputClass, btnId) {
         const inputs = document.querySelectorAll(inputClass);
         const btn = document.getElementById(btnId);
@@ -111,9 +110,26 @@ window.onload = function () {
     handleInputs('.auth-input', 'authContinueBtn');
     handleInputs('.info-input', 'infoContinueBtn');
 
-    // 8. ЛАНЦЮЖОК ВІКОН
+
+    // --- 6. ЛОГІКА КНОПОК "CONTINUE" ---
+
+    // === ВХІД (SIGN IN) - ОНОВЛЕНО ===
+    if (loginContinueBtn) {
+        loginContinueBtn.onclick = () => {
+            // Якщо кнопка активна (щось введено), робимо вхід
+            if (loginContinueBtn.classList.contains('active')) {
+                hide(signInOverlay); // Закриваємо вікно
+                
+                // Міняємо кнопки на фото
+                if (authButtonsContainer) authButtonsContainer.style.display = 'none';
+                if (userProfileHeader) userProfileHeader.style.display = 'block';
+            }
+        };
+    }
+
+    // === РЕЄСТРАЦІЯ (ЛАНЦЮЖОК) ===
     
-    // Крок 1: Register -> Auth
+    // 1. Register -> Auth
     if (regContinueBtn) {
         regContinueBtn.onclick = () => { 
             if (regContinueBtn.classList.contains('active')) { 
@@ -123,7 +139,7 @@ window.onload = function () {
         };
     }
 
-    // Крок 2: Auth -> Info
+    // 2. Auth -> Info
     if (authContinueBtn) {
         authContinueBtn.onclick = () => {
             if (authContinueBtn.classList.contains('active')) { 
@@ -133,41 +149,44 @@ window.onload = function () {
         };
     }
     
-    // Крок 3: Info -> All Done (ТУТ МІНЯЄМО ХЕДЕР)
+    // 3. Info -> All Done (і теж міняємо хедер)
     if (infoContinueBtn) {
         infoContinueBtn.onclick = () => { 
             if (infoContinueBtn.classList.contains('active')) { 
                 hide(infoOverlay); 
                 show(doneOverlay); 
                 
-                // --- ЗМІНА ХЕДЕРА: Ховаємо кнопки, показуємо фото ---
+                // Міняємо кнопки на фото
                 if (authButtonsContainer) authButtonsContainer.style.display = 'none';
                 if (userProfileHeader) userProfileHeader.style.display = 'block';
-                // ----------------------------------------------------
             } 
         };
     }
     
+    // Кнопка "Later"
     if (infoLaterBtn) {
         infoLaterBtn.onclick = () => { 
             hide(infoOverlay); 
-            // Якщо натиснули "Later", теж вважаємо, що вхід виконано (опціонально)
+            // Також вважаємо, що вхід виконано
             if (authButtonsContainer) authButtonsContainer.style.display = 'none';
             if (userProfileHeader) userProfileHeader.style.display = 'block';
         };
     }
 
-    // Крок 4: All Done -> Account Page
+    // === ФІНАЛ (ALL DONE) ===
+    
+    // Перехід на account.html
     if (checkProfileBtn) {
         checkProfileBtn.onclick = () => {
             window.location.href = 'account.html';
         };
     }
 
+    // Просто закрити
     if (continueBookingBtn) {
         continueBookingBtn.onclick = () => {
             hide(doneOverlay);
-            // Тут теж переконуємось, що хедер оновлений, якщо вікно закрили
+            // Переконуємось, що хедер оновлений
             if (authButtonsContainer) authButtonsContainer.style.display = 'none';
             if (userProfileHeader) userProfileHeader.style.display = 'block';
         };
