@@ -5,7 +5,11 @@ window.onload = function () {
     const registerOverlay = document.getElementById('registerOverlay');
     const authOverlay = document.getElementById('authOverlay');
     const infoOverlay = document.getElementById('infoOverlay');
-    const doneOverlay = document.getElementById('doneOverlay'); // Вікно "All Done"
+    const doneOverlay = document.getElementById('doneOverlay');
+
+    // Елементи ХЕДЕРА (для заміни кнопок на фото)
+    const authButtonsContainer = document.getElementById('authButtonsContainer');
+    const userProfileHeader = document.getElementById('userProfileHeader');
 
     // Кнопки відкриття
     const openSignInBtn = document.getElementById('openSignIn');
@@ -33,7 +37,7 @@ window.onload = function () {
     const infoLaterBtn = document.getElementById('infoLaterBtn');
     
     // Кнопки у вікні All Done
-    const checkProfileBtn = document.getElementById('checkProfileBtn'); // Кнопка "Check your profile!"
+    const checkProfileBtn = document.getElementById('checkProfileBtn'); 
     const continueBookingBtn = document.getElementById('continueBookingBtn');
 
     // 2. Универсальные функции
@@ -86,7 +90,6 @@ window.onload = function () {
         const btn = document.getElementById(btnId);
         if (!btn || inputs.length === 0) return;
 
-        // Перевірка при введенні або зміні (для select)
         const checkInputs = () => {
             let allFilled = true;
             inputs.forEach(i => { 
@@ -99,7 +102,7 @@ window.onload = function () {
 
         inputs.forEach(input => {
             input.addEventListener('input', checkInputs);
-            input.addEventListener('change', checkInputs); // Важливо для select
+            input.addEventListener('change', checkInputs); 
         });
     }
 
@@ -130,12 +133,17 @@ window.onload = function () {
         };
     }
     
-    // Крок 3: Info -> All Done (Фото 3 -> Фото 4)
+    // Крок 3: Info -> All Done (ТУТ МІНЯЄМО ХЕДЕР)
     if (infoContinueBtn) {
         infoContinueBtn.onclick = () => { 
             if (infoContinueBtn.classList.contains('active')) { 
                 hide(infoOverlay); 
-                show(doneOverlay); // Відкриваємо фінальне вікно
+                show(doneOverlay); 
+                
+                // --- ЗМІНА ХЕДЕРА: Ховаємо кнопки, показуємо фото ---
+                if (authButtonsContainer) authButtonsContainer.style.display = 'none';
+                if (userProfileHeader) userProfileHeader.style.display = 'block';
+                // ----------------------------------------------------
             } 
         };
     }
@@ -143,13 +151,15 @@ window.onload = function () {
     if (infoLaterBtn) {
         infoLaterBtn.onclick = () => { 
             hide(infoOverlay); 
+            // Якщо натиснули "Later", теж вважаємо, що вхід виконано (опціонально)
+            if (authButtonsContainer) authButtonsContainer.style.display = 'none';
+            if (userProfileHeader) userProfileHeader.style.display = 'block';
         };
     }
 
     // Крок 4: All Done -> Account Page
     if (checkProfileBtn) {
         checkProfileBtn.onclick = () => {
-            // ПЕРЕНАПРАВЛЕННЯ НА СТОРІНКУ ACCOUNT.HTML
             window.location.href = 'account.html';
         };
     }
@@ -157,6 +167,9 @@ window.onload = function () {
     if (continueBookingBtn) {
         continueBookingBtn.onclick = () => {
             hide(doneOverlay);
+            // Тут теж переконуємось, що хедер оновлений, якщо вікно закрили
+            if (authButtonsContainer) authButtonsContainer.style.display = 'none';
+            if (userProfileHeader) userProfileHeader.style.display = 'block';
         };
     }
 };
