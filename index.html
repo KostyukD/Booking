@@ -128,6 +128,50 @@
             </form>
         </div>
     </div>
+
+    <div id="infoOverlay" class="overlay">
+        <div class="modal-content">
+            <button class="close-btn" id="closeInfo">&times;</button>
+            <h2 class="modal-title">Information</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 20px;">
+                Tell us about yourself so we can better choose options for you :)
+            </p>
+            <form class="modal-form">
+                <select class="modal-input info-input" style="background: white;">
+                    <option value="" disabled selected>Country</option>
+                    <option value="ua">Ukraine</option>
+                    <option value="us">USA</option>
+                    <option value="uk">UK</option>
+                </select>
+
+                <select class="modal-input info-input" style="background: white;">
+                    <option value="" disabled selected>City</option>
+                    <option value="kyiv">Kyiv</option>
+                    <option value="ny">New York</option>
+                    <option value="ln">London</option>
+                </select>
+
+                <select class="modal-input info-input" style="background: white;">
+                    <option value="" disabled selected>Why do you travel?</option>
+                    <option value="leisure">Leisure</option>
+                    <option value="business">Business</option>
+                </select>
+
+                <div style="width: 100%; margin: 10px 0; display: flex; align-items: center; gap: 15px;">
+                    <span style="color: #666;">Travelling with a pet?</span>
+                    <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                        <input type="radio" name="pet" value="yes"> Yes
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                        <input type="radio" name="pet" value="no"> No
+                    </label>
+                </div>
+
+                <button type="button" class="continue-btn" id="infoContinueBtn">Continue</button>
+                <button type="button" class="continue-btn" id="infoLaterBtn" style="background: white; color: #6200EA; border: 1px solid #6200EA; margin-top: 10px;">Later</button>
+            </form>
+        </div>
+    </div>
     <main class="main-content">
         <div class="gallery">
             <div class="card">
