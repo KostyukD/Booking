@@ -20,7 +20,7 @@ body {
 
 /* --- Стилизация Header --- */
 .header {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     position: relative;
 }
 
@@ -40,6 +40,10 @@ body {
     .logo span {
         color: #6a1b9a;
     }
+
+.h1-header {
+    text-decoration: none;
+}
 
 .auth-section {
     display: flex;

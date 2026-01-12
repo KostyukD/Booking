@@ -17,6 +17,10 @@ body {
     border-bottom: 1px solid #DDDDDD;
 }
 
+.logo a {
+    text-decoration: none;
+}
+
 .accent {
     color: #581ADB;
 }
@@ -81,6 +85,11 @@ body {
 
 h1 {
     color: #581ADB;
+     text-decoration: none;
+}
+
+h1:a {
+    text-decoration: none;
 }
 
 /* ACCOUNT */

@@ -20,7 +20,6 @@ body {
 
 /* --- Стилизация Header (Общий контейнер) --- */
 .header {
-    /* Мы разделим header на темную полосу сверху и контейнер для изображения */
     background-color: #ffffff; /* Темный фон для верхней полосы */
     padding-bottom: 20px; /* Отступ между темной полосой и началом изображения */
     position: relative;
@@ -47,6 +46,10 @@ body {
     .logo span {
         color: #581ADB;
     }
+
+.h1-header {
+    text-decoration: none;
+}
 
 /* --- Секция авторизации (Flag/Register/Sign in) --- */
 .auth-section {
