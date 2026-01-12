@@ -192,3 +192,14 @@ window.onload = function () {
         };
     }
 };
+
+
+
+/*їбуче пронювання*/
+const openHotelBtn = document.querySelector('.hotel-card__btn');
+
+if (openHotelBtn) {
+    openHotelBtn.onclick = () => {
+        window.location.href = 'index_bron.html';
+    };
+}
