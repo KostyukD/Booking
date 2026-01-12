@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="style_acc.css">
+</head>
+<body>
+    <header class="header">
+    <div class="logo">
+        <a href="index.html">Hotel for <span class="accent">you.</span></a>
+    </div>
+
+    <div class="language">
+        <img src="img_main/logo_lang.png" alt="Language icon">
+    </div>
+</header>
+
+<!-- BACK -->
+<a href="index.html" class="back">← Main page</a>
+
+<!-- NAV -->
+<nav class="nav">
+    <ul class="steps">
+        <li class="step">
+            <img src="img_acc/account.png" alt="">
+            <span>Account</span>
+        </li>
+        <li class="step active">
+            <img src="img_acc/payment.png" alt="">
+            <span>Payment method</span>
+        </li>
+        <li class="step">
+            <img src="img_acc/travel.png" alt="">
+            <span>Travel information</span>
+        </li>
+        <li class="step">
+            <img src="img_acc/message.png" alt="">
+            <span>Newsletters</span>
+        </li>
+        <li class="step">
+            <img src="img_acc/security.png" alt="">
+            <span>Security</span>
+        </li>
+    </ul>
+</nav>
+
+<section class="payment-section">
+
+    <h1 class="payment-title">Payment method</h1>
+
+    <div class="payment-top">
+
+        <!-- LEFT CARD -->
+        <div class="payment-card">
+            <div class="payment-row">
+                <select class="input">
+                    <option>Type of your debit card</option>
+                </select>
+                <a href="#" class="no-card">No card?</a>
+            </div>
+
+            <input 
+                type="text" 
+                class="input"
+                placeholder="Credit or debit card number"
+            >
+
+            <input 
+                type="text" 
+                class="input small"
+                placeholder="Month | Date"
+            >
+        </div>
+
+        <!-- RIGHT INFO -->
+        <div class="payment-info">
+            <p>This information will be kept private and confidential.</p>
+            <p>
+                Once your booking is confirmed, the payment details will
+                be automatically filled in for your convenience.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- SAVED METHODS -->
+    <h3 class="saved-title">Saved payment methods</h3>
+
+    <div class="saved-card">
+        <div class="saved-empty">
+            <span class="card-icon"><img src="img_acc/cardremove1.png"alt="card icon"></span>
+            <p>You have no saved payment methods</p>
+        </div>
+    </div>
+
+    <div class="footer">
+    <p>Rest assured that the payment information you enter on our site is meticulously protected to ensure your
+         utmost security. We prioritize the safety of your transactions, employing robust encryption protocols and industry-standard security 
+         measures. With our steadfast commitment to providing a completely safe payment process, you can confidently book with us knowing that your 
+         financial information is in trusted hands.</p>
+         <span>See privacy policy →</span>
+    </div>
+
+</section>
+
+
+</body>
+</html>
