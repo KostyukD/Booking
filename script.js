@@ -37,6 +37,7 @@ window.onload = function () {
     const infoLaterBtn = document.getElementById('infoLaterBtn');
     const checkProfileBtn = document.getElementById('checkProfileBtn'); 
     const continueBookingBtn = document.getElementById('continueBookingBtn');
+    const bronBtn = document.getElementById('bronBtn'); 
 
     // --- 2. ФУНКЦІЇ ВІДКРИТТЯ/ЗАКРИТТЯ ---
 
@@ -196,10 +197,8 @@ window.onload = function () {
 
 
 /*їбуче пронювання*/
-const openHotelBtn = document.querySelector('.hotel-card__btn');
-
-if (openHotelBtn) {
-    openHotelBtn.onclick = () => {
+if (bronBtn) {
+    bronBtn.onclick = () => {
         window.location.href = 'index_bron.html';
     };
 }
