@@ -3,14 +3,14 @@ window.onload = function () {
     // 1. Находим все элементы
     const signInOverlay = document.getElementById('modalOverlay');
     const registerOverlay = document.getElementById('registerOverlay');
-    const authOverlay = document.getElementById('authOverlay'); // Тепер цей елемент існує в HTML
-    const infoOverlay = document.getElementById('infoOverlay');
-    const doneOverlay = document.getElementById('doneOverlay');
+    const authOverlay = document.getElementById('authOverlay');
+    const infoOverlay = document.getElementById('infoOverlay'); // Нове вікно
+    const doneOverlay = document.getElementById('doneOverlay'); // На майбутнє
 
     // Кнопки відкриття
     const openSignInBtn = document.getElementById('openSignIn');
     const openRegisterBtn = document.getElementById('openRegisterHeader');
-    const openRegisterFooterBtn = document.querySelector('.register-purple-btn'); // Кнопка внизу сторінки
+    const openRegisterFooterBtn = document.querySelector('.register-purple-btn'); 
 
     // Кнопки закриття
     const closeSignInBtn = document.getElementById('closeModal');
@@ -27,8 +27,11 @@ window.onload = function () {
     const authCodeInput = document.getElementById('authCodeInput');
     const authContinueBtn = document.getElementById('authContinueBtn');
     const regContinueBtn = document.getElementById('regContinueBtn');
+    
+    // Нові кнопки у вікні Information
     const infoContinueBtn = document.getElementById('infoContinueBtn');
     const infoLaterBtn = document.getElementById('infoLaterBtn');
+    
     const continueBookingBtn = document.getElementById('continueBookingBtn');
 
     // 2. Универсальные функции
@@ -55,7 +58,7 @@ window.onload = function () {
     if (closeSignInBtn) closeSignInBtn.onclick = () => hide(signInOverlay);
     if (closeRegisterBtn) closeRegisterBtn.onclick = () => hide(registerOverlay);
     if (closeAuthBtn) closeAuthBtn.onclick = () => hide(authOverlay);
-    if (closeInfoBtn) closeInfoBtn.onclick = () => hide(infoOverlay);
+    if (closeInfoBtn) closeInfoBtn.onclick = () => hide(infoOverlay); // Нове закриття
     if (closeDoneBtn) closeDoneBtn.onclick = () => hide(doneOverlay);
 
     // 5. Переходы между окнами
@@ -84,7 +87,6 @@ window.onload = function () {
         inputs.forEach(input => {
             input.addEventListener('input', () => {
                 let allFilled = true;
-                // Перевіряємо, чи всі поля заповнені
                 inputs.forEach(i => { if (i.value.trim() === "") allFilled = false; });
                 
                 if (allFilled) btn.classList.add('active');
@@ -99,10 +101,10 @@ window.onload = function () {
     handleInputs('.info-input', 'infoContinueBtn');
 
     // 8. Цепочка шагов
-    // Головний перехід: Реєстрація -> Authentication
+    
+    // Перехід: Register -> Auth
     if (regContinueBtn) {
         regContinueBtn.onclick = () => { 
-            // Якщо кнопка активна (всі поля заповнені), переходимо далі
             if (regContinueBtn.classList.contains('active')) { 
                 hide(registerOverlay); 
                 show(authOverlay); 
@@ -110,25 +112,32 @@ window.onload = function () {
         };
     }
 
+    // Перехід: Auth -> Info (ПРИЙМАЄ БУДЬ-ЯКИЙ КОД)
     if (authContinueBtn) {
         authContinueBtn.onclick = () => {
-            if (authCodeInput.value === "1234") { 
+            // Перевіряємо просто чи кнопка активна (тобто чи щось введено)
+            if (authContinueBtn.classList.contains('active')) { 
                 hide(authOverlay); 
-                // Тут можна додати наступне вікно, якщо воно є, наприклад infoOverlay
-                // show(infoOverlay); 
-                alert("Authentication successful!");
-            }
-            else { 
-                alert("Try 1234"); 
-                authCodeInput.style.borderColor = "red"; 
+                show(infoOverlay); // Відкриваємо нове вікно
             }
         };
     }
     
-    // Логіка для інших кнопок (якщо потрібна)
+    // Логіка кнопок у вікні Information
     if (infoContinueBtn) {
-        infoContinueBtn.onclick = () => { if (infoContinueBtn.classList.contains('active')) { hide(infoOverlay); show(doneOverlay); } };
+        infoContinueBtn.onclick = () => { 
+            if (infoContinueBtn.classList.contains('active')) { 
+                hide(infoOverlay); 
+                // Тут можна відкрити наступне вікно, якщо буде треба
+            } 
+        };
     }
-    if (infoLaterBtn) infoLaterBtn.onclick = () => { hide(infoOverlay); show(doneOverlay); };
+    
+    if (infoLaterBtn) {
+        infoLaterBtn.onclick = () => { 
+            hide(infoOverlay); 
+        };
+    }
+
     if (continueBookingBtn) continueBookingBtn.onclick = () => hide(doneOverlay);
 };
