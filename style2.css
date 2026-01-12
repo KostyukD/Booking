@@ -8,7 +8,7 @@
 }
 
 .highlight {
-    color: #6a1b9a;
+    color: #581ADB;
 }
 
 /* --- Общие стили для body --- */
@@ -38,7 +38,7 @@ body {
 }
 
     .logo span {
-        color: #6a1b9a;
+        color: #581ADB;
     }
 
 .h1-header {
@@ -295,7 +295,7 @@ body {
 }
 
 .modal-title {
-    color: #6a1b9a;
+    color: #581ADB;
     margin-bottom: 25px;
     font-size: 24px;
     font-weight: 700;
@@ -324,7 +324,7 @@ body {
 }
 
     .continue-btn.active {
-        background-color: #6a1b9a !important;
+        background-color: #581ADB !important;
         color: white !important;
     }
 
@@ -586,7 +586,7 @@ body {
 .rating-label {
     font-size: 11px;
     font-weight: 700;
-    color: #7B42F6;
+    color: #581ADB;
     text-transform: uppercase;
 }
 
@@ -751,11 +751,11 @@ body {
 }
 .price-tag {
     font-size: 24px;
-    color: #6200EA;
+    color: #581ADB;
     font-weight: bold;
 }
 .btn-choose {
-    background-color: #6200EA;
+    background-color: #581ADB;
     color: white;
     border: none;
     padding: 8px 25px;
@@ -766,8 +766,8 @@ body {
 }
 .btn-info {
     background-color: white;
-    color: #6200EA;
-    border: 1px solid #6200EA;
+    color: #581ADB;
+    border: 1px solid #581ADB;
     padding: 8px 25px;
     border-radius: 20px;
     cursor: pointer;
@@ -886,7 +886,7 @@ body {
 }
 .comments-more {
     text-align: center;
-    color: #6200EA;
+    color: #581ADB;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -994,7 +994,7 @@ body {
     font-weight: 600;
 }
 .stars-purple {
-    color: #6200EA;
+    color: #581ADB;
     font-size: 12px;
     margin-bottom: 5px;
 }

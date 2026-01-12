@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 .highlight{
     color: #581ADB;
 }
@@ -212,6 +216,12 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-top: 32px;
+}
+
+.gallery a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .card {
