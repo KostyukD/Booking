@@ -38,6 +38,9 @@ window.onload = function () {
     const checkProfileBtn = document.getElementById('checkProfileBtn'); 
     const continueBookingBtn = document.getElementById('continueBookingBtn');
     const bronBtn = document.getElementById('bronBtn'); 
+    const bron2Btn = document.getElementById('bron2Btn'); 
+    const bron3Btn = document.getElementById('bron3Btn'); 
+    const bronFinalBtn = document.getElementById('bronFinalBtn'); 
 
     // --- 2. ФУНКЦІЇ ВІДКРИТТЯ/ЗАКРИТТЯ ---
 
@@ -200,5 +203,20 @@ window.onload = function () {
 if (bronBtn) {
     bronBtn.onclick = () => {
         window.location.href = 'index_bron.html';
+    };
+}
+if (bron2Btn) {
+    bronBtn.onclick = () => {
+        window.location.href = 'index_bron2.html';
+    };
+}
+if (bron3Btn) {
+    bronBtn.onclick = () => {
+        window.location.href = 'index_bron3.html';
+    };
+}
+if (bronFinalBtn) {
+    bronBtn.onclick = () => {
+        window.location.href = 'index_bron_final.html';
     };
 }
