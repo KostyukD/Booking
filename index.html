@@ -3,462 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel For you.</title>
+    <title>Your Account - Hotel For You</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mobile.css" media="(max-width: 480px)">
+    <link rel="stylesheet" href="mobile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <style>
-        /* Стиль для фото профілю в хедері */
-        .header-profile-img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #6200EA;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-    </style>
 </head>
 <body>
 
-    <header class="header">
+    <header class="header mobile-header">
         <div class="header-top-bar">
-            <a href="index.html" style="text-decoration: none;">
+            <div class="language-flag">
+                <img src="img_main/logo_lang.png" alt="UK" class="flag-icon">
+            </div>
+
+            <a href="index.html" class="logo-link">
                 <div class="logo">Hotel for <span class="highlight">you.</span></div>
             </a>
 
-            <div class="auth-section">
-                
-                <div id="authButtonsContainer" style="display: flex; gap: 10px; align-items: center;">
-                    <button id="openRegisterHeader" class="button button-bordered register-btn">Register</button>
-                    <button id="openSignIn" class="button button-bordered signin-btn">
-                        Sign in
-                        <i class="fas fa-user-circle"></i>
-                    </button>
-                </div>
-
-                <a href="account.html" id="userProfileHeader" style="display: none; margin-right: 15px;">
-                    <img src="img_acc/a349e35e5470441fe4efb8aeb7ee9917ab64e660.png" alt="Profile" class="header-profile-img" onerror="this.src='img_main/review_icon2.png'">
-                </a>
-
-                <div class="language-flag">
-                    <img src="img_main/logo_lang.png" alt="Язык" class="flag-icon">
-                </div>
-            </div>
+            <button class="account-pill-btn">
+                Account <i class="fas fa-user-circle"></i>
+            </button>
         </div>
-
-        <div class="header-image-container">
-        </div>
-
-        <section class="search-section">
-            <div class="search-form-container">
-                <div class="search-field where">
-                    <i class="fas fa-map-marker-alt"></i>
-                    Where are you going?
-                </div>
-                <div class="search-field check-dates">
-                    <i class="far fa-calendar-alt"></i>
-                    Check in - Check out
-                </div>
-                <div class="search-field guests-rooms">
-                    <i class="fas fa-user-friends"></i>
-                    2 adults • 0 children • 1 room
-                </div>
-                <div class="search-toggle">
-                    <i class="fas fa-exchange-alt"></i>
-                </div>
-                <a href="index1.html" class="search-button">
-                    <i class="fas fa-search"></i>
-                </a>
-            </div>
-
-            <div class="search-tabs">
-                <div class="tab-item">
-                    <i class="fas fa-book-open"></i> Easy booking
-                </div>
-                <div class="tab-item">
-                    <i class="fas fa-lock"></i> Secure payment
-                </div>
-                <div class="tab-item">
-                    <i class="fas fa-info-circle"></i> Relevant information
-                </div>
-            </div>
-        </section>
     </header>
 
-    <div id="modalOverlay" class="overlay">
-        <div class="modal-content">
-            <button class="close-btn" id="closeModal">&times;</button>
-            <h2 class="modal-title">Sign In</h2>
-            <form class="modal-form">
-                <input type="email" placeholder="Email" class="modal-input login-input">
-                <input type="password" placeholder="Password" class="modal-input login-input">
-                <button type="button" class="continue-btn" id="loginContinueBtn">Continue</button>
-            </form>
-            <p class="register-link">Do not have an account? <a href="#" id="linkToRegister">Register</a></p>
-            <div class="social-login">
-                <button class="social-button">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G"> Sign In with Google
-                </button>
-                <button class="social-button">
-                    <i class="fab fa-facebook" style="color: #1877F2;"></i> Sign In with Facebook
-                </button>
-                <button class="social-button">
-                    <i class="fab fa-apple"></i> Sign In with Apple
-                </button>
+    <nav class="scroll-nav">
+        <a href="index.html" class="nav-item"><i class="fas fa-chevron-left"></i> Main page</a>
+        <a href="#" class="nav-item active">Account <i class="fas fa-user-circle"></i></a>
+        <a href="#payment" class="nav-item">Payment method</a>
+        <a href="#travel" class="nav-item">Travel information</a>
+        <a href="#newsletters" class="nav-item">Newsletters</a>
+        <a href="#security" class="nav-item">Security</a>
+    </nav>
+
+    <main class="main-content account-content">
+        
+        <h1 class="page-title">Your Account</h1>
+
+        <div class="profile-card">
+            <div class="profile-avatar">
+                <i class="fas fa-user"></i> 
+            </div>
+            <div class="profile-details">
+                <div class="profile-name-row">
+                    <h2>Your Name <i class="fas fa-pencil-alt edit-icon"></i></h2>
+                </div>
+                <button class="edit-photo-btn"><i class="fas fa-camera"></i> Change the photo</button>
             </div>
         </div>
-    </div>
 
-    <div id="registerOverlay" class="overlay">
-        <div class="modal-content">
-            <button class="close-btn" id="closeRegister">&times;</button>
-            <h2 class="modal-title">Register</h2>
-            <form class="modal-form">
-                <input type="text" placeholder="Full Name" class="modal-input reg-input">
-                <input type="email" placeholder="Email" class="modal-input reg-input">
-                <input type="password" placeholder="Password" class="modal-input reg-input">
-                <input type="password" placeholder="Confirm Password" class="modal-input reg-input">
-                <button type="button" class="continue-btn" id="regContinueBtn">Continue</button>
-            </form>
-            <p class="register-link">Already have an account? <a href="#" id="linkToSignIn">Sign In</a></p>
-            <div class="social-login">
-                <button class="social-button">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G"> Sign Up with Google
-                </button>
-                <button class="social-button">
-                    <i class="fab fa-facebook" style="color: #1877F2;"></i> Sign Up with Facebook
-                </button>
-                <button class="social-button">
-                    <i class="fab fa-apple"></i> Sign Up with Apple
-                </button>
+        <div class="info-box">
+            Your name will be the only visible information to other users. <br><br>
+            All other details will remain private and will be utilized to suggest the best offers for you and simplify the booking process.
+        </div>
+
+        <form class="account-form">
+            <div class="form-group">
+                <input type="tel" placeholder="Your phone number" class="acc-input">
+                <span class="input-note">*Has to be confirmed</span>
             </div>
-        </div>
-    </div>
 
-    <div id="authOverlay" class="overlay">
-        <div class="modal-content">
-            <button class="close-btn" id="closeAuth">&times;</button>
-            <h2 class="modal-title">Authentication</h2>
-            <form class="modal-form">
-                <input type="text" placeholder="Code" class="modal-input auth-input" id="authCodeInput">
-                <p style="text-align: center; margin: 15px 0; font-size: 14px; color: #555;">
-                    We have sent you an email with the code.<br>
-                    Check your mail and enter the code for the authentication.
-                </p>
-                <button type="button" class="continue-btn" id="authContinueBtn">Continue</button>
-            </form>
-        </div>
-    </div>
+            <div class="form-group">
+                <input type="email" placeholder="Your email" class="acc-input">
+                <span class="input-note">*Has to be confirmed</span>
+            </div>
 
-    <div id="infoOverlay" class="overlay">
-        <div class="modal-content">
-            <button class="close-btn" id="closeInfo">&times;</button>
-            <h2 class="modal-title">Information</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 20px;">
-                Tell us about yourself so we can better choose options for you :)
-            </p>
-            <form class="modal-form">
-                <select class="modal-input info-input" style="background: white;">
+            <div class="form-group">
+                <input type="text" placeholder="Month | Date | Year" class="acc-input" onfocus="(this.type='date')" onblur="(this.type='text')">
+                <span class="input-note">Enter your date of birth</span>
+                <p class="small-text">You will not be able to change your birthday date after confirmation</p>
+            </div>
+
+            <div class="form-group select-wrapper">
+                <select class="acc-input">
                     <option value="" disabled selected>Country</option>
                     <option value="ua">Ukraine</option>
                     <option value="us">USA</option>
                     <option value="uk">UK</option>
                 </select>
-
-                <select class="modal-input info-input" style="background: white;">
-                    <option value="" disabled selected>City</option>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+             <div class="form-group select-wrapper">
+                <select class="acc-input">
+                    <option value="" disabled selected>Ampthill</option>
                     <option value="kyiv">Kyiv</option>
-                    <option value="ny">New York</option>
-                    <option value="ln">London</option>
+                    <option value="lnd">London</option>
                 </select>
+                <i class="fas fa-chevron-down"></i>
+            </div>
 
-                <select class="modal-input info-input" style="background: white;">
-                    <option value="" disabled selected>Why do you travel?</option>
-                    <option value="leisure">Leisure</option>
-                    <option value="business">Business</option>
+            <div class="form-group select-wrapper">
+                <select class="acc-input">
+                    <option value="" disabled selected>Preferred currency</option>
+                    <option value="usd">USD</option>
+                    <option value="eur">EUR</option>
+                    <option value="uah">UAH</option>
                 </select>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </form>
 
-                <div style="width: 100%; margin: 10px 0; display: flex; align-items: center; gap: 15px;">
-                    <span style="color: #666;">Travelling with a pet?</span>
-                    <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
-                        <input type="radio" name="pet" value="yes"> Yes
-                    </label>
-                    <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
-                        <input type="radio" name="pet" value="no"> No
-                    </label>
-                </div>
+        <hr class="divider">
 
-                <button type="button" class="continue-btn" id="infoContinueBtn">Continue</button>
-                <button type="button" class="continue-btn" id="infoLaterBtn" style="background: white; color: #6200EA; border: 1px solid #6200EA; margin-top: 10px;">Later</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="doneOverlay" class="overlay">
-        <div class="modal-content">
-            <button class="close-btn" id="closeDone">&times;</button>
-            <h2 class="modal-title">All done!</h2>
+        <div class="bookings-section">
+            <h3 class="section-label">YOUR BOOKINGS</h3>
             
-            <div style="display: flex; justify-content: center; margin: 20px 0;">
-                <div style="width: 80px; height: 80px; border-radius: 50%; border: 3px solid #6200EA; display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-check" style="font-size: 40px; color: #6200EA;"></i>
+            <div class="booking-card">
+                <div class="booking-row">
+                    <div class="booking-img">
+                        <img src="img_main/hotel2.jpg" alt="Room">
+                    </div>
+                    <div class="booking-info">
+                        <h4>Suite with a queen-size bed</h4>
+                        <div class="amenity-row"><i class="fas fa-bed"></i> Bed: queen-size bed 1 | double bed 1</div>
+                        <div class="amenity-row"><i class="fas fa-user-friends"></i> Guests: maximum 3</div>
+                        
+                        <div class="amenities-icons">
+                            <i class="fas fa-wifi"></i> free wi-fi
+                            <i class="fas fa-bath"></i> bath
+                            <i class="fas fa-swimming-pool"></i> private pool
+                        </div>
+                        <div class="free-cancellation">
+                            <i class="fas fa-check"></i> FREE cancellation
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-details-grid">
+                    <div class="detail-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kyiv</span>
+                        <span class="dots">•••</span>
+                    </div>
+                    <div class="detail-box">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>Apr 9-11</span>
+                        <span class="dots">•••</span>
+                    </div>
+                    <div class="detail-box">
+                        <i class="fas fa-user"></i>
+                        <span>2 ad. 1 ch.</span>
+                        <span class="dots">•••</span>
+                    </div>
+                </div>
+
+                <div class="booking-actions">
+                    <button class="outline-btn">HOTEL PAGE</button>
+                    <button class="outline-btn">BOOKING INFO</button>
+                </div>
+
+                <div class="cancel-timer">
+                    <a href="#">Want to cancel?</a> Time left: 4 days 16 hours
                 </div>
             </div>
-
-            <button type="button" class="continue-btn active" id="checkProfileBtn">Check your profile!</button>
-            <button type="button" class="continue-btn" id="continueBookingBtn" style="background: white; color: #6200EA; border: 1px solid #6200EA; margin-top: 10px;">Continue booking</button>
-        </div>
-    </div>
-
-
-    <main class="main-content">
-        <div class="gallery">
-            <a href="index2.html"><div class="card">
-                <div class="card-img"><img src="img_main/hotel1.jpg" alt="hotel"></div>
-                <div class="card-body">
-                    <h3>Hotel name | City | Country</h3>
-                    <div class="rating">
-                        <img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt="">
-                    </div>
-                    <p class="distance">the city center : 116 m</p>
-                    <p class="price">$130 <span>night</span></p>
-                </div>
-            </div></a>
-            <a href="index2.html"><div class="card">
-                <div class="card-img"><img src="img_main/hotel2.jpg" alt="hotel2"></div>
-                <div class="card-body">
-                    <h3>Hotel name | City | Country</h3>
-                    <div class="rating">
-                        <img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt="">
-                    </div>
-                    <p class="distance">the city center : 116 m</p>
-                    <p class="price">$130 <span>night</span></p>
-                </div>
-            </div></a>
-            <a href="index2.html"><div class="card">
-                <div class="card-img"><img src="img_main/hotel3.jpg" alt="hote3"></div>
-                <div class="card-body">
-                    <h3>Hotel name | City | Country</h3>
-                    <div class="rating">
-                        <img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt="">
-                    </div>
-                    <p class="distance">the city center : 116 m</p>
-                    <p class="price">$130 <span>night</span></p>
-                </div>
-            </div></a>
-            <a href="index2.html"><div class="card">
-                <div class="card-img"><img src="img_main/hotel4.jpg" alt="hotel4"></div>
-                <div class="card-body">
-                    <h3>Hotel name | City | Country</h3>
-                    <div class="rating">
-                        <img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt="">
-                    </div>
-                    <p class="distance">the city center : 116 m</p>
-                    <p class="price">$130 <span>night</span></p>
-                </div>
-            </div></a>
-            <a href="index2.html"><div class="card">
-                <div class="card-img"><img src="img_main/hotel5.jpg" alt="hotel5"></div>
-                <div class="card-body">
-                    <h3>Hotel name | City | Country</h3>
-                    <div class="rating">
-                        <img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt="">
-                    </div>
-                    <p class="distance">the city center : 116 m</p>
-                    <p class="price">$130 <span>night</span></p>
-                </div>
-            </div></a>
-            <a href="index2.html"><div class="card">
-                <div class="card-img"><img src="img_main/hotel6.jpg" alt="hotel6"></div>
-                <div class="card-body">
-                    <h3>Hotel name | City | Country</h3>
-                    <div class="rating">
-                        <img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt="">
-                    </div>
-                    <p class="distance">the city center : 116 m</p>
-                    <p class="price">$130 <span>night</span></p>
-                </div>
-            </div></a>
-            <a href="index2.html"><div class="card">
-                <div class="card-img"><img src="img_main/hotel7.jpg" alt="hotel7"></div>
-                <div class="card-body">
-                    <h3>Hotel name | City | Country</h3>
-                    <div class="rating">
-                        <img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt="">
-                    </div>
-                    <p class="distance">the city center : 116 m</p>
-                    <p class="price">$130 <span>night</span></p>
-                </div>
-            </div></a>
-            <a href="index2.html"><div class="card">
-                <div class="card-img"><img src="img_main/hotel8.jpg" alt="hotel8"></div>
-                <div class="card-body">
-                    <h3>Hotel name | City | Country</h3>
-                    <div class="rating">
-                        <img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt="">
-                    </div>
-                    <p class="distance">the city center : 116 m</p>
-                    <p class="price">$130 <span>night</span></p>
-                </div>
-            </div></a>
         </div>
 
-        <section class="reviews-section">
-            <h2 class="reviews-title">REVIEWS</h2>
-            <div class="reviews">
-                <div class="card-review">
-                    <div class="card-review-header">
-                        <div class="review-user">
-                            <img src="img_main/review_icon2.png" alt="user avatar" class="review-avatar">
-                            <div class="review-user-info">
-                                <h4 class="review-name">Name</h4>
-                                <p class="review-hotel">Hotel Name</p>
-                            </div>
-                        </div>
-                        <p class="review-date">12 days ago</p>
-                    </div>
-                    <p class="review-text">Lorem ipsum dolor sit amet consectetur. Viverra ultricies enim interdum fermentum tortor.</p>
-                </div>
-                <div class="card-review">
-                    <div class="card-review-header">
-                        <div class="review-user">
-                            <img src="img_main/review_icon3.png" alt="user avatar" class="review-avatar">
-                            <div class="review-user-info">
-                                <h4 class="review-name">Name</h4>
-                                <p class="review-hotel">Hotel Name</p>
-                            </div>
-                        </div>
-                        <p class="review-date">19 days ago</p>
-                    </div>
-                    <p class="review-text">Lorem ipsum dolor sit amet consectetur. Facilisis nulla eun.</p>
-                </div>
-                <div class="card-review">
-                    <div class="card-review-header">
-                        <div class="review-user">
-                            <img src="img_main/review_icon1.png" alt="user avatar" class="review-avatar">
-                            <div class="review-user-info">
-                                <h4 class="review-name">Name</h4>
-                                <p class="review-hotel">Hotel Name</p>
-                            </div>
-                        </div>
-                        <p class="review-date">12 days ago</p>
-                    </div>
-                    <p class="review-text">Viverra ultricies enim interdum fermentum tortor. Facilisis nulla eun.</p>
-                </div>
+        <div class="reviews-section-account">
+            <h3 class="section-label">YOUR REVIEWS</h3>
+            <div class="empty-reviews">
+                <i class="far fa-file-alt"></i>
+                <p>You have no reviews</p>
             </div>
-        </section>
+        </div>
 
-        <section class="safe-with-us">
-            <h2 class="section-title">SAFE WITH US</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <i class="fas fa-hotel"></i>
-                    <p>We choose hotels that meet our standards</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <p>Secure payment without hidden fees</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-hand-holding-usd"></i>
-                    <p>Current prices and best deals</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="far fa-clock"></i>
-                    <p>Easy booking which will not take you long</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="far fa-envelope"></i>
-                    <p>We'll promptly email booking confirmation</p>
-                </div>
-            </div>
-        </section>
+        <hr class="divider">
 
-        <section class="be-regular">
-            <h2 class="section-title">BE OUR REGULAR</h2>
-            <div class="regular-container">
-                <div class="regular-image">
-                    <img src="img_main/be_our_regular.jpg" alt="Traveler"> 
+        <div id="payment" class="sub-section">
+            <h2 class="page-title">Payment method</h2>
+            <div class="white-card">
+                <div class="form-group select-wrapper">
+                    <select class="acc-input">
+                        <option>Type of your debit card</option>
+                        <option>Visa</option>
+                        <option>MasterCard</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
                 </div>
-                <div class="regular-content">
-                    <p>We believe that every customer deserves the best, and we're committed to providing top-class services to all of our clients.</p>
-                    <p>So start your search today and discover the amazing rewards waiting for you on our website!</p>
+                <div class="no-card-text">No card?</div>
+                <div class="form-group">
+                    <input type="text" placeholder="Credit or debit card number" class="acc-input">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Month | Date" class="acc-input">
                 </div>
             </div>
-            <div class="register-action">
-                <button class="register-purple-btn">Register an account</button>
+            
+            <div class="white-info-text">
+                This information will be kept private and confidential.<br>
+                Once your booking is confirmed, the payment details will be automatically filled in for your convenience.
             </div>
-        </section>
 
-        <script src="script.js"></script>
+            <h3 class="section-label">SAVED PAYMENT METHODS</h3>
+            <div class="empty-state-card">
+                <i class="far fa-credit-card"></i>
+                <p>You have no saved payment methods</p>
+            </div>
+            
+            <p class="security-footer-text">
+                Rest assured that the payment information you enter on our site is meticulously protected...
+                <a href="#">See privacy policy →</a>
+            </p>
+        </div>
+
+        <hr class="divider">
+
+        <div id="travel" class="sub-section">
+            <h2 class="page-title">Travel information</h2>
+            <div class="white-info-text-large">
+                With this information at hand, we can tailor the best deals specifically for you...
+            </div>
+            
+            <div class="travel-checklist">
+                <h4><i class="fas fa-concierge-bell"></i> General</h4>
+                <label class="check-item"><input type="checkbox"> Shuttle service</label>
+                <label class="check-item"><input type="checkbox"> Additional charge</label>
+                <label class="check-item"><input type="checkbox"> Grocery deliveries</label>
+                <label class="check-item"><input type="checkbox"> Minimarket on site</label>
+                
+                <h4><i class="fas fa-wheelchair"></i> Accessibility</h4>
+                <label class="check-item"><input type="checkbox"> Upper floors accessible by stairs only</label>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div id="newsletters" class="sub-section">
+            <h2 class="page-title">Newsletters</h2>
+            <div class="newsletter-banner">
+                <img src="img_main/header.jpg" alt="Newsletter">
+            </div>
+            <div class="white-card text-center">
+                <p>We curate a daily selection of topics based on your interests and send them straight to your email address.</p>
+                <button class="subscribe-btn">SUBSCRIBE</button>
+            </div>
+            
+            <h3 class="section-label">CHOOSE TOPICS</h3>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <img src="img_main/hotel5.jpg" alt="Seasonal">
+                    <div class="topic-content">
+                        <h4>Seasonal offers</h4>
+                        <p>Discover the finest offers for every season...</p>
+                        <div class="radio-select">
+                            <input type="radio" name="topic1"> Choose this topic
+                        </div>
+                    </div>
+                </div>
+                <div class="topic-card">
+                    <img src="img_main/hotel7.jpg" alt="Favorites">
+                    <div class="topic-content">
+                        <h4>Favorites</h4>
+                        <p>We curate top rated...</p>
+                        <div class="radio-select">
+                            <input type="radio" name="topic2"> Choose this topic
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div id="security" class="sub-section">
+            <h2 class="page-title">Security</h2>
+            <div class="white-card">
+                <div class="security-row">
+                    <input type="text" value="elena.holland@example.com" readonly class="acc-input-readonly">
+                </div>
+                <div class="security-meta">
+                    Is it still your email address? <a href="#">Change</a>
+                </div>
+
+                <div class="security-row">
+                    <input type="text" value="(209) 555-0114" readonly class="acc-input-readonly">
+                </div>
+                <div class="security-meta">
+                    Is it still your phone number? <a href="#">Change</a>
+                </div>
+
+                <div class="security-row" style="margin-top: 15px;">
+                    <input type="password" value="********" readonly class="acc-input-readonly">
+                </div>
+                <div class="security-meta">
+                    Forgot your password? <br> <a href="#">Restore password</a>
+                </div>
+            </div>
+
+            <div class="privacy-long-text">
+                When booking hotels rooms online, it is essential to pay attention to the privacy policy of the website...
+                <br><br>
+                <a href="#">See privacy policy →</a>
+            </div>
+        </div>
+
     </main>
 
     <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-column">
-                <ul>
-                    <li>Countries</li>
-                    <li>Regions</li>
-                    <li>Cities</li>
-                    <li>Districts</li>
-                    <li>Airports</li>
-                    <li>Hotels</li>
-                    <li>Places of interest</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <ul>
-                    <li>Homes</li>
-                    <li>Apartments</li>
-                    <li>Resorts</li>
-                    <li>Villas</li>
-                    <li>Hostels</li>
-                    <li>B&Bs</li>
-                    <li>Guest houses</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <ul>
-                    <li>Unique places to stay</li>
-                    <li>All destinations</li>
-                    <li>All flight destinations</li>
-                    <li>All car hire locations</li>
-                    <li>Discover</li>
-                    <li>Reviews</li>
-                    <li>Awards</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <ul>
-                    <li>Car hire</li>
-                    <li>Flight finder</li>
-                    <li>Restaurant reservations</li>
-                    <li>For Travel Agents</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <ul>
-                    <li>Coronavirus (COVID-19)</li>
-                    <li>FAQs About</li>
-                    <li>Booking.com Customer Service help</li>
-                    <li>Partner help</li>
-                    <li>Careers</li>
-                    <li>Sustainability</li>
-                    <li>Press centre</li>
-                    <li>Safety resource centre</li>
-                    <li>Investor relations</li>
-                    <li>Terms & Conditions</li>
-                    <li>Partner dispute</li>
-                    <li>How we work</li>
-                    <li>Privacy & Cookie Statement</li>
-                    <li>MSA Statement</li>
-                    <li>Corporate contact</li>
-                    <li>We Price Match</li>
-                </ul>
-            </div>
-        </div>
+        <p style="text-align:center; color:#ccc; font-size: 12px;">© 2026 Hotel For You.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
