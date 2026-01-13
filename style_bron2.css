@@ -320,7 +320,7 @@ body {
 
     .option-text small {
         display: block;
-        color: #6a1b9a;
+        color: #581ADB;
         font-size: 13px;
         margin-top: 4px;
     }
@@ -342,7 +342,7 @@ body {
 }
 
     .continue-btn:hover {
-        background-color: #4a148c;
+        background-color: #581ADB;
         transform: translateY(-2px);
     }
 .additional-options {
