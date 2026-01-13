@@ -1,895 +1,1991 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Onest:wght@100..900&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap');
 
-/* =========================================
-   1. БАЗОВІ СТИЛІ (МОБІЛЬНА ВЕРСІЯ - IPHONE)
-   ========================================= */
+
+
+
 
 * {
+
     box-sizing: border-box;
+
     font-family: "Nunito Sans", sans-serif;
-    margin: 0;
-    padding: 0;
+
 }
+
+
 
 body {
+
+    margin: 0;
+
     background: #ffffff;
+
     color: #222;
-    padding-bottom: 50px;
-    overflow-x: hidden;
+
 }
 
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
 
-/* --- HEADER --- */
+
+/* HEADER */
+
 .header {
+
     display: flex;
+
     justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+
+    padding: 20px 40px;
+
     border-bottom: 1px solid #DDDDDD;
+
 }
 
-.logo { font-size: 20px; font-weight: 800; color: #222222; }
-.logo a { color: #222; }
-.accent { color: #581ADB; }
-.language img { width: 24px; height: auto; }
 
-/* --- NAV (МЕНЮ ЗІ СКРОЛОМ) --- */
-.back { display: none !important; } /* Ховаємо кнопку назад на телефоні */
+
+.logo a {
+
+    text-decoration: none;
+
+    color: #222222;
+
+}
+
+
+
+.logo{
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    color: #222222;
+
+}
+
+
+
+.accent {
+
+    color: #581ADB;
+
+}
+
+
+
+.language img {
+
+    width: 24px;
+
+}
+
+
+
+/* BACK */
+
+.back {
+
+    display: inline-block;
+
+    margin: 40px;
+
+    padding: 8px 16px;
+
+    border: 1px solid #DDDDDD;
+
+    border-radius: 60px;
+
+    color: #717171;
+
+    text-decoration: none;
+
+}
+
+
+
+/* NAV */
 
 .nav {
-    margin-top: 15px;
-    padding-left: 20px;
-    display: block;
-    overflow-x: auto; /* Горизонтальний скрол */
-    white-space: nowrap;
-    scrollbar-width: none;
+
+    display: flex;
+
+    justify-content: center;
+
+    position: relative;
+
 }
-.nav::-webkit-scrollbar { display: none; }
+
+
 
 .steps {
-    display: inline-flex;
-    gap: 10px;
-    padding-right: 20px;
-    padding-left: 0;
-    margin: 0;
+
+    display: flex;
+
+    gap: 16px;
+
+    list-style: none;
+
+    padding: 0;
+
 }
+
+
 
 .step {
-    display: inline-flex;
+
+    display: flex;
+
     align-items: center;
+
     gap: 8px;
+
     padding: 8px 16px;
+
     border: 1px solid #DDDDDD;
+
     border-radius: 60px;
+
+
+
     color: #717171;
-    font-size: 14px;
-    font-weight: 600;
-    background: #fff;
-    flex-shrink: 0;
+
 }
 
-.step img { width: 16px; }
+
+
+.step img {
+
+    width: 16px;
+
+}
+
+
 
 .step.active {
+
     border-color: #581ADB;
+
     color: #581ADB;
-}
-/* Фарбуємо іконку у фіолетовий */
-.step.active img {
-    filter: invert(18%) sepia(66%) saturate(5833%) hue-rotate(262deg) brightness(88%) contrast(98%);
+
+    font-weight: 600;
+
 }
 
-/* --- MAIN CONTAINER --- */
-.container {
-    padding: 0 20px;
-    max-width: 100%;
-    margin: 20px auto;
+
+
+.nav a {
+
+    text-decoration: none;
+
+    color: inherit;
+
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+
+    align-items: center;
+
+    gap: 8px;
+
 }
+
+
+
+/* MAIN */
+
+.container {
+
+    max-width: 1100px;
+
+    margin: 40px auto;
+
+    display: grid;
+
+    gap: 24px;
+
+}
+
+
 
 h1 {
+
     color: #581ADB;
-    font-size: 24px;
-    margin: 10px 0;
+
+     text-decoration: none;
+
 }
 
-h1 a { text-decoration: none; }
 
-/* --- ACCOUNT CARD (Аватар + Ім'я) --- */
+
+h1:a {
+
+    text-decoration: none;
+
+}
+
+
+
+/* ACCOUNT */
+
 .account-section {
-    display: flex;
-    flex-direction: column;
+
+    display: grid;
+
+    grid-template-columns: 1.3fr 1fr;
+
     gap: 20px;
+
 }
 
-.account-card {
-    display: flex;
-    flex-direction: row; /* Аватар зліва, текст справа */
-    align-items: center;
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: 12px;
-    padding: 20px;
-    gap: 20px;
-    box-shadow: none;
-    border: 1px solid #ddd;
-    height: auto;
-}
 
-.avatar { flex-shrink: 0; }
-.avatar img {
-    width: 80px; 
-    height: 80px;
-    border-radius: 50%; /* Круглий на мобільному */
-    object-fit: cover;
-    background-color: #ccc;
-    border: none;
-}
 
-.account-info {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-}
-
-.name {
-    font-size: 18px;
-    font-weight: 700;
-    color: #222;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.edit {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    color: #999;
-}
-
-.change-photo {
-    margin-top: 5px;
-    padding: 6px 14px;
-    border-radius: 20px;
-    border: 1px solid #DDDDDD;
-    background: white;
-    color: #717171;
-    font-size: 12px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-.change-photo:hover { background-color: #f0f0f0; }
-.camera-icon { width: 14px; height: 14px; }
+.account-card,
 
 .disclaimer {
+
     background: white;
+
     border-radius: 12px;
-    padding: 15px;
+
+    padding: 20px;
+
     color: #717171;
-    font-size: 13px;
-    line-height: 1.5;
-    border: 1px solid #eee; 
-    box-shadow: none;
+
+    line-height: 24px;
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+
 }
 
-/* --- ФОРМА (Вертикальна + Круглі поля) --- */
-.profile-form {
+
+
+.account-card {
+
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+
+    gap: 20px;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+
+    padding: 0;
+
+    height: fit-content;
+
+
+
     background: #fff;
-    border-radius: 18px;
-    padding: 10px 0;
-    box-shadow: none; 
-    max-width: 100%;
+
+    border-radius: 12px;
+
+    overflow: hidden; 
+
 }
+
+
+
+/* AVATAR */
+
+.avatar img {
+
+    display: block;       
+
+    width: 220px;
+
+    height: 100%;
+
+    object-fit: cover;
+
+
+
+    border-radius: 12px 0 0 12px;
+
+}
+
+
+
+/* INFO */
+
+.account-info {
+
+    padding: 20px 40px 20px 0;
+
+
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+
+/* NAME */
+
+.name {
+
+    margin-top: 10px;
+
+    font-weight: 700;
+
+    font-size: 20px;
+
+    color: #222222;
+
+
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+
+.edit {
+
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+
+
+/* CHANGE PHOTO */
+
+.change-photo {
+
+    margin-top: 10px;
+
+    padding: 6px 12px;
+
+
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+
+
+    border-radius: 20px;
+
+    border: 1px solid #DDDDDD;
+
+    background: white;
+
+
+
+    color: #717171;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+
+
+.change-photo:hover {
+
+    background-color: #f0f0f0;
+
+}
+
+
+
+/* CAMERA ICON */
+
+.camera-icon {
+
+    width: 16px;
+
+    height: 16px;
+
+}
+
+
+
+
+
+/* FORM */
+
+.profile-form {
+
+  max-width: 1100px;
+
+  background: #fff;
+
+  border-radius: 18px;
+
+  padding: 32px 40px;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+
+  font-family: Arial, sans-serif;
+
+}
+
+
 
 .form-grid {
-    display: flex;
-    flex-direction: column; /* Вертикально на мобільному */
-    gap: 15px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 80px;
+
 }
+
+
 
 .form-col {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 22px;
+
 }
+
+
 
 .form-field {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    position: relative;
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
 }
 
-/* INPUTS & SELECTS (PILL SHAPE) */
-input, select {
-    width: 100%;
-    padding: 14px 20px;
-    border-radius: 30px; /* Сильне заокруглення */
-    border: 1px solid #e0e0e0;
-    font-size: 14px;
-    color: #717171;
-    outline: none;
-    background: #fff;
+
+
+/* INPUTS & SELECTS */
+
+input,
+
+select {
+
+  width: 100%;
+
+  padding: 16px 20px;
+
+  border-radius: 999px;
+
+  border: 1px solid #e0e0e0;
+
+  font-size: 15px;
+
+  color: #717171;
+
+  outline: none;
+
+  background: #fff;
+
 }
 
-input::placeholder { color: #999; }
+
+
+input::placeholder {
+
+  color: #999;
+
+}
+
+
+
+/* SELECT ARROW */
 
 .form-field.select select {
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23999' fill='none' stroke-width='2'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 18px center;
+
+  appearance: none;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23999' fill='none' stroke-width='2'/%3E%3C/svg%3E");
+
+  background-repeat: no-repeat;
+
+  background-position: right 18px center;
+
 }
 
-.hint { font-size: 12px; color: #777; padding-left: 15px; }
-.note { font-size: 12px; color: #bbb; margin-left: 15px; line-height: 1.4; margin-top: 8px; }
-
-input:focus, select:focus { border-color: #6a00ff; }
 
 
-/* --- БРОНЮВАННЯ (Вертикальна картка) --- */
-h2 {
-    color: #999;
-    font-size: 14px;
-    font-weight: 600;
-    margin: 40px 0 15px;
-    text-transform: uppercase;
+/* HELPER TEXT */
+
+.hint {
+
+  font-size: 13px;
+
+  color: #777;
+
+  padding-left: 18px;
+
 }
 
-.bookings-section {
-    display: flex;
-    flex-direction: column; /* Вертикально */
-    gap: 0;
-    border: 1px solid #eee;
-    border-radius: 16px;
-    overflow: hidden;
-    background: #fff;
-    margin: 0;
+
+
+/* NOTE */
+
+.note {
+
+  font-size: 13px;
+
+  color: #bbb;
+
+  margin-top: 8px;
+
+  line-height: 1.4;
+
 }
+
+
+
+/* FOCUS STATE */
+
+input:focus,
+
+select:focus {
+
+  border-color: #6a00ff;
+
+}
+
+
+
+
+
+/* BOOKING */
+
+
+
+h2{
+
+    color: #717171;
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+}
+
+
 
 .room-card {
-    display: flex;
-    flex-direction: column; /* Фото зверху, текст знизу */
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    box-shadow: none;
-    border-radius: 0;
-    background: #fff;
+
+  display: flex;
+
+  max-width: 800px;
+
+  height: 250px;
+
+  background: #fff;
+
+  border-radius: 14px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+  overflow: hidden;
+
+  font-family: Arial, sans-serif;
+
 }
 
-.room-image { width: 100%; height: 200px; background: #eaeaea; }
-.room-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 0; }
+
+
+/* IMAGE */
+
+.room-image {
+
+  width: 40%;
+
+  background: #eaeaea;
+
+}
+
+
+
+.room-image img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+}
+
+
+
+/* CONTENT */
 
 .room-content {
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+
+  width: 60%;
+
+  padding: 20px 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
 }
 
-.room-title { font-size: 18px; margin: 0; font-weight: 700; color: #222222; }
 
-.room-info { gap: 5px; display: flex; flex-direction: column; }
-.info-row { font-size: 13px; display: flex; align-items: center; gap: 10px; color: #717171; font-weight: 400; }
-.info-row img { width: 16px; height: 16px; }
+
+.room-title {
+
+  font-size: 20px;
+
+  color: #222222;
+
+  font-weight: 600;
+
+  margin: 0;
+
+}
+
+
+
+/* INFO ROWS */
+
+.room-info {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+}
+
+
+
+.info-row {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-weight: 400;
+
+  font-size: 16px;
+
+  color: #717171;
+
+}
+
+
+
+.info-row img {
+
+  width: 20px;
+
+  height: 20px;
+
+}
+
+
+
+/* FEATURES */
 
 .room-features {
-    margin-top: 15px;
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 15px;
-}
-.feature { font-size: 12px; display: flex; align-items: center; gap: 6px; color: #555; }
-.feature img { width: 18px; height: 18px; }
 
-.room-cancel { 
-    margin-top: 10px; font-size: 13px; color: #581ADB; 
-    display: flex; align-items: center; gap: 8px; font-weight: 500; margin-bottom: 20px;
-}
-.room-cancel img { 
-    filter: invert(18%) sepia(66%) saturate(5833%) hue-rotate(262deg) brightness(88%) contrast(98%);
-    width: 16px; height: 16px;
+  display: flex;
+
+  gap: 20px;
+
+  margin-top: 50px;
+
 }
 
-/* BOOKING SIDE (Кнопки та інфо знизу) */
+
+
+.feature {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  font-size: 14px;
+
+  color: #555;
+
+}
+
+
+
+.feature img {
+
+  width: 18px;
+
+  height: 18px;
+
+}
+
+
+
+/* FREE CANCELLATION */
+
+.room-cancel {
+
+  margin-top: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 14px;
+
+  color: #581ADB;
+
+  font-weight: 500;
+
+  margin-bottom: 20px;
+
+}
+
+
+
+.room-cancel img {
+
+  width: 18px;
+
+  height: 18px;
+
+}
+
+
+
 .booking-side {
-    width: 100%;
-    padding: 0 20px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+
+  width: 300px;
+
+  padding: 18px;
+
+  font-family: Arial, sans-serif;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+
 }
 
-/* Три квадратики */
+
+
+/* TOP SUMMARY BOXES */
+
 .booking-summary {
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
+
+  display: flex;
+
+  gap: 12px;
+
 }
+
+
 
 .summary-box {
-    flex: 1;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 10px 5px;
-    text-align: center;
-    font-size: 11px;
-    color: #581ADB;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
+
+  flex: 1;
+
+  border: 1px solid #e0e0e0;
+
+  border-radius: 14px;
+
+  padding: 14px 10px;
+
+  text-align: center;
+
+  font-size: 14px;
+
+  color: #555;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+
 }
-.summary-box img { 
-    width: 18px; height: 18px;
-    filter: invert(18%) sepia(66%) saturate(5833%) hue-rotate(262deg) brightness(88%) contrast(98%);
-    opacity: 0.7;
+
+
+
+.summary-box img {
+
+  width: 22px;
+
+  height: 22px;
+
 }
+
+
+
+/* BUTTONS */
 
 .booking-actions {
-    display: flex;
-    gap: 10px;
+
+  display: flex;
+
+  gap: 14px;
+
 }
+
+
 
 .btn-outline {
-    flex: 1;
-    padding: 12px 0;
-    background: transparent;
-    border: 1px solid #581ADB;
-    border-radius: 12px;
-    height: auto;
-    width: auto;
-    color: #581ADB;
-    font-weight: 700;
-    font-size: 12px;
-    cursor: pointer;
-    transition: 0.2s;
+
+  flex: 1;
+
+  padding: 16px 0;
+
+  background: transparent;
+
+  border: 1px solid #581ADB;
+
+  border-radius: 14px;
+
+  height: 80px;
+
+  width: 125px;
+
+  color: #581ADB;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+
 }
-.btn-outline:hover { background: #581ADB; color: #fff; }
+
+
+
+.btn-outline:hover {
+
+  background: #581ADB;
+
+  color: #fff;
+
+}
+
+
+
+/* FOOTER */
 
 .booking-footer {
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    align-items: center;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  font-size: 14px;
+
 }
-.booking-footer a { color: #581ADB; font-weight: 500; }
-.booking-footer a:hover { text-decoration: underline; }
-.time-left { color: #999; }
+
+
+
+.booking-footer a {
+
+  color: #581ADB;
+
+  text-decoration: none;
+
+  font-weight: 500;
+
+}
+
+
+
+.booking-footer a:hover {
+
+  text-decoration: underline;
+
+}
+
+
+
+.time-left {
+
+  color: #777;
+
+}
+
+
+
+.bookings-section {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 24px;
+
+}
+
+
 
 /* REVIEWS */
+
 .reviews {
+
     background: white;
+
     border: 1px solid #DDDDDD;
+
     border-radius: 12px;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     gap: 10px;
-    padding: 20px;
+
+    padding: 40px;
+
     color: #717171;
-    height: 150px;
-    margin-bottom: 50px;
+
+    height: 232px;
+
+    margin-bottom: 200px;
+
 }
-.reviews img { width: 20px; opacity: 0.4; }
 
 
-/* =======================================================
-   ІНШІ СЕКЦІЇ (ВСІ ТВОЇ СТАРІ СЕКЦІЇ ЗБЕРЕЖЕНО)
-   Адаптовані під мобільний (ширина 100%)
-   ======================================================= */
+
+.reviews img{
+
+    width: 20px;
+
+}
+
+
 
 /* PAYMENT SECTION */
+
 .payment-section {
-    max-width: 100%;
+
+    max-width: 900px;
+
     margin: 40px auto;
-    padding: 0 20px;
+
     color: #717171;
+
 }
+
+
+
+/* TITLE */
 
 .payment-title {
+
     color: #581ADB;
-    font-size: 24px;
+
+    font-size: 32px;
+
     font-weight: 700;
+
     margin-bottom: 24px;
+
 }
+
+
+
+/* TOP LAYOUT */
 
 .payment-top {
-    display: flex;
-    flex-direction: column; /* Вертикально на мобільному */
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
     gap: 24px;
+
 }
+
+
+
+/* LEFT CARD */
 
 .payment-card {
+
     background: #fff;
+
     border: 1px solid #DDDDDD;
+
     border-radius: 16px;
+
     padding: 24px;
+
+
+
     display: flex;
+
     flex-direction: column;
+
     gap: 20px;
+
 }
+
+
+
+/* ROW WITH SELECT + LINK */
 
 .payment-row {
+
     display: flex;
+
     align-items: center;
+
     gap: 16px;
+
 }
 
-.input.small { width: 100%; }
+
+
+/* INPUTS */
+
+.input {
+
+    width: 60%;
+
+    padding: 14px 18px;
+
+
+
+    border-radius: 40px;
+
+    border: 1px solid #DDDDDD;
+
+    background: #fff;
+
+
+
+    font-size: 16px;
+
+    color: #717171;
+
+}
+
+
+
+.input.small {
+
+    width: 220px;
+
+}
+
+
+
+/* LINK */
 
 .no-card {
+
     color: #581ADB;
+
     font-size: 16px;
+
     text-decoration: none;
+
     white-space: nowrap;
+
 }
+
+
+
+/* RIGHT INFO */
 
 .payment-info {
+
     background: #fff;
+
     border: 1px solid #DDDDDD;
+
     border-radius: 16px;
+
     padding: 24px;
+
+
+
     display: flex;
+
     flex-direction: column;
+
     gap: 16px;
+
     font-size: 16px;
+
     line-height: 1.4;
+
 }
+
+
+
+/* SAVED */
 
 .saved-title {
+
     margin: 40px 0 16px;
+
     font-size: 16px;
+
     font-weight: 400;
+
     text-transform: uppercase;
+
     color: #717171;
+
 }
+
+
+
+/* SAVED CARD */
 
 .saved-card {
+
     background: #fff;
+
     border: 1px solid #DDDDDD;
+
     border-radius: 16px;
+
     padding: 60px;
+
 }
+
+
+
+/* EMPTY STATE */
 
 .saved-empty {
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     gap: 12px;
+
+
+
     color: #717171;
+
     font-size: 16px;
-}
-.card-icon { font-size: 28px; }
 
-.footer {
+}
+
+
+
+.card-icon {
+
+    font-size: 28px;
+
+}
+
+
+
+.footer{
+
     margin-top: 50px;
-    margin-bottom: 200px;
-    text-align: left;
-    max-width: 100%;
-    padding: 0 20px;
-}
-.footer span { color: #581ADB; cursor: pointer; }
 
-/* TRAVEL SECTION */
-.travel-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #581ADB;
-    margin-left: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 200px;
+
+    text-align: left;
+
+    max-width: 50%;
+
 }
+
+
+
+.footer span{
+
+color: #581ADB;
+
+}
+
+
+
+.footer span:hover{
+
+    cursor: pointer;
+
+}
+
+
+
+/* travel section */
+
+
+
+/* GROUP */
+
+.travel-title{
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    color: #581ADB;
+
+    margin-left: 200px;
+
+    margin-bottom: 20px;
+
+}
+
+
 
 .travel-filter {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 12px;
+
     margin-bottom: 30px;
-    padding: 0 20px;
+
 }
+
+
 
 .travel-container {
+
     display: flex;
-    flex-direction: column;
+
     gap: 20px;
-    margin: 20px 0;
-    padding: 0 20px;
+
+    margin: 50px 50px 0 250px;
+
     align-items: flex-start;
+
 }
 
-.left-column, .right-column {
+
+
+.left-column,
+
+.right-column {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 12px;
-    margin-bottom: 20px;
+
+    margin-bottom: 200px;
+
     flex: 1;
-    width: 100%;
+
 }
+
+
 
 .info-box {
-    width: 100%;
-    height: auto;
+
+    width: 350px;
+
+    height: 300px;
+
     border: 1px solid #DDDDDD;
+
     border-radius: 13px;
+
     padding: 20px;
+
     box-sizing: border-box;
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
+
     gap: 10px;
+
     font-size: 16px;
+
     line-height: 1.5;
+
     color: #717171;
-    margin-left: 0;
+
+    margin-left: 80px;
+
 }
+
+
+
+/* TITLE */
 
 .option-title {
+
     display: flex;
+
     align-items: center;
+
     gap: 10px;
+
     font-weight: 700;
+
     color: #717171;
+
 }
+
+
+
+/* ITEM */
 
 .option-item {
+
     display: flex;
+
     align-items: center;
+
     gap: 12px;
+
+
+
     cursor: pointer;
+
     color: #717171;
+
     font-size: 16px;
+
 }
-.option-item input { display: none; }
+
+
+
+/* HIDE NATIVE INPUT */
+
+.option-item input {
+
+    display: none;
+
+}
+
+
+
+/* CUSTOM CHECKBOX */
 
 .custom-checkbox {
+
     width: 16px;
+
     height: 16px;
+
+
+
     border: 1.5px solid #717171;
+
     border-radius: 50%;
+
+
+
     position: relative;
+
 }
+
+
+
+/* CHECKED STATE */
 
 .option-item input:checked + .custom-checkbox::after {
+
     content: "";
+
     width: 10px;
+
     height: 10px;
+
+
+
     background: #581ADB;
+
     border-radius: 50%;
+
+
+
     position: absolute;
+
     top: 50%;
+
     left: 50%;
+
     transform: translate(-50%, -50%);
+
 }
-.option-text { user-select: none; }
+
+
+
+/* TEXT */
+
+.option-text {
+
+    user-select: none;
+
+}
+
+
 
 /* NEWSLETTER CHECKBOXES */
+
 .newsletter-checkbox-label {
+
     display: flex;
+
     align-items: center;
+
     gap: 10px;
+
     cursor: pointer;
+
     font-size: 16px;
+
     color: #717171;
-}
-.newsletter-checkbox-label input { display: none; }
-.newsletter-checkbox {
-    width: 18px;
-    height: 18px;
-    border: 1.5px solid #717171;
-    border-radius: 50%;
-    position: relative;
-    flex-shrink: 0;
-}
-.newsletter-checkbox-label input:checked + .newsletter-checkbox::after {
-    content: "";
-    width: 10px;
-    height: 10px;
-    background: #581ADB;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
 }
 
-/* NEWSLETTER SECTION */
-.newsletters {
-    max-width: 100%;
-    margin: 40px auto;
-    padding: 0 20px;
-    color: #717171;
+
+
+.newsletter-checkbox-label input {
+
+    display: none;
+
 }
+
+
+
+.newsletter-checkbox {
+
+    width: 18px;
+
+    height: 18px;
+
+    border: 1.5px solid #717171;
+
+    border-radius: 50%;
+
+    position: relative;
+
+    flex-shrink: 0;
+
+}
+
+
+
+.newsletter-checkbox-label input:checked + .newsletter-checkbox::after {
+
+    content: "";
+
+    width: 10px;
+
+    height: 10px;
+
+    background: #581ADB;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+}
+
+
+
+/* Newsletter */
+
+
+
+.newsletters {
+
+  max-width: 1000px;
+
+  margin: 40px auto;
+
+  font-family: Arial, sans-serif;
+
+  color: #717171;
+
+}
+
+
 
 .section-title {
-    color: #581ADB;
-    font-size: 24px;
-    margin-bottom: 20px;
+
+  color: #581ADB;
+
+  font-size: 36px;
+
+  margin-bottom: 20px;
+
 }
+
+
 
 .top-row {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 30px;
+
+  display: flex;
+
+  gap: 20px;
+
+  margin-bottom: 30px;
+
 }
+
+
 
 .banner {
-    border-radius: 10px;
-    overflow: hidden;
-    background: #eee;
-    height: 170px;
-    width: 100%;
+
+  flex: 2;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  background: #eee;
+
+  height: 170px;
+
 }
-.banner img { width: 100%; height: 100%; object-fit: cover; }
+
+
+
+.banner img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+}
+
+
 
 .subscribe-box {
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 0 1px #eee;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 15px;
+
+  flex: 1;
+
+  background: #fff;
+
+  border-radius: 10px;
+
+  padding: 20px;
+
+  box-shadow: 0 0 0 1px #eee;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
 }
+
+
+
+.subscribe-box p {
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+}
+
+
 
 .subscribe-box button {
-    align-self: flex-start;
-    background: #581ADB;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 18px;
-    font-size: 12px;
-    cursor: pointer;
+
+  align-self: flex-start;
+
+  background: #581ADB;
+
+  color: #fff;
+
+  border: none;
+
+  border-radius: 20px;
+
+  padding: 8px 18px;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
 }
+
+
 
 .choose-title {
-    font-size: 11px;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-    color: #717171;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 15px;
+
+  color: #717171;
+
 }
+
+
 
 .cards {
-    display: grid;
-    grid-template-columns: 1fr; /* Одна колонка */
-    gap: 20px;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+
 }
+
+
 
 .card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 0 0 1px #eee;
-    display: flex;
-    flex-direction: column;
+
+  background: #fff;
+
+  border-radius: 12px;
+
+  padding: 15px;
+
+  box-shadow: 0 0 0 1px #eee;
+
+  display: flex;
+
+  flex-direction: column;
+
 }
+
+
 
 .card img {
-    width: 100%;
-    height: 140px;
-    background: #ddd;
-    border-radius: 10px;
-    margin-bottom: 12px;
-    object-fit: cover;
+
+  width: 100%;
+
+  height: 140px;
+
+  background: #ddd;
+
+  border-radius: 10px;
+
+  margin-bottom: 12px;
+
+  object-fit: cover;
+
 }
+
+
+
+.card h3 {
+
+  color: #222222;
+
+  font-size: 15px;
+
+  margin: 0 0 8px;
+
+}
+
+
+
+.card p {
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  margin-bottom: 15px;
+
+}
+
+
 
 .card label {
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: auto;
-    cursor: pointer;
+
+  font-size: 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: auto;
+
+  cursor: pointer;
+
 }
-.card input[type="checkbox"] { accent-color: #581ADB; width: auto; }
+
+
+
+.card input[type="checkbox"] {
+
+  accent-color: #581ADB;
+
+}
+
+
 
 .info-footer {
+
     display: flex;
-    flex-direction: column;
+
     align-items: center;
+
     gap: 20px;
+
     margin-top: 10px;
-    margin-bottom: 100px;
-    height: auto;
+
+    margin-bottom: 200px;
+
+    height: 230px;
+
 }
 
-.info-text {
+
+
+.info-text{
+
+    flex: 1;
+
     font-size: 16px;
+
     line-height: 1.5;
+
     color: #717171;
-    width: 100%;
+
+    width: 50%;
+
     border: 1px solid #DDDDDD;
+
     border-radius: 13px;
-    padding: 20px;
+
+    padding : 20px;
+
 }
 
-.info-footer img {
-    width: 100%;
-    height: 200px;
+
+
+.info-footer img{
+
+    width: 50%;
+
+    height: 230px;
+
     object-fit: cover;
-    border-radius: 13px;
+
 }
 
-/* SECURITY SECTION */
+
+
+/* security */
+
+
+
 .security-section {
-    max-width: 100%;
-    margin: 40px auto;
-    padding: 0 20px;
-    color: #717171;
+
+  max-width: 1000px;
+
+  margin: 40px auto;
+
+  font-family: Arial, sans-serif;
+
+  color: #717171;
+
 }
+
+
 
 .security-title {
-    color: #581ADB;
-    font-size: 22px;
-    margin-bottom: 20px;
+
+  color: #581ADB;
+
+  font-size: 22px;
+
+  margin-bottom: 20px;
+
 }
+
+
 
 .security-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 0 0 1px #eee;
-    margin-bottom: 30px;
+
+  background: #fff;
+
+  border-radius: 12px;
+
+  padding: 25px;
+
+  box-shadow: 0 0 0 1px #eee;
+
+  margin-bottom: 30px;
+
 }
+
+
 
 .security-row {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    margin-bottom: 18px;
+
+  display: grid;
+
+  grid-template-columns: 280px auto auto;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 18px;
+
 }
-.security-row:last-child { margin-bottom: 0; }
+
+
+
+.security-row:last-child {
+
+  margin-bottom: 0;
+
+}
+
+
 
 .security-row input {
-    width: 100%;
-    height: 42px;
-    padding: 0 16px;
-    border-radius: 25px;
-    border: 1px solid #e6e6e6;
-    font-size: 14px;
-    color: #222222;
-    outline: none;
+
+  height: 42px;
+
+  padding: 0 16px;
+
+  border-radius: 25px;
+
+  border: 1px solid #e6e6e6;
+
+  font-size: 14px;
+
+  color: #222222;
+
+  outline: none;
+
 }
-.security-row input::placeholder { color: #999; }
+
+
+
+.security-row input::placeholder {
+
+  color: #999;
+
+}
+
+
+
+.hint {
+
+  font-size: 13px;
+
+}
+
+
 
 .security-row a {
-    font-size: 13px;
-    color: #581ADB;
-    text-decoration: none;
-}
-.security-row a:hover { text-decoration: underline; }
 
-.security-text p { font-size: 14px; line-height: 1.7; margin-bottom: 18px; }
-.security-text { width: 100%; margin-bottom: 200px; }
+  font-size: 13px;
+
+  color: #581ADB;
+
+  text-decoration: none;
+
+}
+
+
+
+.security-row a:hover {
+
+  text-decoration: underline;
+
+}
+
+
+
+.security-text p {
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  margin-bottom: 18px;
+
+}
+
+
 
 .privacy-link {
-    color: #581ADB;
-    font-size: 14px;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 5px;
+
+  color: #581ADB;
+
+  font-size: 14px;
+
+  text-decoration: none;
+
+  display: inline-block;
+
+  margin-top: 5px;
+
 }
-.privacy-link:hover { text-decoration: underline; }
 
 
-/* =================================================================
-   2. DESKTOP RESTORE (ВЕРСІЯ ДЛЯ ПК)
-   Тут ми повертаємо твої старі стилі, якщо екран ширше 1000px
-   ================================================================= */
-@media (min-width: 1000px) {
-    .container, .profile-form, .payment-section, .newsletters, .security-section {
-        max-width: 1100px;
-        margin: 40px auto;
-        padding: 0;
-    }
-    
-    .header { padding: 20px 40px; }
-    
-    .back { display: inline-block !important; margin: 40px; }
-    
-    .nav { 
-        justify-content: center; 
-        padding-left: 0; 
-        overflow: visible; 
-    }
-    
-    /* ACCOUNT GRID RESTORE */
-    .account-section {
-        display: grid;
-        grid-template-columns: 1.3fr 1fr;
-    }
 
-    .account-card {
-        display: grid;
-        grid-template-columns: 220px 1fr;
-        padding: 0;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-        height: fit-content;
-        gap: 20px;
-        border: none;
-    }
+.privacy-link:hover {
 
-    .avatar img {
-        width: 220px;
-        height: 100%;
-        border-radius: 12px 0 0 12px;
-    }
+  text-decoration: underline;
 
-    .account-info { padding: 20px 40px 20px 0; }
-    
-    .disclaimer { box-shadow: 0 6px 18px rgba(0,0,0,0.08); border: none; }
+}
 
-    /* FORM GRID RESTORE */
-    .profile-form { padding: 32px 40px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
-    .form-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 80px;
-    }
-    .form-col { gap: 22px; }
 
-    /* BOOKING RESTORE */
-    .bookings-section {
-        flex-direction: row !important;
-        overflow: visible;
-        border: none;
-        background: transparent;
-        margin: 0;
-        display: flex !important;
-    }
-    
-    .room-card {
-        flex-direction: row !important;
-        max-width: 800px;
-        height: 250px;
-        border-radius: 14px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    }
-    .room-image { width: 40%; height: auto; }
-    .room-image img { border-radius: 0; }
-    .room-content { width: 60%; padding: 20px 24px; }
-    
-    .booking-side { width: 300px; padding: 18px; }
-    .booking-summary { flex-direction: row; gap: 12px; }
-    .btn-outline { height: 80px; width: 125px; }
-    
-    /* Payment Desktop */
-    .payment-top { display: grid; grid-template-columns: 2fr 1fr; }
-    .input { width: 60%; }
-    .input.small { width: 220px; }
-    
-    /* Travel Desktop */
-    .travel-title { margin-left: 200px; font-size: 32px; }
-    .travel-container { flex-direction: row; margin: 50px 50px 0 250px; }
-    .info-box { width: 350px; height: 300px; margin-left: 80px; }
-    
-    /* Newsletter Desktop */
-    .section-title { font-size: 36px; }
-    .top-row { flex-direction: row; }
-    .cards { grid-template-columns: repeat(4, 1fr); }
-    .info-footer { flex-direction: row; height: 230px; margin-bottom: 200px; }
-    .info-text { width: 50%; }
-    .info-footer img { width: 50%; height: 230px; border-radius: 0; }
-    
-    /* Security Desktop */
-    .security-row { display: grid; grid-template-columns: 280px auto auto; }
-    .security-row input { width: auto; }
-    .security-text { width: 50%; margin-bottom: 200px; }
-    .footer { max-width: 50%; margin-bottom: 200px; }
+
+.security-text{
+
+    width: 50%;
+
+    margin-bottom: 200px;
+
 }
