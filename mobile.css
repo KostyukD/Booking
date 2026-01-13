@@ -40,14 +40,12 @@ body {
     width: 24px;
     height: 16px;
     margin-right: 0;
-    
-    /* !!! ГОЛОВНА ЗМІНА: Переносимо прапорець на початок (лівіше кнопки) !!! */
     order: -1; 
 }
 
 /* Контейнер кнопок */
 #authButtonsContainer {
-    display: flex; /* ПРИБРАВ !important ТУТ */
+    display: flex; /* БЕЗ !important */
     align-items: center;
 }
 
