@@ -188,7 +188,7 @@ body {
 .search-tabs {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .tab-item {
@@ -208,7 +208,7 @@ body {
 .main-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 150px 100px;
+  padding: 65px 100px;
 }
 
 .gallery {
