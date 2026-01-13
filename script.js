@@ -211,7 +211,7 @@ if (bronBtn) {
 
 if (bron2Btn) {
     bron2Btn.onclick = () => {
-        window.location.href = 'index_bron2.html';
+        window.location.href = 'account.html';
     };
 }
 
