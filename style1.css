@@ -21,7 +21,7 @@ body {
 /* --- Стилизация Header (Общий контейнер) --- */
 .header {
     background-color: #ffffff; /* Темный фон для верхней полосы */
-    padding-bottom: 20px; /* Отступ между темной полосой и началом изображения */
+    
     position: relative;
 }
 
@@ -456,7 +456,7 @@ body {
 
 .results
 {
-  margin-top: 100px;
+  margin-top: 120px;
 }
 
 a:any-link
