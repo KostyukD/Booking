@@ -206,17 +206,17 @@ if (bronBtn) {
     };
 }
 if (bron2Btn) {
-    bronBtn.onclick = () => {
+    bron2Btn.onclick = () => {
         window.location.href = 'index_bron2.html';
     };
 }
 if (bron3Btn) {
-    bronBtn.onclick = () => {
+    bron3Btn.onclick = () => {
         window.location.href = 'index_bron3.html';
     };
 }
 if (bronFinalBtn) {
-    bronBtn.onclick = () => {
+    bronFinalBtn.onclick = () => {
         window.location.href = 'index_bron_final.html';
     };
 }
