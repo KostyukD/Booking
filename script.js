@@ -204,13 +204,13 @@ if (bronBtn) {
     bronBtn.onclick = () => {
         window.location.href = 'index_bron.html';
     };
-}
 if (bron2Btn) {
     bron2Btn.onclick = () => {
         window.location.href = 'index_bron2.html';
     };
 }
-if (bron3Btn) {
+
+    if (bron3Btn) {
     bron3Btn.onclick = () => {
         window.location.href = 'index_bron3.html';
     };
@@ -219,4 +219,6 @@ if (bronFinalBtn) {
     bronFinalBtn.onclick = () => {
         window.location.href = 'index_bron_final.html';
     };
+}
+    
 }
