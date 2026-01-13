@@ -30,6 +30,10 @@ body {
     padding: 15px 50px;
 }
 
+.header-top-bar a {
+    text-decoration: none;
+}
+
 .logo {
     font-size: 24px;
     font-weight: bold;
