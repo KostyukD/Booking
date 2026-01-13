@@ -18,7 +18,7 @@ body {
     background: #fff;
     border-bottom: 1px solid #f0f0f0;
     
-    /* Важливо: вирівнювання елементів */
+    /* Розміщення: Лого зліва, блок авторизації справа */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,21 +28,30 @@ body {
     font-size: 18px;
 }
 
-/* --- ВИПРАВЛЕННЯ: ПОВЕРТАЄМО КНОПКУ АКАУНТУ --- */
+/* --- БЛОК АВТОРИЗАЦІЇ --- */
 .auth-section {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px; /* Відступ між прапорцем і кнопкою */
 }
 
-/* Показуємо контейнер кнопок */
+/* Прапорець мови */
+.language-flag {
+    width: 24px;
+    height: 16px;
+    margin-right: 0;
+    
+    /* !!! ГОЛОВНА ЗМІНА: Переносимо прапорець на початок (лівіше кнопки) !!! */
+    order: -1; 
+}
+
+/* Контейнер кнопок */
 #authButtonsContainer {
     display: flex !important;
     align-items: center;
-    gap: 5px;
 }
 
-/* Ховаємо кнопку "Register" (вона займає багато місця) */
+/* Ховаємо кнопку "Register" */
 #openRegisterHeader {
     display: none; 
 }
@@ -52,26 +61,18 @@ body {
     display: flex;
     align-items: center;
     background: transparent;
-    border: 1px solid #ddd; /* Легка рамка */
-    border-radius: 20px;    /* Округла форма */
-    padding: 6px 12px;      /* Відступи */
-    font-size: 13px;        /* Розмір тексту */
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 13px;
     color: #333;
-    gap: 5px;               /* Відстань до іконки */
-    white-space: nowrap;    /* Текст в один рядок */
+    gap: 5px;
+    white-space: nowrap;
 }
 
-/* Іконка всередині кнопки */
 #openSignIn i {
     font-size: 16px;
     color: #555;
-}
-
-/* Прапорець мови */
-.language-flag {
-    width: 24px;
-    height: 16px;
-    margin-right: 0;
 }
 
 /* 3. Ховаємо великий банер і вкладки */
@@ -116,7 +117,7 @@ body {
     border-radius: 12px;
     margin-top: 10px;
     height: 45px;
-    background-color: #6200EA; /* Фіолетовий колір */
+    background-color: #6200EA;
     color: white;
     border: none;
     font-size: 18px;
