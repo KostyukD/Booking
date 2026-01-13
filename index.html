@@ -34,7 +34,7 @@
 
             <div class="auth-section">
                 
-                <div id="authButtonsContainer" style="display: none; gap: 10px; align-items: center;">
+                <div id="authButtonsContainer" style="display: flex; gap: 10px; align-items: center;">
                     <button id="openRegisterHeader" class="button button-bordered register-btn">Register</button>
                     <button id="openSignIn" class="button button-bordered signin-btn">
                         Sign in
@@ -42,7 +42,7 @@
                     </button>
                 </div>
 
-                <a href="account.html" id="userProfileHeader" style="display: block; margin-right: 15px;">
+                <a href="account.html" id="userProfileHeader" style="display: none; margin-right: 15px;">
                     <img src="img_acc/a349e35e5470441fe4efb8aeb7ee9917ab64e660.png" alt="Profile" class="header-profile-img" onerror="this.src='img_main/review_icon2.png'">
                 </a>
 
@@ -170,20 +170,17 @@
                     <option value="us">USA</option>
                     <option value="uk">UK</option>
                 </select>
-
                 <select class="modal-input info-input" style="background: white;">
                     <option value="" disabled selected>City</option>
                     <option value="kyiv">Kyiv</option>
                     <option value="ny">New York</option>
                     <option value="ln">London</option>
                 </select>
-
                 <select class="modal-input info-input" style="background: white;">
                     <option value="" disabled selected>Why do you travel?</option>
                     <option value="leisure">Leisure</option>
                     <option value="business">Business</option>
                 </select>
-
                 <div style="width: 100%; margin: 10px 0; display: flex; align-items: center; gap: 15px;">
                     <span style="color: #666;">Travelling with a pet?</span>
                     <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
@@ -193,7 +190,6 @@
                         <input type="radio" name="pet" value="no"> No
                     </label>
                 </div>
-
                 <button type="button" class="continue-btn" id="infoContinueBtn">Continue</button>
                 <button type="button" class="continue-btn" id="infoLaterBtn" style="background: white; color: #6200EA; border: 1px solid #6200EA; margin-top: 10px;">Later</button>
             </form>
