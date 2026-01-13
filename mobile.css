@@ -47,7 +47,7 @@ body {
 
 /* Контейнер кнопок */
 #authButtonsContainer {
-    display: flex !important;
+    display: flex; /* ПРИБРАВ !important ТУТ */
     align-items: center;
 }
 
