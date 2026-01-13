@@ -1,171 +1,477 @@
-/* --- mobile.css (Адаптив iPhone 14 Pro Max) --- */
+/* --- mobile.css (iPhone 14 Pro Max Viewport Optimized) --- */
 
-/* 1. ЗАГАЛЬНІ */
+/* 1. GLOBAL & RESET OVERRIDES */
 body {
     background-color: #fff;
     overflow-x: hidden;
     margin: 0;
     font-family: 'Nunito Sans', sans-serif;
+    color: #333;
 }
 
-.main-content, .content {
-    padding: 15px;
-    margin-top: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* Hide desktop elements on mobile */
+.header-image-container, 
+.search-section, 
+.search-tabs, 
+.register-link, 
+.social-login,
+.be-regular,
+.safe-with-us {
+    display: none !important;
 }
 
-/* 2. ХЕДЕР */
-.header-top-bar {
-    padding: 10px 15px;
+/* 2. HEADER (Fixed for Account View) */
+.mobile-header .header-top-bar {
+    padding: 15px 20px;
     background: #fff;
-    border-bottom: 1px solid #f0f0f0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #f0f0f0;
 }
 
-.logo { font-size: 18px; font-weight: bold; color: #222; }
-.highlight { color: #581ADB; }
+/* Force Flag to Left, Account to Right */
+.mobile-header .language-flag {
+    width: 24px;
+    height: 16px;
+    margin: 0;
+    order: 1; /* First */
+}
 
-.auth-section {
+.mobile-header .logo-link {
+    order: 2; /* Middle */
+    text-decoration: none;
+    flex-grow: 1;
+    text-align: center;
+    padding-right: 24px; /* Balance the flag width */
+}
+
+.mobile-header .account-pill-btn {
+    order: 3; /* Last */
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.mobile-header .account-pill-btn i {
+    font-size: 18px;
+    color: #444;
+}
+
+/* Hide original auth buttons in this view */
+.auth-section { display: none !important; }
+
+/* 3. SCROLL NAVIGATION */
+.scroll-nav {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 15px 20px;
+    gap: 15px;
+    background: #fff;
+    border-bottom: 1px solid #f5f5f5;
+    /* Hide Scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.scroll-nav::-webkit-scrollbar { display: none; }
+
+.nav-item {
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: #888;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s;
+    background: #f9f9f9;
+}
+
+.nav-item.active {
+    background-color: #eee4ff; /* Light purple bg */
+    color: #6200EA;
+    font-weight: 700;
+}
+
+/* 4. MAIN CONTENT & PROFILE */
+.account-content {
+    padding: 20px;
+    max-width: 100%;
+}
+
+.page-title {
+    color: #6200EA;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+    border-radius: 50%; /* Circle placeholder */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: #fff;
+}
+
+.profile-details {
+    flex: 1;
+}
+
+.profile-name-row h2 {
+    font-size: 20px;
+    margin: 0 0 8px 0;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-/* Прапорець вліво */
-.language-flag {
-    width: 24px; height: 16px; order: -1; margin-right: 0;
-}
-
-/* Кнопки */
-.register-btn, #openRegisterHeader { display: none !important; }
-
-.signin-btn, #openSignIn {
-    display: flex !important;
-    align-items: center;
-    background: transparent;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    padding: 6px 12px;
-    font-size: 13px;
+.edit-icon {
+    font-size: 14px;
     color: #333;
-    gap: 5px;
-    white-space: nowrap;
     cursor: pointer;
 }
 
-/* Ховаємо зайве */
-.header-image-container, .search-tabs, .search-toggle { display: none !important; }
-
-/* Пошук */
-.search-section { padding: 10px 15px; }
-.search-form-container {
-    display: flex; border: 1px solid #eee; border-radius: 30px; padding: 5px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-.search-field { width: 100%; border: none; font-size: 14px; padding: 10px; }
-.search-button {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: #6200EA; color: white; border: none;
-    display: flex; justify-content: center; align-items: center; cursor: pointer;
-}
-
-/* 3. КАРТКИ ГОТЕЛІВ */
-.results { width: 100%; }
-.hotel-card {
-    display: flex; flex-direction: column; width: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    border-radius: 15px; overflow: hidden; margin-bottom: 25px; background: #fff; position: relative;
-}
-.hotel-card__image { width: 100%; height: 200px; }
-.hotel-card__image img { width: 100%; height: 100%; object-fit: cover; }
-.hotel-card__body { padding: 20px; display: flex; flex-direction: column; }
-.hotel-card__top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
-.hotel-card__title { font-size: 18px; margin: 0 0 5px 0; }
-.hotel-card__stars { color: #581ADB; font-size: 14px; margin-bottom: 5px; }
-.hotel-card__badges { display: flex; gap: 8px; flex-wrap: wrap; }
-.hotel-card__score {
-    position: absolute; top: 20px; right: 20px; background: white; padding: 5px;
-    border-radius: 50%; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    display: flex; flex-direction: column; align-items: center; font-size: 9px; z-index: 2;
-}
-.hotel-card__score-circle {
-    width: 35px; height: 35px; border: 2px solid #581ADB; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 14px; font-weight: bold; color: #581ADB; margin-bottom: 2px;
-}
-.hotel-card__info { font-size: 12px; color: #555; margin-bottom: 10px; }
-.hotel-card__bottom {
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 12px; width: 100%; margin-top: 10px;
-}
-.hotel-card__price { text-align: center; font-size: 14px; }
-.hotel-card__btn {
-    width: 90%; padding: 12px 0; background: #6200EA; color: white;
-    border: none; border-radius: 25px; font-weight: bold; cursor: pointer;
-}
-
-/* 4. СТОРІНКА АКАУНТУ */
-.page-title { color: #581ADB; font-size: 24px; margin-bottom: 10px; }
-.profile-card { background: #f9f9f9; padding: 20px; border-radius: 20px; display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
-.profile-avatar { width: 70px; height: 70px; background-color: #ccc; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; overflow: hidden; }
-.profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
-.profile-info h2 { font-size: 18px; margin: 0 0 5px 0; display: flex; align-items: center; gap: 10px; }
-.edit-photo-btn { background: white; border: 1px solid #ccc; border-radius: 15px; padding: 5px 15px; font-size: 12px; cursor: pointer; display: flex; gap: 5px; align-items: center; }
-.info-box { border: 1px solid #eee; border-radius: 15px; padding: 15px; font-size: 12px; color: #666; margin-bottom: 20px; line-height: 1.4; }
-.account-form { display: flex; flex-direction: column; gap: 10px; }
-.acc-input { width: 100%; height: 45px; border-radius: 25px; border: 1px solid #ddd; padding: 0 20px; font-size: 14px; outline: none; background: #fff; box-sizing: border-box; }
-.input-note { font-size: 10px; color: #999; margin: -5px 0 10px 15px; }
-.select-wrapper { position: relative; }
-.select-wrapper i { position: absolute; right: 15px; top: 15px; color: #aaa; pointer-events: none; }
-.section-heading { font-size: 14px; color: #888; text-transform: uppercase; margin: 30px 0 15px; }
-.booking-card { border: 1px solid #eee; border-radius: 15px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-.booking-img img { width: 100%; height: 180px; object-fit: cover; }
-.booking-details { padding: 15px; }
-.booking-details h4 { margin: 0 0 10px; font-size: 16px; }
-.free-cancellation { color: #581ADB; font-weight: bold; font-size: 12px; margin-top: 10px; }
-.booking-info-grid { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 20px; }
-.info-item { border: 1px solid #eee; border-radius: 15px; padding: 10px; flex: 1; text-align: center; color: #581ADB; }
-.action-buttons { display: flex; gap: 10px; margin-bottom: 10px; }
-.btn-outline { flex: 1; padding: 12px; border: 1px solid #581ADB; color: #581ADB; background: #fff; border-radius: 25px; font-weight: bold; font-size: 12px; cursor: pointer; }
-.cancel-link { font-size: 12px; color: #581ADB; text-align: center; margin-bottom: 30px; }
-.no-reviews { text-align: center; padding: 20px; border: 1px dashed #ccc; border-radius: 15px; color: #aaa; margin-bottom: 20px; }
-.setting-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #f0f0f0; font-size: 16px; color: #333; cursor: pointer; }
-
-/* 5. МОДАЛЬНІ ВІКНА (ВАЖЛИВО: Виправлення поломки) */
-.overlay {
-    position: fixed !important;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 10000;
-    display: none; /* За замовчуванням приховано */
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(5px);
-}
-
-.overlay.active {
-    display: flex !important; /* JS додає цей клас */
-}
-
-.modal-content {
-    width: 90%;
-    max-width: 400px;
+.edit-photo-btn {
     background: #fff;
-    padding: 30px;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    position: relative;
-    max-height: 90vh;
-    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #333;
+    cursor: pointer;
 }
 
-/* Фільтри і футер */
-.filters { order: 2; width: 100%; }
-.filters-form { display: none; }
-.see-the-map { display: flex; justify-content: center; align-items: center; gap: 10px; background: #fff; border: 1px solid #eee; border-radius: 15px; padding: 10px; }
-.footer { padding: 30px 0; }
-.footer-grid { display: flex; flex-direction: column; text-align: center; gap: 10px; }
-.footer-column ul li { padding: 8px 0; border-bottom: 1px solid #f9f9f9; }
+.info-box {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* 5. FORM STYLES */
+.account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    position: relative;
+    width: 100%;
+}
+
+.acc-input {
+    width: 100%;
+    height: 50px;
+    border-radius: 25px; /* Pill shape */
+    border: 1px solid #e0e0e0;
+    padding: 0 20px;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+    font-family: inherit;
+    background: #fff;
+    color: #333;
+}
+
+.acc-input:focus {
+    border-color: #6200EA;
+}
+
+.input-note {
+    font-size: 11px;
+    color: #999;
+    margin-left: 20px;
+    margin-top: 5px;
+    display: block;
+}
+
+.small-text {
+    font-size: 11px;
+    color: #999;
+    margin-left: 20px;
+    margin-top: 2px;
+}
+
+.select-wrapper i {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    color: #999;
+    pointer-events: none;
+    font-size: 12px;
+}
+
+.select-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #f0f0f0;
+    margin: 40px 0;
+}
+
+.section-label {
+    font-size: 13px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+/* 6. BOOKING CARD */
+.booking-card {
+    border: 1px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    overflow: hidden;
+    background: #fff;
+}
+
+.booking-row {
+    display: flex;
+    padding: 15px;
+    gap: 15px;
+}
+
+.booking-img img {
+    width: 100px;
+    height: 120px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.booking-info h4 {
+    margin: 0 0 8px 0;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.amenity-row {
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.amenities-icons {
+    margin-top: 8px;
+    font-size: 10px;
+    color: #888;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.free-cancellation {
+    color: #6200EA;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.booking-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-box {
+    padding: 12px 5px;
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border-right: 1px solid #f0f0f0;
+}
+.detail-box:last-child { border-right: none; }
+.detail-box i { color: #888; font-size: 14px; }
+.dots { color: #6200EA; font-size: 16px; line-height: 0.5; margin-top: 5px;}
+
+.booking-actions {
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.outline-btn {
+    flex: 1;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #6200EA;
+    border-radius: 25px;
+    color: #6200EA;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.cancel-timer {
+    text-align: center;
+    font-size: 11px;
+    color: #999;
+    padding-bottom: 20px;
+}
+
+.cancel-timer a {
+    color: #6200EA;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* 7. REVIEWS & SUB-SECTIONS */
+.empty-reviews {
+    border: 1px dashed #ccc;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    color: #aaa;
+}
+.empty-reviews i { font-size: 24px; margin-bottom: 10px; display: block; }
+
+/* Styles for Sub-Sections (Payment, etc) */
+.sub-section { margin-bottom: 50px; }
+.white-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    margin-bottom: 20px;
+}
+
+.no-card-text {
+    color: #6200EA;
+    font-size: 12px;
+    margin: 10px 0 10px 20px;
+    font-weight: 600;
+}
+
+.white-info-text {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.empty-state-card {
+    border: 1px dashed #ccc;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.security-footer-text {
+    font-size: 10px;
+    color: #999;
+    line-height: 1.4;
+}
+
+.travel-checklist h4 {
+    margin: 20px 0 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.check-item {
+    display: block;
+    padding: 10px 0;
+    font-size: 13px;
+    color: #555;
+    border-bottom: 1px solid #f9f9f9;
+}
+.check-item input { margin-right: 10px; accent-color: #6200EA; }
+
+/* Newsletters */
+.newsletter-banner img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.subscribe-btn {
+    background: #6200EA;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 12px;
+    width: 100%;
+}
+
+.topics-grid { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; }
+.topic-card {
+    min-width: 220px;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.topic-card img { width: 100%; height: 120px; object-fit: cover; }
+.topic-content { padding: 15px; }
+.radio-select { font-size: 12px; margin-top: 10px; display: flex; align-items: center; gap: 5px; }
+
+/* Security */
+.acc-input-readonly {
+    width: 100%;
+    border: none;
+    background: #f9f9f9;
+    padding: 15px 20px;
+    border-radius: 25px;
+    color: #555;
+    outline: none;
+}
+.security-meta {
+    font-size: 11px;
+    color: #999;
+    margin: 5px 0 15px 20px;
+}
+.security-meta a { color: #6200EA; text-decoration: none; font-weight: 600; }
+.privacy-long-text { font-size: 11px; color: #777; line-height: 1.5; }
