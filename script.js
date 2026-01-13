@@ -1,6 +1,18 @@
 window.onload = function () {
 
-    // --- 1. ЗНАХОДИМО ВСІ ЕЛЕМЕНТИ ---
+    // --- 1. АВТОМАТИЧНИЙ ВХІД (СИМУЛЯЦІЯ) ---
+    // Якщо true - показує Аватар. Якщо false - показує кнопки Sign In/Register.
+    const isUserLoggedIn = true; 
+
+    const authButtonsContainer = document.getElementById('authButtonsContainer');
+    const userProfileHeader = document.getElementById('userProfileHeader');
+
+    if (isUserLoggedIn) {
+        if (authButtonsContainer) authButtonsContainer.style.display = 'none';
+        if (userProfileHeader) userProfileHeader.style.display = 'block';
+    }
+
+    // --- 2. ЗНАХОДИМО ВСІ ЕЛЕМЕНТИ ---
     
     // Модальні вікна
     const signInOverlay = document.getElementById('modalOverlay');
@@ -8,10 +20,6 @@ window.onload = function () {
     const authOverlay = document.getElementById('authOverlay');
     const infoOverlay = document.getElementById('infoOverlay');
     const doneOverlay = document.getElementById('doneOverlay');
-
-    // Елементи ХЕДЕРА (для заміни кнопок на фото)
-    const authButtonsContainer = document.getElementById('authButtonsContainer');
-    const userProfileHeader = document.getElementById('userProfileHeader');
 
     // Кнопки відкриття вікон
     const openSignInBtn = document.getElementById('openSignIn');
@@ -30,37 +38,38 @@ window.onload = function () {
     const linkToSignIn = document.getElementById('linkToSignIn');
 
     // Кнопки "Continue"
-    const loginContinueBtn = document.getElementById('loginContinueBtn'); // Кнопка у вікні Sign In
+    const loginContinueBtn = document.getElementById('loginContinueBtn');
     const authContinueBtn = document.getElementById('authContinueBtn');
     const regContinueBtn = document.getElementById('regContinueBtn');
     const infoContinueBtn = document.getElementById('infoContinueBtn');
     const infoLaterBtn = document.getElementById('infoLaterBtn');
     const checkProfileBtn = document.getElementById('checkProfileBtn'); 
     const continueBookingBtn = document.getElementById('continueBookingBtn');
-   
+    
 
-    // --- 2. ФУНКЦІЇ ВІДКРИТТЯ/ЗАКРИТТЯ ---
+    // --- 3. ФУНКЦІЇ ВІДКРИТТЯ/ЗАКРИТТЯ ---
+    // (Я прибрав overflow = 'hidden', щоб сторінка не злітала)
 
     function show(modal) {
         if (modal) {
             modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            // document.body.style.overflow = 'hidden'; // Цей рядок викликав зсув, я його вимкнув
         }
     }
 
     function hide(modal) {
         if (modal) {
             modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
+            // document.body.style.overflow = 'auto'; // Цей теж
         }
     }
 
-    // --- 3. ЛОГІКА ВІДКРИТТЯ ---
+    // --- 4. ЛОГІКА ВІДКРИТТЯ ---
     if (openSignInBtn) openSignInBtn.onclick = () => show(signInOverlay);
     if (openRegisterBtn) openRegisterBtn.onclick = () => show(registerOverlay);
     if (openRegisterFooterBtn) openRegisterFooterBtn.onclick = () => show(registerOverlay);
 
-    // --- 4. ЛОГІКА ЗАКРИТТЯ ---
+    // --- 5. ЛОГІКА ЗАКРИТТЯ ---
     if (closeSignInBtn) closeSignInBtn.onclick = () => hide(signInOverlay);
     if (closeRegisterBtn) closeRegisterBtn.onclick = () => hide(registerOverlay);
     if (closeAuthBtn) closeAuthBtn.onclick = () => hide(authOverlay);
@@ -84,7 +93,7 @@ window.onload = function () {
         linkToSignIn.onclick = (e) => { e.preventDefault(); hide(registerOverlay); show(signInOverlay); };
     }
 
-    // --- 5. АКТИВАЦІЯ КНОПОК (ФІОЛЕТОВИЙ КОЛІР) ---
+    // --- 6. АКТИВАЦІЯ КНОПОК (ФІОЛЕТОВИЙ КОЛІР) ---
     function handleInputs(inputClass, btnId) {
         const inputs = document.querySelectorAll(inputClass);
         const btn = document.getElementById(btnId);
@@ -112,16 +121,14 @@ window.onload = function () {
     handleInputs('.info-input', 'infoContinueBtn');
 
 
-    // --- 6. ЛОГІКА КНОПОК "CONTINUE" ---
+    // --- 7. ЛОГІКА КНОПОК "CONTINUE" ---
 
-    // === ВХІД (SIGN IN) - ОНОВЛЕНО ===
+    // === ВХІД (SIGN IN) ===
     if (loginContinueBtn) {
         loginContinueBtn.onclick = () => {
-            // Якщо кнопка активна (щось введено), робимо вхід
             if (loginContinueBtn.classList.contains('active')) {
-                hide(signInOverlay); // Закриваємо вікно
-                
-                // Міняємо кнопки на фото
+                hide(signInOverlay);
+                // Оновлюємо хедер
                 if (authButtonsContainer) authButtonsContainer.style.display = 'none';
                 if (userProfileHeader) userProfileHeader.style.display = 'block';
             }
@@ -150,14 +157,13 @@ window.onload = function () {
         };
     }
     
-    // 3. Info -> All Done (і теж міняємо хедер)
+    // 3. Info -> All Done
     if (infoContinueBtn) {
         infoContinueBtn.onclick = () => { 
             if (infoContinueBtn.classList.contains('active')) { 
                 hide(infoOverlay); 
                 show(doneOverlay); 
-                
-                // Міняємо кнопки на фото
+                // Оновлюємо хедер
                 if (authButtonsContainer) authButtonsContainer.style.display = 'none';
                 if (userProfileHeader) userProfileHeader.style.display = 'block';
             } 
@@ -168,7 +174,7 @@ window.onload = function () {
     if (infoLaterBtn) {
         infoLaterBtn.onclick = () => { 
             hide(infoOverlay); 
-            // Також вважаємо, що вхід виконано
+            // Оновлюємо хедер
             if (authButtonsContainer) authButtonsContainer.style.display = 'none';
             if (userProfileHeader) userProfileHeader.style.display = 'block';
         };
@@ -187,20 +193,17 @@ window.onload = function () {
     if (continueBookingBtn) {
         continueBookingBtn.onclick = () => {
             hide(doneOverlay);
-            // Переконуємось, що хедер оновлений
             if (authButtonsContainer) authButtonsContainer.style.display = 'none';
             if (userProfileHeader) userProfileHeader.style.display = 'block';
         };
     }
 };
 
-
-
-/*їбуче пронювання*/
- const bronBtn = document.getElementById('bronBtn'); 
- const bronTwoBtn = document.getElementById('bronTwoBtn'); 
-    const bron3Btn = document.getElementById('bron3Btn'); 
-    const bronFinalBtn = document.getElementById('bronFinalBtn'); 
+/* --- ЛОГІКА БРОНЮВАННЯ (З твого файлу) --- */
+const bronBtn = document.getElementById('bronBtn'); 
+const bronTwoBtn = document.getElementById('bronTwoBtn'); 
+const bron3Btn = document.getElementById('bron3Btn'); 
+const bronFinalBtn = document.getElementById('bronFinalBtn'); 
 
 if (bronBtn) {
     bronBtn.onclick = () => {
@@ -208,10 +211,8 @@ if (bronBtn) {
     };
 }
 
-
 if (bronTwoBtn) {
     bronTwoBtn.onclick = () => {
         window.location.href = 'index_bron2.html';
     };
 }
-
