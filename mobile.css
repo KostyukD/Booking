@@ -1,1 +1,179 @@
+/* mobile.css - Адаптив під iPhone 14 Pro Max */
 
+/* 1. Змінюємо загальні відступи для мобільного */
+body {
+    background-color: #fff; /* На фото фон білий */
+}
+
+.main-content {
+    padding: 20px 15px; /* Зменшуємо величезні відступи десктопа */
+    margin-top: 100px; /* Місце для пошуку, який з'їхав */
+}
+
+/* 2. HEADER - Робимо компактним */
+.header-top-bar {
+    padding: 15px 20px;
+    background-color: #fff; /* Білий хедер як на фото */
+    position: relative;
+    z-index: 20;
+}
+
+.logo {
+    font-size: 20px; /* Трохи менший логотип */
+    color: #000;
+}
+
+/* Приховуємо зайві кнопки "Register" текстом, залишаємо іконки або спрощуємо */
+.auth-section button {
+    display: none; /* Ховаємо великі кнопки */
+}
+
+/* Показуємо тільки іконку профілю, якщо вона є, або спрощуємо меню */
+.auth-section {
+    gap: 10px;
+}
+
+#authButtonsContainer {
+    display: none !important; /* Ховаємо контейнер кнопок входу для чистоти */
+}
+/* Залишаємо прапор та іконку профілю */
+.language-flag {
+    margin-right: 0;
+}
+
+/* 3. БАНЕР І ПОШУК */
+.header-image-container {
+    display: none; /* На другому фото немає великого банера на пів екрану, тому ховаємо */
+}
+
+.search-section {
+    top: 70px; /* Піднімаємо пошук вгору */
+    position: relative; /* Щоб він не плавав поверх всього */
+    padding: 0 15px;
+}
+
+/* Перероблюємо довгий пошук у стовпчик або компактний блок */
+.search-form-container {
+    flex-direction: column; /* Елементи один під одним */
+    height: auto; /* Висота автоматична */
+    border-radius: 20px; /* Більше заокруглення */
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.search-field {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 12px 10px;
+    font-size: 14px;
+}
+
+.search-field:last-of-type {
+    border-bottom: none;
+}
+
+/* Кнопка пошуку на всю ширину знизу або збоку */
+.search-button {
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 10px;
+    height: 40px;
+}
+
+.search-toggle {
+    display: none; /* Ховаємо кнопку перемикання місцями для економії місця */
+}
+
+/* Tabs (Easy booking...) ховаємо, бо на моб. фото їх немає */
+.search-tabs {
+    display: none;
+}
+
+/* 4. ГАЛЕРЕЯ (КАРТКИ ГОТЕЛІВ) */
+/* Головна фішка фото - одна картка на рядок */
+.gallery {
+    grid-template-columns: 1fr; /* Одна колонка замість 4 */
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.card {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Легка тінь як на фото */
+    border-radius: 14px;
+    padding-bottom: 10px;
+}
+
+.card-img img {
+    height: 200px; /* Висота фото */
+}
+
+.card-body {
+    padding: 0 10px; /* Відступи тексту всередині картки */
+}
+
+.card-body h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* 5. ВІДГУКИ */
+.reviews-section {
+    margin-top: 40px;
+}
+
+.reviews {
+    grid-template-columns: 1fr; /* Одна колонка відгуків */
+    gap: 15px;
+}
+
+/* 6. SAFE WITH US (Іконки переваг) */
+.benefits-grid {
+    grid-template-columns: 1fr 1fr; /* Дві колонки (сітка 2х2) */
+    gap: 15px;
+}
+
+/* 7. BE OUR REGULAR (Картинка з дівчиною) */
+.regular-container {
+    flex-direction: column; /* Картинка зверху, текст знизу */
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+.regular-image {
+    flex: none;
+    width: 100%;
+}
+
+.regular-image img {
+    height: 200px;
+}
+
+.regular-content {
+    text-align: center; /* Текст по центру */
+}
+
+/* 8. FOOTER (ПІДВАЛ) */
+.footer {
+    padding: 30px 0;
+}
+
+.footer-grid {
+    grid-template-columns: 1fr; /* Все в одну колонку */
+    text-align: center;
+    gap: 30px;
+}
+
+.footer-column ul li {
+    font-size: 14px;
+    padding: 5px 0;
+    border-bottom: 1px solid #f5f5f5; /* Лінії розділення */
+}
+
+/* 9. МОДАЛЬНІ ВІКНА (Щоб влазили в екран) */
+.modal-content {
+    width: 90%;
+    padding: 20px;
+    margin: 20px;
+}
