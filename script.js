@@ -1,25 +1,17 @@
 window.onload = function () {
 
-    // --- 1. АВТОМАТИЧНИЙ ВХІД (СИМУЛЯЦІЯ) ---
-    // Якщо true - показує Аватар. Якщо false - показує кнопки Sign In/Register.
-    const isUserLoggedIn = true; 
+    // --- 1. ЗНАХОДИМО ВСІ ЕЛЕМЕНТИ ---
 
-    const authButtonsContainer = document.getElementById('authButtonsContainer');
-    const userProfileHeader = document.getElementById('userProfileHeader');
-
-    if (isUserLoggedIn) {
-        if (authButtonsContainer) authButtonsContainer.style.display = 'none';
-        if (userProfileHeader) userProfileHeader.style.display = 'block';
-    }
-
-    // --- 2. ЗНАХОДИМО ВСІ ЕЛЕМЕНТИ ---
-    
     // Модальні вікна
     const signInOverlay = document.getElementById('modalOverlay');
     const registerOverlay = document.getElementById('registerOverlay');
     const authOverlay = document.getElementById('authOverlay');
     const infoOverlay = document.getElementById('infoOverlay');
     const doneOverlay = document.getElementById('doneOverlay');
+
+    // Елементи ХЕДЕРА (для заміни кнопок на фото)
+    const authButtonsContainer = document.getElementById('authButtonsContainer');
+    const userProfileHeader = document.getElementById('userProfileHeader');
 
     // Кнопки відкриття вікон
     const openSignInBtn = document.getElementById('openSignIn');
@@ -38,7 +30,7 @@ window.onload = function () {
     const linkToSignIn = document.getElementById('linkToSignIn');
 
     // Кнопки "Continue"
-    const loginContinueBtn = document.getElementById('loginContinueBtn');
+    const loginContinueBtn = document.getElementById('loginContinueBtn'); // Кнопка у вікні Sign In
     const authContinueBtn = document.getElementById('authContinueBtn');
     const regContinueBtn = document.getElementById('regContinueBtn');
     const infoContinueBtn = document.getElementById('infoContinueBtn');
@@ -47,29 +39,28 @@ window.onload = function () {
     const continueBookingBtn = document.getElementById('continueBookingBtn');
     
 
-    // --- 3. ФУНКЦІЇ ВІДКРИТТЯ/ЗАКРИТТЯ ---
-    // (Я прибрав overflow = 'hidden', щоб сторінка не злітала)
+    // --- 2. ФУНКЦІЇ ВІДКРИТТЯ/ЗАКРИТТЯ ---
 
     function show(modal) {
         if (modal) {
             modal.classList.add('active');
-            // document.body.style.overflow = 'hidden'; // Цей рядок викликав зсув, я його вимкнув
+            // document.body.style.overflow = 'hidden'; // Вимкнув, щоб сторінка не стрибала
         }
     }
 
     function hide(modal) {
         if (modal) {
             modal.classList.remove('active');
-            // document.body.style.overflow = 'auto'; // Цей теж
+            // document.body.style.overflow = 'auto'; 
         }
     }
 
-    // --- 4. ЛОГІКА ВІДКРИТТЯ ---
+    // --- 3. ЛОГІКА ВІДКРИТТЯ ---
     if (openSignInBtn) openSignInBtn.onclick = () => show(signInOverlay);
     if (openRegisterBtn) openRegisterBtn.onclick = () => show(registerOverlay);
     if (openRegisterFooterBtn) openRegisterFooterBtn.onclick = () => show(registerOverlay);
 
-    // --- 5. ЛОГІКА ЗАКРИТТЯ ---
+    // --- 4. ЛОГІКА ЗАКРИТТЯ ---
     if (closeSignInBtn) closeSignInBtn.onclick = () => hide(signInOverlay);
     if (closeRegisterBtn) closeRegisterBtn.onclick = () => hide(registerOverlay);
     if (closeAuthBtn) closeAuthBtn.onclick = () => hide(authOverlay);
@@ -93,7 +84,7 @@ window.onload = function () {
         linkToSignIn.onclick = (e) => { e.preventDefault(); hide(registerOverlay); show(signInOverlay); };
     }
 
-    // --- 6. АКТИВАЦІЯ КНОПОК (ФІОЛЕТОВИЙ КОЛІР) ---
+    // --- 5. АКТИВАЦІЯ КНОПОК (ФІОЛЕТОВИЙ КОЛІР) ---
     function handleInputs(inputClass, btnId) {
         const inputs = document.querySelectorAll(inputClass);
         const btn = document.getElementById(btnId);
@@ -121,14 +112,16 @@ window.onload = function () {
     handleInputs('.info-input', 'infoContinueBtn');
 
 
-    // --- 7. ЛОГІКА КНОПОК "CONTINUE" ---
+    // --- 6. ЛОГІКА КНОПОК "CONTINUE" ---
 
     // === ВХІД (SIGN IN) ===
     if (loginContinueBtn) {
         loginContinueBtn.onclick = () => {
+            // Якщо кнопка активна (щось введено), робимо вхід
             if (loginContinueBtn.classList.contains('active')) {
-                hide(signInOverlay);
-                // Оновлюємо хедер
+                hide(signInOverlay); // Закриваємо вікно
+                
+                // ТУТ ВІДБУВАЄТЬСЯ МАГІЯ: Ховаємо кнопку Sign In, показуємо Аватар
                 if (authButtonsContainer) authButtonsContainer.style.display = 'none';
                 if (userProfileHeader) userProfileHeader.style.display = 'block';
             }
@@ -157,13 +150,14 @@ window.onload = function () {
         };
     }
     
-    // 3. Info -> All Done
+    // 3. Info -> All Done (і теж міняємо хедер)
     if (infoContinueBtn) {
         infoContinueBtn.onclick = () => { 
             if (infoContinueBtn.classList.contains('active')) { 
                 hide(infoOverlay); 
                 show(doneOverlay); 
-                // Оновлюємо хедер
+                
+                // Якщо пройшов реєстрацію - теж вважаємо, що увійшов
                 if (authButtonsContainer) authButtonsContainer.style.display = 'none';
                 if (userProfileHeader) userProfileHeader.style.display = 'block';
             } 
@@ -174,7 +168,7 @@ window.onload = function () {
     if (infoLaterBtn) {
         infoLaterBtn.onclick = () => { 
             hide(infoOverlay); 
-            // Оновлюємо хедер
+            // Якщо натиснув Later - теж вважаємо, що увійшов
             if (authButtonsContainer) authButtonsContainer.style.display = 'none';
             if (userProfileHeader) userProfileHeader.style.display = 'block';
         };
@@ -193,6 +187,7 @@ window.onload = function () {
     if (continueBookingBtn) {
         continueBookingBtn.onclick = () => {
             hide(doneOverlay);
+            // Переконуємось, що хедер оновлений
             if (authButtonsContainer) authButtonsContainer.style.display = 'none';
             if (userProfileHeader) userProfileHeader.style.display = 'block';
         };
