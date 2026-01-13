@@ -208,3 +208,103 @@ body {
     max-height: 90vh;
     overflow-y: auto;
 }
+
+/* --- 11. АДАПТАЦІЯ СТОРІНКИ АКАУНТУ (ACCOUNT PAGE) --- */
+/* Ці стилі адаптують сторінку профілю (account.html) під мобільний вигляд */
+
+/* Заголовок "Your Account" */
+h1, h2 { 
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Основний контейнер, який тримає фото профілю (зліва) та форму (справа) */
+/* Ми змінюємо Flex Direction на column, щоб вони йшли один під одним */
+.account-wrapper, 
+.profile-container, 
+main > div { /* Універсальний селектор, якщо у div немає класу */
+    display: flex;
+    flex-direction: column !important;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Ліва частина (Фото профілю) */
+.account-sidebar, 
+.profile-card-left {
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 15px;
+    gap: 15px;
+}
+
+.account-sidebar img,
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Права частина (Форма) */
+.account-content,
+.profile-form-right {
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+/* Поля вводу (Input fields) */
+form input, 
+form select,
+.input-field {
+    width: 100% !important;
+    height: 50px;
+    border-radius: 25px;
+    border: 1px solid #eee;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    box-sizing: border-box; /* Важливо, щоб padding не ламав ширину */
+}
+
+/* Кнопки або випадаючі списки */
+.dropdown-container {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Адаптація картки бронювання знизу (Your Bookings) */
+.booking-card {
+    display: flex;
+    flex-direction: column !important; /* Фото зверху, текст знизу */
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-top: 30px;
+}
+
+.booking-card-img {
+    width: 100% !important;
+    height: 180px;
+}
+
+.booking-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.booking-card-info {
+    padding: 15px;
+    width: 100% !important;
+}
+
+/* Приховуємо зайві відступи на мобільному */
+.padding-desktop {
+    padding: 0 !important;
+}
