@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Onest:wght@100..900&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap');
 
-/* --- 1. ЗАГАЛЬНІ НАЛАШТУВАННЯ (MOBILE FIRST) --- */
+/* =========================================
+   1. БАЗОВІ СТИЛІ (МОБІЛЬНА ВЕРСІЯ - IPHONE)
+   Це те, що буде видно на телефоні
+   ========================================= */
+
 * {
     box-sizing: border-box;
     font-family: "Nunito Sans", sans-serif;
@@ -12,13 +16,13 @@ body {
     background: #ffffff;
     color: #222;
     padding-bottom: 50px;
-    overflow-x: hidden; /* Запобігає горизонтальному скролу */
+    overflow-x: hidden;
 }
 
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
-/* --- HEADER --- */
+/* HEADER */
 .header {
     display: flex;
     justify-content: space-between;
@@ -27,38 +31,30 @@ ul { list-style: none; }
     border-bottom: 1px solid #DDDDDD;
 }
 
-.logo {
-    font-size: 20px;
-    font-weight: 800;
-    color: #222222;
-}
-
-.logo a { color: #222; }
+.logo { font-size: 20px; font-weight: 800; color: #222222; }
+.logo a { color: #222222; }
 .accent { color: #581ADB; }
-
 .language img { width: 24px; height: auto; }
 
-/* --- НАВІГАЦІЯ (Адаптована під мобільний скрол) --- */
-.back {
-    display: none; /* На мобільному ховаємо кнопку назад */
-}
+/* NAV (МЕНЮ ЗІ СКРОЛОМ) */
+.back { display: none; } /* На телефоні ховаємо кнопку назад */
 
 .nav {
     margin-top: 15px;
     padding-left: 20px;
-    /* Горизонтальний скрол для мобільного */
     display: block;
-    overflow-x: auto;
+    overflow-x: auto; /* Горизонтальний скрол */
     white-space: nowrap;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE */
+    scrollbar-width: none;
 }
-.nav::-webkit-scrollbar { display: none; /* Chrome/Safari */ }
+.nav::-webkit-scrollbar { display: none; }
 
 .steps {
-    display: inline-flex; /* В рядок */
+    display: inline-flex;
     gap: 10px;
     padding-right: 20px;
+    padding-left: 0;
+    margin: 0;
 }
 
 .step {
@@ -81,12 +77,11 @@ ul { list-style: none; }
     border-color: #581ADB;
     color: #581ADB;
 }
-/* Фарбуємо іконку у фіолетовий для активного пункту */
 .step.active img {
     filter: invert(18%) sepia(66%) saturate(5833%) hue-rotate(262deg) brightness(88%) contrast(98%);
 }
 
-/* --- ГОЛОВНИЙ КОНТЕЙНЕР --- */
+/* MAIN CONTAINER */
 .container {
     padding: 0 20px;
     max-width: 100%;
@@ -102,7 +97,7 @@ h1 {
     margin: 10px 0;
 }
 
-/* --- СЕКЦІЯ АКАУНТА (Картка профілю) --- */
+/* ACCOUNT CARD (Вертикальна адаптація) */
 .account-section {
     display: flex;
     flex-direction: column;
@@ -117,24 +112,20 @@ h1 {
     border-radius: 12px;
     padding: 20px;
     gap: 20px;
-    box-shadow: none; /* На мобільному чисто, без тіні */
+    box-shadow: none;
     border: 1px solid #ddd;
     height: auto;
 }
 
-/* Аватар */
-.avatar {
-    flex-shrink: 0;
-}
+.avatar { flex-shrink: 0; }
 .avatar img {
-    width: 80px;
+    width: 80px; 
     height: 80px;
-    border-radius: 50%; /* Круглий на мобільному */
+    border-radius: 50%; /* Кругле фото */
     object-fit: cover;
     background-color: #ccc;
 }
 
-/* Інформація */
 .account-info {
     padding: 0;
     display: flex;
@@ -146,7 +137,7 @@ h1 {
 .name {
     font-size: 18px;
     font-weight: 700;
-    color: #222;
+    color: #222222;
     margin: 0;
     display: flex;
     align-items: center;
@@ -187,18 +178,18 @@ h1 {
     box-shadow: none;
 }
 
-/* --- ФОРМА --- */
+/* FORM (Круглі поля) */
 .profile-form {
     background: #fff;
     border-radius: 18px;
-    padding: 10px 0; /* Менші відступи для мобільного */
+    padding: 10px 0;
     box-shadow: none; 
     max-width: 100%;
 }
 
 .form-grid {
     display: flex;
-    flex-direction: column; /* Одна колонка на телефоні */
+    flex-direction: column;
     gap: 15px;
 }
 
@@ -212,13 +203,14 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    position: relative;
 }
 
-/* INPUTS & SELECTS (Стиль пігулки) */
+/* Стиль полів (Pill shape) */
 input, select {
     width: 100%;
     padding: 14px 20px;
-    border-radius: 30px; /* Сильне заокруглення як на фото */
+    border-radius: 30px; /* Сильне заокруглення */
     border: 1px solid #e0e0e0;
     font-size: 14px;
     color: #717171;
@@ -236,7 +228,7 @@ input, select {
 .hint { font-size: 12px; color: #777; padding-left: 15px; }
 .note { font-size: 12px; color: #bbb; margin-left: 15px; line-height: 1.4; }
 
-/* --- БРОНЮВАННЯ (BOOKINGS) --- */
+/* BOOKINGS (Вертикальна картка) */
 h2 {
     color: #999;
     font-size: 14px;
@@ -246,7 +238,6 @@ h2 {
 }
 
 .bookings-section {
-    /* На телефоні блоки стають вертикально */
     display: flex;
     flex-direction: column; 
     gap: 0;
@@ -257,10 +248,9 @@ h2 {
     margin: 0;
 }
 
-/* Картка номера */
 .room-card {
     display: flex;
-    flex-direction: column; /* Фото зверху */
+    flex-direction: column; /* Вертикально */
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -279,10 +269,10 @@ h2 {
     gap: 10px;
 }
 
-.room-title { font-size: 18px; margin: 0; font-weight: 700; }
+.room-title { font-size: 18px; margin: 0; font-weight: 700; color: #222; }
 
-.room-info { gap: 5px; }
-.info-row { font-size: 13px; }
+.room-info { gap: 5px; display: flex; flex-direction: column; }
+.info-row { font-size: 13px; display: flex; align-items: center; gap: 10px; color: #717171; }
 .info-row img { width: 16px; height: 16px; }
 
 .room-features {
@@ -291,15 +281,16 @@ h2 {
     flex-wrap: wrap; 
     gap: 15px;
 }
-.feature { font-size: 12px; }
+.feature { font-size: 12px; display: flex; align-items: center; gap: 6px; color: #555; }
+.feature img { width: 18px; height: 18px; }
 
-.room-cancel { margin-top: 10px; font-size: 13px; color: #581ADB; }
+.room-cancel { margin-top: 10px; font-size: 13px; color: #581ADB; display: flex; align-items: center; gap: 8px; font-weight: 500;}
 .room-cancel img { 
     filter: invert(18%) sepia(66%) saturate(5833%) hue-rotate(262deg) brightness(88%) contrast(98%);
-    width: 16px; 
+    width: 16px; height: 16px;
 }
 
-/* Блок збоку (став знизу на телефоні) */
+/* BOOKING SIDE (Кнопки та інфо) */
 .booking-side {
     width: 100%;
     padding: 0 20px 20px;
@@ -308,7 +299,6 @@ h2 {
     gap: 15px;
 }
 
-/* Три квадратики */
 .booking-summary {
     display: flex;
     gap: 10px;
@@ -329,12 +319,11 @@ h2 {
     gap: 5px;
 }
 .summary-box img { 
-    width: 18px; 
+    width: 18px; height: 18px;
     filter: invert(18%) sepia(66%) saturate(5833%) hue-rotate(262deg) brightness(88%) contrast(98%);
     opacity: 0.7;
 }
 
-/* Кнопки */
 .booking-actions {
     display: flex;
     gap: 10px;
@@ -359,11 +348,12 @@ h2 {
     display: flex;
     justify-content: space-between;
     font-size: 11px;
+    align-items: center;
 }
-.booking-footer a { color: #581ADB; }
+.booking-footer a { color: #581ADB; font-weight: 500; }
 .time-left { color: #999; }
 
-/* --- ВІДГУКИ --- */
+/* REVIEWS */
 .reviews {
     background: white;
     border: 1px solid #DDDDDD;
@@ -381,7 +371,7 @@ h2 {
 
 
 /* =======================================================
-   ІНШІ СЕКЦІЇ (Твій оригінальний код без змін)
+   ІНШІ СЕКЦІЇ (МОБІЛЬНА АДАПТАЦІЯ)
    ======================================================= */
 
 /* PAYMENT SECTION */
@@ -401,8 +391,8 @@ h2 {
 
 .payment-top {
     display: flex;
-    flex-direction: column;
-    gap: 24px;
+    flex-direction: column; /* Вертикально */
+    gap: 20px;
 }
 
 .payment-card {
@@ -421,12 +411,11 @@ h2 {
     gap: 16px;
 }
 
-.input.small { width: 100%; }
+.input.small { width: 100%; } /* На всю ширину */
 
 .no-card {
     color: #581ADB;
     font-size: 16px;
-    text-decoration: none;
     white-space: nowrap;
 }
 
@@ -454,7 +443,7 @@ h2 {
     background: #fff;
     border: 1px solid #DDDDDD;
     border-radius: 16px;
-    padding: 60px;
+    padding: 40px 20px;
 }
 
 .saved-empty {
@@ -465,18 +454,17 @@ h2 {
     color: #717171;
     font-size: 16px;
 }
-
 .card-icon { font-size: 28px; }
 
+/* FOOTER */
 .footer {
     margin-top: 50px;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
     text-align: left;
     max-width: 100%;
     padding: 0 20px;
 }
-.footer span { color: #581ADB; }
-.footer span:hover { cursor: pointer; }
+.footer span { color: #581ADB; cursor: pointer; }
 
 /* TRAVEL SECTION */
 .travel-title {
@@ -519,7 +507,6 @@ h2 {
     border: 1px solid #DDDDDD;
     border-radius: 13px;
     padding: 20px;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -546,7 +533,6 @@ h2 {
     color: #717171;
     font-size: 16px;
 }
-
 .option-item input { display: none; }
 
 .custom-checkbox {
@@ -568,7 +554,6 @@ h2 {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
 .option-text { user-select: none; }
 
 /* NEWSLETTER */
@@ -599,6 +584,7 @@ h2 {
     height: 170px;
     width: 100%;
 }
+.banner img { width: 100%; height: 100%; object-fit: cover; }
 
 .subscribe-box {
     background: #fff;
@@ -631,7 +617,7 @@ h2 {
 
 .cards {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Одна колонка */
     gap: 20px;
 }
 
@@ -750,7 +736,7 @@ h2 {
 
 
 /* =================================================================
-   DESKTOP RESTORE (Медіа-запит для великих екранів)
+   3. DESKTOP RESTORE (ВЕРСІЯ ДЛЯ ПК)
    Тут ми повертаємо твої старі стилі, якщо екран ширше 1000px
    ================================================================= */
 @media (min-width: 1000px) {
@@ -782,6 +768,8 @@ h2 {
         padding: 0;
         box-shadow: 0 6px 18px rgba(0,0,0,0.08);
         height: fit-content;
+        gap: 20px;
+        border: none;
     }
 
     .avatar img {
@@ -829,7 +817,6 @@ h2 {
     
     /* Payment Desktop */
     .payment-top { display: grid; grid-template-columns: 2fr 1fr; }
-    .input { width: 60%; }
     .input.small { width: 220px; }
     
     /* Travel Desktop */
