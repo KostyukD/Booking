@@ -160,7 +160,7 @@ body, html {
     justify-content: center;
 }
 
-/* 5. ГАЛЕРЕЯ КАРТОК (СІТКА 2 СТОВПЧИКИ) */
+/* 5. ГАЛЕРЕЯ КАРТОК (Сітка 2 стовпчики) */
 .main-content {
     padding: 0 15px !important;
     margin-top: 10px !important;
@@ -195,7 +195,7 @@ body, html {
 
 .card-img img {
     width: 100% !important;
-    height: 140px !important;
+    height: 140px !important; /* Менша висота */
     object-fit: cover !important;
     border-radius: 15px !important;
 }
@@ -225,7 +225,7 @@ body, html {
     font-size: 14px !important;
 }
 
-/* 6. ВІДГУКИ */
+/* 6. ВІДГУКИ (Вертикально) */
 .reviews-section {
     margin-top: 20px !important;
 }
