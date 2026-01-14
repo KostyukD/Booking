@@ -6,8 +6,6 @@
     <title>Hotel For you.</title>
     <link rel="stylesheet" href="style1.css">
     
-    <link rel="stylesheet" href="mobile1.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
@@ -26,8 +24,8 @@
                     <img src="img_main/logo_lang.png" alt="Язык" class="flag-icon">
                 </div>
             </div>
-             <div class="mobile-user-icon" style="display: none;">
-                <i class="fas fa-user-circle" style="font-size: 30px; color: #581ADB;"></i>
+             <div class="mobile-user-nav">
+                <i class="fas fa-user-circle"></i>
             </div>
         </div>
 
@@ -37,7 +35,7 @@
         <section class="search-section">
             <div class="search-form-container">
                 <div class="search-field where">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-map-marker-alt mobile-pin-icon"></i>
                     Where are you going?
                 </div>
                 <div class="search-field check-dates">
@@ -52,8 +50,8 @@
                     <i class="fas fa-exchange-alt"></i>
                 </div>
                 <button class="search-button">
-                    <i class="fas fa-search desktop-icon"></i>
-                    <i class="fas fa-sliders-h mobile-icon"></i>
+                    <i class="fas fa-search desktop-search-icon"></i>
+                    <i class="fas fa-sliders-h mobile-slider-icon"></i>
                 </button>
             </div>
 
@@ -72,13 +70,9 @@
     </header>
 
     <div class="content">
-        <div class="mobile-controls">
-            <button class="mobile-control-btn">
-                Filter <i class="fas fa-sliders-h" style="transform: rotate(90deg); font-size: 12px; margin-left: 5px;"></i>
-            </button>
-            <button class="mobile-control-btn" style="color: #EE0039;">
-                See the map <i class="fas fa-map-marker-alt" style="margin-left: 5px;"></i>
-            </button>
+        <div class="mobile-filter-bar">
+            <button class="mobile-filter-btn">Filter <i class="fas fa-sliders-h" style="transform:rotate(90deg);"></i></button>
+            <button class="mobile-filter-btn map-btn">See the map <i class="fas fa-map-marker-alt"></i></button>
         </div>
 
          <aside class="filters">
@@ -104,7 +98,6 @@
         type="text"
         class="search-input"
         placeholder="Attractions near..."
-        img src="img_2/attraction.png"
       >
     </section>
 
@@ -762,5 +755,10 @@
             </div>
         </div>
     </footer>
+    
+    <div class="floating-chat">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+    
     </body>
 </html>
