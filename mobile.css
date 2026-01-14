@@ -1,212 +1,341 @@
-/* --- mobile.css --- 
-   Цей файл підключається ТІЛЬКИ на телефонах (iPhone, Android і т.д.) */
+/* --- mobile.css (ПОВНИЙ КОД ДЛЯ IPHONE 14 PRO MAX) --- */
 
-/* 1. Загальні налаштування сторінки */
+/* =========================================
+   1. ВИПРАВЛЕННЯ ГОЛОВНОЇ СТОРІНКИ (INDEX)
+   ========================================= */
+
 body {
     background-color: #fff;
     overflow-x: hidden;
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
-.main-content {
-    padding: 15px;
-    margin-top: 50px;
-}
-
-/* 2. Хедер (Логотип і меню) */
+/* --- ХЕДЕР --- */
 .header-top-bar {
-    padding: 10px 15px;
+    padding: 15px 20px;
     background: #fff;
     border-bottom: 1px solid #f0f0f0;
-    
-    /* Розміщення: Лого зліва, блок авторизації справа */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
-    font-size: 18px;
-}
+.logo { font-size: 20px; font-weight: 800; color: #000; }
+.highlight { color: #6200EA; }
 
-/* --- БЛОК АВТОРИЗАЦІЇ --- */
+/* Адаптація блоку авторизації */
 .auth-section {
     display: flex;
     align-items: center;
-    gap: 12px; /* Відступ між прапорцем і кнопкою */
+    gap: 15px;
 }
 
-/* Прапорець мови */
+/* Прапорець (переносимо вліво) */
 .language-flag {
     width: 24px;
     height: 16px;
-    margin-right: 0;
-    
-    /* !!! ГОЛОВНА ЗМІНА: Переносимо прапорець на початок (лівіше кнопки) !!! */
     order: -1; 
+    margin-right: 0;
 }
 
-/* Контейнер кнопок */
-#authButtonsContainer {
+/* Кнопки (Register ховаємо, Sign in стилізуємо) */
+.register-btn, #openRegisterHeader { display: none !important; }
+
+.signin-btn, #openSignIn {
     display: flex !important;
-    align-items: center;
-}
-
-/* Ховаємо кнопку "Register" */
-#openRegisterHeader {
-    display: none; 
-}
-
-/* Налаштовуємо кнопку "Sign in" (Account) */
-#openSignIn {
-    display: flex;
     align-items: center;
     background: transparent;
     border: 1px solid #ddd;
     border-radius: 20px;
-    padding: 6px 12px;
-    font-size: 13px;
+    padding: 8px 14px;
+    font-size: 14px;
     color: #333;
-    gap: 5px;
+    gap: 6px;
     white-space: nowrap;
+    cursor: pointer;
 }
 
-#openSignIn i {
-    font-size: 16px;
-    color: #555;
-}
+/* Аватарка */
+.header-profile-img { display: block; width: 35px; height: 35px; border-radius: 50%; }
 
-/* 3. Ховаємо великий банер і вкладки */
-.header-image-container,
-.search-tabs {
-    display: none;
-}
+/* !!! ВИПРАВЛЕННЯ НАКЛАДАННЯ ПОШУКУ !!! */
+.header-image-container { display: none !important; } /* Ховаємо банер */
 
-/* 4. Пошук */
 .search-section {
-    position: relative;
-    top: 0;
-    margin-top: 20px;
-    padding: 0 15px;
+    position: static !important; /* Скасовуємо absolute з style.css */
+    margin-top: 0 !important;
+    padding: 15px 20px;
+    background: #fff;
+    transform: none !important;
 }
 
+/* Робимо пошук як на Фото 3 (Піллюля) */
 .search-form-container {
-    flex-direction: column;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    padding: 10px;
-}
-
-.search-field {
+    display: flex !important;
+    flex-direction: row !important; /* В рядок */
+    align-items: center;
+    border: 1px solid #eee;
+    border-radius: 30px;
+    padding: 5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    height: 50px;
     width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #eee;
-    padding: 12px 10px;
 }
 
-.search-field:last-of-type {
-    border-bottom: none;
+.search-field.where {
+    width: 100%;
+    border: none;
+    font-size: 14px;
+    padding-left: 15px;
 }
 
+/* Ховаємо зайві поля (дати, гості) для компактності */
+.search-field.check-dates, 
+.search-field.guests-rooms,
 .search-toggle {
-    display: none;
+    display: none !important;
 }
 
 .search-button {
-    width: 100%;
-    border-radius: 12px;
-    margin-top: 10px;
-    height: 45px;
-    background-color: #6200EA;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #6200EA;
     color: white;
     border: none;
-    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
 }
 
-/* 5. Галерея */
-.gallery {
-    grid-template-columns: 1fr;
-    gap: 20px;
+/* Ховаємо вкладки під пошуком */
+.search-tabs { display: none !important; }
+
+
+/* --- КАРТКИ ГОТЕЛІВ (Вертикальні) --- */
+.main-content {
+    padding: 0 20px;
+    margin-top: 10px;
 }
 
-.card {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    border-radius: 15px;
-    overflow: hidden;
-    padding-bottom: 15px;
+.gallery, .results {
+    display: flex;
+    flex-direction: column; /* Вертикальний список */
+    gap: 25px;
 }
 
-.card-img img {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-}
-
-.card-body {
-    padding: 0 15px;
-}
-
-/* 6. Відгуки */
-.reviews-section {
-    margin-top: 40px;
-}
-
-.reviews {
-    grid-template-columns: 1fr;
-    gap: 15px;
-}
-
-/* 7. SAFE WITH US */
-.benefits-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-/* 8. BE OUR REGULAR */
-.regular-container {
+.card, .hotel-card {
+    display: flex;
     flex-direction: column;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 0;
     padding: 0;
-    border: none;
-    background: transparent;
-    gap: 20px;
+    background: #fff;
+    position: relative;
 }
 
-.regular-image {
-    flex: none;
+/* Фото */
+.card-img img, .hotel-card__image img {
     width: 100%;
-}
-
-.regular-image img {
-    height: 200px;
-    border-radius: 15px;
-    width: 100%;
+    height: 220px;
     object-fit: cover;
+    border-radius: 0;
 }
 
-.regular-content {
+.card-body, .hotel-card__body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-body h3, .hotel-card__title {
+    font-size: 18px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.rating, .hotel-card__stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 5px;
+}
+.rating img { width: 14px; }
+
+.distance, .hotel-card__info {
+    font-size: 13px;
+    color: #777;
+}
+
+/* Ціна і кнопка (Знизу по центру) */
+.price, .hotel-card__bottom {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
     text-align: center;
+    display: block;
 }
 
-/* 9. Футер */
-.footer {
-    padding: 30px 0;
+/* Інші блоки головної */
+.reviews { grid-template-columns: 1fr !important; }
+.benefits-grid { grid-template-columns: 1fr 1fr !important; }
+.regular-container { flex-direction: column; border: none; padding: 0; }
+.regular-image img { width: 100%; border-radius: 15px; }
+.footer-grid { grid-template-columns: 1fr !important; text-align: center; }
+
+
+/* =========================================
+   2. СТОРІНКА АКАУНТУ (ЯК НА ФОТО 4-8)
+   ========================================= */
+
+.account-page {
+    padding-top: 0;
 }
 
-.footer-grid {
-    grid-template-columns: 1fr;
+/* Верхня навігація (скрол) */
+.account-nav {
+    display: flex;
+    overflow-x: auto;
     gap: 10px;
-    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+.account-nav::-webkit-scrollbar { display: none; }
+
+.nav-item {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #333;
+    border: 1px solid #eee;
+    background: #fff;
+    display: flex; align-items: center; gap: 5px; text-decoration: none;
+}
+.nav-item.active {
+    background-color: #F3EFFF; /* Світло-фіолетовий */
+    color: #6200EA;
+    border-color: #F3EFFF;
+    font-weight: bold;
+}
+.nav-item.back-link { border: none; padding-left: 0; color: #888; }
+
+.page-title {
+    color: #6200EA;
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 20px;
 }
 
-.footer-column ul li {
-    padding: 8px 0;
-    border-bottom: 1px solid #f9f9f9;
+/* Картка профілю */
+.profile-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.profile-avatar-square {
+    width: 70px; height: 70px;
+    background-color: #C4C4C4; /* Сірий квадрат */
+    border-radius: 18px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 30px; color: #fff;
+}
+.profile-info h2 { font-size: 18px; margin: 0 0 5px 0; display: flex; align-items: center; gap: 8px; }
+.edit-photo-btn {
+    background: white; border: 1px solid #ccc; border-radius: 15px;
+    padding: 6px 12px; font-size: 12px; cursor: pointer; display: flex; gap: 5px; align-items: center;
 }
 
-/* 10. Модальні вікна */
+/* Інфо бокс */
+.info-box {
+    border: 1px solid #eee; border-radius: 15px; padding: 15px;
+    font-size: 13px; color: #666; margin-bottom: 25px; line-height: 1.5;
+}
+
+/* Форма (Круглі інпути) */
+.account-form { display: flex; flex-direction: column; gap: 15px; }
+.acc-input {
+    width: 100%; height: 50px;
+    border: 1px solid #ddd; border-radius: 25px; /* Round */
+    padding: 0 20px; font-size: 14px; outline: none; background: #fff;
+    box-sizing: border-box;
+}
+.input-note { font-size: 11px; color: #999; margin: -10px 0 0 15px; }
+.select-wrapper { position: relative; }
+.select-wrapper i { position: absolute; right: 20px; top: 18px; color: #aaa; pointer-events: none; }
+.acc-input select { -webkit-appearance: none; appearance: none; width: 100%; border: none; background: transparent; }
+
+/* Секції */
+.section-heading {
+    font-size: 13px; color: #999; text-transform: uppercase; margin: 30px 0 15px; letter-spacing: 1px;
+}
+.divider { border: 0; border-top: 1px solid #f5f5f5; margin: 30px 0; }
+
+/* Картка бронювання (горизонтальна) */
+.booking-card-horizontal {
+    display: flex;
+    border: 1px solid #f0f0f0; border-radius: 15px;
+    overflow: hidden; margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+.booking-img-left { width: 40%; }
+.booking-img-left img { width: 100%; height: 100%; object-fit: cover; }
+.booking-content-right { width: 60%; padding: 15px; display: flex; flex-direction: column; justify-content: center; }
+.booking-content-right h4 { font-size: 15px; margin: 0 0 10px 0; }
+.booking-features span { font-size: 11px; color: #777; display: block; margin-bottom: 3px; }
+.free-cancellation { color: #6200EA; font-weight: bold; font-size: 11px; margin-top: 8px; }
+
+/* Інфо пігулки */
+.booking-info-row { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 20px; }
+.info-pill {
+    flex: 1; border: 1px solid #eee; border-radius: 15px; padding: 10px 5px;
+    text-align: center; display: flex; flex-direction: column; align-items: center;
+}
+.info-pill i { font-size: 18px; color: #6200EA; margin-bottom: 5px; }
+.info-title { font-size: 12px; font-weight: bold; color: #333; }
+.info-dots { font-size: 10px; color: #6200EA; }
+
+.action-buttons-row { display: flex; gap: 10px; margin-bottom: 15px; }
+.btn-outline {
+    flex: 1; padding: 12px; border: 1px solid #6200EA; color: #6200EA;
+    background: #fff; border-radius: 25px; font-weight: bold; font-size: 12px; cursor: pointer;
+}
+.cancel-link { text-align: center; font-size: 12px; color: #6200EA; }
+.cancel-link span { color: #999; }
+
+/* Sub-sections */
+.sub-title { font-size: 20px; color: #6200EA; font-weight: bold; margin-bottom: 15px; }
+.setting-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 0; border-bottom: 1px solid #f9f9f9; font-size: 15px; color: #333; cursor: pointer;
+}
+
+/* =========================================
+   3. МОДАЛЬНІ ВІКНА (Щоб не ламалися)
+   ========================================= */
+.overlay {
+    position: fixed !important; /* Фіксуємо на екрані */
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+.overlay.active { display: flex !important; }
 .modal-content {
-    width: 90%;
-    padding: 25px;
-    max-height: 90vh;
-    overflow-y: auto;
+    width: 90%; max-width: 400px;
+    background: #fff; padding: 30px; border-radius: 25px;
+    max-height: 90vh; overflow-y: auto;
 }
