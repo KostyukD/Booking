@@ -26,7 +26,7 @@
                     <img src="img_main/logo_lang.png" alt="Язык" class="flag-icon">
                 </div>
             </div>
-             <div class="mobile-user-icon" style="display: none;">
+            <div class="mobile-user-icon" style="display: none;">
                 <i class="fas fa-user-circle" style="font-size: 30px; color: #581ADB;"></i>
             </div>
         </div>
@@ -37,7 +37,8 @@
         <section class="search-section">
             <div class="search-form-container">
                 <div class="search-field where">
-                    <i class="fas fa-location-dot mobile-loc-pin"></i>
+                    <i class="fas fa-plane mobile-plane-icon" style="display:none;"></i>
+                    <i class="fas fa-map-marker-alt desktop-loc-icon"></i>
                     Where are you going?
                 </div>
                 <div class="search-field check-dates">
@@ -53,10 +54,7 @@
                 </div>
                 <button class="search-button">
                     <i class="fas fa-search desktop-icon"></i>
-                    <div class="mobile-search-icons">
-                        <i class="fas fa-search"></i>
-                        <i class="fas fa-sliders-h"></i>
-                    </div>
+                    <i class="fas fa-sliders-h mobile-icon" style="display:none;"></i>
                 </button>
             </div>
 
@@ -75,13 +73,9 @@
     </header>
 
     <div class="content">
-        <div class="mobile-controls">
-            <button class="mobile-control-btn">
-                Filter <i class="fas fa-sliders-h" style="transform: rotate(90deg); font-size: 12px; margin-left: 5px;"></i>
-            </button>
-            <button class="mobile-control-btn" style="color: #EE0039;">
-                See the map <i class="fas fa-map-marker-alt" style="margin-left: 5px;"></i>
-            </button>
+        <div class="mobile-controls" style="display:none;">
+            <button class="mobile-control-btn">Filter <i class="fas fa-sliders-h" style="transform:rotate(90deg); margin-left:5px;"></i></button>
+            <button class="mobile-control-btn" style="color: #EE0039;">See the map <i class="fas fa-map-marker-alt"></i></button>
         </div>
 
          <aside class="filters">
@@ -107,6 +101,7 @@
         type="text"
         class="search-input"
         placeholder="Attractions near..."
+        img src="img_2/attraction.png"
       >
     </section>
 
@@ -391,9 +386,9 @@
         <div class="hotel-card__stars">★★★★</div>
 
         <div class="hotel-card__badges">
-          <div class="badge-item"><img class="icon-card "src="img_2/crown.png"><span>popular</span></div>
-          <div class="badge-item"><img class="icon-card "src="img_2/rank.png"><span>city centre</span></div>
-          <div class="badge-item"><img class="icon-card "src="img_2/coffee.png"><span>comfortable</span></div>
+          <img class="icon-card "src="img_2/crown.png"><span>popular</span>
+          <img class="icon-card "src="img_2/rank.png"><span>city centre</span>
+          <img class="icon-card "src="img_2/coffee.png"><span>comfortable</span>
         </div>
       </div>
 
@@ -424,7 +419,279 @@
   </div>
 </div>
 
-</main>
+<div class="hotel-card">
+  <div class="hotel-card__image">
+    <img src="img_2/hotel1.jpg" alt="Hotel photo">
+  </div>
+
+  <div class="hotel-card__body">
+    <div class="hotel-card__top">
+      <div>
+        <h2 class="hotel-card__title">Tourist Hotel</h2>
+
+        <div class="hotel-card__stars">★★★</div>
+
+        <div class="hotel-card__badges">
+          <img class="icon-card "src="img_2/crown.png"><span>popular</span>
+          <img class="icon-card "src="img_2/rank.png"><span>city centre</span>
+          <img class="icon-card "src="img_2/coffee.png"><span>comfortable</span>
+        </div>
+      </div>
+
+      <div class="hotel-card__score">
+        <div class="hotel-card__score-circle">6.7</div>
+        <span>reviews<br>345</span>
+      </div>
+    </div>
+
+    <div class="hotel-card__info">
+      airport 3.5km &nbsp; railway station 4.2km
+      <a href="#">see on the map →</a>
+    </div>
+
+    <p class="hotel-card__desc">
+      Located in the heart of Kiev, our hotel offers a prime location for
+      exploring the city's rich history and culture...
+    </p>
+
+    <div class="hotel-card__bottom">
+      <div class="hotel-card__price">
+        prices from<br>
+        <span style="color: #581ADB; font-weight: bold; font-size: 20px;">85$</span>
+      </div>
+
+      <button class="hotel-card__btn" onclick="location.href='index2.html'">CHOOSE</button>
+    </div>
+  </div>
+</div>
+
+<div class="hotel-card">
+  <div class="hotel-card__image">
+    <img src="img_2/hotel3.jpg" alt="Hotel photo">
+  </div>
+  <div class="hotel-card__body">
+    <div class="hotel-card__top">
+      <div>
+        <h2 class="hotel-card__title">Tourist Hotel</h2>
+
+        <div class="hotel-card__stars">★★★★★</div>
+
+        <div class="hotel-card__badges">
+          <img class="icon-card "src="img_2/crown.png"><span>popular</span>
+          <img class="icon-card "src="img_2/rank.png"><span>city centre</span>
+          <img class="icon-card "src="img_2/coffee.png"><span>comfortable</span>
+        </div>
+      </div>
+
+      <div class="hotel-card__score">
+        <div class="hotel-card__score-circle">9.3</div>
+        <span>reviews<br>345</span>
+      </div>
+    </div>
+
+    <div class="hotel-card__info">
+      airport 3.5km &nbsp; railway station 4.2km
+      <a href="#">see on the map →</a>
+    </div>
+
+    <p class="hotel-card__desc">
+      Located in the heart of Kiev, our hotel offers a prime location for
+      exploring the city's rich history and culture...
+    </p>
+
+    <div class="hotel-card__bottom">
+      <div class="hotel-card__price">
+        prices from<br>
+        <span style="color: #581ADB; font-weight: bold; font-size: 20px;">85$</span>
+      </div>
+      <button class="hotel-card__btn" onclick="location.href='index2.html'">CHOOSE</button>
+    </div>
+  </div>
+</div>
+
+<div class="hotel-card">
+  <div class="hotel-card__image">
+    <img src="img_2/hotel4.jpg" alt="Hotel photo">
+  </div>
+  <div class="hotel-card__body">
+    <div class="hotel-card__top">
+      <div>
+        <h2 class="hotel-card__title">Tourist Hotel</h2>
+
+        <div class="hotel-card__stars">★★★</div>
+
+        <div class="hotel-card__badges">
+          <img class="icon-card "src="img_2/crown.png"><span>popular</span>
+          <img class="icon-card "src="img_2/rank.png"><span>city centre</span>
+          <img class="icon-card "src="img_2/coffee.png"><span>comfortable</span>
+        </div>
+      </div>
+
+      <div class="hotel-card__score">
+        <div class="hotel-card__score-circle">7.1</div>
+        <span>reviews<br>345</span>
+      </div>
+    </div>
+
+    <div class="hotel-card__info">
+      airport 3.5km &nbsp; railway station 4.2km
+      <a href="#">see on the map →</a>
+    </div>
+
+    <p class="hotel-card__desc">
+      Located in the heart of Kiev, our hotel offers a prime location for
+      exploring the city's rich history and culture...
+    </p>
+
+    <div class="hotel-card__bottom">
+      <div class="hotel-card__price">
+        prices from<br>
+        <span style="color: #581ADB; font-weight: bold; font-size: 20px;">85$</span>
+      </div>
+
+      <button class="hotel-card__btn" onclick="location.href='index2.html'">CHOOSE</button>
+    </div>
+  </div>
+</div>
+
+<div class="hotel-card">
+  <div class="hotel-card__image">
+    <img src="img_2/hotel5.jpg" alt="Hotel photo">
+  </div>
+
+  <div class="hotel-card__body">
+    <div class="hotel-card__top">
+      <div>
+        <h2 class="hotel-card__title">Tourist Hotel</h2>
+
+        <div class="hotel-card__stars">★★★★</div>
+
+        <div class="hotel-card__badges">
+          <img class="icon-card "src="img_2/crown.png"><span>popular</span>
+          <img class="icon-card "src="img_2/rank.png"><span>city centre</span>
+          <img class="icon-card "src="img_2/coffee.png"><span>comfortable</span>
+        </div>
+      </div>
+
+      <div class="hotel-card__score">
+        <div class="hotel-card__score-circle">7.7</div>
+        <span>reviews<br>345</span>
+      </div>
+    </div>
+
+    <div class="hotel-card__info">
+      airport 3.5km &nbsp; railway station 4.2km
+      <a href="#">see on the map →</a>
+    </div>
+
+    <p class="hotel-card__desc">
+      Located in the heart of Kiev, our hotel offers a prime location for
+      exploring the city's rich history and culture...
+    </p>
+
+    <div class="hotel-card__bottom">
+      <div class="hotel-card__price">
+        prices from<br>
+        <span style="color: #581ADB; font-weight: bold; font-size: 20px;">85$</span>
+      </div>
+
+      <button class="hotel-card__btn" onclick="location.href='index2.html'">CHOOSE</button>
+    </div>
+  </div>
+</div>
+
+<div class="hotel-card">
+  <div class="hotel-card__image">
+    <img src="img_2/hotel6.jpg" alt="Hotel photo">
+  </div>
+
+  <div class="hotel-card__body">
+    <div class="hotel-card__top">
+      <div>
+        <h2 class="hotel-card__title">Tourist Hotel</h2>
+
+        <div class="hotel-card__stars">★★★</div>
+
+        <div class="hotel-card__badges">
+          <img class="icon-card "src="img_2/crown.png"><span>popular</span>
+          <img class="icon-card "src="img_2/rank.png"><span>city centre</span>
+          <img class="icon-card "src="img_2/coffee.png"><span>comfortable</span>
+        </div>
+      </div>
+
+      <div class="hotel-card__score">
+        <div class="hotel-card__score-circle">5.9</div>
+        <span>reviews<br>345</span>
+      </div>
+    </div>
+
+    <div class="hotel-card__info">
+      airport 3.5km &nbsp; railway station 4.2km
+      <a href="#">see on the map →</a>
+    </div>
+
+    <p class="hotel-card__desc">
+      Located in the heart of Kiev, our hotel offers a prime location for
+      exploring the city's rich history and culture...
+    </p>
+
+    <div class="hotel-card__bottom">
+      <div class="hotel-card__price">
+        prices from<br>
+        <span style="color: #581ADB; font-weight: bold; font-size: 20px;">85$</span>
+      </div>
+
+      <button class="hotel-card__btn" onclick="location.href='index2.html'">CHOOSE</button>
+    </div>
+  </div>
+</div>
+
+<div class="hotel-card">
+  <div class="hotel-card__image">
+    <img src="img_2/hotel7.jpg" alt="Hotel photo">
+  </div>
+
+  <div class="hotel-card__body">
+    <div class="hotel-card__top">
+      <div>
+        <h2 class="hotel-card__title">Tourist Hotel</h2>
+
+        <div class="hotel-card__stars">★★★★</div>
+
+        <div class="hotel-card__badges">
+          <img class="icon-card "src="img_2/crown.png"><span>popular</span>
+          <img class="icon-card "src="img_2/rank.png"><span>city centre</span>
+          <img class="icon-card "src="img_2/coffee.png"><span>comfortable</span>
+        </div>
+      </div>
+
+      <div class="hotel-card__score">
+        <div class="hotel-card__score-circle">7.2</div>
+        <span>reviews<br>345</span>
+      </div>
+    </div>
+
+    <div class="hotel-card__info">
+      airport 3.5km &nbsp; railway station 4.2km
+      <a href="#">see on the map →</a>
+    </div>
+
+    <p class="hotel-card__desc">
+      Located in the heart of Kiev, our hotel offers a prime location for
+      exploring the city's rich history and culture...
+    </p>
+
+    <div class="hotel-card__bottom">
+      <div class="hotel-card__price">
+        prices from<br>
+        <span style="color: #581ADB; font-weight: bold; font-size: 20px;">85$</span>
+      </div>
+      <button class="hotel-card__btn" onclick="location.href='index2.html'">CHOOSE</button>
+    </div>
+  </div>
+</div>
+
+  </main>
     </div>
 
     <footer class="footer">
