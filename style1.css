@@ -109,7 +109,7 @@ body {
 .search-section {
     position: absolute;
     width: 100%;
-    top: 180px;
+    top: 200px;
     left: 0;
     z-index: 10;
 }
@@ -486,4 +486,16 @@ a:any-link
 
 .footer-column li:hover {
     color: #ff8000;
+}
+
+/* --- Стили для скрытия мобильных элементов на десктопе --- */
+.mobile-user-icon,
+.mobile-icon,
+.mobile-controls,
+.floating-chat-btn {
+    display: none;
+}
+
+.badge-item {
+    display: contents; 
 }
