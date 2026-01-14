@@ -6,7 +6,8 @@
     <title>Hotel For you.</title>
     
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mobile.css" media="(max-width: 480px)">
+    
+    <link rel="stylesheet" href="mobile.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
@@ -31,20 +32,20 @@
             <div class="logo">Hotel for <span class="highlight">you.</span></div>
 
             <div class="auth-section">
-                <div class="language-flag">
-                    <img src="img_main/logo_lang.png" alt="Язык" class="flag-icon">
-                </div>
-
-                <a href="account.html" id="mobileAccountBtn" style="display: none;">
-                    Account <i class="fas fa-user-circle"></i>
-                </a>
-
                 <div id="authButtonsContainer">
                     <button id="openRegisterHeader" class="button button-bordered register-btn">Register</button>
                     <button id="openSignIn" class="button button-bordered signin-btn">
                         Sign in
                         <i class="fas fa-user-circle"></i>
                     </button>
+                </div>
+
+                <a href="account.html" id="mobileAccountBtn">
+                    Account <i class="fas fa-user-circle"></i>
+                </a>
+
+                <div class="language-flag">
+                    <img src="img_main/logo_lang.png" alt="Language" class="flag-icon">
                 </div>
 
                 <a href="account.html" id="userProfileHeader" style="display: none; margin-right: 15px;">
@@ -59,7 +60,8 @@
         <section class="search-section">
             <div class="search-form-container">
                 <div class="search-field where">
-                    <i class="fas fa-plane mobile-search-icon"></i>
+                    <i class="fas fa-map-marker-alt mobile-hide-icon"></i>
+                    <i class="fas fa-plane mobile-show-icon"></i>
                     Where are you going?
                 </div>
                 <div class="search-field check-dates">
@@ -70,18 +72,34 @@
                     <i class="fas fa-user-friends"></i>
                     2 adults • 0 children • 1 room
                 </div>
+                
                 <div class="mobile-filter-btn">
                     <i class="fas fa-sliders-h"></i>
                 </div>
+                
+                <div class="search-toggle">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+
                 <a href="index1.html" class="search-button">
                     <i class="fas fa-search"></i>
                 </a>
             </div>
 
             <div class="search-tabs">
-                <div class="tab-item"><i class="fas fa-suitcase"></i></div>
-                <div class="tab-item"><i class="fas fa-lock"></i></div>
-                <div class="tab-item"><i class="fas fa-receipt"></i></div>
+                <div class="tab-item desktop-tab">
+                    <i class="fas fa-book-open"></i> Easy booking
+                </div>
+                <div class="tab-item desktop-tab">
+                    <i class="fas fa-lock"></i> Secure payment
+                </div>
+                <div class="tab-item desktop-tab">
+                    <i class="fas fa-info-circle"></i> Relevant information
+                </div>
+
+                <div class="tab-item mobile-tab"><i class="fas fa-suitcase"></i></div>
+                <div class="tab-item mobile-tab"><i class="fas fa-lock"></i></div>
+                <div class="tab-item mobile-tab"><i class="fas fa-receipt"></i></div>
             </div>
         </section>
     </header>
@@ -130,7 +148,7 @@
             <h2 class="modal-title">Authentication</h2>
             <form class="modal-form">
                 <input type="text" placeholder="Code" class="modal-input auth-input" id="authCodeInput">
-                <p style="text-align: center; margin: 15px 0; font-size: 14px; color: #555;">Check your mail and enter the code.</p>
+                <p style="text-align: center; margin: 15px 0; font-size: 14px; color: #555;">We have sent you an email with the code.<br>Check your mail and enter the code.</p>
                 <button type="button" class="continue-btn" id="authContinueBtn">Continue</button>
             </form>
         </div>
