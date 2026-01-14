@@ -31,28 +31,32 @@
             <div class="logo">Hotel for <span class="highlight">you.</span></div>
 
             <div class="auth-section">
+                
                 <div class="language-flag">
                     <img src="img_main/logo_lang.png" alt="Язык" class="flag-icon">
                 </div>
 
-                <a href="account.html" id="mobileAccountBtn">
+                <a href="account.html" id="mobileAccountBtn" style="display: none;">
                     Account <i class="fas fa-user-circle"></i>
                 </a>
 
                 <div id="authButtonsContainer" style="display: flex; gap: 10px; align-items: center;">
                     <button id="openRegisterHeader" class="button button-bordered register-btn">Register</button>
                     <button id="openSignIn" class="button button-bordered signin-btn">
-                        Sign in <i class="fas fa-user-circle"></i>
+                        Sign in
+                        <i class="fas fa-user-circle"></i>
                     </button>
                 </div>
 
                 <a href="account.html" id="userProfileHeader" style="display: none; margin-right: 15px;">
                     <img src="img_acc/a349e35e5470441fe4efb8aeb7ee9917ab64e660.png" alt="Profile" class="header-profile-img" onerror="this.src='img_main/review_icon2.png'">
                 </a>
+
             </div>
         </div>
 
-        <div class="header-image-container"></div>
+        <div class="header-image-container">
+        </div>
 
         <section class="search-section">
             <div class="search-form-container">
@@ -79,9 +83,15 @@
             </div>
 
             <div class="search-tabs">
-                <div class="tab-item"><i class="fas fa-suitcase"></i></div>
-                <div class="tab-item"><i class="fas fa-lock"></i></div>
-                <div class="tab-item"><i class="fas fa-receipt"></i></div>
+                <div class="tab-item">
+                    <i class="fas fa-suitcase"></i>
+                </div>
+                <div class="tab-item">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="tab-item">
+                    <i class="fas fa-receipt"></i>
+                </div>
             </div>
         </section>
     </header>
@@ -263,6 +273,7 @@
                     <p>So start your search today and discover the amazing rewards waiting for you on our website!</p>
                 </div>
             </div>
+            
             <div class="register-action">
                 <button class="register-purple-btn">Register an account</button>
             </div>
