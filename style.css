@@ -37,9 +37,6 @@ body {
     align-items: center;
     padding: 15px 50px; /* Отступы по краям и сверху/снизу */
     color: white;
-    /* Обратите внимание, логотип должен быть черным на белом фоне (как в вашем примере) 
-       или белым на черном фоне (как в моем коде).
-       Я временно сделаю его белым, чтобы он был виден на фоне #333. */
 }
 
 .logo {
@@ -56,6 +53,13 @@ body {
 .auth-section {
     display: flex;
     align-items: center;
+}
+
+/* --- ВАЖЛИВО: Контейнер для кнопок на ПК --- */
+#authButtonsContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .language-flag {
@@ -168,19 +172,19 @@ body {
     width: 44px;
     height: 44px;
 
-    display: inline-flex;     
-    align-items: center;      
+    display: inline-flex;      
+    align-items: center;       
     justify-content: center;   
 
-    text-decoration: none;     
+    text-decoration: none;      
     cursor: pointer;
     flex-shrink: 0;
 }
 
 .search-button i {
-    display: block;     
+    display: block;      
     font-size: 20px;
-    line-height: 1;    
+    line-height: 1;     
 }
 
 
