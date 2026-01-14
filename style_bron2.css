@@ -377,3 +377,169 @@ body {
 .options-row .option-item {
     min-height: 80px;
 }
+@media (max-width: 480px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .header-top-bar {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .main-container {
+    flex-direction: column;
+    padding: 15px;
+    gap: 16px;
+    max-width: 100%;
+    margin: 0;
+    align-items: stretch;
+  }
+
+  .search-summary {
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+
+  .summary-card {
+    min-width: 90px;
+    width: auto;
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 14px;
+    flex-shrink: 0;
+  }
+
+  .room-card {
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .room-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .room-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .room-info {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .room-info h3 {
+    font-size: 18px;
+  }
+
+  .room-details {
+    font-size: 13px;
+  }
+
+  .amenities {
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  .booking-container {
+    max-width: 100%;
+    width: 100%;
+    padding: 16px;
+    margin: 0;
+  }
+
+  .booking-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .booking-title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .input-group {
+    width: 100%;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+
+  .helper-text {
+    font-size: 13px;
+  }
+
+  .options-row {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .option-item {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .custom-checkbox {
+    width: 20px;
+    height: 20px;
+  }
+
+  .option-item input:checked + .custom-checkbox::after {
+    width: 10px;
+    height: 10px;
+  }
+
+  .option-text {
+    font-size: 14px;
+  }
+
+  .option-text small {
+    font-size: 12px;
+  }
+
+  .continue-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px 0;
+    border-radius: 32px;
+    margin: 0;
+  }
+
+  .close-btn,
+  .back-btn {
+    top: 12px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.95);
+  }
+
+  .close-btn {
+    right: 12px;
+  }
+
+  .back-btn {
+    left: 12px;
+    right: auto;
+  }
+}
