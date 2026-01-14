@@ -1,243 +1,156 @@
 /* --- mobile.css --- 
-   Адаптація під мобільний вигляд (iPhone 14 Pro Max) */
+   Цей файл підключається ТІЛЬКИ на телефонах (iPhone, Android і т.д.) */
 
-/* Цей код спрацює ТІЛЬКИ якщо ширина екрану менша за 480px */
-@media only screen and (max-width: 480px) {
+/* 1. Загальні налаштування сторінки */
+body {
+    background-color: #fff; /* Білий фон */
+    overflow-x: hidden; /* Щоб не було горизонтальної прокрутки */
+}
 
-    /* 1. БАЗА */
-    body, html {
-        background-color: #fff !important;
-        overflow-x: hidden !important;
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-sizing: border-box !important;
-    }
+.main-content {
+    padding: 15px; /* Зменшуємо відступи */
+    margin-top: 50px; /* Відступ зверху */
+}
 
-    /* 2. ЕЛЕМЕНТИ ЯКІ ТРЕБА СХОВАТИ НА МОБІЛЬНОМУ */
-    .desktop-only, 
-    .desktop-auth-buttons,
-    .desktop-only-icon {
-        display: none !important;
-    }
+/* 2. Хедер (Логотип і меню) */
+.header-top-bar {
+    padding: 10px 15px;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
 
-    /* ЕЛЕМЕНТИ ЯКІ ТРЕБА ПОКАЗАТИ НА МОБІЛЬНОМУ */
-    .mobile-only {
-        display: flex !important;
-    }
-    
-    .mobile-only-icon {
-        display: inline-block !important;
-    }
+.logo {
+    font-size: 18px;
+}
 
-    /* 3. ХЕДЕР (Верхня біла панель) */
-    .header {
-        background-color: transparent !important;
-        padding-bottom: 0 !important;
-    }
+/* Ховаємо великі кнопки реєстрації */
+#authButtonsContainer {
+    display: none !important;
+}
 
-    .header-top-bar {
-        padding: 10px 15px !important;
-        height: 60px !important;
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        background: #fff !important;
-        position: relative;
-        z-index: 5; /* Поверх всього */
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
+/* 3. Ховаємо великий банер і вкладки "Easy Booking" */
+.header-image-container,
+.search-tabs {
+    display: none;
+}
 
-    .logo {
-        font-size: 20px !important;
-        color: #222 !important;
-        font-weight: 800 !important;
-    }
+/* 4. Пошук (Робимо компактним) */
+.search-section {
+    position: relative;
+    top: 0;
+    margin-top: 20px;
+    padding: 0 15px;
+}
 
-    /* ПРАВА ЧАСТИНА ХЕДЕРА */
-    .auth-section {
-        display: flex !important;
-        align-items: center !important;
-        gap: 10px !important;
-    }
+.search-form-container {
+    flex-direction: column; /* Елементи стовпчиком */
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 10px;
+}
 
-    /* ПОРЯДОК: 1. Прапор, 2. Кнопка Account */
-    .language-flag {
-        order: 1 !important;
-        width: 24px !important;
-        height: auto !important;
-        margin: 0 !important;
-    }
-    .flag-icon { width: 100%; display: block; }
+.search-field {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding: 12px 10px;
+}
 
-    /* Кнопка Account (стиль пігулки) */
-    .mobile-account-btn {
-        order: 2 !important; /* Друга в черзі */
-        display: flex !important;
-        align-items: center !important;
-        gap: 8px !important;
-        background: white !important;
-        border: 1px solid #ddd !important;
-        padding: 6px 12px !important;
-        border-radius: 30px !important;
-        font-size: 13px !important;
-        font-weight: 600 !important;
-        color: #333 !important;
-        text-decoration: none !important;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
+.search-field:last-of-type {
+    border-bottom: none;
+}
 
-    /* 4. КАРТИНКА (ФОН) */
-    .header-image-container {
-        display: block !important;
-        width: 100% !important;
-        height: 250px !important;
-        background-color: #eee;
-        background-image: url("img_main/header.jpg") !important;
-        background-size: cover !important;
-        background-position: center !important;
-        margin-top: 0 !important;
-        position: relative;
-        z-index: 1;
-    }
+.search-toggle {
+    display: none; /* Ховаємо стрілочки */
+}
 
-    /* 5. ПОШУК (Накладається на фото) */
-    .search-section {
-        position: relative !important;
-        top: 0 !important;
-        margin-top: -30px !important; /* Піднімаємо вгору */
-        padding: 0 15px !important;
-        z-index: 3;
-    }
+.search-button {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 10px;
+    height: 45px;
+}
 
-    .search-form-container {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        height: 55px !important;
-        padding: 0 15px !important;
-        border-radius: 30px !important;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
-        background: white !important;
-        justify-content: space-between !important;
-    }
+/* 5. Галерея (Картки одна під одною) */
+.gallery {
+    grid-template-columns: 1fr; /* Одна колонка */
+    gap: 20px;
+}
 
-    .search-field.where {
-        width: auto !important;
-        border: none !important;
-        padding: 0 !important;
-        font-size: 14px !important;
-        color: #555 !important;
-        flex-grow: 1 !important;
-        font-weight: 500;
-        display: flex !important;
-        align-items: center !important;
-    }
+.card {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 15px;
+    overflow: hidden;
+    padding-bottom: 15px;
+}
 
-    .search-field.where i {
-        margin-right: 10px;
-        color: #555;
-    }
+.card-img img {
+    height: 200px;
+}
 
-    /* Фіолетова кнопка фільтра */
-    .mobile-filter-btn {
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-        width: 36px;
-        height: 36px;
-        background-color: #6200EA;
-        border-radius: 50%;
-        color: white;
-        font-size: 14px;
-        flex-shrink: 0;
-    }
+.card-body {
+    padding: 0 15px;
+}
 
-    /* Вкладки під пошуком */
-    .search-tabs {
-        display: flex !important;
-        justify-content: space-around !important;
-        margin-top: 25px !important;
-        padding-bottom: 10px !important;
-    }
+/* 6. Відгуки */
+.reviews-section {
+    margin-top: 40px;
+}
 
-    .tab-item.mobile-only {
-        width: 50px;
-        height: 50px;
-        background: #f5f5f5;
-        border-radius: 50%;
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-        color: #555;
-    }
-    .tab-item i { margin: 0 !important; font-size: 20px !important; }
+.reviews {
+    grid-template-columns: 1fr; /* Одна колонка */
+}
 
-    /* 6. ГАЛЕРЕЯ (2 КОЛОНКИ) */
-    .main-content {
-        padding: 0 15px !important;
-        margin-top: 10px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
+/* 7. SAFE WITH US (Іконки) */
+.benefits-grid {
+    grid-template-columns: 1fr 1fr; /* Дві колонки (як плитка) */
+    gap: 15px;
+}
 
-    .gallery {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 15px !important;
-        padding-bottom: 20px !important;
-    }
+/* 8. BE OUR REGULAR (Картинка і текст) */
+.regular-container {
+    flex-direction: column;
+    padding: 0;
+    border: none;
+    background: transparent;
+    gap: 20px;
+}
 
-    .card {
-        width: 100% !important;
-        margin-bottom: 0 !important;
-        border-radius: 15px !important;
-        border: none !important;
-        box-shadow: none !important;
-    }
+.regular-image {
+    flex: none;
+    width: 100%;
+}
 
-    .card-img img {
-        height: 140px !important;
-        object-fit: cover !important;
-        border-radius: 15px !important;
-        width: 100% !important;
-    }
+.regular-image img {
+    height: 200px;
+    border-radius: 15px;
+}
 
-    .card-body { padding: 10px 0 !important; }
-    .card-body h3 { 
-        font-size: 14px !important; 
-        font-weight: 700 !important;
-        margin-bottom: 5px !important;
-        white-space: nowrap !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-    }
-    .rating img { width: 12px !important; }
-    .distance { font-size: 11px !important; }
-    .price { font-size: 14px !important; }
+.regular-content {
+    text-align: center;
+}
 
-    /* 7. ІНШІ СЕКЦІЇ */
-    .reviews { display: flex !important; flex-direction: column !important; gap: 15px !important; }
-    .card-review { width: 100% !important; border: 1px solid #eee !important; border-radius: 15px !important; padding: 20px !important; box-sizing: border-box !important; }
-    
-    .benefits-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 15px !important; }
-    .benefit-card { padding: 20px 10px !important; height: 120px !important; border: 1px solid #f0f0f0 !important; border-radius: 15px !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; }
-    
-    .regular-container { flex-direction: column !important; padding: 0 !important; border: none !important; gap: 20px !important; }
-    .regular-image img { height: 200px !important; border-radius: 15px !important; width: 100% !important; }
-    .regular-content { text-align: left !important; padding: 0 !important; }
+/* 9. Футер (Список посилань) */
+.footer {
+    padding: 30px 0;
+}
 
-    .register-purple-btn { width: 100% !important; padding: 15px !important; border-radius: 30px !important; font-size: 16px !important; background-color: #6200EA !important; color: white !important; }
-    
-    .footer { padding: 30px 0 !important; }
-    .footer-grid { grid-template-columns: 1fr !important; text-align: center !important; gap: 10px !important; }
+.footer-grid {
+    grid-template-columns: 1fr; /* Одна колонка */
+    gap: 10px;
+    text-align: center;
+}
 
-    /* Account Page Fixes */
-    .container { width: 100% !important; padding: 0 15px !important; box-sizing: border-box !important; }
-    .account-card, .room-card { display: flex !important; flex-direction: column !important; height: auto !important; grid-template-columns: none !important; }
-    .avatar img { height: auto !important; }
-    .form-grid { display: flex !important; flex-direction: column !important; }
-    .form-col { width: 100% !important; }
-    .booking-summary { display: flex !important; justify-content: space-between !important; }
-    .btn-outline { width: 100% !important; }
+.footer-column ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+/* 10. Модальні вікна */
+.modal-content {
+    width: 90%;
+    padding: 25px;
+    max-height: 90vh;
+    overflow-y: auto;
 }
