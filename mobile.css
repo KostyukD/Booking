@@ -18,7 +18,7 @@ body, html {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    background: transparent !important; /* Прозорий фон, щоб не перекривало картинку */
+    background: transparent !important;
     position: relative;
     z-index: 2;
 }
@@ -26,6 +26,13 @@ body, html {
 .logo {
     font-size: 20px !important;
     color: #222 !important;
+}
+
+/* ВИПРАВЛЕННЯ ДЛЯ ПРАВОЇ ЧАСТИНИ ХЕДЕРА НА МОБІЛЬНОМУ */
+.auth-section {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important; /* Відступ між прапорцем і кнопкою */
 }
 
 /* Приховуємо десктопні кнопки */
@@ -36,33 +43,40 @@ body, html {
 /* Прапорець */
 .language-flag {
     width: 24px !important;
-    margin-right: 10px !important;
+    height: auto !important;
+    margin: 0 !important;
 }
 
-/* Мобільна кнопка Account (стиль "пігулка") */
+.flag-icon {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Мобільна кнопка Account (стиль "пігулка" з рамкою) */
 #mobileAccountBtn {
     display: flex !important;
-    align-items: center;
-    gap: 8px;
+    align-items: center !important;
+    gap: 8px !important;
     background: white !important;
-    border: 1px solid #ddd !important;
-    padding: 5px 12px !important;
-    border-radius: 20px !important;
+    border: 1px solid #222 !important; /* Чорна рамка, як на фото */
+    padding: 6px 14px !important;
+    border-radius: 30px !important; /* Пігулка */
     font-size: 13px !important;
-    color: #333 !important;
+    font-weight: 600 !important;
+    color: #222 !important;
     text-decoration: none !important;
 }
 
-/* ФОТОГРАФІЯ В ХЕДЕРІ (Відновлена!) */
+/* ФОТОГРАФІЯ В ХЕДЕРІ */
 .header-image-container {
-    display: block !important; /* Вмикаємо фото */
+    display: block !important;
     height: 200px !important;
     width: 100% !important;
-    /* Використовуємо те саме фото, що й на десктопі, або інше */
     background-image: url("img_main/header.jpg") !important;
     background-size: cover !important;
     background-position: center !important;
-    margin-top: -60px !important; /* Підтягуємо під хедер */
+    margin-top: -60px !important;
     position: relative;
     z-index: 1;
 }
@@ -70,7 +84,7 @@ body, html {
 /* 3. Пошук (Накладається на фото) */
 .search-section {
     position: relative !important;
-    margin-top: -25px !important; /* Накладання на фото */
+    margin-top: -25px !important;
     padding: 0 15px !important;
     z-index: 3;
 }
@@ -81,7 +95,7 @@ body, html {
     align-items: center !important;
     height: 55px !important;
     padding: 0 15px !important;
-    border-radius: 30px !important; /* Більш кругла */
+    border-radius: 30px !important;
     box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
     background: white !important;
     justify-content: space-between !important;
