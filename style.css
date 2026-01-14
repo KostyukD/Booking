@@ -55,7 +55,7 @@ body {
     align-items: center;
 }
 
-/* --- ВАЖЛИВО: Контейнер для кнопок на ПК --- */
+/* --- ВИПРАВЛЕННЯ ДЛЯ ПК (Кнопки в ряд) --- */
 #authButtonsContainer {
     display: flex;
     align-items: center;
