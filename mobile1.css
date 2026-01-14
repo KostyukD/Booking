@@ -8,18 +8,25 @@
         font-size: 20px;
     }
 
-    /* Сховати кнопки авторизації на мобільному (відповідно до фото 2) */
+    /* Сховати кнопки авторизації на мобільному */
     .auth-section {
         display: none;
     }
 
-    .header-image-container {
-        height: 160px;
+    /* Відобразити іконку користувача */
+    .mobile-user-icon {
+        display: block !important;
     }
 
-    /* SEARCH SECTION - ПЕРЕРОБКА ПІД МОБІЛЬНИЙ */
+    .header-image-container {
+        /* Збільшена висота, щоб вмістити статистику на фоні */
+        height: 280px; 
+        padding-bottom: 20px;
+    }
+
+    /* SEARCH SECTION */
     .search-section {
-        top: 120px;
+        top: 100px;
         padding: 0 20px;
         box-sizing: border-box;
     }
@@ -30,6 +37,8 @@
         justify-content: space-between;
         padding: 5px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        /* Переконуємось, що інпут білий */
+        background-color: #fff; 
     }
 
     /* Ховаємо зайві поля пошуку */
@@ -48,10 +57,11 @@
     }
 
     .search-field.where i {
-        display: none; /* Прибираємо іконку локації, якщо її немає на фото 2 в полі вводу */
+        display: block; /* Іконка літачка в інпуті */
+        color: #333;
     }
 
-    /* Кнопка пошуку перетворюється на кнопку налаштувань */
+    /* Кнопка пошуку перетворюється на фіолетову кнопку налаштувань */
     .search-button {
         width: 50px;
         height: 50px;
@@ -60,6 +70,7 @@
         align-items: center;
         justify-content: center;
         padding: 0;
+        background-color: #581ADB;
     }
 
     .desktop-icon {
@@ -68,22 +79,32 @@
     
     .mobile-icon {
         display: block;
-        font-size: 20px;
+        font-size: 22px;
+        color: white;
     }
 
-    /* TABS / STATS */
+    /* TABS / STATS (60+, 756, 1323) */
     .search-tabs {
-        margin-top: 20px;
-        gap: 30px;
+        margin-top: 30px; /* Відступ вниз від інпуту */
+        gap: 40px; /* Відстань між елементами */
+        display: flex;
+        justify-content: center;
+        /* Робимо текст і іконки білими, бо вони на фоні картинки */
+        position: relative;
+        z-index: 20;
     }
 
     .tab-item {
         margin: 0;
         font-size: 14px;
+        color: #ffffff; /* Білий колір тексту */
+        font-weight: 600;
     }
     
     .tab-item i {
-        font-size: 20px;
+        font-size: 24px;
+        margin-bottom: 5px;
+        color: #ffffff; /* Білий колір іконок */
     }
 
     /* CONTENT LAYOUT */
@@ -138,7 +159,7 @@
 
     .hotel-card__image {
         width: 100%;
-        height: 250px; /* Велика картинка зверху */
+        height: 250px;
     }
 
     .hotel-card__body {
@@ -157,16 +178,14 @@
         margin-bottom: 5px;
     }
 
-    /* Рейтинг праворуч від заголовка */
     .hotel-card__score {
-        flex-direction: row-reverse; /* Щоб цифра була праворуч */
+        flex-direction: row-reverse;
         text-align: right;
     }
     .hotel-card__score span {
         font-size: 14px;
     }
 
-    /* Бейджі вертикально */
     .hotel-card__badges {
         flex-direction: column;
         align-items: flex-start;
@@ -180,22 +199,19 @@
         gap: 8px;
     }
 
-    /* Інформація про локацію */
     .hotel-card__info {
         margin-top: 15px;
         font-size: 14px;
     }
 
-    /* Опис */
     .hotel-card__desc {
         max-width: 100%;
-        margin-bottom: 100px; /* Місце для ціни та кнопки */
+        margin-bottom: 100px;
         font-size: 14px;
     }
 
-    /* Нижня частина картки */
     .hotel-card__bottom {
-        position: static; /* Відв'язуємо від абсолютного позиціонування */
+        position: static;
         margin-top: 20px;
         align-items: center;
         width: 100%;
@@ -214,7 +230,6 @@
         color: #581ADB;
     }
 
-    /* Кнопка на всю ширину */
     .hotel-card__btn {
         width: 100%;
         padding: 15px;
@@ -222,13 +237,33 @@
         letter-spacing: 1px;
     }
 
-    /* FOOTER */
+    /* FOOTER (Виправлений згідно фото 4) */
+    .footer {
+        padding: 30px 0;
+        background-color: #f7f7f7;
+    }
+
     .footer-grid {
-        grid-template-columns: 1fr; /* Одна колонка */
-        gap: 30px;
+        display: flex;
+        flex-direction: column; /* Вертикальний список */
+        gap: 0;
+        padding: 0;
     }
     
-    .footer {
-        padding: 40px 0;
+    .footer-column {
+        margin: 0;
+    }
+
+    .footer-column ul {
+        padding: 0 20px;
+    }
+
+    .footer-column li {
+        text-align: left;
+        color: #003580; /* Синій колір */
+        font-size: 16px; /* Трохи більший шрифт для зручності */
+        padding: 10px 0;
+        display: block;
+        margin-bottom: 0;
     }
 }
