@@ -1,5 +1,5 @@
 /* --- mobile.css --- 
-   Адаптація під мобільний вигляд (Horizontal scroll, великі картки) */
+   Адаптація для телефонів (iPhone 14 Pro Max) */
 
 /* 1. Глобальні налаштування */
 body, html {
@@ -11,7 +11,7 @@ body, html {
     box-sizing: border-box !important;
 }
 
-/* 2. Хедер */
+/* 2. Хедер та Топ Бар */
 .header-top-bar {
     padding: 10px 15px !important;
     height: auto !important;
@@ -19,6 +19,28 @@ body, html {
 
 .logo {
     font-size: 20px !important;
+}
+
+/* СХОВАТИ КНОПКУ REGISTER В ХЕДЕРІ */
+#openRegisterHeader {
+    display: none !important;
+}
+
+/* Змінити Sign In на Account (якщо потрібно) або просто стиль */
+#openSignIn {
+    background: transparent !important;
+    border: 1px solid #ddd !important;
+    padding: 6px 12px !important;
+    font-size: 13px !important;
+    color: #333 !important;
+}
+
+#openSignIn .desktop-text {
+    display: none !important; /* Ховаємо "Sign in" */
+}
+
+#openSignIn .mobile-text {
+    display: inline !important; /* Показуємо "Account" */
 }
 
 /* Прибираємо десктопний банер */
@@ -74,7 +96,7 @@ body, html {
 }
 
 .tab-item {
-    font-size: 0 !important; /* Ховаємо текст, якщо на макеті тільки іконки */
+    font-size: 0 !important; /* Ховаємо текст */
 }
 
 .tab-item i {
@@ -95,28 +117,29 @@ body, html {
 }
 
 .gallery {
-    display: flex !important; /* В ряд */
-    overflow-x: auto !important; /* Прокрутка */
+    /* Робимо Flex замість Grid, щоб картки стали в ряд */
+    display: flex !important;
+    /* Додаємо горизонтальну прокрутку */
+    overflow-x: auto !important;
     gap: 15px !important;
-    padding-bottom: 20px !important;
-    grid-template-columns: none !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
+    padding-bottom: 20px !important; /* Місце для скролбару */
+    grid-template-columns: none !important; /* Відключаємо grid */
     
-    /* Плавна прокрутка iOS */
+    /* Для плавної прокрутки на iOS */
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory; /* Прилипання */
 }
 
-/* Ховаємо скролбар */
+/* Ховаємо скролбар в Chrome/Safari */
 .gallery::-webkit-scrollbar {
     display: none; 
 }
 
+/* Налаштування картки */
 .gallery a {
-    min-width: 85% !important; /* Картка на 85% екрану */
+    min-width: 85% !important; /* Картка займає 85% ширини екрану */
     width: 85% !important;
-    flex-shrink: 0 !important;
+    flex-shrink: 0 !important; /* Щоб картки не стискалися */
     scroll-snap-align: start; /* Центрування при скролі */
 }
 
@@ -156,7 +179,7 @@ body, html {
 }
 
 .card-review {
-    min-width: 80% !important;
+    min-width: 80% !important; /* Ширина картки відгуку */
     flex-shrink: 0 !important;
     scroll-snap-align: start;
     border-radius: 15px !important;
@@ -165,7 +188,7 @@ body, html {
 /* 6. SAFE WITH US (Сітка 2 на 2) */
 .benefits-grid {
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: 1fr 1fr !important; /* Дві колонки */
     gap: 15px !important;
     width: 100% !important;
     box-sizing: border-box !important;
@@ -177,7 +200,8 @@ body, html {
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    height: 120px !important; /* Фіксована висота квадратів */
+    height: 150px !important; /* Фіксована висота квадратів */
+    text-align: center !important;
 }
 
 /* 7. BE OUR REGULAR */
@@ -207,9 +231,10 @@ body, html {
     padding: 0 10px !important;
 }
 
-/* Кнопка внизу */
+/* Кнопка внизу (ПЛАВАЮЧА АБО ВЕЛИКА ВНИЗУ) */
 .register-action {
     margin-top: 30px !important;
+    padding-bottom: 20px !important;
 }
 
 .register-purple-btn {
@@ -217,6 +242,9 @@ body, html {
     padding: 15px !important;
     border-radius: 30px !important; /* Більш кругла, як на фото */
     font-size: 16px !important;
+    background-color: #6200EA !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(98, 0, 234, 0.4) !important;
 }
 
 /* 8. ФУТЕР */
@@ -280,17 +308,21 @@ body, html {
 
 .form-col {
     width: 100% !important;
+    gap: 15px !important;
 }
 
 input, select {
     width: 100% !important;
     box-sizing: border-box !important;
+    max-width: 100% !important;
+    height: 50px !important;
 }
 
 .booking-side, .booking-actions {
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
+    padding: 0 !important;
 }
 
 .booking-summary {
