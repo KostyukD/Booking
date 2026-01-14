@@ -1,50 +1,53 @@
 /* --- mobile.css --- */
 
-/* 1. Глобальний скидання */
+/* 1. Глобальні налаштування */
 body, html {
-    overflow-x: hidden;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    background-color: #fff;
+    overflow-x: hidden !important; /* Забороняємо горизонтальний скрол */
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
 }
 
 /* 2. Хедер */
 .header {
     padding: 15px 20px !important;
+    flex-wrap: wrap !important;
 }
 
 .logo {
     font-size: 20px !important;
 }
 
-/* 3. Навігація - горизонтальний скрол */
+/* 3. Навігація */
 .nav {
     display: block !important;
-    white-space: nowrap;
-    overflow-x: auto;
+    white-space: nowrap !important;
+    overflow-x: auto !important; /* Скрол для меню */
     padding: 10px 15px !important;
     margin: 0 !important;
-    width: 100%;
-    box-sizing: border-box;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .steps {
     display: inline-flex !important;
-    padding: 0;
-    margin: 0;
-    gap: 10px;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 10px !important;
 }
 
 .step {
     padding: 6px 15px !important;
     font-size: 13px !important;
+    flex-shrink: 0 !important;
 }
 
-/* 4. Контейнер сторінки */
+/* 4. Контейнер */
 .container {
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: 100% !important; /* Перебиває 1100px */
     margin: 20px 0 !important;
     padding: 0 15px !important;
     display: flex !important;
@@ -53,29 +56,28 @@ body, html {
     box-sizing: border-box !important;
 }
 
-/* Кнопка "Назад" */
 .back {
     margin: 15px 15px !important;
 }
 
-/* 5. КАРТКА АКАУНТУ (Як на скріншоті iPhone 14) */
+/* 5. КАРТКА ПРОФІЛЮ (Account) */
 .account-section {
     display: flex !important;
     flex-direction: column !important;
     gap: 20px !important;
     grid-template-columns: none !important;
+    width: 100% !important;
 }
 
 .account-card {
     display: flex !important;
-    /* Важливо: тут row, щоб аватар і ім'я були поруч, як на скріншоті */
-    flex-direction: row !important; 
+    flex-direction: row !important; /* Фото зліва, текст справа */
     align-items: center !important;
     width: 100% !important;
     height: auto !important;
     padding: 20px !important;
     box-sizing: border-box !important;
-    background-color: #f0f0f0 !important; /* Світло-сірий фон, як на фото */
+    background-color: #f0f0f0 !important;
     border: none !important;
     grid-template-columns: none !important;
     gap: 15px !important;
@@ -84,20 +86,21 @@ body, html {
 .avatar {
     width: 80px !important;
     height: 80px !important;
-    flex-shrink: 0;
+    flex-shrink: 0 !important;
 }
 
 .avatar img {
     width: 100% !important;
     height: 100% !important;
-    border-radius: 50% !important; /* Робимо круглу аватарку */
-    object-fit: cover;
+    border-radius: 50% !important; /* Кругла аватарка */
+    object-fit: cover !important;
 }
 
 .account-info {
     padding: 0 !important;
     width: auto !important;
-    flex-grow: 1;
+    flex-grow: 1 !important;
+    align-items: flex-start !important;
 }
 
 .name {
@@ -112,11 +115,16 @@ body, html {
     border: 1px solid #ddd !important;
 }
 
-/* 6. ФОРМА (Всі поля в одну колонку) */
+.disclaimer {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* 6. ФОРМА (Form) */
 .profile-form {
     padding: 20px !important;
     width: 100% !important;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     max-width: 100% !important;
 }
 
@@ -128,7 +136,7 @@ body, html {
 }
 
 .form-col {
-    gap: 15px;
+    gap: 15px !important;
     width: 100% !important;
 }
 
@@ -139,20 +147,20 @@ input, select {
     height: 50px !important;
 }
 
-/* 7. БРОНЮВАННЯ (Фото зверху, текст знизу) */
+/* 7. БРОНЮВАННЯ (Bookings) */
 .bookings-section {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 }
 
 .room-card {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
+    max-width: 100% !important; /* Перебиває 800px */
+    height: auto !important; /* Перебиває 250px */
     margin-bottom: 20px !important;
 }
 
@@ -167,22 +175,26 @@ input, select {
 }
 
 .room-features {
-    margin-top: 15px;
-    flex-wrap: wrap;
+    margin-top: 15px !important;
+    flex-wrap: wrap !important;
 }
 
-/* 8. Сайдбар бронювання (Кнопки і дати) */
+/* 8. Сайдбар (Кнопки і дати) */
 .booking-side {
     width: 100% !important;
     padding: 0 !important;
     margin: 0 !important;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 .booking-summary {
+    display: flex !important;
     justify-content: space-between !important;
     gap: 5px !important;
     margin-bottom: 15px !important;
+    width: 100% !important;
 }
 
 .summary-box {
@@ -190,21 +202,26 @@ input, select {
     flex: none !important;
     padding: 10px 5px !important;
     font-size: 11px !important;
+    box-sizing: border-box !important;
 }
 
 .booking-actions {
+    display: flex !important;
     flex-direction: row !important;
     gap: 10px !important;
     margin-bottom: 15px !important;
+    width: 100% !important;
 }
 
 .btn-outline {
     width: 100% !important;
     height: 50px !important;
     font-size: 13px !important;
+    padding: 0 !important;
 }
 
 .booking-footer {
+    display: flex !important;
     flex-direction: column !important;
     gap: 5px !important;
     text-align: center !important;
@@ -217,11 +234,13 @@ input, select {
     padding: 30px 15px !important;
     margin-bottom: 50px !important;
     box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 .footer {
     max-width: 100% !important;
     text-align: center !important;
     padding: 20px !important;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 }
