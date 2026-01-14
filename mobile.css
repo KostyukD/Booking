@@ -1,90 +1,85 @@
 /* --- mobile.css --- 
-   Адаптація для iPhone 14 Pro Max та інших мобільних пристроїв */
+   Спеціальні стилі для телефонів, щоб нічого не злітало */
 
-/* 1. Глобальні налаштування */
-body {
-    background-color: #fff;
-    overflow-x: hidden; /* Забороняємо горизонтальну прокрутку */
+/* 1. Скидання глобальних розмірів */
+body, html {
+    overflow-x: hidden; /* Прибирає горизонтальний скрол */
     width: 100%;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* 2. Навігація */
+/* 2. Хедер та Навігація */
+.header {
+    padding: 15px 20px !important;
+}
+
 .nav {
     justify-content: flex-start !important;
-    overflow-x: auto;
+    overflow-x: auto; /* Додає скрол для меню, якщо не влазить */
     padding: 10px 15px;
     margin: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .steps {
-    gap: 10px;
     padding: 0;
     margin: 0;
-    flex-wrap: nowrap;
+    gap: 10px;
+    flex-wrap: nowrap; /* Забороняємо перенос кнопок меню на новий рядок */
 }
 
 .step {
     white-space: nowrap;
-    padding: 6px 12px;
-    font-size: 14px;
     flex-shrink: 0;
 }
 
-/* 3. Основний контейнер - скидаємо Grid */
+/* 3. Головний контейнер (Виправляємо проблему "злітання") */
 .container {
+    width: 100% !important;
+    max-width: 100% !important; /* Перебиває 1100px з десктопу */
+    margin: 20px 0 !important;
     padding: 0 15px !important;
-    margin: 20px auto !important;
-    /* Змушуємо стати вертикально */
     display: flex !important;
     flex-direction: column !important;
     gap: 20px !important;
-    width: 100% !important;
     box-sizing: border-box !important;
-    max-width: 100% !important;
 }
 
-h1 {
-    font-size: 24px;
-    margin-left: 0;
-    text-align: left;
-}
-
-/* 4. БЛОК АКАУНТУ */
+/* 4. Картка Акаунту */
 .account-section {
     display: flex !important;
     flex-direction: column !important;
     gap: 20px !important;
-    grid-template-columns: none !important; /* Вимикаємо grid */
+    width: 100% !important;
 }
 
 .account-card {
     display: flex !important;
     flex-direction: column !important; /* Фото зверху, текст знизу */
-    grid-template-columns: none !important; /* Вимикаємо grid 220px */
-    height: auto !important;
     width: 100% !important;
+    height: auto !important;
     padding: 0 !important;
 }
 
 .avatar {
     width: 100% !important;
-    height: auto !important;
 }
 
 .avatar img {
-    width: 100% !important; /* Фото на всю ширину */
+    width: 100% !important;
     height: 250px !important;
-    object-fit: cover;
     border-radius: 12px 12px 0 0 !important;
+    object-fit: cover;
 }
 
 .account-info {
-    padding: 20px !important;
     width: 100% !important;
+    padding: 20px !important;
+    align-items: center !important;
     box-sizing: border-box;
-    align-items: center !important; /* Центруємо контент */
 }
 
 .disclaimer {
@@ -92,54 +87,54 @@ h1 {
     box-sizing: border-box;
 }
 
-/* 5. ФОРМА */
+/* 5. Форма (Inputs) */
 .profile-form {
-    padding: 20px !important;
     width: 100% !important;
+    padding: 20px !important;
     box-sizing: border-box;
+    max-width: 100% !important;
 }
 
 .form-grid {
     display: flex !important;
     flex-direction: column !important;
     gap: 20px !important;
-    grid-template-columns: none !important; /* Вимикаємо grid з gap 80px */
 }
 
 .form-col {
-    gap: 15px;
     width: 100% !important;
+    gap: 15px;
 }
 
-/* Поля вводу на всю ширину */
 input, select {
     width: 100% !important;
     box-sizing: border-box !important;
     max-width: 100% !important;
 }
 
-/* 6. БРОНЮВАННЯ */
+/* 6. Бронювання (Room Card) */
 .bookings-section {
     display: flex !important;
     flex-direction: column !important;
-    gap: 30px !important;
+    width: 100% !important;
+    box-sizing: border-box;
 }
 
 .room-card {
     display: flex !important;
     flex-direction: column !important;
-    height: auto !important; /* Скидаємо фіксовану висоту 250px */
-    max-width: 100% !important; /* Скидаємо ширину 800px */
     width: 100% !important;
+    max-width: 100% !important; /* Перебиває 800px */
+    height: auto !important; /* Перебиває 250px */
 }
 
 .room-image {
-    width: 100% !important; /* Скидаємо 40% */
+    width: 100% !important;
     height: 200px !important;
 }
 
 .room-content {
-    width: 100% !important; /* Скидаємо 60% */
+    width: 100% !important;
     padding: 20px !important;
 }
 
@@ -150,27 +145,31 @@ input, select {
 
 /* 7. Сайдбар бронювання */
 .booking-side {
-    width: 100% !important; /* Скидаємо 300px */
+    width: 100% !important; /* Перебиває 300px */
     padding: 0 !important;
-    margin-top: 0 !important;
+    margin: 0 !important;
     box-sizing: border-box;
 }
 
 .booking-summary {
-    justify-content: space-between;
-    gap: 5px;
+    gap: 10px;
 }
 
 .summary-box {
-    padding: 10px 5px;
-    font-size: 12px;
-    width: 32%;
-    box-sizing: border-box;
+    width: 33% !important;
+    padding: 10px 5px !important;
+    font-size: 12px !important;
 }
 
 .booking-actions {
     flex-direction: row;
     gap: 10px;
+}
+
+.btn-outline {
+    width: 100% !important;
+    height: 60px !important;
+    font-size: 14px !important;
 }
 
 .booking-footer {
@@ -182,22 +181,9 @@ input, select {
 
 /* 8. Відгуки */
 .reviews {
-    padding: 20px !important;
-    flex-direction: column !important;
-    height: auto !important;
-    margin-bottom: 50px !important; /* Скидаємо 200px відступу */
     width: 100% !important;
-    box-sizing: border-box;
-}
-
-/* 9. Футер */
-.footer {
-    max-width: 100% !important; /* Скидаємо 50% */
-    text-align: center !important;
     margin-bottom: 50px !important;
-    width: 100% !important;
-}
-
-.back {
-    margin: 20px !important;
+    padding: 20px !important;
+    height: auto !important;
+    box-sizing: border-box;
 }
