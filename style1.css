@@ -1,251 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Onest:wght@100..900&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap');
 
-/* --- Сброс стилей --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* --- Базові стилі --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+.highlight { color: #581ADB; }
+body { font-family: 'Nunito Sans', sans-serif; background-color: #f7f7f7; color: #333; }
 
-.highlight {
-    color: #581ADB;
-}
+/* --- HEADER (Desktop) --- */
+.header { background-color: #ffffff; position: relative; }
+.header-top-bar { display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; }
+.logo { font-size: 24px; font-weight: bold; color: #222222; }
+.h1-header { text-decoration: none; }
 
-/* --- Общие стили для body --- */
-body {
-    font-family: 'Nunito Sans', sans-serif;
-    background-color: #f7f7f7;
-    color: #333;
-}
-
-/* --- Стилизация Header --- */
-.header {
-    background-color: #ffffff; 
-    position: relative;
-}
-
-.header-top-bar { 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px; 
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #222222; 
-}
-
-    .logo span {
-        color: #581ADB;
-    }
-
-.h1-header {
-    text-decoration: none;
-}
-
-/* --- Секция авторизации --- */
-.auth-section {
-    display: flex;
-    align-items: center;
-}
-
-.language-flag {
-    width: 30px;
-    height: 20px;
-    margin-right: 15px;
-    overflow: hidden;
-    border-radius: 3px;
-}
-
+.auth-section { display: flex; align-items: center; }
+.language-flag { width: 30px; height: 20px; margin-right: 15px; overflow: hidden; border-radius: 3px; }
 .flag-icon { width: 100%; height: 100%; object-fit: cover; }
-
-.button {
-    background: none;
-    cursor: pointer;
-    padding: 8px 15px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-}
-
-.button-bordered {
-    border: 1px solid #222222; 
-    color: #222222; 
-    margin-left: 10px;
-}
-
-    .button-bordered:hover { background-color: rgba(0,0,0,0.05); }
-
+.button { background: none; cursor: pointer; padding: 8px 15px; border-radius: 30px; font-size: 14px; font-weight: 600; display: flex; align-items: center; transition: 0.3s; }
+.button-bordered { border: 1px solid #222222; color: #222222; margin-left: 10px; }
 .signin-btn i { margin-left: 5px; }
 
-/* --- Секция фонового изображения --- */
-.header-image-container {
-    height: 200px; 
-    background-image: url("img_main/header2.jpg");
-    background-size: cover;
-    background-position: center;
-    position: relative; 
-}
+/* --- BANNER & SEARCH (Desktop) --- */
+.header-image-container { height: 200px; background-image: url("img_main/header2.jpg"); background-size: cover; background-position: center; position: relative; }
+.search-section { position: absolute; width: 100%; top: 175px; left: 0; z-index: 10; }
+.search-form-container { display: flex; max-width: 900px; margin: 0 auto; background-color: white; border-radius: 30px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); height: 55px; }
+.search-field { display: flex; align-items: center; padding: 0 15px; flex-grow: 1; border-right: 1px solid #eee; color: #666; font-size: 15px; }
+.search-field i { color: #888; margin-right: 10px; }
+.search-toggle { display: flex; align-items: center; padding: 0 15px; color: #666; border-right: 1px solid #eee; }
+.search-button { background-color: #581ADB; color: white; border: none; border-radius: 30px; padding: 0 20px; font-size: 20px; cursor: pointer; }
 
-/* --- Секция поиска --- */
-.search-section {
-    position: absolute;
-    width: 100%;
-    top: 175px;
-    left: 0;
-    z-index: 10;
-}
+/* Statistics (Desktop) */
+.search-tabs { display: flex; justify-content: center; margin-top: 55px; }
+.tab-item { display: flex; flex-direction: column; align-items: center; margin: 0 25px; font-size: 12px; color: #666; }
+.tab-item i { font-size: 24px; margin-bottom: 5px; }
 
-.search-form-container {
-    display: flex;
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: white;
-    border-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    height: 55px;
-}
+/* --- CONTENT (Desktop) --- */
+.content { display: grid; grid-template-columns: 280px 1fr; gap: 50px; padding: 50px; place-items: start center; }
+.filters { margin-top: 100px; width: 260px; background: #fff; border: 1px solid #eee; border-radius: 13px; padding: 16px; }
+.see-the-map { display: flex; justify-content: space-between; border: 1px solid #eee; border-radius: 30px; padding: 10px 20px; color: #EE0039; margin-bottom: 20px; }
 
-.search-field {
-    display: flex;
-    align-items: center;
-    padding: 0 15px;
-    flex-grow: 1;
-    border-right: 1px solid #eee;
-    color: #666;
-    font-size: 15px;
-}
-
-    .search-field i { color: #888; margin-right: 10px; }
-
-.search-toggle {
-    display: flex;
-    align-items: center;
-    padding: 0 15px;
-    color: #666;
-    border-right: 1px solid #eee;
-}
-
-.search-button {
-    background-color: #581ADB; 
-    color: white;
-    border: none;
-    border-radius: 30px;
-    padding: 0 20px;
-    font-size: 20px;
-    cursor: pointer;
-    flex-shrink: 0;
-}
-
-/* --- Вкладки статистики --- */
-.search-tabs {
-    display: flex;
-    justify-content: center;
-    margin-top: 55px;
-}
-
-.tab-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 25px;
-    font-size: 12px;
-    color: #666;
-}
-
-    .tab-item i { font-size: 24px; margin-bottom: 5px; }
-
-/* --- Контент --- */
-.content {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 50px;
-    padding: 50px;
-    place-items: start center;
-}
-
-.filters { margin-top: 100px; }
-
-/* --- Карточки готелів --- */
-.hotel-card {
-    display: flex;
-    max-width: 880px;
-    background: #fff;
-    margin-bottom: 50px;
-    border-radius: 14px;
-    box-shadow: 0 6px 20px rgba(0,0,0,.1);
-    overflow: hidden;
-}
-
+.hotel-card { display: flex; max-width: 880px; background: #fff; margin-bottom: 50px; border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,.1); overflow: hidden; }
 .hotel-card__image { width: 310px; height: 310px; flex-shrink: 0; }
 .hotel-card__image img { width: 100%; height: 100%; object-fit: cover; }
 .hotel-card__body { padding: 24px; display: flex; flex-direction: column; width: 100%; }
+.hotel-card__score-circle { width: 48px; height: 48px; border: 1px solid #581ADB; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #581ADB; font-size: 18px; }
+.hotel-card__btn { background: #581ADB; color: #fff; border: none; border-radius: 30px; padding: 10px 25px; font-weight: bold; cursor: pointer; }
 
-.badge-item { display: inline-flex; align-items: center; margin-right: 15px; font-size: 13px; color: #666; }
-.icon-card { width: 16px; margin-right: 8px; }
-
-.hotel-card__score-circle {
-    width: 48px; height: 48px; border: 1px solid #581ADB; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center; color: #581ADB; font-size: 18px;
-}
-
-.hotel-card__btn {
-    background: #581ADB; color: #fff; border: none; border-radius: 30px;
-    padding: 10px 25px; font-weight: bold; cursor: pointer;
-}
-
-/* --- Футер --- */
+/* --- FOOTER (Desktop) --- */
 .footer { padding: 60px 0; background: #fff; border-top: 1px solid #eee; }
 .footer-grid { display: grid; grid-template-columns: repeat(5, 1fr); max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 .footer-column ul { list-style: none; }
-.footer-column li { color: #003580; margin-bottom: 10px; font-size: 13px; }
+.footer-column li { color: #003580; margin-bottom: 10px; font-size: 13px; cursor: pointer; }
 
-/* --- Приховати мобільні елементи на десктопі --- */
-.mobile-user-nav, .mobile-pin-icon, .mobile-settings-icon, .mobile-filter-bar, .mobile-chat-btn {
-    display: none;
-}
+/* Приховати мобільні елементи на десктопі */
+.mobile-account-icon, .mobile-only-icon, .mobile-action-bar, .floating-chat-icon { display: none; }
 
 /* =========================================
-   АДАПТИВ ДЛЯ iPHONE 14 PRO MAX (Тільки < 480px)
+   АДАПТИВ (Тільки для iPhone - 480px і менше)
    ========================================= */
 @media (max-width: 480px) {
-    /* Синя іконка користувача */
+    /* 1. Синя іконка користувача */
     .auth-section, .language-flag { display: none; }
-    .mobile-user-nav { 
-        display: block !important; 
-        color: #581ADB; /* Фіолетово-синій як на фото */
-        font-size: 32px; 
-    }
+    .mobile-account-icon { display: block !important; color: #581ADB; font-size: 32px; cursor: pointer; }
 
     .header-image-container { height: 180px; }
     .search-section { top: 90px; padding: 0 15px; }
     
-    /* Інпут з іконкою піна */
+    /* 2. Інпут з іконкою піна всередині */
     .search-form-container { height: 60px; width: 100%; border-radius: 40px; padding: 5px; }
-    .search-field.check-dates, .search-field.guests-rooms, .search-toggle, .desktop-search-icon { display: none; }
+    .search-field.check-dates, .search-field.guests-rooms, .search-toggle, .desktop-only-icon { display: none; }
     .search-field.where { border: none; font-size: 16px; padding-left: 10px; }
-    .mobile-pin-icon { display: block !important; color: #333 !important; font-size: 18px; margin-right: 12px; }
+    .input-icon { display: block !important; color: #333 !important; font-size: 18px; margin-right: 10px; }
 
-    /* Кнопка з повзунками */
+    /* 3. Кнопка з повзунками */
     .search-button { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .mobile-settings-icon { display: block !important; font-size: 20px; color: white; }
+    .mobile-only-icon { display: block !important; font-size: 20px; color: white; }
 
-    /* Біла статистика на картинці */
+    /* 4. Біла статистика на темній картинці */
     .search-tabs { margin-top: -35px; position: relative; z-index: 20; }
     .tab-item { color: #ffffff !important; margin: 0 15px; font-weight: bold; }
     .tab-item i { color: #ffffff !important; font-size: 22px; }
 
     /* Кнопки Filter/Map */
-    .mobile-filter-bar { display: flex !important; justify-content: space-between; margin-top: 100px; gap: 15px; margin-bottom: 20px;}
-    .mobile-filter-btn { flex: 1; background: #fff; border: 1.5px solid #eee; border-radius: 30px; padding: 12px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-    .map-btn { color: #EE0039; }
+    .mobile-action-bar { display: flex !important; justify-content: space-between; margin-top: 100px; gap: 15px; margin-bottom: 20px; }
+    .action-btn { flex: 1; background: #fff; border: 1.5px solid #eee; border-radius: 30px; padding: 12px; font-weight: bold; font-size: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .map-red { color: #EE0039; }
 
-    /* Контент та картки */
+    /* Контент */
     .content { display: block; padding: 15px; }
     .filters { display: none; }
     
@@ -255,14 +94,14 @@ body {
     .hotel-card__bottom { position: static; margin-top: 20px; display: flex; flex-direction: column; align-items: center; gap: 15px; }
     .hotel-card__btn { width: 100%; padding: 15px; }
 
-    /* Футер — синій список */
-    .footer { padding: 20px 0; background: #ffffff; }
+    /* 5. Футер — синій вертикальний список */
+    .footer { padding: 20px 0; background: #ffffff; border: none; }
     .footer-grid { display: block !important; }
     .footer-column { margin-bottom: 25px; }
-    .footer-column li { color: #003580 !important; font-size: 16px; font-weight: 500; margin-bottom: 12px; }
+    .footer-column li { color: #003580 !important; font-size: 16px; font-weight: 500; margin-bottom: 15px; text-align: left; }
 
-    /* Кнопка чату */
-    .mobile-chat-btn {
+    /* 6. Фіолетова кнопка чату */
+    .floating-chat-icon {
         display: flex !important; position: fixed; bottom: 25px; right: 25px;
         width: 60px; height: 60px; background: #581ADB; color: #fff;
         border-radius: 50%; align-items: center; justify-content: center;
