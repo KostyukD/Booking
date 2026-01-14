@@ -496,3 +496,14 @@ a:any-link
 .footer-column li:hover {
     color: #ff8000;
 }
+
+/* --- Стили для скрытия мобильных элементов на десктопе --- */
+.mobile-controls {
+    display: none;
+}
+.mobile-icon {
+    display: none;
+}
+.badge-item {
+    display: contents; /* Чтобы бейджи вели себя нормально на десктопе */
+}
