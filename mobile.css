@@ -32,7 +32,7 @@ body {
     flex-shrink: 0;
 }
 
-/* 3. Основний контейнер */
+/* 3. Основний контейнер - скидаємо Grid */
 .container {
     padding: 0 15px !important;
     margin: 20px auto !important;
@@ -51,7 +51,7 @@ h1 {
     text-align: left;
 }
 
-/* 4. БЛОК АКАУНТУ - ЛАМАЄМО СІТКУ */
+/* 4. БЛОК АКАУНТУ */
 .account-section {
     display: flex !important;
     flex-direction: column !important;
@@ -62,7 +62,7 @@ h1 {
 .account-card {
     display: flex !important;
     flex-direction: column !important; /* Фото зверху, текст знизу */
-    grid-template-columns: none !important; /* Вимикаємо grid з style_acc.css */
+    grid-template-columns: none !important; /* Вимикаємо grid 220px */
     height: auto !important;
     width: 100% !important;
     padding: 0 !important;
@@ -74,7 +74,7 @@ h1 {
 }
 
 .avatar img {
-    width: 100% !important;
+    width: 100% !important; /* Фото на всю ширину */
     height: 250px !important;
     object-fit: cover;
     border-radius: 12px 12px 0 0 !important;
@@ -84,9 +84,15 @@ h1 {
     padding: 20px !important;
     width: 100% !important;
     box-sizing: border-box;
+    align-items: center !important; /* Центруємо контент */
 }
 
-/* 5. ФОРМА - ЛАМАЄМО СІТКУ */
+.disclaimer {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+/* 5. ФОРМА */
 .profile-form {
     padding: 20px !important;
     width: 100% !important;
@@ -97,7 +103,7 @@ h1 {
     display: flex !important;
     flex-direction: column !important;
     gap: 20px !important;
-    grid-template-columns: none !important; /* Вимикаємо grid */
+    grid-template-columns: none !important; /* Вимикаємо grid з gap 80px */
 }
 
 .form-col {
@@ -122,18 +128,18 @@ input, select {
 .room-card {
     display: flex !important;
     flex-direction: column !important;
-    height: auto !important;
-    max-width: 100% !important;
+    height: auto !important; /* Скидаємо фіксовану висоту 250px */
+    max-width: 100% !important; /* Скидаємо ширину 800px */
     width: 100% !important;
 }
 
 .room-image {
-    width: 100% !important;
+    width: 100% !important; /* Скидаємо 40% */
     height: 200px !important;
 }
 
 .room-content {
-    width: 100% !important;
+    width: 100% !important; /* Скидаємо 60% */
     padding: 20px !important;
 }
 
@@ -144,7 +150,7 @@ input, select {
 
 /* 7. Сайдбар бронювання */
 .booking-side {
-    width: 100% !important;
+    width: 100% !important; /* Скидаємо 300px */
     padding: 0 !important;
     margin-top: 0 !important;
     box-sizing: border-box;
@@ -179,14 +185,14 @@ input, select {
     padding: 20px !important;
     flex-direction: column !important;
     height: auto !important;
-    margin-bottom: 50px !important;
+    margin-bottom: 50px !important; /* Скидаємо 200px відступу */
     width: 100% !important;
     box-sizing: border-box;
 }
 
 /* 9. Футер */
 .footer {
-    max-width: 100% !important;
+    max-width: 100% !important; /* Скидаємо 50% */
     text-align: center !important;
     margin-bottom: 50px !important;
     width: 100% !important;
