@@ -6,7 +6,7 @@
     <title>Hotel For you.</title>
     <link rel="stylesheet" href="style1.css">
     
-    <link rel="stylesheet" href="mobile.css" media="(max-width: 480px)">
+    <link rel="stylesheet" href="mobile1.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -25,6 +25,9 @@
                 <div class="language-flag">
                     <img src="img_main/logo_lang.png" alt="Язык" class="flag-icon">
                 </div>
+            </div>
+             <div class="mobile-user-icon" style="display: none;">
+                <i class="fas fa-user-circle" style="font-size: 30px; color: #581ADB;"></i>
             </div>
         </div>
 
@@ -49,25 +52,35 @@
                     <i class="fas fa-exchange-alt"></i>
                 </div>
                 <button class="search-button">
-                    <i class="fas fa-search"></i>
+                    <i class="fas fa-search desktop-icon"></i>
+                    <i class="fas fa-sliders-h mobile-icon"></i>
                 </button>
             </div>
 
             <div class="search-tabs">
                 <div class="tab-item">
-                    <i class="fa-solid fa-medal"></i> Suppliers 60+
+                    <i class="fa-solid fa-medal"></i> 60+
                 </div>
                 <div class="tab-item">
-                    <i class="fa-solid fa-link"></i> Match 756
+                    <i class="fa-solid fa-link"></i> 756
                 </div>
                 <div class="tab-item">
-                    <i class="fa-regular fa-building"></i> Hotels 1323
+                    <i class="fa-regular fa-building"></i> 1323
                 </div>
             </div>
         </section>
     </header>
 
     <div class="content">
+        <div class="mobile-controls">
+            <button class="mobile-control-btn">
+                Filter <i class="fas fa-sliders-h" style="transform: rotate(90deg); font-size: 12px; margin-left: 5px;"></i>
+            </button>
+            <button class="mobile-control-btn" style="color: #EE0039;">
+                See the map <i class="fas fa-map-marker-alt" style="margin-left: 5px;"></i>
+            </button>
+        </div>
+
          <aside class="filters">
             <div class="see-the-map">
              <p>See the map</p>
@@ -376,9 +389,9 @@
         <div class="hotel-card__stars">★★★★</div>
 
         <div class="hotel-card__badges">
-          <img class="icon-card "src="img_2/crown.png"><span>popular</span>
-          <img class="icon-card "src="img_2/rank.png"><span>city centre</span>
-          <img class="icon-card "src="img_2/coffee.png"><span>comfortable</span>
+          <div class="badge-item"><img class="icon-card "src="img_2/crown.png"><span>popular</span></div>
+          <div class="badge-item"><img class="icon-card "src="img_2/rank.png"><span>city centre</span></div>
+          <div class="badge-item"><img class="icon-card "src="img_2/coffee.png"><span>comfortable</span></div>
         </div>
       </div>
 
@@ -422,9 +435,9 @@
         <div class="hotel-card__stars">★★★</div>
 
         <div class="hotel-card__badges">
-          <img class="icon-card "src="img_2/crown.png"><span>popular</span>
-          <img class="icon-card "src="img_2/rank.png"><span>city centre</span>
-          <img class="icon-card "src="img_2/coffee.png"><span>comfortable</span>
+            <div class="badge-item"><img class="icon-card "src="img_2/crown.png"><span>popular</span></div>
+            <div class="badge-item"><img class="icon-card "src="img_2/rank.png"><span>city centre</span></div>
+            <div class="badge-item"><img class="icon-card "src="img_2/coffee.png"><span>comfortable</span></div>
         </div>
       </div>
 
@@ -467,9 +480,9 @@
         <div class="hotel-card__stars">★★★★★</div>
 
         <div class="hotel-card__badges">
-          <img class="icon-card "src="img_2/crown.png"><span>popular</span>
-          <img class="icon-card "src="img_2/rank.png"><span>city centre</span>
-          <img class="icon-card "src="img_2/coffee.png"><span>comfortable</span>
+            <div class="badge-item"><img class="icon-card "src="img_2/crown.png"><span>popular</span></div>
+            <div class="badge-item"><img class="icon-card "src="img_2/rank.png"><span>city centre</span></div>
+            <div class="badge-item"><img class="icon-card "src="img_2/coffee.png"><span>comfortable</span></div>
         </div>
       </div>
 
@@ -511,9 +524,9 @@
         <div class="hotel-card__stars">★★★</div>
 
         <div class="hotel-card__badges">
-          <img class="icon-card "src="img_2/crown.png"><span>popular</span>
-          <img class="icon-card "src="img_2/rank.png"><span>city centre</span>
-          <img class="icon-card "src="img_2/coffee.png"><span>comfortable</span>
+            <div class="badge-item"><img class="icon-card "src="img_2/crown.png"><span>popular</span></div>
+            <div class="badge-item"><img class="icon-card "src="img_2/rank.png"><span>city centre</span></div>
+            <div class="badge-item"><img class="icon-card "src="img_2/coffee.png"><span>comfortable</span></div>
         </div>
       </div>
 
@@ -557,9 +570,9 @@
         <div class="hotel-card__stars">★★★★</div>
 
         <div class="hotel-card__badges">
-          <img class="icon-card "src="img_2/crown.png"><span>popular</span>
-          <img class="icon-card "src="img_2/rank.png"><span>city centre</span>
-          <img class="icon-card "src="img_2/coffee.png"><span>comfortable</span>
+            <div class="badge-item"><img class="icon-card "src="img_2/crown.png"><span>popular</span></div>
+            <div class="badge-item"><img class="icon-card "src="img_2/rank.png"><span>city centre</span></div>
+            <div class="badge-item"><img class="icon-card "src="img_2/coffee.png"><span>comfortable</span></div>
         </div>
       </div>
 
@@ -603,9 +616,9 @@
         <div class="hotel-card__stars">★★★</div>
 
         <div class="hotel-card__badges">
-          <img class="icon-card "src="img_2/crown.png"><span>popular</span>
-          <img class="icon-card "src="img_2/rank.png"><span>city centre</span>
-          <img class="icon-card "src="img_2/coffee.png"><span>comfortable</span>
+            <div class="badge-item"><img class="icon-card "src="img_2/crown.png"><span>popular</span></div>
+            <div class="badge-item"><img class="icon-card "src="img_2/rank.png"><span>city centre</span></div>
+            <div class="badge-item"><img class="icon-card "src="img_2/coffee.png"><span>comfortable</span></div>
         </div>
       </div>
 
@@ -649,9 +662,9 @@
         <div class="hotel-card__stars">★★★★</div>
 
         <div class="hotel-card__badges">
-          <img class="icon-card "src="img_2/crown.png"><span>popular</span>
-          <img class="icon-card "src="img_2/rank.png"><span>city centre</span>
-          <img class="icon-card "src="img_2/coffee.png"><span>comfortable</span>
+            <div class="badge-item"><img class="icon-card "src="img_2/crown.png"><span>popular</span></div>
+            <div class="badge-item"><img class="icon-card "src="img_2/rank.png"><span>city centre</span></div>
+            <div class="badge-item"><img class="icon-card "src="img_2/coffee.png"><span>comfortable</span></div>
         </div>
       </div>
 
