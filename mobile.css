@@ -12,14 +12,12 @@
         box-sizing: border-box !important;
     }
 
-    /* 2. Скидання стилів хедера ПК */
+    /* 2. Хедер (Біла смужка) */
     .header {
         background-color: transparent !important;
         padding-bottom: 0 !important;
-        height: auto !important;
     }
 
-    /* 3. Хедер (Біла смужка) */
     .header-top-bar {
         padding: 10px 15px !important;
         height: 60px !important;
@@ -38,19 +36,16 @@
         font-weight: 800 !important;
     }
 
-    /* ХОВАЄМО ДЕСКТОПНИЙ БЛОК */
-    #desktopAuthContainer {
-        display: none !important;
+    /* --- ЛОГІКА ПЕРЕМИКАННЯ КНОПОК --- */
+    #desktopAuthBlock {
+        display: none !important; /* Ховаємо ПК кнопки */
     }
 
-    /* ПОКАЗУЄМО МОБІЛЬНИЙ БЛОК */
-    #mobileAuthContainer {
-        display: flex !important;
-        align-items: center !important;
-        gap: 12px !important;
+    #mobileAuthBlock {
+        display: flex !important; /* Показуємо мобільні */
     }
 
-    /* Стиль кнопки Account (Пігулка) */
+    /* Стиль кнопки Account */
     #mobileAccountBtn {
         display: flex !important;
         align-items: center !important;
@@ -66,12 +61,12 @@
         box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
 
-    /* ФОТОГРАФІЯ (ПОВИННА БУТИ ВИДИМА) */
+    /* ФОТОГРАФІЯ В ХЕДЕРІ */
     .header-image-container {
         display: block !important;
         width: 100% !important;
-        height: 250px !important; /* Явна висота */
-        background-color: #ddd; /* Колір, якщо фото не завантажиться */
+        height: 250px !important;
+        background-color: #ccc; /* Колір, якщо фото не завантажиться */
         background-image: url("img_main/header.jpg") !important;
         background-size: cover !important;
         background-position: center !important;
@@ -80,7 +75,7 @@
         z-index: 1;
     }
 
-    /* 4. Пошук (Накладається на фото) */
+    /* 3. Пошук (Накладається на фото) */
     .search-section {
         position: relative !important;
         top: 0 !important;
@@ -127,7 +122,6 @@
         flex-shrink: 0;
     }
 
-    /* Вкладки */
     .search-tabs {
         display: flex !important;
         justify-content: space-around !important;
@@ -144,7 +138,7 @@
         justify-content: center;
     }
 
-    /* 5. Галерея (2 колонки) */
+    /* 4. Галерея */
     .main-content {
         padding: 0 15px !important;
         margin-top: 10px !important;
@@ -162,8 +156,8 @@
         width: 100% !important;
         margin-bottom: 0 !important;
         border-radius: 15px !important;
-        box-shadow: none !important;
         border: none !important;
+        box-shadow: none !important;
     }
 
     .card-img img {
@@ -172,6 +166,7 @@
         border-radius: 15px !important;
     }
 
+    .card-body { padding: 10px 0 !important; }
     .card-body h3 { 
         font-size: 14px !important; 
         margin-bottom: 5px !important;
@@ -183,7 +178,7 @@
     .distance { font-size: 11px !important; }
     .price { font-size: 14px !important; }
 
-    /* 6. Решта секцій */
+    /* 5. Решта секцій */
     .reviews { display: flex !important; flex-direction: column !important; gap: 15px !important; }
     .card-review { width: 100% !important; border: 1px solid #eee !important; border-radius: 15px !important; padding: 20px !important; }
     
@@ -192,7 +187,8 @@
     
     .regular-container { flex-direction: column !important; padding: 0 !important; border: none !important; gap: 20px !important; }
     .regular-image img { height: 200px !important; border-radius: 15px !important; }
-    
+    .regular-content { text-align: left !important; padding: 0 !important; }
+
     .register-purple-btn { width: 100% !important; padding: 15px !important; border-radius: 30px !important; font-size: 16px !important; background-color: #6200EA !important; color: white !important; }
     
     .footer-grid { grid-template-columns: 1fr !important; text-align: center !important; gap: 10px !important; }
