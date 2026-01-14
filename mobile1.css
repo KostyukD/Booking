@@ -1,8 +1,17 @@
 @media (max-width: 430px) {
     /* HEADER */
     .header-top-bar { padding: 15px 20px; }
+    
+    /* Ховаємо кнопки, показуємо синю іконку користувача */
     .auth-section { display: none; }
-    .mobile-user-icon { display: block !important; }
+    .mobile-user-icon { 
+        display: block !important; 
+        color: #003580; /* Синій колір як на фото */
+    }
+    .mobile-user-icon i {
+        font-size: 32px;
+        color: #003580 !important;
+    }
 
     .header-image-container {
         height: 250px; 
@@ -24,20 +33,31 @@
     .search-field.check-dates, 
     .search-field.guests-rooms, 
     .search-toggle,
-    .desktop-loc-icon {
+    .desktop-icon,
+    .input-loc-icon {
         display: none;
     }
 
     .search-field.where {
         border: none;
         font-size: 16px;
+        /* Додаємо іконку пін в інпут через псевдоелемент */
+        position: relative;
+        padding-left: 30px;
+    }
+    
+    .search-field.where::before {
+        content: "\f3c5"; /* Код іконки map-marker-alt */
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #333;
+        font-size: 18px;
     }
 
-    .mobile-plane-icon {
-        display: block !important;
-        color: #333;
-        margin-right: 10px;
-    }
 
     .search-button {
         width: 50px;
@@ -48,8 +68,7 @@
         justify-content: center;
     }
 
-    .desktop-icon { display: none; }
-    .mobile-icon { display: block !important; font-size: 20px; }
+    .mobile-icon { display: block !important; font-size: 22px; }
 
     /* STATS (60+, 756, 1323) - БІЛИЙ КОЛІР ПІД ПОШУКОМ */
     .search-tabs {
@@ -167,5 +186,24 @@
         font-size: 16px;
         font-weight: 500;
         text-align: left;
+    }
+
+    /* Floating Chat Button */
+    .floating-chat-btn {
+        display: flex !important;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background-color: #581ADB;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 28px;
+        box-shadow: 0 4px 15px rgba(88, 26, 219, 0.4);
+        z-index: 100;
+        cursor: pointer;
     }
 }
