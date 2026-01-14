@@ -1,7 +1,5 @@
 /* --- mobile.css --- 
-   Цей файл застосовується ТІЛЬКИ для екранів шириною до 480px.
-   Він НЕ впливатиме на комп'ютерну версію.
-*/
+   Адаптація під мобільний вигляд. Застосовується ТІЛЬКИ на екранах до 480px. */
 
 @media only screen and (max-width: 480px) {
 
@@ -15,7 +13,7 @@
         box-sizing: border-box !important;
     }
 
-    /* 2. Скидання стилів хедера ПК */
+    /* 2. Скидання стилів хедера ПК (щоб картинка не перекривалася) */
     .header {
         background-color: transparent !important;
         padding-bottom: 0 !important;
@@ -28,7 +26,7 @@
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
-        background: #fff !important;
+        background: #fff !important; /* Білий фон */
         position: relative;
         z-index: 2;
         box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -47,25 +45,18 @@
         gap: 10px !important;
     }
 
-    /* ХОВАЄМО КНОПКИ ПК */
-    #authButtonsContainer {
-        display: none !important;
-    }
-
-    /* ПОРЯДОК ЕЛЕМЕНТІВ (Прапор -> Кнопка) */
+    /* --- ВАЖЛИВО: ПОРЯДОК ЕЛЕМЕНТІВ (Прапор -> Кнопка) --- */
+    
+    /* Прапорець - ПЕРШИЙ (зліва) */
     .language-flag {
         order: 1 !important;
         width: 24px !important;
         height: auto !important;
         margin: 0 !important;
     }
-    
-    .flag-icon {
-        width: 100%;
-        display: block;
-    }
+    .flag-icon { width: 100%; display: block; }
 
-    /* МОБІЛЬНА КНОПКА (Account) */
+    /* Кнопка Account - ДРУГА (справа) */
     #mobileAccountBtn {
         order: 2 !important;
         display: flex !important;
@@ -79,26 +70,32 @@
         font-weight: 600 !important;
         color: #333 !important;
         text-decoration: none !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    /* Ховаємо десктопні кнопки */
+    #authButtonsContainer {
+        display: none !important;
     }
 
     /* ФОТОГРАФІЯ В ХЕДЕРІ */
     .header-image-container {
         display: block !important;
-        height: 220px !important;
+        height: 220px !important; /* Висота картинки */
         width: 100% !important;
         background-image: url("img_main/header.jpg") !important;
         background-size: cover !important;
         background-position: center !important;
+        margin-top: 0 !important;
         position: relative;
         z-index: 1;
-        margin-top: -1px !important; /* Щоб з'єднати з хедером */
     }
 
     /* 4. Пошук (Накладається на фото) */
     .search-section {
         position: relative !important;
         top: 0 !important;
-        margin-top: -30px !important;
+        margin-top: -30px !important; /* Накладання */
         padding: 0 15px !important;
         z-index: 3;
     }
@@ -115,17 +112,6 @@
         justify-content: space-between !important;
     }
 
-    /* Ховаємо зайві іконки/поля */
-    .mobile-hide-icon, .check-dates, .guests-rooms, .search-button, .search-toggle {
-        display: none !important;
-    }
-
-    .mobile-show-icon {
-        display: inline-block !important;
-        margin-right: 10px;
-        color: #555;
-    }
-
     .search-field.where {
         width: auto !important;
         border: none !important;
@@ -136,7 +122,9 @@
         font-weight: 500;
     }
 
-    /* Фіолетова кнопка */
+    .mobile-search-icon { margin-right: 10px; color: #555; display: inline-block !important; }
+    .check-dates, .guests-rooms, .search-button, .search-toggle { display: none !important; }
+
     .mobile-filter-btn {
         display: flex !important;
         align-items: center;
@@ -157,20 +145,16 @@
         margin-top: 25px !important;
         padding-bottom: 10px !important;
     }
-
-    .desktop-tab { display: none !important; }
-    .mobile-tab { 
-        display: flex !important; 
-        width: 50px;
-        height: 50px;
-        background: #f5f5f5;
-        border-radius: 50%;
+    .tab-item { font-size: 0 !important; }
+    .tab-item i {
+        font-size: 20px !important;
+        color: #666 !important;
+        width: 24px;
+        height: 24px;
+        display: flex;
         align-items: center;
         justify-content: center;
-        color: #555;
-        font-size: 20px;
     }
-    .mobile-tab i { margin: 0 !important; font-size: 20px !important; }
 
     /* 5. Галерея (2 колонки) */
     .main-content {
@@ -196,7 +180,9 @@
     }
 
     .card-img img {
+        width: 100% !important;
         height: 140px !important;
+        object-fit: cover !important;
         border-radius: 15px !important;
     }
 
@@ -228,7 +214,7 @@
     .footer { padding: 30px 0 !important; }
     .footer-grid { grid-template-columns: 1fr !important; text-align: center !important; gap: 10px !important; }
 
-    /* Fix Account Page */
+    /* Account Page Fixes */
     .container { width: 100% !important; padding: 0 15px !important; box-sizing: border-box !important; }
     .account-card, .room-card { display: flex !important; flex-direction: column !important; height: auto !important; grid-template-columns: none !important; }
     .avatar img { height: auto !important; }
