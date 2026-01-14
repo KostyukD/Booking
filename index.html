@@ -19,6 +19,9 @@
             cursor: pointer;
             transition: transform 0.2s;
         }
+        .header-profile-img:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -36,7 +39,7 @@
                     Account <i class="fas fa-user-circle"></i>
                 </a>
 
-                <div id="authButtonsContainer">
+                <div id="authButtonsContainer" style="display: flex; gap: 10px; align-items: center;">
                     <button id="openRegisterHeader" class="button button-bordered register-btn">Register</button>
                     <button id="openSignIn" class="button button-bordered signin-btn">
                         Sign in <i class="fas fa-user-circle"></i>
