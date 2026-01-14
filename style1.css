@@ -37,11 +37,15 @@ body {
     color: #222222; 
 }
 
+    .logo span {
+        color: #581ADB;
+    }
+
 .h1-header {
     text-decoration: none;
 }
 
-/* --- Кнопки авторизации --- */
+/* --- Секция авторизации --- */
 .auth-section {
     display: flex;
     align-items: center;
@@ -75,9 +79,11 @@ body {
     margin-left: 10px;
 }
 
+    .button-bordered:hover { background-color: rgba(0,0,0,0.05); }
+
 .signin-btn i { margin-left: 5px; }
 
-/* --- Баннер --- */
+/* --- Секция фонового изображения --- */
 .header-image-container {
     height: 200px; 
     background-image: url("img_main/header2.jpg");
@@ -90,7 +96,7 @@ body {
 .search-section {
     position: absolute;
     width: 100%;
-    top: 180px;
+    top: 175px;
     left: 0;
     z-index: 10;
 }
@@ -115,7 +121,15 @@ body {
     font-size: 15px;
 }
 
-.search-field i { color: #888; margin-right: 10px; }
+    .search-field i { color: #888; margin-right: 10px; }
+
+.search-toggle {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    color: #666;
+    border-right: 1px solid #eee;
+}
 
 .search-button {
     background-color: #581ADB; 
@@ -125,13 +139,14 @@ body {
     padding: 0 20px;
     font-size: 20px;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 /* --- Вкладки статистики --- */
 .search-tabs {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 55px;
 }
 
 .tab-item {
@@ -143,7 +158,7 @@ body {
     color: #666;
 }
 
-.tab-item i { font-size: 24px; margin-bottom: 5px; }
+    .tab-item i { font-size: 24px; margin-bottom: 5px; }
 
 /* --- Контент --- */
 .content {
@@ -151,11 +166,12 @@ body {
     grid-template-columns: 280px 1fr;
     gap: 50px;
     padding: 50px;
+    place-items: start center;
 }
 
 .filters { margin-top: 100px; }
 
-/* --- Карточки --- */
+/* --- Карточки готелів --- */
 .hotel-card {
     display: flex;
     max-width: 880px;
@@ -171,7 +187,7 @@ body {
 .hotel-card__body { padding: 24px; display: flex; flex-direction: column; width: 100%; }
 
 .badge-item { display: inline-flex; align-items: center; margin-right: 15px; font-size: 13px; color: #666; }
-.icon-card { width: 16px; margin-right: 5px; }
+.icon-card { width: 16px; margin-right: 8px; }
 
 .hotel-card__score-circle {
     width: 48px; height: 48px; border: 1px solid #581ADB; border-radius: 50%;
@@ -189,40 +205,47 @@ body {
 .footer-column ul { list-style: none; }
 .footer-column li { color: #003580; margin-bottom: 10px; font-size: 13px; }
 
-/* --- Скрыть мобильные элементы --- */
-.mobile-user-nav, .mobile-slider-icon, .mobile-pin-icon, .mobile-filter-bar, .floating-chat { display: none; }
+/* --- Приховати мобільні елементи на десктопі --- */
+.mobile-user-nav, .mobile-pin-icon, .mobile-settings-icon, .mobile-filter-bar, .mobile-chat-btn {
+    display: none;
+}
 
 /* =========================================
-   АДАПТИВ (Зміни на 1000px для тесту)
+   АДАПТИВ ДЛЯ iPHONE 14 PRO MAX (Тільки < 480px)
    ========================================= */
-@media (max-width: 1000px) {
-    /* Синя іконка юзера */
+@media (max-width: 480px) {
+    /* Синя іконка користувача */
     .auth-section, .language-flag { display: none; }
-    .mobile-user-nav { display: block !important; color: #003580; font-size: 32px; cursor: pointer; }
+    .mobile-user-nav { 
+        display: block !important; 
+        color: #581ADB; /* Фіолетово-синій як на фото */
+        font-size: 32px; 
+    }
 
     .header-image-container { height: 180px; }
     .search-section { top: 90px; padding: 0 15px; }
     
-    /* Округлий інпут з іконкою піна */
+    /* Інпут з іконкою піна */
     .search-form-container { height: 60px; width: 100%; border-radius: 40px; padding: 5px; }
-    .search-field.check-dates, .search-field.guests-rooms, .search-toggle, .desktop-search-icon, .desktop-loc-icon { display: none; }
+    .search-field.check-dates, .search-field.guests-rooms, .search-toggle, .desktop-search-icon { display: none; }
     .search-field.where { border: none; font-size: 16px; padding-left: 10px; }
-    .mobile-pin-icon { display: block !important; color: #333 !important; font-size: 18px; margin-right: 10px; }
+    .mobile-pin-icon { display: block !important; color: #333 !important; font-size: 18px; margin-right: 12px; }
 
-    /* Кнопка пошуку з повзунками */
+    /* Кнопка з повзунками */
     .search-button { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .mobile-slider-icon { display: block !important; font-size: 20px; color: white; }
+    .mobile-settings-icon { display: block !important; font-size: 20px; color: white; }
 
     /* Біла статистика на картинці */
     .search-tabs { margin-top: -35px; position: relative; z-index: 20; }
-    .tab-item { color: #fff !important; margin: 0 20px; font-weight: bold; }
-    .tab-item i { color: #fff !important; font-size: 22px; }
+    .tab-item { color: #ffffff !important; margin: 0 15px; font-weight: bold; }
+    .tab-item i { color: #ffffff !important; font-size: 22px; }
 
     /* Кнопки Filter/Map */
-    .mobile-filter-bar { display: flex !important; justify-content: space-between; margin-top: 100px; gap: 15px; }
-    .mobile-filter-btn { flex: 1; background: #fff; border: 1px solid #eee; border-radius: 30px; padding: 12px; font-weight: bold; font-size: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); cursor: pointer; }
+    .mobile-filter-bar { display: flex !important; justify-content: space-between; margin-top: 100px; gap: 15px; margin-bottom: 20px;}
+    .mobile-filter-btn { flex: 1; background: #fff; border: 1.5px solid #eee; border-radius: 30px; padding: 12px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
     .map-btn { color: #EE0039; }
 
+    /* Контент та картки */
     .content { display: block; padding: 15px; }
     .filters { display: none; }
     
@@ -232,14 +255,14 @@ body {
     .hotel-card__bottom { position: static; margin-top: 20px; display: flex; flex-direction: column; align-items: center; gap: 15px; }
     .hotel-card__btn { width: 100%; padding: 15px; }
 
-    /* Простий синій список у футері */
-    .footer { background: #fff; padding: 20px 0; }
+    /* Футер — синій список */
+    .footer { padding: 20px 0; background: #ffffff; }
     .footer-grid { display: block !important; }
-    .footer-column { margin-bottom: 20px; }
-    .footer-column li { color: #003580 !important; font-size: 16px; font-weight: 500; text-align: left; }
+    .footer-column { margin-bottom: 25px; }
+    .footer-column li { color: #003580 !important; font-size: 16px; font-weight: 500; margin-bottom: 12px; }
 
-    /* Фіолетова кнопка чату */
-    .floating-chat {
+    /* Кнопка чату */
+    .mobile-chat-btn {
         display: flex !important; position: fixed; bottom: 25px; right: 25px;
         width: 60px; height: 60px; background: #581ADB; color: #fff;
         border-radius: 50%; align-items: center; justify-content: center;
