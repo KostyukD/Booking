@@ -13,12 +13,12 @@ body, html {
 
 /* 2. Хедер */
 .header-top-bar {
-    padding: 15px !important;
+    padding: 10px 15px !important;
     height: auto !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    background: transparent !important;
+    background: #fff !important; /* Білий фон хедера */
     position: relative;
     z-index: 2;
 }
@@ -26,25 +26,40 @@ body, html {
 .logo {
     font-size: 20px !important;
     color: #222 !important;
+    font-weight: 800 !important;
 }
 
-/* ВИПРАВЛЕННЯ ДЛЯ ПРАВОЇ ЧАСТИНИ ХЕДЕРА НА МОБІЛЬНОМУ */
+/* БЛОК АВТОРИЗАЦІЇ (ПРАВОРУЧ) */
 .auth-section {
     display: flex !important;
     align-items: center !important;
-    gap: 10px !important; /* Відступ між прапорцем і кнопкою */
+    gap: 10px !important;
 }
 
-/* Приховуємо десктопні кнопки */
-#authButtonsContainer {
-    display: none !important;
-}
-
-/* Прапорець */
+/* --- ВАЖЛИВО: ПОРЯДОК ЕЛЕМЕНТІВ НА МОБІЛЬНОМУ --- */
+/* Прапорець - Перший */
 .language-flag {
+    order: 1 !important;
     width: 24px !important;
     height: auto !important;
     margin: 0 !important;
+}
+
+/* Кнопка Account - Друга */
+#mobileAccountBtn {
+    order: 2 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: white !important;
+    border: 1px solid #ddd !important;
+    padding: 6px 14px !important;
+    border-radius: 30px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+    text-decoration: none !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .flag-icon {
@@ -53,30 +68,20 @@ body, html {
     display: block;
 }
 
-/* Мобільна кнопка Account (стиль "пігулка" з рамкою) */
-#mobileAccountBtn {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    background: white !important;
-    border: 1px solid #222 !important; /* Чорна рамка, як на фото */
-    padding: 6px 14px !important;
-    border-radius: 30px !important; /* Пігулка */
-    font-size: 13px !important;
-    font-weight: 600 !important;
-    color: #222 !important;
-    text-decoration: none !important;
+/* Приховуємо десктопні кнопки */
+#authButtonsContainer {
+    display: none !important;
 }
 
-/* ФОТОГРАФІЯ В ХЕДЕРІ */
+/* ФОТОГРАФІЯ В ХЕДЕРІ (Відновлена!) */
 .header-image-container {
     display: block !important;
-    height: 200px !important;
+    height: 220px !important;
     width: 100% !important;
     background-image: url("img_main/header.jpg") !important;
     background-size: cover !important;
     background-position: center !important;
-    margin-top: -60px !important;
+    /* Відступ, щоб картинка була під хедером */
     position: relative;
     z-index: 1;
 }
@@ -84,7 +89,8 @@ body, html {
 /* 3. Пошук (Накладається на фото) */
 .search-section {
     position: relative !important;
-    margin-top: -25px !important;
+    top: 0 !important;
+    margin-top: -30px !important; /* Накладання */
     padding: 0 15px !important;
     z-index: 3;
 }
@@ -116,7 +122,7 @@ body, html {
     color: #555;
 }
 
-/* Приховуємо зайві поля */
+/* Приховуємо зайве */
 .check-dates, .guests-rooms, .search-button, .search-toggle {
     display: none !important; 
 }
@@ -157,7 +163,7 @@ body, html {
     justify-content: center;
 }
 
-/* 5. ГАЛЕРЕЯ КАРТОК (Сітка 2 стовпчики) */
+/* 5. ГАЛЕРЕЯ КАРТОК (СІТКА 2 СТОВПЧИКИ) */
 .main-content {
     padding: 0 15px !important;
     margin-top: 10px !important;
@@ -192,7 +198,7 @@ body, html {
 
 .card-img img {
     width: 100% !important;
-    height: 140px !important; /* Менша висота */
+    height: 140px !important;
     object-fit: cover !important;
     border-radius: 15px !important;
 }
@@ -222,7 +228,7 @@ body, html {
     font-size: 14px !important;
 }
 
-/* 6. ВІДГУКИ (Вертикально) */
+/* 6. ВІДГУКИ */
 .reviews-section {
     margin-top: 20px !important;
 }
@@ -231,7 +237,6 @@ body, html {
     display: flex !important;
     flex-direction: column !important;
     gap: 15px !important;
-    padding: 0 !important;
     width: 100% !important;
 }
 
@@ -285,7 +290,7 @@ body, html {
     padding: 0 !important;
 }
 
-/* Велика фіолетова кнопка */
+/* Кнопка */
 .register-action {
     margin-top: 30px !important;
     width: 100% !important;
@@ -312,7 +317,7 @@ body, html {
     gap: 10px !important;
 }
 
-/* --- СТИЛІ ДЛЯ СТОРІНКИ АКАУНТУ (Щоб не ламалась) --- */
+/* --- СТИЛІ ДЛЯ ACCOUNT PAGE --- */
 .account-section, .profile-form, .bookings-section {
     width: 100% !important;
     box-sizing: border-box !important;
@@ -333,7 +338,6 @@ body, html {
 .form-grid {
     display: flex !important;
     flex-direction: column !important;
-    padding: 0 !important;
 }
 
 .form-col {
