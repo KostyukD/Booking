@@ -6,8 +6,11 @@
     <title>Hotel For you.</title>
     
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mobile.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="mobile.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
+        /* Стиль для аватарки в хедері (якщо треба) */
         .header-profile-img {
             width: 40px;
             height: 40px;
@@ -16,9 +19,6 @@
             border: 2px solid #6200EA;
             cursor: pointer;
             transition: transform 0.2s;
-        }
-        .header-profile-img:hover {
-            transform: scale(1.1);
         }
     </style>
 </head>
@@ -30,33 +30,25 @@
 
             <div class="auth-section">
                 
-                <div id="mobileAuthBlock" style="display: none; align-items: center; gap: 10px;">
-                    <div class="language-flag" style="margin: 0; width: 24px;">
-                        <img src="img_main/logo_lang.png" alt="UK" style="width: 100%; display: block;">
-                    </div>
-                    <a href="account.html" id="mobileAccountBtn">
-                        Account <i class="fas fa-user-circle"></i>
-                    </a>
+                <div class="desktop-auth-buttons">
+                    <button id="openRegisterHeader" class="button button-bordered register-btn">Register</button>
+                    <button id="openSignIn" class="button button-bordered signin-btn">
+                        Sign in
+                        <i class="fas fa-user-circle"></i>
+                    </button>
                 </div>
 
-                <div id="desktopAuthBlock" style="display: flex; align-items: center; gap: 20px;">
-                    <div style="display: flex; gap: 10px;">
-                        <button id="openRegisterHeader" class="button button-bordered register-btn">Register</button>
-                        <button id="openSignIn" class="button button-bordered signin-btn">
-                            Sign in
-                            <i class="fas fa-user-circle"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="language-flag">
-                        <img src="img_main/logo_lang.png" alt="Язык" class="flag-icon">
-                    </div>
+                <a href="account.html" class="mobile-account-btn mobile-only">
+                    Account <i class="fas fa-user-circle"></i>
+                </a>
 
-                    <a href="account.html" id="userProfileHeader" style="display: none;">
-                        <img src="img_acc/a349e35e5470441fe4efb8aeb7ee9917ab64e660.png" alt="Profile" class="header-profile-img" onerror="this.src='img_main/review_icon2.png'">
-                    </a>
+                <div class="language-flag">
+                    <img src="img_main/logo_lang.png" alt="Language" class="flag-icon">
                 </div>
 
+                <a href="account.html" id="userProfileHeader" style="display: none; margin-right: 15px;">
+                    <img src="img_acc/a349e35e5470441fe4efb8aeb7ee9917ab64e660.png" alt="Profile" class="header-profile-img" onerror="this.src='img_main/review_icon2.png'">
+                </a>
             </div>
         </div>
 
@@ -66,31 +58,46 @@
         <section class="search-section">
             <div class="search-form-container">
                 <div class="search-field where">
-                    <i class="fas fa-plane mobile-search-icon"></i>
+                    <i class="fas fa-plane mobile-only-icon"></i>
+                    <i class="fas fa-map-marker-alt desktop-only-icon"></i>
                     Where are you going?
                 </div>
-                <div class="search-field check-dates">
+                <div class="search-field check-dates desktop-only">
                     <i class="far fa-calendar-alt"></i>
                     Check in - Check out
                 </div>
-                <div class="search-field guests-rooms">
+                <div class="search-field guests-rooms desktop-only">
                     <i class="fas fa-user-friends"></i>
                     2 adults • 0 children • 1 room
                 </div>
                 
-                <div class="mobile-filter-btn">
+                <div class="mobile-filter-btn mobile-only">
                     <i class="fas fa-sliders-h"></i>
                 </div>
 
-                <a href="index1.html" class="search-button">
+                <div class="search-toggle desktop-only">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+
+                <a href="index1.html" class="search-button desktop-only">
                     <i class="fas fa-search"></i>
                 </a>
             </div>
 
             <div class="search-tabs">
-                <div class="tab-item"><i class="fas fa-suitcase"></i></div>
-                <div class="tab-item"><i class="fas fa-lock"></i></div>
-                <div class="tab-item"><i class="fas fa-receipt"></i></div>
+                <div class="tab-item desktop-only">
+                    <i class="fas fa-book-open"></i> Easy booking
+                </div>
+                <div class="tab-item desktop-only">
+                    <i class="fas fa-lock"></i> Secure payment
+                </div>
+                <div class="tab-item desktop-only">
+                    <i class="fas fa-info-circle"></i> Relevant information
+                </div>
+
+                <div class="tab-item mobile-only"><i class="fas fa-suitcase"></i></div>
+                <div class="tab-item mobile-only"><i class="fas fa-lock"></i></div>
+                <div class="tab-item mobile-only"><i class="fas fa-receipt"></i></div>
             </div>
         </section>
     </header>
@@ -272,6 +279,7 @@
                     <p>So start your search today and discover the amazing rewards waiting for you on our website!</p>
                 </div>
             </div>
+            
             <div class="register-action">
                 <button class="register-purple-btn">Register an account</button>
             </div>
