@@ -1989,3 +1989,321 @@ color: #581ADB;
     margin-bottom: 200px;
 
 }
+
+@media (max-width: 480px) {
+
+
+  body { overflow-x: hidden; }
+  .container { margin: 18px auto; padding: 0 15px; max-width: 100%; }
+
+
+  .header {
+    padding: 12px 15px;
+    align-items: center;
+  }
+
+  .logo { font-size: 18px; }
+  .language img { width: 20px; }
+
+  
+  .back {
+    margin: 15px;
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+
+  .nav { padding: 0 15px; }
+  .steps {
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+  }
+  .step {
+    flex: 0 0 auto;
+    padding: 8px 12px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  .step img { width: 14px; }
+
+  .account-section {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .account-card {
+    grid-template-columns: 1fr;
+  
+  }
+
+  .avatar img {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .account-info {
+    padding: 16px;
+  }
+
+  .name {
+    font-size: 18px;
+    margin-top: 0;
+  }
+
+  .change-photo {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .account-card,
+  .disclaimer {
+    padding: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* 5) Profile form */
+  .profile-form {
+    padding: 18px 16px;
+    border-radius: 16px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 18px;
+  }
+
+  input, select {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .hint { font-size: 12px; padding-left: 12px; }
+  .note { font-size: 12px; }
+
+  /* 6) Bookings (room-card + booking-side) */
+  .bookings-section {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .room-card {
+    max-width: 100%;
+    height: auto;         /* було 250px */
+    flex-direction: column;
+    border-radius: 16px;
+  }
+
+  .room-image {
+    width: 100%;
+    height: 180px;
+  }
+
+  .room-content {
+    width: 100%;
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .room-title { font-size: 16px; }
+  .info-row { font-size: 13px; }
+
+  .room-features {
+    margin-top: 8px;      /* було 50px */
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .feature { font-size: 12px; }
+
+  .room-cancel {
+    margin-bottom: 0;
+    font-size: 12px;
+  }
+
+  .booking-side {
+    width: 100%;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    background: #fff;
+  }
+
+  .booking-summary { gap: 10px; }
+  .summary-box { padding: 12px 8px; font-size: 12px; border-radius: 12px; }
+
+  .booking-actions {
+    gap: 10px;
+  }
+
+  .btn-outline {
+    height: 56px;
+    border-radius: 14px;
+    width: 100%;
+    padding: 0;
+    font-size: 13px;
+  }
+
+  .booking-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 13px;
+  }
+
+  /* 7) Reviews box */
+  .reviews {
+    padding: 18px;
+    height: auto;
+    margin-bottom: 60px; /* було 200px */
+  }
+
+  /* 8) Payment section */
+  .payment-section {
+    padding: 0 15px;
+    max-width: 100%;
+    margin: 20px auto;
+  }
+
+  .payment-title { font-size: 22px; margin-bottom: 14px; }
+
+  .payment-top {
+    grid-template-columns: 1fr; /* stack */
+    gap: 14px;
+  }
+
+  .payment-card,
+  .payment-info {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .payment-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .input { width: 100%; font-size: 14px; }
+  .input.small { width: 100%; }
+
+  .no-card { font-size: 14px; }
+
+  .saved-card { padding: 18px; border-radius: 16px; }
+
+  /* 9) Footer small text block (your .footer class) */
+  .footer {
+    max-width: 100%;
+    margin: 30px 15px 60px;
+  }
+
+  /* 10) Travel section */
+  .travel-title {
+    margin-left: 0;     /* було 200px */
+    margin-bottom: 14px;
+    padding: 0 15px;
+    font-size: 22px;
+  }
+
+  .travel-container {
+    margin: 0;          /* було margin: 50px 50px 0 250px */
+    padding: 0 15px;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .left-column,
+  .right-column {
+    margin-bottom: 30px; /* було 200px */
+  }
+
+  .info-box {
+    width: 100%;
+    height: auto;        /* було 300px */
+    margin-left: 0;      /* було 80px */
+    padding: 16px;
+    border-radius: 16px;
+    font-size: 14px;
+  }
+
+  .option-item,
+  .newsletter-checkbox-label {
+    font-size: 14px;
+  }
+
+  /* 11) Newsletters */
+  .newsletters {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+
+  .section-title { font-size: 22px; }
+
+  .top-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .banner { height: 140px; border-radius: 12px; }
+  .subscribe-box { border-radius: 12px; }
+
+  .cards {
+    grid-template-columns: 1fr; /* було 4 */
+    gap: 12px;
+  }
+
+  .card img { height: 150px; }
+
+  .info-footer {
+    flex-direction: column;
+    height: auto;
+    gap: 12px;
+    margin-bottom: 60px; /* було 200px */
+    padding: 0 15px;
+  }
+
+  .info-text {
+    width: 100%;
+    font-size: 14px;
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .info-footer img {
+    width: 100%;
+    height: 180px;
+    border-radius: 16px;
+  }
+
+  /* 12) Security */
+  .security-section {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+
+  .security-title { font-size: 18px; }
+
+  .security-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .security-row {
+    grid-template-columns: 1fr; /* було 280px auto auto */
+    gap: 10px;
+  }
+
+  .security-row a { font-size: 13px; }
+
+  .security-text {
+    width: 100%;          /* було 50% */
+    margin-bottom: 60px;  /* було 200px */
+  }
+
+}
