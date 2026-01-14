@@ -43,11 +43,18 @@ body, html {
     gap: 10px !important;
 }
 
-/* --- ВАЖЛИВО: ПОРЯДОК ЕЛЕМЕНТІВ (Account -> Flag) --- */
-
-/* Кнопка Account - ПЕРША */
-#mobileAccountBtn {
+/* --- ВИПРАВЛЕННЯ: ПОРЯДОК ЕЛЕМЕНТІВ (Прапор -> Кнопка) --- */
+/* Прапорець - ПЕРШИЙ (order: 1) */
+.language-flag {
     order: 1 !important;
+    width: 24px !important;
+    height: auto !important;
+    margin: 0 !important;
+}
+
+/* Кнопка Account - ДРУГА (order: 2) */
+#mobileAccountBtn {
+    order: 2 !important;
     display: flex !important;
     align-items: center !important;
     gap: 8px !important;
@@ -60,14 +67,6 @@ body, html {
     color: #333 !important;
     text-decoration: none !important;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-/* Прапорець - ДРУГИЙ */
-.language-flag {
-    order: 2 !important;
-    width: 24px !important;
-    height: auto !important;
-    margin: 0 !important;
 }
 
 .flag-icon {
