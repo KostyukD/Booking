@@ -6,11 +6,11 @@
     <title>Hotel For you.</title>
     
     <link rel="stylesheet" href="style.css">
+    
     <link rel="stylesheet" href="mobile.css" media="(max-width: 480px)">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-        /* Стиль для фото профілю в хедері */
         .header-profile-img {
             width: 40px;
             height: 40px;
@@ -32,12 +32,11 @@
             <div class="logo">Hotel for <span class="highlight">you.</span></div>
 
             <div class="auth-section">
-                
                 <div id="authButtonsContainer" style="display: flex; gap: 10px; align-items: center;">
                     <button id="openRegisterHeader" class="button button-bordered register-btn">Register</button>
+                    
                     <button id="openSignIn" class="button button-bordered signin-btn">
-                        <span class="desktop-text">Sign in</span>
-                        <span class="mobile-text" style="display:none;">Account</span>
+                        <span class="btn-text">Account</span>
                         <i class="fas fa-user-circle"></i>
                     </button>
                 </div>
@@ -69,9 +68,6 @@
                     <i class="fas fa-user-friends"></i>
                     2 adults • 0 children • 1 room
                 </div>
-                <div class="search-toggle">
-                    <i class="fas fa-exchange-alt"></i>
-                </div>
                 <a href="index1.html" class="search-button">
                     <i class="fas fa-search"></i>
                 </a>
@@ -79,13 +75,13 @@
 
             <div class="search-tabs">
                 <div class="tab-item">
-                    <i class="fas fa-book-open"></i> Easy booking
+                    <i class="fas fa-bed"></i>
                 </div>
                 <div class="tab-item">
-                    <i class="fas fa-lock"></i> Secure payment
+                    <i class="fas fa-plane"></i>
                 </div>
                 <div class="tab-item">
-                    <i class="fas fa-info-circle"></i> Relevant information
+                    <i class="fas fa-globe"></i>
                 </div>
             </div>
         </section>
@@ -102,15 +98,9 @@
             </form>
             <p class="register-link">Do not have an account? <a href="#" id="linkToRegister">Register</a></p>
             <div class="social-login">
-                <button class="social-button">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G"> Sign In with Google
-                </button>
-                <button class="social-button">
-                    <i class="fab fa-facebook" style="color: #1877F2;"></i> Sign In with Facebook
-                </button>
-                <button class="social-button">
-                    <i class="fab fa-apple"></i> Sign In with Apple
-                </button>
+                <button class="social-button"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G"> Sign In with Google</button>
+                <button class="social-button"><i class="fab fa-facebook" style="color: #1877F2;"></i> Sign In with Facebook</button>
+                <button class="social-button"><i class="fab fa-apple"></i> Sign In with Apple</button>
             </div>
         </div>
     </div>
@@ -128,15 +118,9 @@
             </form>
             <p class="register-link">Already have an account? <a href="#" id="linkToSignIn">Sign In</a></p>
             <div class="social-login">
-                <button class="social-button">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G"> Sign Up with Google
-                </button>
-                <button class="social-button">
-                    <i class="fab fa-facebook" style="color: #1877F2;"></i> Sign Up with Facebook
-                </button>
-                <button class="social-button">
-                    <i class="fab fa-apple"></i> Sign Up with Apple
-                </button>
+                <button class="social-button"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G"> Sign Up with Google</button>
+                <button class="social-button"><i class="fab fa-facebook" style="color: #1877F2;"></i> Sign Up with Facebook</button>
+                <button class="social-button"><i class="fab fa-apple"></i> Sign Up with Apple</button>
             </div>
         </div>
     </div>
@@ -147,10 +131,7 @@
             <h2 class="modal-title">Authentication</h2>
             <form class="modal-form">
                 <input type="text" placeholder="Code" class="modal-input auth-input" id="authCodeInput">
-                <p style="text-align: center; margin: 15px 0; font-size: 14px; color: #555;">
-                    We have sent you an email with the code.<br>
-                    Check your mail and enter the code for the authentication.
-                </p>
+                <p style="text-align: center; margin: 15px 0; font-size: 14px; color: #555;">Check your mail and enter the code.</p>
                 <button type="button" class="continue-btn" id="authContinueBtn">Continue</button>
             </form>
         </div>
@@ -160,38 +141,12 @@
         <div class="modal-content">
             <button class="close-btn" id="closeInfo">&times;</button>
             <h2 class="modal-title">Information</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 20px;">
-                Tell us about yourself so we can better choose options for you :)
-            </p>
             <form class="modal-form">
-                <select class="modal-input info-input" style="background: white;">
-                    <option value="" disabled selected>Country</option>
-                    <option value="ua">Ukraine</option>
-                    <option value="us">USA</option>
-                    <option value="uk">UK</option>
-                </select>
-                <select class="modal-input info-input" style="background: white;">
-                    <option value="" disabled selected>City</option>
-                    <option value="kyiv">Kyiv</option>
-                    <option value="ny">New York</option>
-                    <option value="ln">London</option>
-                </select>
-                <select class="modal-input info-input" style="background: white;">
-                    <option value="" disabled selected>Why do you travel?</option>
-                    <option value="leisure">Leisure</option>
-                    <option value="business">Business</option>
-                </select>
-                <div style="width: 100%; margin: 10px 0; display: flex; align-items: center; gap: 15px;">
-                    <span style="color: #666;">Travelling with a pet?</span>
-                    <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
-                        <input type="radio" name="pet" value="yes"> Yes
-                    </label>
-                    <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
-                        <input type="radio" name="pet" value="no"> No
-                    </label>
-                </div>
+                <select class="modal-input info-input"><option value="" disabled selected>Country</option><option value="ua">Ukraine</option></select>
+                <select class="modal-input info-input"><option value="" disabled selected>City</option><option value="kyiv">Kyiv</option></select>
+                <select class="modal-input info-input"><option value="" disabled selected>Why do you travel?</option><option value="leisure">Leisure</option></select>
+                <div style="margin: 10px 0;">Travelling with a pet? <input type="radio" name="pet" value="yes"> Yes <input type="radio" name="pet" value="no"> No</div>
                 <button type="button" class="continue-btn" id="infoContinueBtn">Continue</button>
-                <button type="button" class="continue-btn" id="infoLaterBtn" style="background: white; color: #6200EA; border: 1px solid #6200EA; margin-top: 10px;">Later</button>
             </form>
         </div>
     </div>
@@ -200,18 +155,11 @@
         <div class="modal-content">
             <button class="close-btn" id="closeDone">&times;</button>
             <h2 class="modal-title">All done!</h2>
-            
-            <div style="display: flex; justify-content: center; margin: 20px 0;">
-                <div style="width: 80px; height: 80px; border-radius: 50%; border: 3px solid #6200EA; display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-check" style="font-size: 40px; color: #6200EA;"></i>
-                </div>
-            </div>
-
+            <div style="display: flex; justify-content: center; margin: 20px 0;"><i class="fas fa-check" style="font-size: 40px; color: #6200EA;"></i></div>
             <button type="button" class="continue-btn active" id="checkProfileBtn">Check your profile!</button>
-            <button type="button" class="continue-btn" id="continueBookingBtn" style="background: white; color: #6200EA; border: 1px solid #6200EA; margin-top: 10px;">Continue booking</button>
+            <button type="button" class="continue-btn" id="continueBookingBtn">Continue booking</button>
         </div>
     </div>
-
 
     <main class="main-content">
         <div class="gallery">
@@ -219,9 +167,7 @@
                 <div class="card-img"><img src="img_main/hotel1.jpg" alt="hotel"></div>
                 <div class="card-body">
                     <h3>Hotel name | City | Country</h3>
-                    <div class="rating">
-                        <img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt="">
-                    </div>
+                    <div class="rating"><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""></div>
                     <p class="distance">the city center : 116 m</p>
                     <p class="price">$130 <span>night</span></p>
                 </div>
@@ -230,20 +176,16 @@
                 <div class="card-img"><img src="img_main/hotel2.jpg" alt="hotel2"></div>
                 <div class="card-body">
                     <h3>Hotel name | City | Country</h3>
-                    <div class="rating">
-                        <img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt="">
-                    </div>
+                    <div class="rating"><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""></div>
                     <p class="distance">the city center : 116 m</p>
-                    <p class="price">$130 <span>night</span></p>
+                    <p class="price">$142 <span>night</span></p>
                 </div>
             </div></a>
             <a href="index2.html"><div class="card">
                 <div class="card-img"><img src="img_main/hotel3.jpg" alt="hote3"></div>
                 <div class="card-body">
                     <h3>Hotel name | City | Country</h3>
-                    <div class="rating">
-                        <img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt="">
-                    </div>
+                    <div class="rating"><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""></div>
                     <p class="distance">the city center : 116 m</p>
                     <p class="price">$130 <span>night</span></p>
                 </div>
@@ -252,55 +194,9 @@
                 <div class="card-img"><img src="img_main/hotel4.jpg" alt="hotel4"></div>
                 <div class="card-body">
                     <h3>Hotel name | City | Country</h3>
-                    <div class="rating">
-                        <img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt="">
-                    </div>
+                    <div class="rating"><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""></div>
                     <p class="distance">the city center : 116 m</p>
-                    <p class="price">$130 <span>night</span></p>
-                </div>
-            </div></a>
-            <a href="index2.html"><div class="card">
-                <div class="card-img"><img src="img_main/hotel5.jpg" alt="hotel5"></div>
-                <div class="card-body">
-                    <h3>Hotel name | City | Country</h3>
-                    <div class="rating">
-                        <img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt="">
-                    </div>
-                    <p class="distance">the city center : 116 m</p>
-                    <p class="price">$130 <span>night</span></p>
-                </div>
-            </div></a>
-            <a href="index2.html"><div class="card">
-                <div class="card-img"><img src="img_main/hotel6.jpg" alt="hotel6"></div>
-                <div class="card-body">
-                    <h3>Hotel name | City | Country</h3>
-                    <div class="rating">
-                        <img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt="">
-                    </div>
-                    <p class="distance">the city center : 116 m</p>
-                    <p class="price">$130 <span>night</span></p>
-                </div>
-            </div></a>
-            <a href="index2.html"><div class="card">
-                <div class="card-img"><img src="img_main/hotel7.jpg" alt="hotel7"></div>
-                <div class="card-body">
-                    <h3>Hotel name | City | Country</h3>
-                    <div class="rating">
-                        <img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt="">
-                    </div>
-                    <p class="distance">the city center : 116 m</p>
-                    <p class="price">$130 <span>night</span></p>
-                </div>
-            </div></a>
-            <a href="index2.html"><div class="card">
-                <div class="card-img"><img src="img_main/hotel8.jpg" alt="hotel8"></div>
-                <div class="card-body">
-                    <h3>Hotel name | City | Country</h3>
-                    <div class="rating">
-                        <img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt="">
-                    </div>
-                    <p class="distance">the city center : 116 m</p>
-                    <p class="price">$130 <span>night</span></p>
+                    <p class="price">$142 <span>night</span></p>
                 </div>
             </div></a>
         </div>
@@ -312,10 +208,7 @@
                     <div class="card-review-header">
                         <div class="review-user">
                             <img src="img_main/review_icon2.png" alt="user avatar" class="review-avatar">
-                            <div class="review-user-info">
-                                <h4 class="review-name">Name</h4>
-                                <p class="review-hotel">Hotel Name</p>
-                            </div>
+                            <div class="review-user-info"><h4 class="review-name">Name</h4><p class="review-hotel">Hotel Name</p></div>
                         </div>
                         <p class="review-date">12 days ago</p>
                     </div>
@@ -325,27 +218,11 @@
                     <div class="card-review-header">
                         <div class="review-user">
                             <img src="img_main/review_icon3.png" alt="user avatar" class="review-avatar">
-                            <div class="review-user-info">
-                                <h4 class="review-name">Name</h4>
-                                <p class="review-hotel">Hotel Name</p>
-                            </div>
+                            <div class="review-user-info"><h4 class="review-name">Name</h4><p class="review-hotel">Hotel Name</p></div>
                         </div>
                         <p class="review-date">19 days ago</p>
                     </div>
                     <p class="review-text">Lorem ipsum dolor sit amet consectetur. Facilisis nulla eun.</p>
-                </div>
-                <div class="card-review">
-                    <div class="card-review-header">
-                        <div class="review-user">
-                            <img src="img_main/review_icon1.png" alt="user avatar" class="review-avatar">
-                            <div class="review-user-info">
-                                <h4 class="review-name">Name</h4>
-                                <p class="review-hotel">Hotel Name</p>
-                            </div>
-                        </div>
-                        <p class="review-date">12 days ago</p>
-                    </div>
-                    <p class="review-text">Viverra ultricies enim interdum fermentum tortor. Facilisis nulla eun.</p>
                 </div>
             </div>
         </section>
@@ -353,35 +230,17 @@
         <section class="safe-with-us">
             <h2 class="section-title">SAFE WITH US</h2>
             <div class="benefits-grid">
-                <div class="benefit-card">
-                    <i class="fas fa-hotel"></i>
-                    <p>We choose hotels that meet our standards</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <p>Secure payment without hidden fees</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-hand-holding-usd"></i>
-                    <p>Current prices and best deals</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="far fa-clock"></i>
-                    <p>Easy booking which will not take you long</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="far fa-envelope"></i>
-                    <p>We'll promptly email booking confirmation</p>
-                </div>
+                <div class="benefit-card"><i class="fas fa-hotel"></i><p>We choose hotels that meet our standards</p></div>
+                <div class="benefit-card"><i class="fas fa-shield-alt"></i><p>Secure payment without hidden fees</p></div>
+                <div class="benefit-card"><i class="fas fa-hand-holding-usd"></i><p>Current prices and best deals</p></div>
+                <div class="benefit-card"><i class="far fa-clock"></i><p>Easy booking which will not take you long</p></div>
             </div>
         </section>
 
         <section class="be-regular">
             <h2 class="section-title">BE OUR REGULAR</h2>
             <div class="regular-container">
-                <div class="regular-image">
-                    <img src="img_main/be_our_regular.jpg" alt="Traveler"> 
-                </div>
+                <div class="regular-image"><img src="img_main/be_our_regular.jpg" alt="Traveler"></div>
                 <div class="regular-content">
                     <p>We believe that every customer deserves the best, and we're committed to providing top-class services to all of our clients.</p>
                     <p>So start your search today and discover the amazing rewards waiting for you on our website!</p>
@@ -397,67 +256,8 @@
 
     <footer class="footer">
         <div class="footer-grid">
-            <div class="footer-column">
-                <ul>
-                    <li>Countries</li>
-                    <li>Regions</li>
-                    <li>Cities</li>
-                    <li>Districts</li>
-                    <li>Airports</li>
-                    <li>Hotels</li>
-                    <li>Places of interest</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <ul>
-                    <li>Homes</li>
-                    <li>Apartments</li>
-                    <li>Resorts</li>
-                    <li>Villas</li>
-                    <li>Hostels</li>
-                    <li>B&Bs</li>
-                    <li>Guest houses</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <ul>
-                    <li>Unique places to stay</li>
-                    <li>All destinations</li>
-                    <li>All flight destinations</li>
-                    <li>All car hire locations</li>
-                    <li>Discover</li>
-                    <li>Reviews</li>
-                    <li>Awards</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <ul>
-                    <li>Car hire</li>
-                    <li>Flight finder</li>
-                    <li>Restaurant reservations</li>
-                    <li>For Travel Agents</li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <ul>
-                    <li>Coronavirus (COVID-19)</li>
-                    <li>FAQs About</li>
-                    <li>Booking.com Customer Service help</li>
-                    <li>Partner help</li>
-                    <li>Careers</li>
-                    <li>Sustainability</li>
-                    <li>Press centre</li>
-                    <li>Safety resource centre</li>
-                    <li>Investor relations</li>
-                    <li>Terms & Conditions</li>
-                    <li>Partner dispute</li>
-                    <li>How we work</li>
-                    <li>Privacy & Cookie Statement</li>
-                    <li>MSA Statement</li>
-                    <li>Corporate contact</li>
-                    <li>We Price Match</li>
-                </ul>
-            </div>
+            <div class="footer-column"><ul><li>Countries</li><li>Regions</li><li>Cities</li></ul></div>
+            <div class="footer-column"><ul><li>Homes</li><li>Apartments</li><li>Resorts</li></ul></div>
         </div>
     </footer>
 </body>
