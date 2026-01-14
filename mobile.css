@@ -1,7 +1,6 @@
 /* --- mobile.css --- 
    Адаптація під мобільний вигляд */
 
-/* 1. Глобальні налаштування */
 body, html {
     background-color: #fff;
     overflow-x: hidden !important;
@@ -11,13 +10,13 @@ body, html {
     box-sizing: border-box !important;
 }
 
-/* --- ВИПРАВЛЕННЯ: Скидаємо стилі батьківського хедера --- */
+/* Скидаємо стилі батьківського хедера */
 .header {
     background-color: transparent !important;
     padding-bottom: 0 !important;
 }
 
-/* 2. Хедер (Біла смужка) */
+/* Хедер (Біла смужка) */
 .header-top-bar {
     padding: 10px 15px !important;
     height: auto !important;
@@ -36,15 +35,13 @@ body, html {
     font-weight: 800 !important;
 }
 
-/* БЛОК АВТОРИЗАЦІЇ (ПРАВОРУЧ) */
 .auth-section {
     display: flex !important;
     align-items: center !important;
     gap: 10px !important;
 }
 
-/* --- ВИПРАВЛЕННЯ: ПОРЯДОК ЕЛЕМЕНТІВ (Прапор -> Кнопка) --- */
-/* Прапорець - ПЕРШИЙ (order: 1) */
+/* Порядок елементів: Прапор -> Кнопка */
 .language-flag {
     order: 1 !important;
     width: 24px !important;
@@ -52,7 +49,6 @@ body, html {
     margin: 0 !important;
 }
 
-/* Кнопка Account - ДРУГА (order: 2) */
 #mobileAccountBtn {
     order: 2 !important;
     display: flex !important;
@@ -75,12 +71,11 @@ body, html {
     display: block;
 }
 
-/* Приховуємо десктопні кнопки */
 #authButtonsContainer {
     display: none !important;
 }
 
-/* ФОТОГРАФІЯ В ХЕДЕРІ */
+/* Фотографія */
 .header-image-container {
     display: block !important;
     height: 220px !important;
@@ -92,11 +87,12 @@ body, html {
     z-index: 1;
 }
 
-/* 3. Пошук (Накладається на фото) */
+/* Пошук (Накладається на фото) */
 .search-section {
     position: relative !important;
     top: 0 !important;
-    margin-top: -30px !important;
+    /* ВАЖЛИВО: Від'ємний відступ для накладання */
+    margin-top: -30px !important; 
     padding: 0 15px !important;
     z-index: 3;
 }
@@ -128,12 +124,10 @@ body, html {
     color: #555;
 }
 
-/* Приховуємо зайве */
 .check-dates, .guests-rooms, .search-button, .search-toggle {
     display: none !important; 
 }
 
-/* Фіолетова кнопка-фільтр */
 .mobile-filter-btn {
     display: flex !important;
     align-items: center;
@@ -147,16 +141,11 @@ body, html {
     flex-shrink: 0;
 }
 
-/* 4. Вкладки (Іконки) */
 .search-tabs {
     display: flex !important;
     justify-content: space-around !important;
     margin-top: 25px !important;
     padding-bottom: 10px !important;
-}
-
-.tab-item {
-    font-size: 0 !important;
 }
 
 .tab-item i {
@@ -169,27 +158,18 @@ body, html {
     justify-content: center;
 }
 
-/* 5. ГАЛЕРЕЯ КАРТОК (СІТКА 2 СТОВПЧИКИ) */
+/* Галерея */
 .main-content {
     padding: 0 15px !important;
     margin-top: 10px !important;
     max-width: 100% !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
 }
 
 .gallery {
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important; /* 2 колонки */
+    grid-template-columns: 1fr 1fr !important;
     gap: 15px !important;
     padding-bottom: 20px !important;
-    width: 100% !important;
-}
-
-.gallery a {
-    min-width: 0 !important;
-    width: 100% !important;
-    text-decoration: none !important;
 }
 
 .card {
@@ -198,8 +178,6 @@ body, html {
     border-radius: 15px !important;
     border: none !important;
     box-shadow: none !important;
-    display: flex !important;
-    flex-direction: column !important;
 }
 
 .card-img img {
@@ -209,41 +187,11 @@ body, html {
     border-radius: 15px !important;
 }
 
-.card-body {
-    padding: 10px 0 !important;
-}
-
-.card-body h3 {
-    font-size: 14px !important;
-    font-weight: 700 !important;
-    margin-bottom: 5px !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-}
-
-.rating img {
-    width: 12px !important;
-}
-
-.distance {
-    font-size: 11px !important;
-}
-
-.price {
-    font-size: 14px !important;
-}
-
-/* 6. ВІДГУКИ */
-.reviews-section {
-    margin-top: 20px !important;
-}
-
+/* Відгуки */
 .reviews {
     display: flex !important;
     flex-direction: column !important;
     gap: 15px !important;
-    width: 100% !important;
 }
 
 .card-review {
@@ -251,34 +199,23 @@ body, html {
     border: 1px solid #eee !important;
     border-radius: 15px !important;
     padding: 20px !important;
-    box-sizing: border-box !important;
 }
 
-/* 7. SAFE WITH US */
+/* Safe with us */
 .benefits-grid {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 15px !important;
-    width: 100% !important;
 }
 
 .benefit-card {
     padding: 20px 10px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    border-radius: 15px !important;
     height: 120px !important;
     border: 1px solid #f0f0f0 !important;
+    border-radius: 15px !important;
 }
 
-/* 8. BE OUR REGULAR */
-.be-regular {
-    margin: 40px 0 !important;
-}
-
+/* Be regular */
 .regular-container {
     flex-direction: column !important;
     padding: 0 !important;
@@ -291,85 +228,15 @@ body, html {
     border-radius: 15px !important;
 }
 
-.regular-content {
-    text-align: left !important;
-    padding: 0 !important;
-}
-
-/* Кнопка */
-.register-action {
-    margin-top: 30px !important;
-    width: 100% !important;
-}
-
 .register-purple-btn {
     width: 100% !important;
     padding: 15px !important;
     border-radius: 30px !important;
-    font-size: 16px !important;
-    background-color: #6200EA !important;
-    color: white !important;
-    box-shadow: 0 4px 20px rgba(98, 0, 234, 0.4) !important;
 }
 
-/* 9. ФУТЕР */
-.footer {
-    padding: 30px 0 !important;
-}
-
+/* Footer */
 .footer-grid {
     grid-template-columns: 1fr !important;
     text-align: center !important;
     gap: 10px !important;
-}
-
-/* --- СТИЛІ ДЛЯ ACCOUNT PAGE --- */
-.account-section, .profile-form, .bookings-section {
-    width: 100% !important;
-    box-sizing: border-box !important;
-}
-
-.account-card, .room-card {
-    display: flex !important;
-    flex-direction: column !important;
-    height: auto !important;
-    grid-template-columns: none !important;
-}
-
-.avatar img, .room-image img {
-    width: 100% !important;
-    height: auto !important;
-}
-
-.form-grid {
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-.form-col {
-    width: 100% !important;
-    gap: 15px !important;
-}
-
-input, select {
-    width: 100% !important;
-    box-sizing: border-box !important;
-    max-width: 100% !important;
-    height: 50px !important;
-}
-
-.booking-side, .booking-actions {
-    width: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    padding: 0 !important;
-}
-
-.booking-summary {
-    display: flex !important;
-    justify-content: space-between !important;
-}
-
-.btn-outline {
-    width: 100% !important;
 }
