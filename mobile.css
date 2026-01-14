@@ -1,144 +1,174 @@
-/* mobile.css - Адаптив під iPhone 14 Pro Max */
+/* --- mobile.css --- 
+   Цей файл підключається ТІЛЬКИ на телефонах (iPhone, Android і т.д.) */
 
-/* 1. Змінюємо загальні відступи для мобільного */
+/* 1. Загальні налаштування сторінки */
 body {
-    background-color: #fff; /* На фото фон білий */
+    background-color: #fff;
+    overflow-x: hidden;
 }
 
 .main-content {
-    padding: 20px 15px; /* Зменшуємо величезні відступи десктопа */
-    margin-top: 100px; /* Місце для пошуку, який з'їхав */
+    padding: 15px;
+    margin-top: 50px;
 }
 
-/* 2. HEADER - Робимо компактним */
+/* 2. Хедер (Логотип і меню) */
 .header-top-bar {
-    padding: 15px 20px;
-    background-color: #fff; /* Білий хедер як на фото */
-    position: relative;
-    z-index: 20;
+    padding: 10px 15px;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+    
+    /* Розміщення: Лого зліва, блок авторизації справа */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-    font-size: 20px; /* Трохи менший логотип */
-    color: #000;
+    font-size: 18px;
 }
 
-/* Приховуємо зайві кнопки "Register" текстом, залишаємо іконки або спрощуємо */
-.auth-section button {
-    display: none; /* Ховаємо великі кнопки */
-}
-
-/* Показуємо тільки іконку профілю, якщо вона є, або спрощуємо меню */
+/* --- БЛОК АВТОРИЗАЦІЇ --- */
 .auth-section {
-    gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Відступ між прапорцем і кнопкою */
 }
 
-#authButtonsContainer {
-    display: none !important; /* Ховаємо контейнер кнопок входу для чистоти */
-}
-/* Залишаємо прапор та іконку профілю */
+/* Прапорець мови */
 .language-flag {
+    width: 24px;
+    height: 16px;
     margin-right: 0;
+    
+    /* !!! ГОЛОВНА ЗМІНА: Переносимо прапорець на початок (лівіше кнопки) !!! */
+    order: -1; 
 }
 
-/* 3. БАНЕР І ПОШУК */
-.header-image-container {
-    display: none; /* На другому фото немає великого банера на пів екрану, тому ховаємо */
+/* Контейнер кнопок */
+#authButtonsContainer {
+    display: flex !important;
+    align-items: center;
 }
 
+/* Ховаємо кнопку "Register" */
+#openRegisterHeader {
+    display: none; 
+}
+
+/* Налаштовуємо кнопку "Sign in" (Account) */
+#openSignIn {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: #333;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+#openSignIn i {
+    font-size: 16px;
+    color: #555;
+}
+
+/* 3. Ховаємо великий банер і вкладки */
+.header-image-container,
+.search-tabs {
+    display: none;
+}
+
+/* 4. Пошук */
 .search-section {
-    top: 70px; /* Піднімаємо пошук вгору */
-    position: relative; /* Щоб він не плавав поверх всього */
+    position: relative;
+    top: 0;
+    margin-top: 20px;
     padding: 0 15px;
 }
 
-/* Перероблюємо довгий пошук у стовпчик або компактний блок */
 .search-form-container {
-    flex-direction: column; /* Елементи один під одним */
-    height: auto; /* Висота автоматична */
-    border-radius: 20px; /* Більше заокруглення */
+    flex-direction: column;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     padding: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
 .search-field {
     width: 100%;
     border-right: none;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #eee;
     padding: 12px 10px;
-    font-size: 14px;
 }
 
 .search-field:last-of-type {
     border-bottom: none;
 }
 
-/* Кнопка пошуку на всю ширину знизу або збоку */
-.search-button {
-    width: 100%;
-    border-radius: 15px;
-    margin-top: 10px;
-    height: 40px;
-}
-
 .search-toggle {
-    display: none; /* Ховаємо кнопку перемикання місцями для економії місця */
-}
-
-/* Tabs (Easy booking...) ховаємо, бо на моб. фото їх немає */
-.search-tabs {
     display: none;
 }
 
-/* 4. ГАЛЕРЕЯ (КАРТКИ ГОТЕЛІВ) */
-/* Головна фішка фото - одна картка на рядок */
-.gallery {
-    grid-template-columns: 1fr; /* Одна колонка замість 4 */
-    gap: 25px;
+.search-button {
+    width: 100%;
+    border-radius: 12px;
     margin-top: 10px;
+    height: 45px;
+    background-color: #6200EA;
+    color: white;
+    border: none;
+    font-size: 18px;
+}
+
+/* 5. Галерея */
+.gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
 .card {
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Легка тінь як на фото */
-    border-radius: 14px;
-    padding-bottom: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 15px;
+    overflow: hidden;
+    padding-bottom: 15px;
 }
 
 .card-img img {
-    height: 200px; /* Висота фото */
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
 }
 
 .card-body {
-    padding: 0 10px; /* Відступи тексту всередині картки */
+    padding: 0 15px;
 }
 
-.card-body h3 {
-    font-size: 16px;
-    margin-bottom: 5px;
-}
-
-/* 5. ВІДГУКИ */
+/* 6. Відгуки */
 .reviews-section {
     margin-top: 40px;
 }
 
 .reviews {
-    grid-template-columns: 1fr; /* Одна колонка відгуків */
+    grid-template-columns: 1fr;
     gap: 15px;
 }
 
-/* 6. SAFE WITH US (Іконки переваг) */
+/* 7. SAFE WITH US */
 .benefits-grid {
-    grid-template-columns: 1fr 1fr; /* Дві колонки (сітка 2х2) */
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
 }
 
-/* 7. BE OUR REGULAR (Картинка з дівчиною) */
+/* 8. BE OUR REGULAR */
 .regular-container {
-    flex-direction: column; /* Картинка зверху, текст знизу */
+    flex-direction: column;
     padding: 0;
     border: none;
     background: transparent;
+    gap: 20px;
 }
 
 .regular-image {
@@ -148,32 +178,35 @@ body {
 
 .regular-image img {
     height: 200px;
+    border-radius: 15px;
+    width: 100%;
+    object-fit: cover;
 }
 
 .regular-content {
-    text-align: center; /* Текст по центру */
+    text-align: center;
 }
 
-/* 8. FOOTER (ПІДВАЛ) */
+/* 9. Футер */
 .footer {
     padding: 30px 0;
 }
 
 .footer-grid {
-    grid-template-columns: 1fr; /* Все в одну колонку */
+    grid-template-columns: 1fr;
+    gap: 10px;
     text-align: center;
-    gap: 30px;
 }
 
 .footer-column ul li {
-    font-size: 14px;
-    padding: 5px 0;
-    border-bottom: 1px solid #f5f5f5; /* Лінії розділення */
+    padding: 8px 0;
+    border-bottom: 1px solid #f9f9f9;
 }
 
-/* 9. МОДАЛЬНІ ВІКНА (Щоб влазили в екран) */
+/* 10. Модальні вікна */
 .modal-content {
     width: 90%;
-    padding: 20px;
-    margin: 20px;
+    padding: 25px;
+    max-height: 90vh;
+    overflow-y: auto;
 }
