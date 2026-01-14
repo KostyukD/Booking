@@ -1,1 +1,297 @@
+/* --- mobile.css (Адаптив iPhone 14 Pro Max) --- */
 
+
+
+/* 1. ЗАГАЛЬНІ */
+
+body {
+
+    background-color: #fff;
+
+    overflow-x: hidden;
+
+    margin: 0;
+
+}
+
+
+
+.content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 15px;
+
+    gap: 20px;
+
+    margin-top: 0;
+
+}
+
+
+
+/* 2. ХЕДЕР (ШАПКА) */
+
+.header-top-bar {
+
+    padding: 10px 15px;
+
+    background: #fff;
+
+    border-bottom: 1px solid #f0f0f0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+
+.logo { font-size: 18px; }
+
+
+
+/* Блок авторизації */
+
+.auth-section {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+
+/* Переносимо прапорець вліво */
+
+.language-flag {
+
+    width: 24px;
+
+    height: 16px;
+
+    order: -1; 
+
+    margin-right: 0;
+
+}
+
+
+
+.register-btn { display: none !important; }
+
+
+
+/* Кнопка Account */
+
+.signin-btn {
+
+    display: flex !important;
+
+    align-items: center;
+
+    background: transparent;
+
+    border: 1px solid #ddd;
+
+    border-radius: 20px;
+
+    padding: 6px 12px;
+
+    font-size: 13px;
+
+    color: #333;
+
+    gap: 5px;
+
+}
+
+
+
+/* Приховуємо зайві елементи */
+
+.header-image-container, .search-tabs, .search-toggle {
+
+    display: none !important;
+
+}
+
+
+
+/* Пошук */
+
+.search-section { padding: 10px 15px; }
+
+.search-form-container {
+
+    display: flex;
+
+    border: 1px solid #eee;
+
+    border-radius: 30px;
+
+    padding: 5px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+
+}
+
+.search-field { width: 100%; border: none; font-size: 14px; }
+
+.search-button {
+
+    width: 40px; height: 40px; border-radius: 50%;
+
+    background: #6200EA; color: white; border: none;
+
+    display: flex; justify-content: center; align-items: center;
+
+}
+
+
+
+/* 3. КАРТКИ ГОТЕЛІВ */
+
+.results { width: 100%; margin-top: 0; }
+
+
+
+.hotel-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    margin-bottom: 25px;
+
+    background: #fff;
+
+    position: relative; /* Для позиціонування рейтингу */
+
+}
+
+
+
+/* Фото */
+
+.hotel-card__image { width: 100%; height: 200px; }
+
+.hotel-card__image img { width: 100%; height: 100%; object-fit: cover; }
+
+
+
+.hotel-card__body { padding: 20px; display: flex; flex-direction: column; }
+
+
+
+/* Інформація зверху */
+
+.hotel-card__top {
+
+    display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;
+
+}
+
+.hotel-card__title { font-size: 18px; margin: 0 0 5px 0; }
+
+
+
+/* Рейтинг справа зверху (абсолютно) */
+
+.hotel-card__score {
+
+    position: absolute;
+
+    top: 20px; right: 20px;
+
+    background: white; padding: 5px; border-radius: 50%;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+    display: flex; flex-direction: column; align-items: center;
+
+    font-size: 9px; z-index: 2;
+
+}
+
+.hotel-card__score-circle {
+
+    width: 35px; height: 35px;
+
+    border: 2px solid #581ADB; border-radius: 50%;
+
+    display: flex; align-items: center; justify-content: center;
+
+    font-size: 14px; font-weight: bold; color: #581ADB;
+
+    margin-bottom: 2px;
+
+}
+
+
+
+.hotel-card__info { font-size: 12px; color: #555; margin-bottom: 10px; }
+
+.hotel-card__desc { font-size: 13px; color: #777; margin-bottom: 20px; line-height: 1.4; }
+
+
+
+/* НИЗ КАРТКИ (Центрування) */
+
+.hotel-card__bottom {
+
+    display: flex; flex-direction: column; 
+
+    align-items: center; justify-content: center;
+
+    gap: 15px; width: 100%; margin-top: 10px; position: static;
+
+}
+
+.hotel-card__price { text-align: center; font-size: 14px; }
+
+.hotel-card__btn {
+
+    width: 90%; padding: 12px 0; background: #6200EA; color: white;
+
+    border: none; border-radius: 25px; font-weight: bold; cursor: pointer;
+
+}
+
+
+
+/* 4. ФІЛЬТРИ ТА ФУТЕР */
+
+.filters { order: 2; width: 100%; }
+
+.filters-form { display: none; }
+
+.see-the-map {
+
+    display: flex; justify-content: center; align-items: center; gap: 10px;
+
+    background: #fff; border: 1px solid #eee; border-radius: 15px; padding: 10px;
+
+}
+
+.footer { padding: 30px 0; }
+
+.footer-grid { grid-template-columns: 1fr; text-align: center; gap: 10px; }
+
+.footer-column ul li { border-bottom: 1px solid #f9f9f9; padding: 8px 0; }
