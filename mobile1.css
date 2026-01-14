@@ -26,7 +26,8 @@
 
     /* SEARCH SECTION */
     .search-section {
-        top: 100px;
+        /* Піднімаємо вище, щоб елементи були на фоні картинки */
+        top: 100px; 
         padding: 0 20px;
         box-sizing: border-box;
     }
@@ -37,7 +38,6 @@
         justify-content: space-between;
         padding: 5px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        /* Переконуємось, що інпут білий */
         background-color: #fff; 
     }
 
@@ -89,7 +89,7 @@
         gap: 40px; /* Відстань між елементами */
         display: flex;
         justify-content: center;
-        /* Робимо текст і іконки білими, бо вони на фоні картинки */
+        /* Колір стає білим, бо вони на фоні картинки (як на фото 2) */
         position: relative;
         z-index: 20;
     }
@@ -237,21 +237,24 @@
         letter-spacing: 1px;
     }
 
-    /* FOOTER (Виправлений згідно фото 4) */
+    /* FOOTER - ПРОСТИЙ СПИСОК (Як на фото 4) */
     .footer {
         padding: 30px 0;
-        background-color: #f7f7f7;
+        background-color: #ffffff; /* Білий фон як на фото 4 */
+        border-top: none;
     }
 
     .footer-grid {
         display: flex;
-        flex-direction: column; /* Вертикальний список */
+        flex-direction: column; /* Вертикальний список один під одним */
         gap: 0;
         padding: 0;
+        max-width: 100%;
     }
     
     .footer-column {
-        margin: 0;
+        width: 100%;
+        margin-bottom: 0;
     }
 
     .footer-column ul {
@@ -260,10 +263,16 @@
 
     .footer-column li {
         text-align: left;
-        color: #003580; /* Синій колір */
-        font-size: 16px; /* Трохи більший шрифт для зручності */
-        padding: 10px 0;
+        color: #003580; /* Синій колір як на фото 4 */
+        font-size: 16px; 
+        padding: 10px 0; /* Відступи між пунктами */
         display: block;
-        margin-bottom: 0;
+        border-bottom: none;
+        cursor: pointer;
+    }
+
+    /* Приховуємо горизонтальні розділювачі акордеону */
+    .footer-column:not(:last-child) {
+        border-bottom: none;
     }
 }
