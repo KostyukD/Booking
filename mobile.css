@@ -1,242 +1,239 @@
 /* --- mobile.css --- 
-   Адаптація під мобільний вигляд */
+   Цей файл застосовується ТІЛЬКИ для екранів шириною до 480px.
+   Він НЕ впливатиме на комп'ютерну версію.
+*/
 
-body, html {
-    background-color: #fff;
-    overflow-x: hidden !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-}
+@media only screen and (max-width: 480px) {
 
-/* Скидаємо стилі батьківського хедера */
-.header {
-    background-color: transparent !important;
-    padding-bottom: 0 !important;
-}
+    /* 1. Глобальні налаштування */
+    body, html {
+        background-color: #fff !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
 
-/* Хедер (Біла смужка) */
-.header-top-bar {
-    padding: 10px 15px !important;
-    height: auto !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    background: #fff !important;
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
+    /* 2. Скидання стилів хедера ПК */
+    .header {
+        background-color: transparent !important;
+        padding-bottom: 0 !important;
+    }
 
-.logo {
-    font-size: 20px !important;
-    color: #222 !important;
-    font-weight: 800 !important;
-}
+    /* 3. Хедер (Біла смужка) */
+    .header-top-bar {
+        padding: 10px 15px !important;
+        height: auto !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        background: #fff !important;
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
 
-.auth-section {
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-}
+    .logo {
+        font-size: 20px !important;
+        color: #222 !important;
+        font-weight: 800 !important;
+    }
 
-/* Порядок елементів: Прапор -> Кнопка */
-.language-flag {
-    order: 1 !important;
-    width: 24px !important;
-    height: auto !important;
-    margin: 0 !important;
-}
+    /* БЛОК АВТОРИЗАЦІЇ */
+    .auth-section {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
 
-#mobileAccountBtn {
-    order: 2 !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    background: white !important;
-    border: 1px solid #ddd !important;
-    padding: 6px 14px !important;
-    border-radius: 30px !important;
-    font-size: 13px !important;
-    font-weight: 600 !important;
-    color: #333 !important;
-    text-decoration: none !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
+    /* ХОВАЄМО КНОПКИ ПК */
+    #authButtonsContainer {
+        display: none !important;
+    }
 
-.flag-icon {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+    /* ПОРЯДОК ЕЛЕМЕНТІВ (Прапор -> Кнопка) */
+    .language-flag {
+        order: 1 !important;
+        width: 24px !important;
+        height: auto !important;
+        margin: 0 !important;
+    }
+    
+    .flag-icon {
+        width: 100%;
+        display: block;
+    }
 
-#authButtonsContainer {
-    display: none !important;
-}
+    /* МОБІЛЬНА КНОПКА (Account) */
+    #mobileAccountBtn {
+        order: 2 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        background: white !important;
+        border: 1px solid #ddd !important;
+        padding: 6px 14px !important;
+        border-radius: 30px !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        color: #333 !important;
+        text-decoration: none !important;
+    }
 
-/* Фотографія */
-.header-image-container {
-    display: block !important;
-    height: 220px !important;
-    width: 100% !important;
-    background-image: url("img_main/header.jpg") !important;
-    background-size: cover !important;
-    background-position: center !important;
-    position: relative;
-    z-index: 1;
-}
+    /* ФОТОГРАФІЯ В ХЕДЕРІ */
+    .header-image-container {
+        display: block !important;
+        height: 220px !important;
+        width: 100% !important;
+        background-image: url("img_main/header.jpg") !important;
+        background-size: cover !important;
+        background-position: center !important;
+        position: relative;
+        z-index: 1;
+        margin-top: -1px !important; /* Щоб з'єднати з хедером */
+    }
 
-/* Пошук (Накладається на фото) */
-.search-section {
-    position: relative !important;
-    top: 0 !important;
-    /* ВАЖЛИВО: Від'ємний відступ для накладання */
-    margin-top: -30px !important; 
-    padding: 0 15px !important;
-    z-index: 3;
-}
+    /* 4. Пошук (Накладається на фото) */
+    .search-section {
+        position: relative !important;
+        top: 0 !important;
+        margin-top: -30px !important;
+        padding: 0 15px !important;
+        z-index: 3;
+    }
 
-.search-form-container {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    height: 55px !important;
-    padding: 0 15px !important;
-    border-radius: 30px !important;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
-    background: white !important;
-    justify-content: space-between !important;
-}
+    .search-form-container {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        height: 55px !important;
+        padding: 0 15px !important;
+        border-radius: 30px !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
+        background: white !important;
+        justify-content: space-between !important;
+    }
 
-.search-field.where {
-    width: auto !important;
-    border: none !important;
-    padding: 0 !important;
-    font-size: 14px !important;
-    color: #555 !important;
-    flex-grow: 1 !important;
-    font-weight: 500;
-}
+    /* Ховаємо зайві іконки/поля */
+    .mobile-hide-icon, .check-dates, .guests-rooms, .search-button, .search-toggle {
+        display: none !important;
+    }
 
-.mobile-search-icon {
-    margin-right: 10px;
-    color: #555;
-}
+    .mobile-show-icon {
+        display: inline-block !important;
+        margin-right: 10px;
+        color: #555;
+    }
 
-.check-dates, .guests-rooms, .search-button, .search-toggle {
-    display: none !important; 
-}
+    .search-field.where {
+        width: auto !important;
+        border: none !important;
+        padding: 0 !important;
+        font-size: 14px !important;
+        color: #555 !important;
+        flex-grow: 1 !important;
+        font-weight: 500;
+    }
 
-.mobile-filter-btn {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background-color: #6200EA;
-    border-radius: 50%;
-    color: white;
-    font-size: 14px;
-    flex-shrink: 0;
-}
+    /* Фіолетова кнопка */
+    .mobile-filter-btn {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background-color: #6200EA;
+        border-radius: 50%;
+        color: white;
+        font-size: 14px;
+        flex-shrink: 0;
+    }
 
-.search-tabs {
-    display: flex !important;
-    justify-content: space-around !important;
-    margin-top: 25px !important;
-    padding-bottom: 10px !important;
-}
+    /* Вкладки */
+    .search-tabs {
+        display: flex !important;
+        justify-content: space-around !important;
+        margin-top: 25px !important;
+        padding-bottom: 10px !important;
+    }
 
-.tab-item i {
-    font-size: 20px !important;
-    color: #666 !important;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .desktop-tab { display: none !important; }
+    .mobile-tab { 
+        display: flex !important; 
+        width: 50px;
+        height: 50px;
+        background: #f5f5f5;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        color: #555;
+        font-size: 20px;
+    }
+    .mobile-tab i { margin: 0 !important; font-size: 20px !important; }
 
-/* Галерея */
-.main-content {
-    padding: 0 15px !important;
-    margin-top: 10px !important;
-    max-width: 100% !important;
-}
+    /* 5. Галерея (2 колонки) */
+    .main-content {
+        padding: 0 15px !important;
+        margin-top: 10px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
 
-.gallery {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 15px !important;
-    padding-bottom: 20px !important;
-}
+    .gallery {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 15px !important;
+        padding-bottom: 20px !important;
+    }
 
-.card {
-    width: 100% !important;
-    margin-bottom: 0 !important;
-    border-radius: 15px !important;
-    border: none !important;
-    box-shadow: none !important;
-}
+    .card {
+        width: 100% !important;
+        margin-bottom: 0 !important;
+        border-radius: 15px !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
 
-.card-img img {
-    width: 100% !important;
-    height: 140px !important;
-    object-fit: cover !important;
-    border-radius: 15px !important;
-}
+    .card-img img {
+        height: 140px !important;
+        border-radius: 15px !important;
+    }
 
-/* Відгуки */
-.reviews {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 15px !important;
-}
+    .card-body { padding: 10px 0 !important; }
+    .card-body h3 { 
+        font-size: 14px !important; 
+        font-weight: 700 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+    .rating img { width: 12px !important; }
+    .distance { font-size: 11px !important; }
+    .price { font-size: 14px !important; }
 
-.card-review {
-    width: 100% !important;
-    border: 1px solid #eee !important;
-    border-radius: 15px !important;
-    padding: 20px !important;
-}
+    /* 6. Решта секцій */
+    .reviews { display: flex !important; flex-direction: column !important; gap: 15px !important; }
+    .card-review { width: 100% !important; border: 1px solid #eee !important; border-radius: 15px !important; padding: 20px !important; box-sizing: border-box !important; }
+    
+    .benefits-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 15px !important; }
+    .benefit-card { padding: 20px 10px !important; height: 120px !important; border: 1px solid #f0f0f0 !important; border-radius: 15px !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; }
+    
+    .regular-container { flex-direction: column !important; padding: 0 !important; border: none !important; gap: 20px !important; }
+    .regular-image img { height: 200px !important; border-radius: 15px !important; }
+    .regular-content { text-align: left !important; padding: 0 !important; }
 
-/* Safe with us */
-.benefits-grid {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 15px !important;
-}
+    .register-purple-btn { width: 100% !important; padding: 15px !important; border-radius: 30px !important; font-size: 16px !important; background-color: #6200EA !important; color: white !important; }
+    
+    .footer { padding: 30px 0 !important; }
+    .footer-grid { grid-template-columns: 1fr !important; text-align: center !important; gap: 10px !important; }
 
-.benefit-card {
-    padding: 20px 10px !important;
-    height: 120px !important;
-    border: 1px solid #f0f0f0 !important;
-    border-radius: 15px !important;
-}
-
-/* Be regular */
-.regular-container {
-    flex-direction: column !important;
-    padding: 0 !important;
-    border: none !important;
-    gap: 20px !important;
-}
-
-.regular-image img {
-    height: 200px !important;
-    border-radius: 15px !important;
-}
-
-.register-purple-btn {
-    width: 100% !important;
-    padding: 15px !important;
-    border-radius: 30px !important;
-}
-
-/* Footer */
-.footer-grid {
-    grid-template-columns: 1fr !important;
-    text-align: center !important;
-    gap: 10px !important;
+    /* Fix Account Page */
+    .container { width: 100% !important; padding: 0 15px !important; box-sizing: border-box !important; }
+    .account-card, .room-card { display: flex !important; flex-direction: column !important; height: auto !important; grid-template-columns: none !important; }
+    .avatar img { height: auto !important; }
+    .form-grid { display: flex !important; flex-direction: column !important; }
+    .form-col { width: 100% !important; }
+    .booking-summary { display: flex !important; justify-content: space-between !important; }
+    .btn-outline { width: 100% !important; }
 }
