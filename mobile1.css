@@ -1,149 +1,234 @@
-/* --- mobile.css (Адаптив iPhone 14 Pro Max) --- */
+@media (max-width: 430px) {
+    /* HEADER */
+    .header-top-bar {
+        padding: 15px 20px;
+    }
 
-/* 1. ЗАГАЛЬНІ */
-body {
-    background-color: #fff;
-    overflow-x: hidden;
-    margin: 0;
+    .logo {
+        font-size: 20px;
+    }
+
+    /* Сховати кнопки авторизації на мобільному (відповідно до фото 2) */
+    .auth-section {
+        display: none;
+    }
+
+    .header-image-container {
+        height: 160px;
+    }
+
+    /* SEARCH SECTION - ПЕРЕРОБКА ПІД МОБІЛЬНИЙ */
+    .search-section {
+        top: 120px;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .search-form-container {
+        width: 100%;
+        height: 60px;
+        justify-content: space-between;
+        padding: 5px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+
+    /* Ховаємо зайві поля пошуку */
+    .search-field.check-dates, 
+    .search-field.guests-rooms, 
+    .search-toggle {
+        display: none;
+    }
+
+    /* Стилізація поля "Where are you going" */
+    .search-field.where {
+        border: none;
+        font-size: 16px;
+        color: #333;
+        flex-grow: 1;
+    }
+
+    .search-field.where i {
+        display: none; /* Прибираємо іконку локації, якщо її немає на фото 2 в полі вводу */
+    }
+
+    /* Кнопка пошуку перетворюється на кнопку налаштувань */
+    .search-button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .desktop-icon {
+        display: none;
+    }
+    
+    .mobile-icon {
+        display: block;
+        font-size: 20px;
+    }
+
+    /* TABS / STATS */
+    .search-tabs {
+        margin-top: 20px;
+        gap: 30px;
+    }
+
+    .tab-item {
+        margin: 0;
+        font-size: 14px;
+    }
+    
+    .tab-item i {
+        font-size: 20px;
+    }
+
+    /* CONTENT LAYOUT */
+    .content {
+        display: block; /* Прибираємо grid */
+        padding: 0 20px 50px 20px;
+    }
+
+    /* FILTER BAR (MOBILE CONTROL) */
+    .mobile-controls {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .mobile-control-btn {
+        flex: 1;
+        background: white;
+        border: 1px solid #eee;
+        border-radius: 30px;
+        padding: 12px;
+        text-align: center;
+        font-weight: 600;
+        color: #555;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    /* Приховуємо десктопний сайдбар фільтрів */
+    aside.filters {
+        display: none;
+    }
+
+    .results {
+        margin-top: 0;
+    }
+
+    /* HOTEL CARD - ВЕРТИКАЛЬНИЙ ДИЗАЙН */
+    .hotel-card {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .hotel-card__image {
+        width: 100%;
+        height: 250px; /* Велика картинка зверху */
+    }
+
+    .hotel-card__body {
+        padding: 20px;
+        position: relative;
+    }
+
+    .hotel-card__top {
+        gap: 10px;
+        margin-bottom: 10px;
+        align-items: flex-start;
+    }
+
+    .hotel-card__title {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+
+    /* Рейтинг праворуч від заголовка */
+    .hotel-card__score {
+        flex-direction: row-reverse; /* Щоб цифра була праворуч */
+        text-align: right;
+    }
+    .hotel-card__score span {
+        font-size: 14px;
+    }
+
+    /* Бейджі вертикально */
+    .hotel-card__badges {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-top: 15px;
+    }
+    
+    .badge-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    /* Інформація про локацію */
+    .hotel-card__info {
+        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    /* Опис */
+    .hotel-card__desc {
+        max-width: 100%;
+        margin-bottom: 100px; /* Місце для ціни та кнопки */
+        font-size: 14px;
+    }
+
+    /* Нижня частина картки */
+    .hotel-card__bottom {
+        position: static; /* Відв'язуємо від абсолютного позиціонування */
+        margin-top: 20px;
+        align-items: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hotel-card__price {
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    .hotel-card__price strong {
+        font-size: 24px;
+        color: #581ADB;
+    }
+
+    /* Кнопка на всю ширину */
+    .hotel-card__btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    /* FOOTER */
+    .footer-grid {
+        grid-template-columns: 1fr; /* Одна колонка */
+        gap: 30px;
+    }
+    
+    .footer {
+        padding: 40px 0;
+    }
 }
-
-.content {
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    gap: 20px;
-    margin-top: 0;
-}
-
-/* 2. ХЕДЕР (ШАПКА) */
-.header-top-bar {
-    padding: 10px 15px;
-    background: #fff;
-    border-bottom: 1px solid #f0f0f0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo { font-size: 18px; }
-
-/* Блок авторизації */
-.auth-section {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-/* Переносимо прапорець вліво */
-.language-flag {
-    width: 24px;
-    height: 16px;
-    order: -1; 
-    margin-right: 0;
-}
-
-.register-btn { display: none !important; }
-
-/* Кнопка Account */
-.signin-btn {
-    display: flex !important;
-    align-items: center;
-    background: transparent;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    padding: 6px 12px;
-    font-size: 13px;
-    color: #333;
-    gap: 5px;
-}
-
-/* Приховуємо зайві елементи */
-.header-image-container, .search-tabs, .search-toggle {
-    display: none !important;
-}
-
-/* Пошук */
-.search-section { padding: 10px 15px; }
-.search-form-container {
-    display: flex;
-    border: 1px solid #eee;
-    border-radius: 30px;
-    padding: 5px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-.search-field { width: 100%; border: none; font-size: 14px; }
-.search-button {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: #6200EA; color: white; border: none;
-    display: flex; justify-content: center; align-items: center;
-}
-
-/* 3. КАРТКИ ГОТЕЛІВ */
-.results { width: 100%; margin-top: 0; }
-
-.hotel-card {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    border-radius: 15px;
-    overflow: hidden;
-    margin-bottom: 25px;
-    background: #fff;
-    position: relative; /* Для позиціонування рейтингу */
-}
-
-/* Фото */
-.hotel-card__image { width: 100%; height: 200px; }
-.hotel-card__image img { width: 100%; height: 100%; object-fit: cover; }
-
-.hotel-card__body { padding: 20px; display: flex; flex-direction: column; }
-
-/* Інформація зверху */
-.hotel-card__top {
-    display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;
-}
-.hotel-card__title { font-size: 18px; margin: 0 0 5px 0; }
-
-/* Рейтинг справа зверху (абсолютно) */
-.hotel-card__score {
-    position: absolute;
-    top: 20px; right: 20px;
-    background: white; padding: 5px; border-radius: 50%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    display: flex; flex-direction: column; align-items: center;
-    font-size: 9px; z-index: 2;
-}
-.hotel-card__score-circle {
-    width: 35px; height: 35px;
-    border: 2px solid #581ADB; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 14px; font-weight: bold; color: #581ADB;
-    margin-bottom: 2px;
-}
-
-.hotel-card__info { font-size: 12px; color: #555; margin-bottom: 10px; }
-.hotel-card__desc { font-size: 13px; color: #777; margin-bottom: 20px; line-height: 1.4; }
-
-/* НИЗ КАРТКИ (Центрування) */
-.hotel-card__bottom {
-    display: flex; flex-direction: column; 
-    align-items: center; justify-content: center;
-    gap: 15px; width: 100%; margin-top: 10px; position: static;
-}
-.hotel-card__price { text-align: center; font-size: 14px; }
-.hotel-card__btn {
-    width: 90%; padding: 12px 0; background: #6200EA; color: white;
-    border: none; border-radius: 25px; font-weight: bold; cursor: pointer;
-}
-
-/* 4. ФІЛЬТРИ ТА ФУТЕР */
-.filters { order: 2; width: 100%; }
-.filters-form { display: none; }
-.see-the-map {
-    display: flex; justify-content: center; align-items: center; gap: 10px;
-    background: #fff; border: 1px solid #eee; border-radius: 15px; padding: 10px;
-}
-.footer { padding: 30px 0; }
-.footer-grid { grid-template-columns: 1fr; text-align: center; gap: 10px; }
-.footer-column ul li { border-bottom: 1px solid #f9f9f9; padding: 8px 0; }
