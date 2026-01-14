@@ -13,7 +13,7 @@
         <div class="header-top-bar">
             <a class="h1-header" href="index.html"><div class="logo">Hotel for <span class="highlight">you.</span></div></a>
 
-            <div class="auth-section">
+            <div class="auth-section-desktop">
                 <button id="openRegisterHeader" class="button button-bordered register-btn">Register</button>
                 <button id="openSignIn" class="button button-bordered signin-btn">
                     Account
@@ -24,7 +24,7 @@
                 </div>
             </div>
 
-            <div class="mobile-account-icon">
+            <div class="mobile-user-icon-blue">
                 <i class="fas fa-user-circle"></i>
             </div>
         </div>
@@ -35,23 +35,23 @@
         <section class="search-section">
             <div class="search-form-container">
                 <div class="search-field where">
-                    <i class="fas fa-map-marker-alt input-icon"></i>
+                    <i class="fas fa-map-marker-alt mobile-input-pin"></i>
                     Where are you going?
                 </div>
-                <div class="search-field check-dates">
+                <div class="search-field check-dates desktop-only-field">
                     <i class="far fa-calendar-alt"></i>
                     Check in - Check out
                 </div>
-                <div class="search-field guests-rooms">
+                <div class="search-field guests-rooms desktop-only-field">
                     <i class="fas fa-user-friends"></i>
                     2 adults • 0 children • 1 room
                 </div>
-                <div class="search-toggle">
+                <div class="search-toggle desktop-only-field">
                     <i class="fas fa-exchange-alt"></i>
                 </div>
                 <button class="search-button">
-                    <i class="fas fa-search desktop-only-icon"></i>
-                    <i class="fas fa-sliders-h mobile-only-icon"></i>
+                    <i class="fas fa-search desktop-search-icon"></i>
+                    <i class="fas fa-sliders-h mobile-sliders-icon"></i>
                 </button>
             </div>
 
@@ -70,12 +70,12 @@
     </header>
 
     <div class="content">
-        <div class="mobile-action-bar">
-            <button class="action-btn">Filter <i class="fas fa-sliders-h" style="transform:rotate(90deg);"></i></button>
-            <button class="action-btn map-red">See the map <i class="fas fa-map-marker-alt"></i></button>
+        <div class="mobile-controls-bar">
+            <button class="mob-ctrl-btn">Filter <i class="fas fa-sliders-h" style="transform:rotate(90deg); margin-left:5px;"></i></button>
+            <button class="mob-ctrl-btn red-map-btn">See the map <i class="fas fa-map-marker-alt" style="margin-left: 5px;"></i></button>
         </div>
 
-         <aside class="filters">
+         <aside class="filters desktop-sidebar">
             <div class="see-the-map">
              <p>See the map</p>
              <img src="img_2/location.png" alt="Map Icon" class="map-icon">
@@ -606,7 +606,7 @@
       <div>
         <h2 class="hotel-card__title">Tourist Hotel</h2>
 
-        <div class="hotel-card__stars">★★★</div>
+        <div class="hotel-card__stars">★★★★★</div>
 
         <div class="hotel-card__badges">
             <div class="badge-item"><img class="icon-card "src="img_2/crown.png"><span>popular</span></div>
@@ -756,7 +756,7 @@
         </div>
     </footer>
 
-    <div class="floating-chat-icon">
+    <div class="floating-chat-btn">
         <i class="fas fa-comment-dots"></i>
     </div>
 
