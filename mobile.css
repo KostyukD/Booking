@@ -1,45 +1,50 @@
-/* --- mobile.css --- 
-   Спеціальні стилі для телефонів, щоб нічого не злітало */
+/* --- mobile.css --- */
 
-/* 1. Скидання глобальних розмірів */
+/* 1. Глобальний скидання */
 body, html {
-    overflow-x: hidden; /* Прибирає горизонтальний скрол */
+    overflow-x: hidden;
     width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* 2. Хедер та Навігація */
+/* 2. Хедер */
 .header {
     padding: 15px 20px !important;
 }
 
+.logo {
+    font-size: 20px !important;
+}
+
+/* 3. Навігація - горизонтальний скрол */
 .nav {
-    justify-content: flex-start !important;
-    overflow-x: auto; /* Додає скрол для меню, якщо не влазить */
-    padding: 10px 15px;
-    margin: 0;
+    display: block !important;
+    white-space: nowrap;
+    overflow-x: auto;
+    padding: 10px 15px !important;
+    margin: 0 !important;
     width: 100%;
     box-sizing: border-box;
 }
 
 .steps {
+    display: inline-flex !important;
     padding: 0;
     margin: 0;
     gap: 10px;
-    flex-wrap: nowrap; /* Забороняємо перенос кнопок меню на новий рядок */
 }
 
 .step {
-    white-space: nowrap;
-    flex-shrink: 0;
+    padding: 6px 15px !important;
+    font-size: 13px !important;
 }
 
-/* 3. Головний контейнер (Виправляємо проблему "злітання") */
+/* 4. Контейнер сторінки */
 .container {
     width: 100% !important;
-    max-width: 100% !important; /* Перебиває 1100px з десктопу */
+    max-width: 100% !important;
     margin: 20px 0 !important;
     padding: 0 15px !important;
     display: flex !important;
@@ -48,49 +53,69 @@ body, html {
     box-sizing: border-box !important;
 }
 
-/* 4. Картка Акаунту */
+/* Кнопка "Назад" */
+.back {
+    margin: 15px 15px !important;
+}
+
+/* 5. КАРТКА АКАУНТУ (Як на скріншоті iPhone 14) */
 .account-section {
     display: flex !important;
     flex-direction: column !important;
     gap: 20px !important;
-    width: 100% !important;
+    grid-template-columns: none !important;
 }
 
 .account-card {
     display: flex !important;
-    flex-direction: column !important; /* Фото зверху, текст знизу */
+    /* Важливо: тут row, щоб аватар і ім'я були поруч, як на скріншоті */
+    flex-direction: row !important; 
+    align-items: center !important;
     width: 100% !important;
     height: auto !important;
-    padding: 0 !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+    background-color: #f0f0f0 !important; /* Світло-сірий фон, як на фото */
+    border: none !important;
+    grid-template-columns: none !important;
+    gap: 15px !important;
 }
 
 .avatar {
-    width: 100% !important;
+    width: 80px !important;
+    height: 80px !important;
+    flex-shrink: 0;
 }
 
 .avatar img {
     width: 100% !important;
-    height: 250px !important;
-    border-radius: 12px 12px 0 0 !important;
+    height: 100% !important;
+    border-radius: 50% !important; /* Робимо круглу аватарку */
     object-fit: cover;
 }
 
 .account-info {
-    width: 100% !important;
-    padding: 20px !important;
-    align-items: center !important;
-    box-sizing: border-box;
+    padding: 0 !important;
+    width: auto !important;
+    flex-grow: 1;
 }
 
-.disclaimer {
-    width: 100% !important;
-    box-sizing: border-box;
+.name {
+    margin-top: 0 !important;
+    font-size: 18px !important;
 }
 
-/* 5. Форма (Inputs) */
+.change-photo {
+    margin-top: 5px !important;
+    font-size: 12px !important;
+    background: white !important;
+    border: 1px solid #ddd !important;
+}
+
+/* 6. ФОРМА (Всі поля в одну колонку) */
 .profile-form {
-    width: 100% !important;
     padding: 20px !important;
+    width: 100% !important;
     box-sizing: border-box;
     max-width: 100% !important;
 }
@@ -98,21 +123,23 @@ body, html {
 .form-grid {
     display: flex !important;
     flex-direction: column !important;
-    gap: 20px !important;
+    gap: 15px !important;
+    grid-template-columns: none !important;
 }
 
 .form-col {
-    width: 100% !important;
     gap: 15px;
+    width: 100% !important;
 }
 
 input, select {
     width: 100% !important;
     box-sizing: border-box !important;
     max-width: 100% !important;
+    height: 50px !important;
 }
 
-/* 6. Бронювання (Room Card) */
+/* 7. БРОНЮВАННЯ (Фото зверху, текст знизу) */
 .bookings-section {
     display: flex !important;
     flex-direction: column !important;
@@ -124,8 +151,9 @@ input, select {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
-    max-width: 100% !important; /* Перебиває 800px */
-    height: auto !important; /* Перебиває 250px */
+    max-width: 100% !important;
+    height: auto !important;
+    margin-bottom: 20px !important;
 }
 
 .room-image {
@@ -139,51 +167,61 @@ input, select {
 }
 
 .room-features {
-    margin-top: 20px;
+    margin-top: 15px;
     flex-wrap: wrap;
 }
 
-/* 7. Сайдбар бронювання */
+/* 8. Сайдбар бронювання (Кнопки і дати) */
 .booking-side {
-    width: 100% !important; /* Перебиває 300px */
+    width: 100% !important;
     padding: 0 !important;
     margin: 0 !important;
     box-sizing: border-box;
 }
 
 .booking-summary {
-    gap: 10px;
+    justify-content: space-between !important;
+    gap: 5px !important;
+    margin-bottom: 15px !important;
 }
 
 .summary-box {
-    width: 33% !important;
+    width: 32% !important;
+    flex: none !important;
     padding: 10px 5px !important;
-    font-size: 12px !important;
+    font-size: 11px !important;
 }
 
 .booking-actions {
-    flex-direction: row;
-    gap: 10px;
+    flex-direction: row !important;
+    gap: 10px !important;
+    margin-bottom: 15px !important;
 }
 
 .btn-outline {
     width: 100% !important;
-    height: 60px !important;
-    font-size: 14px !important;
+    height: 50px !important;
+    font-size: 13px !important;
 }
 
 .booking-footer {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    text-align: center;
+    flex-direction: column !important;
+    gap: 5px !important;
+    text-align: center !important;
 }
 
-/* 8. Відгуки */
+/* 9. Відгуки */
 .reviews {
     width: 100% !important;
-    margin-bottom: 50px !important;
-    padding: 20px !important;
     height: auto !important;
+    padding: 30px 15px !important;
+    margin-bottom: 50px !important;
+    box-sizing: border-box !important;
+}
+
+.footer {
+    max-width: 100% !important;
+    text-align: center !important;
+    padding: 20px !important;
     box-sizing: border-box;
 }
