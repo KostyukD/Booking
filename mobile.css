@@ -1,7 +1,6 @@
-/* --- mobile.css --- 
-   Спеціальні стилі для телефонів (iPhone 14 Pro Max) */
+/* --- mobile.css --- */
 
-/* 1. Глобальні налаштування: Скидаємо ширину і забороняємо горизонтальний скрол сторінки */
+/* 1. Налаштування екрану */
 body, html {
     background-color: #fff;
     overflow-x: hidden !important;
@@ -11,129 +10,135 @@ body, html {
     box-sizing: border-box !important;
 }
 
-/* 2. Хедер: Ховаємо зайве */
+/* 2. Хедер */
 .header-top-bar {
     padding: 15px !important;
     height: auto !important;
 }
 
 .logo {
-    font-size: 20px !important;
+    font-size: 22px !important;
 }
 
-/* ХОВАЄМО КНОПКУ REGISTER В ХЕДЕРІ */
-#openRegisterHeader {
+/* Приховуємо десктопні кнопки */
+#authButtonsContainer {
     display: none !important;
 }
 
-/* Кнопка Sign In стає маленькою кнопкою Account */
-#openSignIn {
-    background: white !important;
-    border: 1px solid #ddd !important;
-    padding: 5px 12px !important;
-    border-radius: 20px !important;
-    font-size: 13px !important;
-    color: #333 !important;
+/* Показуємо мобільну кнопку акаунту */
+#mobileAccountBtn {
+    display: flex !important;
 }
 
-/* Ховаємо великий банер */
 .header-image-container {
-    display: none !important;
+    display: none !important; /* Без банера */
 }
 
-/* 3. Пошук */
+/* 3. Пошук (Спрощений) */
 .search-section {
     position: relative !important;
     top: 0 !important;
-    margin-top: 10px !important;
+    margin-top: 15px !important;
     padding: 0 15px !important;
 }
 
 .search-form-container {
-    flex-direction: column !important;
-    height: auto !important;
-    padding: 15px !important;
-    border-radius: 20px !important;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
-    background: white !important;
-}
-
-.search-field {
-    width: 100% !important;
-    border-right: none !important;
-    border-bottom: 1px solid #f0f0f0 !important;
-    padding: 12px 0 !important;
-}
-
-.search-field:last-of-type {
-    border-bottom: none !important;
-}
-
-.search-toggle {
-    display: none !important;
-}
-
-/* Фіолетова кнопка пошуку */
-.search-button {
-    width: 100% !important;
-    margin-top: 15px !important;
-    border-radius: 12px !important;
+    display: flex !important;
+    flex-direction: row !important; /* В рядок: текст і кнопка */
+    align-items: center !important;
     height: 50px !important;
-    background-color: #6200EA !important;
+    padding: 0 15px !important;
+    border-radius: 25px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+    background: white !important;
+    justify-content: space-between !important;
 }
 
-/* Іконки під пошуком */
+.search-field.where {
+    width: auto !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 14px !important;
+    color: #333 !important;
+    flex-grow: 1 !important;
+}
+
+/* Приховуємо інші поля вводу в міні-вигляді */
+.check-dates, .guests-rooms, .search-button, .search-toggle {
+    display: none !important; 
+}
+
+/* Додаємо фіолетову кнопку налаштувань замість лупи */
+.search-form-container::after {
+    content: '\f0b0'; /* Filter icon code FontAwesome */
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    color: white;
+    background: #6200EA;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+/* 4. Вкладки (Іконки) */
 .search-tabs {
     display: flex !important;
     justify-content: space-around !important;
-    margin-top: 20px !important;
+    margin-top: 25px !important;
     padding-bottom: 10px !important;
 }
 
 .tab-item {
-    font-size: 0 !important; /* Ховаємо текст */
+    font-size: 0 !important;
 }
 
 .tab-item i {
     font-size: 20px !important;
-    color: #666 !important;
-    border: 1px solid #eee;
-    padding: 12px;
-    border-radius: 12px;
-    background: #fff;
+    color: #555 !important;
+    background: #f5f5f5;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
-/* 4. ГАЛЕРЕЯ КАРТОК (Горизонтальний скрол) */
+/* 5. ГОРИЗОНТАЛЬНА ГАЛЕРЕЯ (Найважливіше!) */
 .main-content {
-    padding: 15px !important;
-    margin-top: 0 !important;
+    padding: 0 0 0 15px !important; /* Відступ зліва, справа пусто для скролу */
+    margin-top: 10px !important;
     max-width: 100% !important;
     width: 100% !important;
     box-sizing: border-box !important;
 }
 
 .gallery {
-    display: flex !important; /* В один ряд */
-    overflow-x: auto !important; /* Прокрутка */
+    display: flex !important; /* Flex для горизонту */
+    overflow-x: auto !important; /* Скрол */
     gap: 15px !important;
     padding-bottom: 20px !important;
+    padding-right: 15px !important; /* Відступ справа */
     grid-template-columns: none !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    
+    /* Для плавності */
     -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory; 
 }
 
-.gallery::-webkit-scrollbar {
-    display: none; 
-}
+.gallery::-webkit-scrollbar { display: none; }
 
 .gallery a {
-    min-width: 85% !important; /* Картка займає 85% ширини екрану */
-    width: 85% !important;
-    flex-shrink: 0 !important;
-    scroll-snap-align: start;
     text-decoration: none !important;
+    flex-shrink: 0 !important; /* Не стискати */
+    width: 85% !important; /* Ширина однієї картки */
+    scroll-snap-align: start;
 }
 
 .card {
@@ -141,16 +146,18 @@ body, html {
     margin-bottom: 0 !important;
     border-radius: 15px !important;
     border: none !important;
-    box-shadow: none !important; /* Прибираємо тінь контейнера */
+    box-shadow: none !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 .card-img img {
-    height: 250px !important;
+    width: 100% !important;
+    height: 220px !important;
     object-fit: cover !important;
     border-radius: 15px !important;
 }
 
-/* Інформація під карткою */
 .card-body {
     padding: 10px 0 !important;
 }
@@ -160,15 +167,10 @@ body, html {
     margin-bottom: 5px !important;
 }
 
-/* 5. ВІДГУКИ */
+/* 6. ВІДГУКИ (Горизонтально) */
 .reviews-section {
     margin-top: 20px !important;
-}
-
-.reviews-title {
-    font-size: 14px !important;
-    color: #888 !important;
-    margin-bottom: 15px !important;
+    padding-right: 15px !important;
 }
 
 .reviews {
@@ -178,50 +180,46 @@ body, html {
     padding-bottom: 20px !important;
     grid-template-columns: none !important;
     width: 100% !important;
-    box-sizing: border-box !important;
 }
 
-.reviews::-webkit-scrollbar {
-    display: none;
-}
+.reviews::-webkit-scrollbar { display: none; }
 
 .card-review {
-    min-width: 85% !important;
+    min-width: 80% !important;
     flex-shrink: 0 !important;
     border: 1px solid #eee !important;
     border-radius: 15px !important;
     padding: 20px !important;
+    scroll-snap-align: start;
 }
 
-/* 6. SAFE WITH US (Сітка 2 на 2) */
+/* 7. SAFE WITH US (Сітка 2х2) */
+.safe-with-us {
+    padding-right: 15px !important;
+}
+
 .benefits-grid {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 15px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
 }
 
 .benefit-card {
-    padding: 20px !important;
+    padding: 20px 10px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
     border-radius: 15px !important;
-    height: 140px !important; /* Квадратні картки */
+    height: 120px !important;
+    border: 1px solid #f0f0f0 !important;
 }
 
-.benefit-card i {
-    font-size: 24px !important;
-    margin-bottom: 10px !important;
-    color: #666 !important;
-}
-
-/* 7. BE OUR REGULAR */
+/* 8. BE OUR REGULAR & FOOTER BUTTON */
 .be-regular {
     margin: 40px 0 !important;
+    padding-right: 15px !important;
 }
 
 .regular-container {
@@ -231,15 +229,9 @@ body, html {
     gap: 20px !important;
 }
 
-.regular-image {
-    width: 100% !important;
-    flex: none !important;
-}
-
 .regular-image img {
     height: 200px !important;
     border-radius: 15px !important;
-    object-fit: cover !important;
 }
 
 .regular-content {
@@ -247,10 +239,10 @@ body, html {
     padding: 0 !important;
 }
 
-/* Велика фіолетова кнопка знизу */
+/* Велика фіолетова кнопка */
 .register-action {
     margin-top: 30px !important;
-    padding-bottom: 20px !important;
+    width: 100% !important;
 }
 
 .register-purple-btn {
@@ -260,20 +252,59 @@ body, html {
     font-size: 16px !important;
     background-color: #6200EA !important;
     color: white !important;
-    box-shadow: 0 4px 15px rgba(98, 0, 234, 0.4) !important;
+    box-shadow: 0 4px 20px rgba(98, 0, 234, 0.4) !important;
 }
 
-/* 8. ФУТЕР */
+/* 9. ФУТЕР */
 .footer {
-    padding: 30px 0 !important;
+    padding: 30px 15px !important;
 }
 
 .footer-grid {
     grid-template-columns: 1fr !important;
     text-align: center !important;
-    gap: 20px !important;
+    gap: 10px !important;
 }
 
-.footer-column ul li {
-    padding: 5px 0 !important;
+/* --- СТИЛІ ДЛЯ СТОРІНКИ АКАУНТУ (Щоб не ламалась) --- */
+.container {
+    padding: 0 15px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.account-section, .profile-form, .bookings-section {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.account-card, .room-card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    grid-template-columns: none !important;
+}
+
+.avatar img, .room-image img {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.form-grid {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.booking-summary {
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+.booking-actions {
+    display: flex !important;
+    gap: 10px !important;
+}
+
+.btn-outline {
+    width: 100% !important;
 }
