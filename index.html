@@ -6,7 +6,7 @@
     <title>Hotel For you.</title>
     
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mobile.css" media="(max-width: 480px)">
+    <link rel="stylesheet" href="mobile.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
@@ -31,25 +31,34 @@
             <div class="logo">Hotel for <span class="highlight">you.</span></div>
 
             <div class="auth-section">
-                <div class="language-flag">
-                    <img src="img_main/logo_lang.png" alt="Язык" class="flag-icon">
+                
+                <div id="mobileAuthContainer" style="display: none; align-items: center; gap: 10px;">
+                    <div class="language-flag" style="margin: 0; width: 24px;">
+                        <img src="img_main/logo_lang.png" alt="UK" style="width: 100%; display: block;">
+                    </div>
+                    <a href="account.html" id="mobileAccountBtn">
+                        Account <i class="fas fa-user-circle"></i>
+                    </a>
                 </div>
 
-                <a href="account.html" id="mobileAccountBtn" style="display: none;">
-                    Account <i class="fas fa-user-circle"></i>
-                </a>
+                <div id="desktopAuthContainer" style="display: flex; align-items: center; gap: 20px;">
+                    <div class="buttons-row" style="display: flex; gap: 10px;">
+                        <button id="openRegisterHeader" class="button button-bordered register-btn">Register</button>
+                        <button id="openSignIn" class="button button-bordered signin-btn">
+                            Sign in
+                            <i class="fas fa-user-circle"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="language-flag">
+                        <img src="img_main/logo_lang.png" alt="Язык" class="flag-icon">
+                    </div>
 
-                <div id="authButtonsContainer" style="display: flex; flex-direction: row; gap: 10px; align-items: center;">
-                    <button id="openRegisterHeader" class="button button-bordered register-btn">Register</button>
-                    <button id="openSignIn" class="button button-bordered signin-btn">
-                        Sign in
-                        <i class="fas fa-user-circle"></i>
-                    </button>
+                    <a href="account.html" id="userProfileHeader" style="display: none;">
+                        <img src="img_acc/a349e35e5470441fe4efb8aeb7ee9917ab64e660.png" alt="Profile" class="header-profile-img" onerror="this.src='img_main/review_icon2.png'">
+                    </a>
                 </div>
 
-                <a href="account.html" id="userProfileHeader" style="display: none; margin-right: 15px;">
-                    <img src="img_acc/a349e35e5470441fe4efb8aeb7ee9917ab64e660.png" alt="Profile" class="header-profile-img" onerror="this.src='img_main/review_icon2.png'">
-                </a>
             </div>
         </div>
 
@@ -265,7 +274,6 @@
                     <p>So start your search today and discover the amazing rewards waiting for you on our website!</p>
                 </div>
             </div>
-            
             <div class="register-action">
                 <button class="register-purple-btn">Register an account</button>
             </div>
