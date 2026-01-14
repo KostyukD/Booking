@@ -18,10 +18,6 @@
             object-fit: cover;
             border: 2px solid #6200EA;
             cursor: pointer;
-            transition: transform 0.2s;
-        }
-        .header-profile-img:hover {
-            transform: scale(1.1);
         }
     </style>
 </head>
@@ -32,18 +28,16 @@
             <div class="logo">Hotel for <span class="highlight">you.</span></div>
 
             <div class="auth-section">
-                <div id="authButtonsContainer" style="display: flex; gap: 10px; align-items: center;">
+                <a href="account.html" id="mobileAccountBtn" style="display: none; align-items: center; gap: 5px; border: 1px solid #ddd; padding: 5px 12px; border-radius: 20px; color: #333; text-decoration: none;">
+                    Account <i class="fas fa-user-circle"></i>
+                </a>
+
+                <div id="authButtonsContainer">
                     <button id="openRegisterHeader" class="button button-bordered register-btn">Register</button>
-                    
                     <button id="openSignIn" class="button button-bordered signin-btn">
-                        <span class="btn-text">Account</span>
-                        <i class="fas fa-user-circle"></i>
+                        Sign in <i class="fas fa-user-circle"></i>
                     </button>
                 </div>
-
-                <a href="account.html" id="userProfileHeader" style="display: none; margin-right: 15px;">
-                    <img src="img_acc/a349e35e5470441fe4efb8aeb7ee9917ab64e660.png" alt="Profile" class="header-profile-img" onerror="this.src='img_main/review_icon2.png'">
-                </a>
 
                 <div class="language-flag">
                     <img src="img_main/logo_lang.png" alt="Язык" class="flag-icon">
@@ -51,38 +45,21 @@
             </div>
         </div>
 
-        <div class="header-image-container">
-        </div>
+        <div class="header-image-container"></div>
 
         <section class="search-section">
             <div class="search-form-container">
                 <div class="search-field where">
-                    <i class="fas fa-map-marker-alt"></i>
-                    Where are you going?
+                    <i class="fas fa-plane"></i> Where are you going?
                 </div>
-                <div class="search-field check-dates">
-                    <i class="far fa-calendar-alt"></i>
-                    Check in - Check out
-                </div>
-                <div class="search-field guests-rooms">
-                    <i class="fas fa-user-friends"></i>
-                    2 adults • 0 children • 1 room
-                </div>
-                <a href="index1.html" class="search-button">
-                    <i class="fas fa-search"></i>
-                </a>
+                <div class="search-toggle">
+                    <i class="fas fa-sliders-h"></i> </div>
             </div>
 
             <div class="search-tabs">
-                <div class="tab-item">
-                    <i class="fas fa-bed"></i>
-                </div>
-                <div class="tab-item">
-                    <i class="fas fa-plane"></i>
-                </div>
-                <div class="tab-item">
-                    <i class="fas fa-globe"></i>
-                </div>
+                <div class="tab-item active"><i class="fas fa-suitcase"></i></div>
+                <div class="tab-item"><i class="fas fa-lock"></i></div>
+                <div class="tab-item"><i class="fas fa-receipt"></i></div>
             </div>
         </section>
     </header>
@@ -131,7 +108,7 @@
             <h2 class="modal-title">Authentication</h2>
             <form class="modal-form">
                 <input type="text" placeholder="Code" class="modal-input auth-input" id="authCodeInput">
-                <p style="text-align: center; margin: 15px 0; font-size: 14px; color: #555;">Check your mail and enter the code.</p>
+                <p style="text-align: center; margin: 15px 0; font-size: 14px; color: #555;">We have sent you an email with the code.<br>Check your mail and enter the code.</p>
                 <button type="button" class="continue-btn" id="authContinueBtn">Continue</button>
             </form>
         </div>
@@ -167,7 +144,7 @@
                 <div class="card-img"><img src="img_main/hotel1.jpg" alt="hotel"></div>
                 <div class="card-body">
                     <h3>Hotel name | City | Country</h3>
-                    <div class="rating"><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""></div>
+                    <div class="rating"><img src="img_main/purple_star.png"><img src="img_main/purple_star.png"><img src="img_main/purple_star.png"><img src="img_main/purple_star.png"></div>
                     <p class="distance">the city center : 116 m</p>
                     <p class="price">$130 <span>night</span></p>
                 </div>
@@ -176,16 +153,16 @@
                 <div class="card-img"><img src="img_main/hotel2.jpg" alt="hotel2"></div>
                 <div class="card-body">
                     <h3>Hotel name | City | Country</h3>
-                    <div class="rating"><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""></div>
+                    <div class="rating"><img src="img_main/purple_star.png"><img src="img_main/purple_star.png"><img src="img_main/purple_star.png"><img src="img_main/purple_star.png"></div>
                     <p class="distance">the city center : 116 m</p>
-                    <p class="price">$142 <span>night</span></p>
+                    <p class="price">$130 <span>night</span></p>
                 </div>
             </div></a>
             <a href="index2.html"><div class="card">
                 <div class="card-img"><img src="img_main/hotel3.jpg" alt="hote3"></div>
                 <div class="card-body">
                     <h3>Hotel name | City | Country</h3>
-                    <div class="rating"><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""></div>
+                    <div class="rating"><img src="img_main/purple_star.png"><img src="img_main/purple_star.png"><img src="img_main/purple_star.png"><img src="img_main/purple_star.png"></div>
                     <p class="distance">the city center : 116 m</p>
                     <p class="price">$130 <span>night</span></p>
                 </div>
@@ -194,9 +171,9 @@
                 <div class="card-img"><img src="img_main/hotel4.jpg" alt="hotel4"></div>
                 <div class="card-body">
                     <h3>Hotel name | City | Country</h3>
-                    <div class="rating"><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""><img src="img_main/purple_star.png" alt=""></div>
+                    <div class="rating"><img src="img_main/purple_star.png"><img src="img_main/purple_star.png"><img src="img_main/purple_star.png"><img src="img_main/purple_star.png"></div>
                     <p class="distance">the city center : 116 m</p>
-                    <p class="price">$142 <span>night</span></p>
+                    <p class="price">$130 <span>night</span></p>
                 </div>
             </div></a>
         </div>
@@ -246,6 +223,7 @@
                     <p>So start your search today and discover the amazing rewards waiting for you on our website!</p>
                 </div>
             </div>
+            
             <div class="register-action">
                 <button class="register-purple-btn">Register an account</button>
             </div>
