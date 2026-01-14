@@ -1,5 +1,5 @@
 /* --- mobile.css --- 
-   Адаптація для телефонів (iPhone 14 Pro Max) */
+   Адаптація для iPhone 14 Pro Max та інших мобільних пристроїв */
 
 /* 1. Глобальні налаштування */
 body, html {
@@ -97,8 +97,7 @@ body, html {
 
 /* Налаштування картки */
 .gallery a {
-    min-width: 280px !important; /* Фіксована ширина картки */
-    width: 280px !important;
+    min-width: 85% !important; /* Картка займає 85% ширини екрану */
     flex-shrink: 0 !important; /* Щоб картки не стискалися */
 }
 
@@ -134,7 +133,7 @@ body, html {
 }
 
 .card-review {
-    min-width: 300px !important; /* Ширина картки відгуку */
+    min-width: 80% !important; /* Ширина картки відгуку */
     flex-shrink: 0 !important;
 }
 
@@ -186,8 +185,6 @@ body, html {
     padding: 15px !important;
     border-radius: 12px !important;
     font-size: 16px !important;
-    /* Плаваюча кнопка (опціонально, як на дизайні) */
-    /* position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 100; width: 90% !important; box-shadow: 0 5px 20px rgba(98, 0, 234, 0.5); */
 }
 
 /* 8. ФУТЕР */
@@ -202,6 +199,30 @@ body, html {
 }
 
 /* --- ДОДАТКОВО ДЛЯ АКАУНТУ (щоб не зламати його) --- */
+/* Навігація */
+.nav {
+    display: block !important;
+    white-space: nowrap !important;
+    overflow-x: auto !important;
+    padding: 10px 15px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.steps {
+    display: inline-flex !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 10px !important;
+}
+
+.step {
+    padding: 6px 15px !important;
+    font-size: 13px !important;
+    flex-shrink: 0 !important;
+}
+
 .container, .account-section, .profile-form, .bookings-section {
     width: 100% !important;
     max-width: 100% !important;
@@ -210,11 +231,48 @@ body, html {
     padding-right: 15px !important;
 }
 
-.account-card, .room-card {
-    grid-template-columns: none !important;
+.account-card {
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: row !important; /* Фото зліва, текст справа */
+    align-items: center !important;
+    width: 100% !important;
     height: auto !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+    background-color: #f0f0f0 !important;
+    grid-template-columns: none !important;
+    gap: 15px !important;
+}
+
+.avatar {
+    width: 80px !important;
+    height: 80px !important;
+    flex-shrink: 0 !important;
+}
+
+.avatar img {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+}
+
+.account-info {
+    padding: 0 !important;
+    width: auto !important;
+    flex-grow: 1 !important;
+}
+
+.name {
+    margin-top: 0 !important;
+    font-size: 18px !important;
+}
+
+.change-photo {
+    margin-top: 5px !important;
+    font-size: 12px !important;
+    background: white !important;
+    border: 1px solid #ddd !important;
 }
 
 .form-grid {
@@ -222,10 +280,42 @@ body, html {
     flex-direction: column !important;
 }
 
+.form-col {
+    width: 100% !important;
+    gap: 15px !important;
+}
+
+input, select {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+    height: 50px !important;
+}
+
+.room-card {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin-bottom: 20px !important;
+}
+
+.room-image {
+    width: 100% !important;
+    height: 200px !important;
+}
+
+.room-content {
+    width: 100% !important;
+    padding: 20px !important;
+}
+
 .booking-side, .booking-actions {
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
+    padding: 0 !important;
 }
 
 .booking-summary {
@@ -233,4 +323,25 @@ body, html {
     flex-direction: row !important;
     width: 100% !important;
     justify-content: space-between !important;
+}
+
+.summary-box {
+    width: 32% !important;
+    padding: 10px 5px !important;
+    font-size: 11px !important;
+    flex: none !important;
+}
+
+.booking-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+}
+
+.btn-outline {
+    width: 100% !important;
+    height: 50px !important;
+    font-size: 13px !important;
 }
