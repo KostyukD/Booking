@@ -288,3 +288,145 @@ body {
 .confirmation-title{
     color:#581ADB;
 }
+@media (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .header-top-bar {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .top-line-divider {
+    margin-bottom: 12px;
+  }
+
+  .main-container {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 15px;
+    gap: 15px;
+    max-width: 100%;
+  }
+
+  .search-summary {
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+  }
+
+  .summary-card {
+    width: auto;
+    min-width: 90px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    font-size: 12px;
+    flex: 0 0 auto;
+  }
+
+  .summary-card i {
+    font-size: 16px;
+  }
+
+  .room-card {
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .room-image {
+    width: 100%;
+    height: 190px;
+  }
+
+  .room-info {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .booking-container {
+    max-width: 100%;
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 15px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .form-input {
+    padding: 14px 16px;
+    border-radius: 22px;
+    font-size: 14px;
+  }
+
+  .continue-btn {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px 0;
+    font-size: 16px;
+    border-radius: 32px;
+    margin: 0;
+  }
+
+  .secondary-btn {
+    width: 100%;
+    max-width: 100%;
+    margin: 12px 0 0;
+    padding: 12px 0;
+    border-radius: 32px;
+    font-size: 15px;
+  }
+
+  .close-btn,
+  .back-btn {
+    top: 12px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .close-btn {
+    right: 12px;
+  }
+
+  .success-card {
+    max-width: 100%;
+  }
+
+  .hotel-name-title {
+    font-size: 22px;
+  }
+
+  .success-details li {
+    font-size: 13px;
+  }
+
+  .option-item {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    gap: 12px;
+  }
+
+  .custom-checkbox {
+    width: 20px;
+    height: 20px;
+  }
+
+  .option-item input:checked + .custom-checkbox::after {
+    width: 10px;
+    height: 10px;
+  }
+}
