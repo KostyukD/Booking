@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Onest:wght@100..900&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap');
 
+/* --- Сброс стилей --- */
 * {
     margin: 0;
     padding: 0;
@@ -14,46 +15,51 @@ a {
     color: #581ADB;
 }
 
+/* --- Общие стили для body --- */
 body {
     font-family: 'Nunito Sans', sans-serif;
     background-color: #f7f7f7;
     color: #333;
 }
 
+/* --- Стилизация Header (Общий контейнер) --- */
 .header {
-    background-color: #f7f7f7;
-    padding-bottom: 20px;
+    /* Мы разделим header на темную полосу сверху и контейнер для изображения */
+    background-color: #f7f7f7; /* Темный фон для верхней полосы */
+    padding-bottom: 20px; /* Отступ между темной полосой и началом изображения */
     position: relative;
 }
 
-.header-top-bar {
+/* --- Верхняя панель (Header Top Bar) --- */
+.header-top-bar { /* Используем этот класс вместо .header-top для большей ясности */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
+    padding: 15px 50px; /* Отступы по краям и сверху/снизу */
     color: white;
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #222222;
+    color: #222222; /* Изменено на белый для контраста с фоном #333 */
 }
 
 .logo span{
     color: #581ADB;
 }
 
+/* --- Секция авторизации (Flag/Register/Sign in) --- */
 .auth-section {
     display: flex;
     align-items: center;
 }
 
-/* --- ВАЖЛИВО: Вирівнювання кнопок в ряд на ПК --- */
+/* --- ВАЖЛИВО: ГАРАНТУЄ, ЩО КНОПКИ В РЯД НА ПК --- */
 #authButtonsContainer {
     display: flex !important;
-    align-items: center;
-    gap: 10px;
+    align-items: center !important;
+    gap: 10px !important;
 }
 
 .language-flag {
@@ -70,6 +76,7 @@ body {
     object-fit: cover;
 }
 
+/* --- Стили для кнопок (Register/Sign in) --- */
 .button {
     background: none;
     cursor: pointer;
@@ -83,12 +90,12 @@ body {
 }
 
 .button-bordered {
-    border: 1px solid #222222;
-    color: #222222;
+    border: 1px solid #222222; /* Светлая обводка */
+    color: #222222; /* Светлый текст */
     margin-left: 10px;
 }
 
-.button-bordered:hover {
+    .button-bordered:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
@@ -96,19 +103,26 @@ body {
     margin-left: 5px;
 }
 
+/* --- Секция фонового изображения (Баннер) --- */
 .header-image-container {
-    height: 200px;
+    /* Высота и другие настройки для фона, чтобы он занимал верхнюю часть */
+
+    height: 200px; /* Примерная высота */
+
     background-image: url("img_main/header.jpg");
     background-size: cover;
     background-position: center;
-    color: white;
+    color: white; /* Цвет текста на баннере */
+
     padding: 20px;
-    position: relative;
+    position: relative; /* Чтобы позиционировать элементы внутри */
 }
 
+/* --- Секция поиска (Search Section) --- */
 .search-section {
     position: absolute;
     width: 100%;
+    /* Позиционируем форму поиска поверх баннера */
     top: 200px;
     left: 0;
     z-index: 10;
@@ -133,23 +147,35 @@ body {
     color: #666;
     font-size: 15px;
     cursor: pointer;
-    white-space: nowrap;
+    white-space: nowrap; /* Предотвращаем перенос текста */
 }
 
-.search-field i {
-    color: #888;
-    margin-right: 10px;
+    .search-field i {
+        color: #888;
+        margin-right: 10px;
+    }
+
+.search-toggle {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    color: #666;
+    border-right: 1px solid #eee;
 }
+
 
 .search-button {
     background-color: #581ADB;
     color: white;
     border-radius: 30px;
+
     width: 44px;
     height: 44px;
+
     display: inline-flex;      
     align-items: center;       
     justify-content: center;   
+
     text-decoration: none;      
     cursor: pointer;
     flex-shrink: 0;
@@ -161,6 +187,8 @@ body {
     line-height: 1;     
 }
 
+
+/* --- Дополнительные вкладки под формой поиска (Easy booking и т.д.) --- */
 .search-tabs {
     display: flex;
     justify-content: center;
@@ -176,10 +204,10 @@ body {
     color: #666;
 }
 
-.tab-item i {
-    font-size: 24px;
-    margin-bottom: 5px;
-}
+    .tab-item i {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
 
 .main-content {
   max-width: 1200px;
@@ -316,7 +344,11 @@ body {
     color: #333;
 }
 
-/* Модальні вікна */
+/* =========================================
+   МОДАЛЬНОЕ ОКНО (ВХОД) 
+   ========================================= */
+
+/* Эффект затемнения и размытия */
 .overlay {
     display: none;
     position: fixed;
@@ -331,10 +363,11 @@ body {
     align-items: center;
 }
 
-.overlay.active {
-    display: flex;
-}
+    .overlay.active {
+        display: flex;
+    }
 
+/* Контейнер модального окна */
 .modal-content {
     background: white;
     width: 100%;
@@ -353,22 +386,24 @@ body {
     font-weight: 700;
 }
 
+/* Стили полей ввода (Email/Password) */
 .modal-input {
     width: 100%;
     height: 50px;
     padding: 0 20px;
     margin-bottom: 15px;
     border: 1px solid #E0E0E0;
-    border-radius: 25px;
+    border-radius: 25px; /* Идеальный овал */
     outline: none;
     font-size: 14px;
     transition: border-color 0.3s;
 }
 
-.modal-input:focus {
-    border-color: #581ADB;
-}
+    .modal-input:focus {
+        border-color: #581ADB;
+    }
 
+/* Кнопка Continue */
 .continue-btn {
     width: 100%;
     height: 50px;
@@ -382,28 +417,30 @@ body {
     transition: background 0.3s;
 }
 
-.continue-btn:hover {
-    background: #D5D5D5;
-}
+    .continue-btn:hover {
+        background: #D5D5D5;
+    }
+    /* Состояние кнопки Continue, когда поля заполнены */
+    .continue-btn.active {
+        background-color: #581ADB !important; /* Твой фиолетовый */
+        color: white !important;
+        cursor: pointer;
+    }
 
-.continue-btn.active {
-    background-color: #581ADB !important;
-    color: white !important;
-    cursor: pointer;
-}
-
+/* Ссылка на регистрацию */
 .register-link {
     font-size: 13px;
     color: #666;
     margin-bottom: 25px;
 }
 
-.register-link a {
-    color: #581ADB;
-    text-decoration: none;
-    font-weight: bold;
-}
+    .register-link a {
+        color: #581ADB;
+        text-decoration: none;
+        font-weight: bold;
+    }
 
+/* Кнопки соцсетей (Google, Facebook, Apple) */
 .social-button {
     width: 100%;
     height: 50px;
@@ -421,18 +458,19 @@ body {
     transition: all 0.2s;
 }
 
-.social-button:hover {
-    background-color: #F9F9F9;
-}
+    .social-button:hover {
+        background-color: #F9F9F9;
+    }
 
-.social-button img {
-    width: 18px;
-}
+    .social-button img {
+        width: 18px;
+    }
 
-.social-button i {
-    font-size: 18px;
-}
+    .social-button i {
+        font-size: 18px;
+    }
 
+/* Кнопка закрытия (крестик) */
 .close-btn {
     position: absolute;
     top: 15px;
@@ -445,10 +483,10 @@ body {
     line-height: 1;
 }
 
-.close-btn:hover {
-    color: #999;
-}
-
+    .close-btn:hover {
+        color: #999;
+    }
+/* Заголовки секцій */
 .section-title {
     text-align: center;
     font-size: 14px;
@@ -458,6 +496,7 @@ body {
     text-transform: uppercase;
 }
 
+/* Секція SAFE WITH US */
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -486,6 +525,7 @@ body {
     margin: 0;
 }
 
+/* Секція BE OUR REGULAR */
 .be-regular {
     margin-bottom: 80px;
     margin-top: 80px;
@@ -542,6 +582,7 @@ body {
     box-shadow: 0 4px 15px rgba(98, 0, 234, 0.3);
 }
 
+/* Footer */
 .footer {
     border-top: 1px solid #eee;
     padding: 60px 0;
