@@ -1,5 +1,5 @@
 /* --- mobile.css --- 
-   Адаптація для iPhone 14 Pro Max та інших мобільних пристроїв */
+   Адаптація під мобільний вигляд (Horizontal scroll, великі картки) */
 
 /* 1. Глобальні налаштування */
 body, html {
@@ -11,7 +11,7 @@ body, html {
     box-sizing: border-box !important;
 }
 
-/* 2. Хедер та Топ Бар */
+/* 2. Хедер */
 .header-top-bar {
     padding: 10px 15px !important;
     height: auto !important;
@@ -26,7 +26,7 @@ body, html {
     display: none !important;
 }
 
-/* 3. Пошук */
+/* 3. Пошук (Як на макеті) */
 .search-section {
     position: relative !important;
     top: 0 !important;
@@ -37,16 +37,17 @@ body, html {
 .search-form-container {
     flex-direction: column !important;
     height: auto !important;
-    padding: 10px !important;
+    padding: 15px !important;
     border-radius: 15px !important;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08) !important;
+    background: white !important;
 }
 
 .search-field {
     width: 100% !important;
     border-right: none !important;
     border-bottom: 1px solid #eee !important;
-    padding: 12px 10px !important;
+    padding: 12px 0 !important;
 }
 
 .search-field:last-of-type {
@@ -64,9 +65,24 @@ body, html {
     height: 45px !important;
 }
 
-/* Приховуємо вкладки під пошуком */
+/* 3.1 Вкладки під пошуком (іконки) */
 .search-tabs {
-    display: none !important;
+    display: flex !important;
+    justify-content: space-around !important;
+    margin-top: 20px !important;
+    padding-bottom: 10px !important;
+}
+
+.tab-item {
+    font-size: 0 !important; /* Ховаємо текст, якщо на макеті тільки іконки */
+}
+
+.tab-item i {
+    font-size: 24px !important;
+    color: #555 !important;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 12px;
 }
 
 /* 4. ГАЛЕРЕЯ КАРТОК (Горизонтальний скрол) */
@@ -74,46 +90,51 @@ body, html {
     padding: 15px !important;
     margin-top: 10px !important;
     max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .gallery {
-    /* Робимо Flex замість Grid, щоб картки стали в ряд */
-    display: flex !important;
-    /* Додаємо горизонтальну прокрутку */
-    overflow-x: auto !important;
+    display: flex !important; /* В ряд */
+    overflow-x: auto !important; /* Прокрутка */
     gap: 15px !important;
-    padding-bottom: 20px !important; /* Місце для скролбару */
-    grid-template-columns: none !important; /* Відключаємо grid */
+    padding-bottom: 20px !important;
+    grid-template-columns: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
     
-    /* Для плавної прокрутки на iOS */
+    /* Плавна прокрутка iOS */
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Ховаємо скролбар в Firefox */
+    scroll-snap-type: x mandatory; /* Прилипання */
 }
 
-/* Ховаємо скролбар в Chrome/Safari */
+/* Ховаємо скролбар */
 .gallery::-webkit-scrollbar {
     display: none; 
 }
 
-/* Налаштування картки */
 .gallery a {
-    min-width: 85% !important; /* Картка займає 85% ширини екрану */
-    flex-shrink: 0 !important; /* Щоб картки не стискалися */
+    min-width: 85% !important; /* Картка на 85% екрану */
+    width: 85% !important;
+    flex-shrink: 0 !important;
+    scroll-snap-align: start; /* Центрування при скролі */
 }
 
 .card {
     width: 100% !important;
     margin-bottom: 0 !important;
     border-radius: 15px !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05) !important;
+    box-shadow: none !important; /* Легша тінь */
+    border: 1px solid #eee;
 }
 
 .card-img img {
-    height: 200px !important;
+    height: 220px !important;
     object-fit: cover !important;
+    border-radius: 15px 15px 0 0 !important;
 }
 
-/* 5. ВІДГУКИ (Теж горизонтальний скрол) */
+/* 5. ВІДГУКИ (Горизонтальний скрол) */
 .reviews-section {
     margin-top: 30px !important;
 }
@@ -124,8 +145,10 @@ body, html {
     gap: 15px !important;
     padding-bottom: 20px !important;
     grid-template-columns: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
 }
 
 .reviews::-webkit-scrollbar {
@@ -133,22 +156,31 @@ body, html {
 }
 
 .card-review {
-    min-width: 80% !important; /* Ширина картки відгуку */
+    min-width: 80% !important;
     flex-shrink: 0 !important;
+    scroll-snap-align: start;
+    border-radius: 15px !important;
 }
 
 /* 6. SAFE WITH US (Сітка 2 на 2) */
 .benefits-grid {
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important; /* Дві колонки */
+    grid-template-columns: 1fr 1fr !important;
     gap: 15px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .benefit-card {
     padding: 20px 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 120px !important; /* Фіксована висота квадратів */
 }
 
-/* 7. BE OUR REGULAR (Картинка і текст) */
+/* 7. BE OUR REGULAR */
 .be-regular {
     margin: 40px 0 !important;
 }
@@ -166,7 +198,7 @@ body, html {
 }
 
 .regular-image img {
-    height: 220px !important;
+    height: 200px !important;
     border-radius: 15px !important;
 }
 
@@ -183,7 +215,7 @@ body, html {
 .register-purple-btn {
     width: 100% !important;
     padding: 15px !important;
-    border-radius: 12px !important;
+    border-radius: 30px !important; /* Більш кругла, як на фото */
     font-size: 16px !important;
 }
 
@@ -198,8 +230,16 @@ body, html {
     gap: 20px !important;
 }
 
-/* --- ДОДАТКОВО ДЛЯ АКАУНТУ (щоб не зламати його) --- */
-/* Навігація */
+/* --- СТИЛІ ДЛЯ АКАУНТУ (щоб він теж працював) --- */
+.container, .account-section, .profile-form, .bookings-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+/* Навігація акаунту */
 .nav {
     display: block !important;
     white-space: nowrap !important;
@@ -219,60 +259,18 @@ body, html {
 
 .step {
     padding: 6px 15px !important;
-    font-size: 13px !important;
     flex-shrink: 0 !important;
 }
 
-.container, .account-section, .profile-form, .bookings-section {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-}
-
-.account-card {
+.account-card, .room-card {
     display: flex !important;
-    flex-direction: row !important; /* Фото зліва, текст справа */
-    align-items: center !important;
-    width: 100% !important;
+    flex-direction: column !important;
     height: auto !important;
-    padding: 20px !important;
-    box-sizing: border-box !important;
-    background-color: #f0f0f0 !important;
     grid-template-columns: none !important;
-    gap: 15px !important;
-}
-
-.avatar {
-    width: 80px !important;
-    height: 80px !important;
-    flex-shrink: 0 !important;
 }
 
 .avatar img {
     width: 100% !important;
-    height: 100% !important;
-    border-radius: 50% !important;
-    object-fit: cover !important;
-}
-
-.account-info {
-    padding: 0 !important;
-    width: auto !important;
-    flex-grow: 1 !important;
-}
-
-.name {
-    margin-top: 0 !important;
-    font-size: 18px !important;
-}
-
-.change-photo {
-    margin-top: 5px !important;
-    font-size: 12px !important;
-    background: white !important;
-    border: 1px solid #ddd !important;
 }
 
 .form-grid {
@@ -282,66 +280,24 @@ body, html {
 
 .form-col {
     width: 100% !important;
-    gap: 15px !important;
 }
 
 input, select {
     width: 100% !important;
     box-sizing: border-box !important;
-    max-width: 100% !important;
-    height: 50px !important;
-}
-
-.room-card {
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    margin-bottom: 20px !important;
-}
-
-.room-image {
-    width: 100% !important;
-    height: 200px !important;
-}
-
-.room-content {
-    width: 100% !important;
-    padding: 20px !important;
 }
 
 .booking-side, .booking-actions {
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
-    padding: 0 !important;
 }
 
 .booking-summary {
     display: flex !important;
-    flex-direction: row !important;
-    width: 100% !important;
     justify-content: space-between !important;
-}
-
-.summary-box {
-    width: 32% !important;
-    padding: 10px 5px !important;
-    font-size: 11px !important;
-    flex: none !important;
-}
-
-.booking-actions {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 10px !important;
-    width: 100% !important;
-    margin-top: 15px !important;
 }
 
 .btn-outline {
     width: 100% !important;
-    height: 50px !important;
-    font-size: 13px !important;
 }
